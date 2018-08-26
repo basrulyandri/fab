@@ -1,0 +1,23 @@
+* Ketika keuangan akan mendaftarkan atau meregistrasikan aplikan, tampilan modal form untuk pilihan presenter belum secara default ke presenternya
+
+Presenter yang meregistrasikan atau mendaftarkan aplikan yang belum di take tidak secara otomatis menjadikan aplikan tersebut menjadi milik presenter yang meregistrasikan atau mendaftarkan. Namun kegiatan meregistrasikannya di catat dalam tabel aplikan_track. Ketika keuangan meregistrasikan aplikan, beri catatan kepada keuangan siapa yang mendaftarkan aplikan pada modal form registrasikan
+
+Aplikan yang belum pernah di take oleh presenter, lalu didaftarkan oleh Presenter atau keuangan, maka secara otomatis aplikan tersebut di take oleh presenter yang bersangkutan dan dicatat dalam tabel aplikan_track.
+
+Email notifikasi ke user ketika ada aplikan yang baru saja download brosur, harus ada settingan untuk ceklis siapa aja user yang menerima notifikasi
+
+Setting Header email blm ada
+
+Email notifikasi ke pimpinan belum ada ketika ada yg download brosur dari link refferal
+
+*////-- Penilaian bintang presenter --/////*
+
+aplikan yang daftar oleh presenter dibagi dengan seluruh aplikan daftar (persentase)
+daftar mendapat porsi 2 bintang, maka persentase di atas dibagi 2 lalu di lakukan pembulatan
+
+aplikan yang regis oleh presenter dibagi dengan seluruh aplikan regis (persentase)
+regis mendapat porsi 3 bintang, maka persentase di atas dibagi 2 lalu di lakukan pembulatan
+
+/****************************************
+
+* Untuk penilaian bintang presenter, ada ide setiap kegiatan followup, melayani, mendaftarkan dan me registrasikan dicatatat dalam sistem dalam bentuk poin.

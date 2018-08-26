@@ -1,0 +1,109 @@
+/* Reset */
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.menu li,
+.menu ul a {
+  position: relative;
+}
+.menu > li {
+  float: left;
+}
+.menu > li.floatr {
+  float: right;
+}
+.menu li > a {
+  display: block;
+}
+.menu a small {
+  display: block;
+}
+.menu ul {
+  position: absolute;
+  display: none;
+  width: 180px;
+}
+.menu ul ul {
+  top: 0;
+  left: 180px;
+}
+.menu > li.floatr > ul {
+  right: 0;
+}
+.menu > li.floatr > ul ul {
+  left: -180px;
+}
+.menu li:hover > ul {
+  display: block;
+}
+/* Mega Menu */
+.menu .cols1,
+.menu .cols2,
+.menu .cols3,
+.menu .cols4,
+.menu .cols5 {
+  position: absolute;
+  display: none;
+  overflow: auto;
+}
+.menu .cols1,
+.menu .col1 {
+  width: 160px;
+}
+.menu .cols2,
+.menu .col2 {
+  width: 320px;
+}
+.menu .cols3,
+.menu .col3 {
+  width: 480px;
+}
+.menu .cols4,
+.menu .col4 {
+  width: 640px;
+}
+.menu .cols5,
+.menu .col5 {
+  width: 800px;
+}
+.menu > li.floatr > div {
+  right: 0;
+}
+.menu > li:hover > div {
+  display: block;
+}
+.menu .col1,
+.menu .col2,
+.menu .col3,
+.menu .col4,
+.menu .col5 {
+  float: left;
+}
+/* Large desktop */
+@media (min-width: 1200px) {
+  
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  nav.navigation .menu > li:hover > a {
+    padding-left: 17px;
+  }
+  nav.navigation .menu > li > a {
+    padding: 13px 16px 16px;
+  }
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  
+}

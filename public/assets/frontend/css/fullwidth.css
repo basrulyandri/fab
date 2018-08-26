@@ -1,0 +1,20 @@
+/*-----------------------------------------------------------------------------
+REVOLUTION RESPONSIVE BASIC STYLES OF HTML DOCUMENT
+
+Screen Stylesheet
+
+version:   	1.0
+date:      	26/06/12
+author:		themepunch
+email:     	support@themepunch.com
+website:   	http://www.themepunch.com
+-----------------------------------------------------------------------------*/
+/* Full Width Banner */
+.fullwidthbanner-container {
+  overflow: hidden;
+  position: relative;
+  width: 100% !important;
+  max-height: 400px !important;
+  padding: 0;
+  z-index: 5;
+}

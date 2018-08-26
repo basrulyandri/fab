@@ -1,0 +1,203 @@
+/* Switcher */
+.switcher {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  width: 340px;
+  z-index: 1000;
+}
+.switcher a {
+  color: #666;
+}
+.switcher h6 {
+  position: relative;
+  font-size: 11px;
+  color: #777;
+}
+.switcher h6 .remove,
+.switcher h6 .default {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  -webkit-transition: color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+  -ms-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+.switcher h6 .remove:hover,
+.switcher h6 .default:hover,
+.switcher h6 .remove:focus,
+.switcher h6 .default:focus {
+  color: #333;
+}
+.switcher .switcher-container {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-border-radius: 0 0 4px 0;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0 0 4px 0;
+  -moz-background-clip: padding;
+  border-radius: 0 0 4px 0;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+.switcher .heading {
+  background: #222629;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+}
+.switcher .heading h5 {
+  color: #ffffff;
+  font-weight: 700;
+  margin-left: 10px;
+}
+.switcher .layout-select {
+  padding: 0 10px;
+  border-bottom: 1px solid #ddd;
+}
+.switcher .layout-select ul {
+  text-align: center;
+}
+.switcher .layout-select a {
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+.switcher .layout-select .active {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+.switcher .toggle {
+  background: #222629;
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  -webkit-border-radius: 0 4px 4px 0;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0 4px 4px 0;
+  -moz-background-clip: padding;
+  border-radius: 0 4px 4px 0;
+  background-clip: padding-box;
+}
+.switcher .toggle-close,
+.switcher .toggle-open {
+  position: absolute;
+  top: 0;
+}
+.switcher .toggle-close {
+  right: -36px;
+}
+.switcher .toggle-open {
+  left: 0;
+}
+.switcher .images,
+.switcher .styles,
+.switcher .menus,
+.switcher .headers {
+  padding: 0 10px;
+  border-bottom: 1px solid #ddd;
+}
+.switcher .images:last-child,
+.switcher .styles:last-child,
+.switcher .menus:last-child,
+.switcher .headers:last-child {
+  border-bottom: 0;
+}
+.switcher .images ul li,
+.switcher .styles ul li,
+.switcher .menus ul li,
+.switcher .headers ul li {
+  margin-bottom: 5px;
+  padding: 0;
+}
+.switcher .images img,
+.switcher .styles img,
+.switcher .menus img,
+.switcher .headers img {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #f9f9f9;
+}
+.switcher .images img:hover,
+.switcher .styles img:hover,
+.switcher .menus img:hover,
+.switcher .headers img:hover,
+.switcher .images img:focus,
+.switcher .styles img:focus,
+.switcher .menus img:focus,
+.switcher .headers img:focus,
+.switcher .images img.active,
+.switcher .styles img.active,
+.switcher .menus img.active,
+.switcher .headers img.active {
+  border: 2px solid #666666;
+}
+.switcher .fonts {
+  padding: 0 10px;
+  border-bottom: 1px solid #ddd;
+}
+.switcher .fonts:last-child {
+  border-bottom: 0;
+}
+.switcher .fonts select {
+  width: 160px;
+}
+/* xxLarge desktop */
+@media (max-width: 1600px) {
+  .switcher {
+    width: 540px;
+  }
+  .switcher h6 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .switcher .images img,
+  .switcher .styles img,
+  .switcher .menus img,
+  .switcher .headers img {
+    width: 18px;
+    height: 18px;
+  }
+}
+/* xLarge desktop */
+@media (max-width: 1366px) {
+  .switcher {
+    top: 30px;
+  }
+}
+/* Large desktop */
+@media (min-width: 1200px) {
+  
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  .switcher {
+    top: 10px;
+  }
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  
+}
