@@ -71,10 +71,7 @@
 
                 <li>
                     <a href="{{route('static.pages.index')}}"><i class="fa fa-pie-chart"></i> <span class="nav-label">Pages</span></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-pie-chart"></i> <span class="nav-label">Gallery</span></a>
-                </li>
+                </li>                
                 
                 <li>
                     <a href="{{route('theme.options.general')}}"><i class="fa fa-wrench"></i><span class="nav-label"> Theme Options</span></a>

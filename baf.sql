@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2018 at 08:22 PM
+-- Generation Time: Aug 26, 2018 at 08:53 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.1.19
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `stikes-imc-l53`
+-- Database: `baf`
 --
 
 -- --------------------------------------------------------
@@ -8325,12 +8325,12 @@ INSERT INTO `options` (`id`, `option_key`, `option_value`, `created_at`, `update
 (6, 'akhir_tahun_akademik', '2018-09-09', '2017-10-21 08:01:55', '0000-00-00 00:00:00'),
 (7, 'theme_option_amount_of_slider', '3', '2017-11-01 08:00:42', '2018-04-08 11:14:25'),
 (8, 'theme_option_slider_contents', 'a:3:{i:0;s:2:\"18\";i:1;s:2:\"20\";i:2;s:2:\"24\";}', '2017-11-01 08:35:29', '2018-04-08 11:14:25'),
-(9, 'theme_option_logo', '/photos/LOGO STIKES  IMC-HEADER 2 (1).png', '2018-01-04 09:44:46', '2018-05-09 22:50:03'),
-(10, 'theme_option_hotline', '0812 1078877', '2018-01-04 10:04:14', '2018-05-09 22:50:03'),
-(11, 'theme_option_facebook_url', 'https://www.facebook.com/STIKES-IMC-BINTARO-62280832100/', '2018-01-04 10:11:01', '2018-05-09 22:50:03'),
-(12, 'theme_option_twitter_url', 'q', '2018-01-04 10:13:25', '2018-05-09 22:50:03'),
-(13, 'theme_option_instagram_url', 'q', '2018-01-04 10:13:25', '2018-05-09 22:50:03'),
-(14, 'theme_option_youtube_url', 'q', '2018-01-04 10:13:36', '2018-05-09 22:50:03'),
+(9, 'theme_option_logo', '/photos/logo_BAF-min.png', '2018-01-04 09:44:46', '2018-08-27 01:42:13'),
+(10, 'theme_option_hotline', '0812 1078877', '2018-01-04 10:04:14', '2018-08-27 01:42:13'),
+(11, 'theme_option_facebook_url', 'https://www.facebook.com/bafstudies/', '2018-01-04 10:11:01', '2018-08-27 01:42:13'),
+(12, 'theme_option_twitter_url', 'q', '2018-01-04 10:13:25', '2018-08-27 01:42:13'),
+(13, 'theme_option_instagram_url', 'q', '2018-01-04 10:13:25', '2018-08-27 01:42:13'),
+(14, 'theme_option_youtube_url', 'q', '2018-01-04 10:13:36', '2018-08-27 01:42:13'),
 (15, 'email_from', 'digicrea08@gmail.com', '2018-02-24 09:54:03', '2018-07-17 20:01:12'),
 (16, 'email_from_label', 'STIKES IMC Bintaro', '2018-02-24 09:55:33', '2018-07-17 20:01:12'),
 (17, 'subject_email_notification_download_brosur_to_aplikan', 'Permintaan Download Brosur anda telah kami terima', '2018-02-24 10:29:00', '2018-07-17 20:01:12'),
