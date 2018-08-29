@@ -34,31 +34,6 @@
                     </ul>
                 </li>  
                 @endif
-                <li class="">
-                    <a href="#"><i class="fa fa-smile-o"></i> <span class="nav-label">Aplikan</span> <span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
-                        @if(auth()->user()->isPresenter() || auth()->user()->isSuperadmin())
-                        <li>
-                            <a href="{{route('aplikan.index')}}"><span class="nav-label">Aplikan Terbaru</span></a>
-                        </li>
-                        <li>
-                            <a href="{{route('aplikan.saya')}}"><span class="nav-label">Aplikan Saya</span></a>
-                        </li>                    
-                        @endif
-
-                        @if(auth()->user()->isReferrer())
-                            <li>
-                                <a href="{{route('aplikan.saya')}}"><span class="nav-label">Aplikan Saya</span></a>
-                            </li>                    
-                        @endif
-
-                        @if(!auth()->user()->isReferrer())
-                        <li>
-                            <a href="{{route('aplikan.all')}}"><span class="nav-label">Semua Aplikan</span></a>
-                        </li>                    
-                        @endif
-                    </ul>
-                </li>  
               
                 @if(auth()->user()->isAdmin())
                 <li>

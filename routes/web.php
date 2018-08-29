@@ -376,7 +376,12 @@ Route::group(['middleware' => 'rbac'],function(){
 });
 
 
-
+Route::group(
+	[
+		'prefix' => LaravelLocalization::setLocale(),
+		'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+	], function()
+{
 	Route::get('/', [
 			'uses' => 'PagesController@index',
 			'as' => 'page.index',
@@ -432,7 +437,7 @@ Route::group(['middleware' => 'rbac'],function(){
 	// 	'uses' => 'PostController@ajaxUploadThumbnail',
 	// 	'as' => 'ajax.upload.thumbnail',
 	// ]);
-
+});
 Route::get('tags/search',[
 	'as' => 'tags.search',
 	'uses' => 'TagsController@search'

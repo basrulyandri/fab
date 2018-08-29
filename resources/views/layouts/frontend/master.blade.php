@@ -72,7 +72,7 @@
 							<!-- Access -->
 							<ul class="access unstyled">								
 								@if(!auth()->user())
-								<li class="login-area"><a href="{{route('auth.login')}}"><i class="icon-user"></i> Login</a>
+								<li class="login-area"><a href="{{route('auth.login')}}"><i class="icon-user"></i> {{trans('msg.login')}}</a>
 								</li>
 								@else
 								<ul class="menu-top unstyled inline">
@@ -80,7 +80,7 @@
 									<!-- First Level -->
 									<ul class="unstyled">
 										<li><a href="{{route('dashboard.index')}}"><i class="icon-diamond"></i> Dashboard</a></li>										
-										<li><a href="{{route('auth.logout')}}"><i class="icon-sign-out"></i> Logout</a></li>										
+										<li><a href="{{route('auth.logout')}}"><i class="icon-sign-out"></i> {{trans('msg.logout')}}</a></li>										
 									</ul>
 									<!-- End First Level -->
 								</li>								
@@ -180,7 +180,7 @@
 						@include('layouts.frontend._footermenu')
 						<div class="span3">
 							<!-- About us -->
-							<h3><i class="icon-book"></i> About Us</h3>
+							<h3><i class="icon-book"></i> {{trans('msg.about_us')}}</h3>
 							<p>The British Academy Of Finance (BAF) os CIMA accredited learning partner for Indonesia.</a>.</p>							
 							<address>
 								<strong>Address</strong><br>

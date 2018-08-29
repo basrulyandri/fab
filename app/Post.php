@@ -32,6 +32,11 @@ class Post extends Model
     	return $this->belongsToMany('App\Category');
     }
 
+    public function translation()
+    {
+        return $this->hasMany(Translation::class,'foreign_key_id');
+    }
+
     public function categories_comma($link = false)
     {
     	$cats = $this->categories;
@@ -106,5 +111,21 @@ class Post extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function trans($field)
+    {
+        //dd(config('app.fallback_locale'));
+        if(\LaravelLocalization::getCurrentLocale() == config('app.fallback_locale')){
+            return $this->{$field};
+        }
+
+        $translation = $this->translation()->whereTableName('posts')->whereFieldName($field)->whereLanguageCode(\LaravelLocalization::getCurrentLocale())->first();
+        if(!$translation){
+            return $this->{$field};
+        }
+
+        return $translation->content;
+
     }
 }

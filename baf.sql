@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 29, 2018 at 06:01 AM
+-- Generation Time: Aug 29, 2018 at 09:33 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -21,869 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `baf`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `aplikan`
---
-
-CREATE TABLE `aplikan` (
-  `id` int(8) NOT NULL,
-  `tanggal_daftar` datetime NOT NULL,
-  `nama` varchar(40) NOT NULL,
-  `jenis_kelamin` varchar(10) NOT NULL,
-  `tempat_lahir` varchar(15) DEFAULT NULL,
-  `tanggal_lahir` date DEFAULT NULL,
-  `agama` varchar(45) DEFAULT NULL,
-  `email` varchar(100) NOT NULL,
-  `telepon` varchar(15) DEFAULT NULL,
-  `alamat` varchar(100) DEFAULT NULL,
-  `village_id` char(10) DEFAULT NULL,
-  `asal_sekolah` varchar(100) DEFAULT NULL,
-  `jurusan_sekolah` varchar(100) DEFAULT NULL,
-  `konsentrasi_id` int(11) DEFAULT NULL,
-  `kelas_id` int(11) DEFAULT NULL,
-  `sumber_informasi` varchar(100) DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  `aplikan_status_id` int(11) NOT NULL,
-  `status_detail` char(20) DEFAULT NULL,
-  `tanggal_take` datetime DEFAULT NULL,
-  `pilihan_kampus_id` int(11) DEFAULT NULL,
-  `token` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL,
-  `tanggal_database` datetime DEFAULT NULL,
-  `tanggal_aplikan` datetime DEFAULT NULL,
-  `tanggal_terdaftar` datetime DEFAULT NULL,
-  `tanggal_teregistrasi` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
-
---
--- Dumping data for table `aplikan`
---
-
-INSERT INTO `aplikan` (`id`, `tanggal_daftar`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `agama`, `email`, `telepon`, `alamat`, `village_id`, `asal_sekolah`, `jurusan_sekolah`, `konsentrasi_id`, `kelas_id`, `sumber_informasi`, `user_id`, `aplikan_status_id`, `status_detail`, `tanggal_take`, `pilihan_kampus_id`, `token`, `created_at`, `updated_at`, `tanggal_database`, `tanggal_aplikan`, `tanggal_terdaftar`, `tanggal_teregistrasi`) VALUES
-(3206, '2017-10-20 10:25:56', 'Muhammad Rizky', 'L', 'Jakarta', '2016-11-28', 'islam', 'rolloictl@gmail.com', '09838434388', 'Depok', '3171090001', 'SMA 59', 'IPS', 1, 1, 'Teman', 85, 4, NULL, '2017-03-20 04:41:03', 1, '', '2016-11-27 23:32:07', '2018-03-28 19:35:15', NULL, NULL, '2018-01-03 00:00:00', '2018-01-03 00:00:00'),
-(3208, '2017-10-20 10:25:56', 'Zakaria', 'L', 'Tangerang', '1985-05-25', 'Islam', 'zakariazack823@gmail.com', '085695599590', 'Jalan Karyawan III No.53 RT 002 RW 007', '3171090001', 'SMA 112', 'IPS', 2, 1, 'Brosur', 85, 4, NULL, '2017-03-20 04:36:12', 1, 'dug84Uw87QGJ4e2T7Koijs6BvDHTpwLC', '2016-11-30 06:37:09', '2018-03-28 19:35:15', NULL, NULL, '2017-11-01 00:00:00', '2018-01-02 00:00:00'),
-(3209, '2017-10-20 10:25:56', 'Widia ristiani', 'P', 'Tangerang', '1996-05-17', 'Islam', 'widiaristiani@yahoo.com', '089674718270', 'Jl.H.jali kunciran jaya rt02/rw02 kel.kunciran jaya kec.pinang kota tangerang banten', '3171090001', 'Smk kihajar dewantoro', 'Adm perkantoran', 1, 2, 'Brosur', NULL, 4, NULL, NULL, 1, 'ggmgprWRK2NI3BuHN4LwsgB1o4RaEgw1', '2016-11-30 22:11:15', '2018-03-28 19:35:15', NULL, NULL, '2018-01-09 00:00:00', '2018-01-10 00:01:11'),
-(3210, '2017-10-20 10:25:56', 'Widia ristiani', 'P', 'Tangerang', '1996-05-17', 'Islam', 'ristianiwidia@yahoo.com', '089674718270', 'Jl.H.jali kunciran jaya rt02/rw002 kel.kunciran jaya kec.pinang kota tangerang banten', '3171090001', 'Smk kihajar dewantoro', 'Adm perkantoran', 2, 2, 'Iklan', 85, 4, NULL, '2017-03-20 04:35:54', 1, 'GxtRzU2ksGhDI33YTA4h502r8zchkvTr', '2016-11-30 22:26:32', '2018-03-28 19:35:15', NULL, NULL, '2017-12-04 00:00:00', '2018-01-10 00:00:56'),
-(3211, '2017-10-20 10:25:56', 'Oskar', 'L', 'Tidore Kepulaua', '1984-01-14', 'Islam', 'xzulkarnain@example.org', '(+62) 490 2043 ', 'Ds. Bawal No. 93, Administrasi Jakarta Utara 69907, Lampung', '3171090001', 'SMK 44', 'IPS', 2, 1, 'Website', NULL, 2, 'pendaftaran', NULL, 1, NULL, '2017-04-02 01:22:25', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3212, '2017-10-20 10:25:56', 'Okto', 'L', 'Langsa', '1984-01-14', 'Islam', 'kiandra.prastuti@example.net', '(+62) 871 6782 ', 'Kpg. Supomo No. 840, Bau-Bau 54177, BaBel', '3171090001', 'SMK 32', 'IPS', 2, 1, 'Website', NULL, 2, 'pendaftaran', NULL, 1, NULL, '2017-04-02 01:22:25', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3213, '2017-10-20 10:25:56', 'Hasta', 'L', 'Pematangsiantar', '1984-01-14', 'Islam', 'jasmin.kusmawati@example.org', '(+62) 365 8161 ', 'Gg. Baranang Siang No. 901, Bekasi 14686, SulTra', '3171090001', 'SMK 44', 'IPS', 2, 1, 'Website', NULL, 2, 'pendaftaran', NULL, 1, NULL, '2017-04-02 01:22:25', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3214, '2017-10-20 10:25:56', 'Aris', 'L', 'Administrasi Ja', '1984-01-14', 'Islam', 'hartati.juli@example.org', '023 8944 4428', 'Jln. Sukabumi No. 390, Tangerang 14349, KalUt', '3171090001', 'SMA 61', 'IPS', 2, 1, 'Website', NULL, 4, NULL, NULL, 1, NULL, '2017-04-02 01:22:26', '2018-03-28 19:35:15', NULL, NULL, '2017-11-01 00:00:00', '2018-02-18 00:24:44'),
-(3215, '2017-10-20 10:25:56', 'Mahmud', 'L', 'Bandar Lampung', '1984-01-14', 'Islam', 'jaswadi77@example.com', '0772 3955 9195', 'Ki. S. Parman No. 37, Jayapura 59454, KalUt', '3171090001', 'SMK 32', 'IPS', 2, 2, 'Website', NULL, 3, 'proses-registrasi', NULL, 1, NULL, '2017-04-02 01:22:26', '2018-03-28 19:35:15', NULL, NULL, '2018-02-18 00:29:05', NULL),
-(3216, '2017-10-20 10:25:56', 'Sidiq', 'L', 'Sibolga', '1984-01-14', 'Islam', 'orahmawati@example.com', '(+62) 544 2231 ', 'Ds. Wahidin Sudirohusodo No. 792, Solok 18144, KalTeng', '3171090001', 'SMA 59', 'IPA', 2, 2, 'Website', NULL, 3, 'proses-registrasi', NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, '2018-02-18 00:29:48', NULL),
-(3217, '2017-10-20 10:25:56', 'Cahyo', 'L', 'Langsa', '1984-01-14', 'Islam', 'sihotang.dimas@example.org', '0787 1081 4976', 'Ds. Sampangan No. 740, Pasuruan 57775, KalTeng', '3171090001', 'SMA 8', 'IPA', 2, 1, 'Website', NULL, 3, NULL, NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, '2018-02-18 00:30:00', NULL),
-(3218, '2017-10-20 10:25:56', 'Lanjar', 'L', 'Pagar Alam', '1984-01-14', 'Islam', 'zulaikha.hakim@example.net', '0564 3651 636', 'Dk. Tentara Pelajar No. 430, Administrasi Jakarta Timur 65015, KepR', '3171090001', 'SMK 48', 'IPA', 1, 2, 'Website', NULL, 3, 'proses-registrasi', NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, '2018-01-10 00:05:27', NULL),
-(3219, '2017-10-20 10:25:56', 'Perkasa', 'L', 'Tangerang Selat', '1984-01-14', 'Islam', 'banggriawan@example.net', '(+62) 299 5377 ', 'Dk. Yos No. 223, Bengkulu 66924, PapBar', '3171090001', 'MAN 6', 'IPA', 2, 2, 'Website', NULL, 3, NULL, NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, '2018-01-10 00:02:06', NULL),
-(3220, '2017-10-20 10:25:56', 'Darman', 'L', 'Mojokerto', '1984-01-14', 'Islam', 'fujiati.gina@example.org', '(+62) 804 2425 ', 'Jln. Bata Putih No. 458, Sorong 62757, DKI', '3171090001', 'SMK 22', 'IPA', 2, 2, 'Website', 85, 2, 'pendaftaran', '2017-08-07 00:32:46', 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3221, '2017-10-20 10:25:56', 'Bagas', 'L', 'Padangsidempuan', '1984-01-14', 'Islam', 'qdabukke@example.org', '0837 7206 131', 'Jln. Sukabumi No. 793, Balikpapan 48773, Maluku', '3171090001', 'MAN 6', 'IPA', 2, 2, 'Website', NULL, 2, 'pendaftaran', NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3222, '2017-10-20 10:25:56', 'Mahesa', 'L', 'Medan', '1984-01-14', 'Islam', 'susanti.icha@example.net', '0585 8111 5878', 'Ds. Sutan Syahrir No. 674, Pekalongan 58567, Bengkulu', '3171090001', 'SMA 61', 'IPA', 2, 2, 'Website', NULL, 2, 'pendaftaran', NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3223, '2017-10-20 10:25:56', 'Jarwi', 'L', 'Tangerang', '1984-01-14', 'Islam', 'hasanah.malika@example.org', '(+62) 827 2170 ', 'Gg. Badak No. 561, Yogyakarta 40446, DKI', '3171090001', 'MAN 6', 'IPA', 2, 2, 'Website', NULL, 2, 'pendaftaran', NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3224, '2017-10-20 10:25:56', 'Enteng', 'L', 'Palembang', '1984-01-14', 'Islam', 'wyuniar@example.com', '(+62) 397 7839 ', 'Jr. Halim No. 103, Bukittinggi 68934, Maluku', '3171090001', 'MAN 3', 'IPA', 1, 2, 'Website', NULL, 3, NULL, NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, '2018-02-18 22:34:31', NULL),
-(3225, '2017-10-20 10:25:56', 'Jasmani', 'L', 'Padangpanjang', '1984-01-14', 'Islam', 'ywidiastuti@example.com', '(+62) 949 5144 ', 'Dk. Kartini No. 372, Batam 14695, JaBar', '3171090001', 'SMK 22', 'IPA', 2, 2, 'Website', 100, 4, NULL, NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, '2018-02-01 23:16:20', '2018-02-01 23:17:20'),
-(3226, '2017-10-20 10:25:56', 'Adika', 'L', 'Sorong', '1984-01-14', 'Islam', 'mayasari.mahfud@example.org', '(+62) 601 8512 ', 'Dk. Gotong Royong No. 751, Tidore Kepulauan 83047, SulUt', '3171090001', 'SMA 21', 'IPA', 2, 1, 'Website', 100, 3, NULL, NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, '2018-02-18 23:03:38', NULL),
-(3227, '2017-10-20 10:25:56', 'Jaga', 'L', 'Tebing Tinggi', '1984-01-14', 'Islam', 'warsa.hutasoit@example.net', '(+62) 713 1496 ', 'Gg. Gading No. 745, Tarakan 37404, Maluku', '3171090001', 'SMK 43', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3228, '2017-10-20 10:25:56', 'Aswani', 'L', 'Administrasi Ja', '1984-01-14', 'Islam', 'jsitompul@example.com', '(+62) 888 5073 ', 'Kpg. Moch. Toha No. 329, Tidore Kepulauan 54393, Bali', '3171090001', 'SMA 8', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3229, '2017-10-20 10:25:56', 'Slamet', 'L', 'Solok', '1984-01-14', 'Islam', 'rina.prasetya@example.com', '0693 5870 547', 'Jln. Jamika No. 253, Langsa 70992, SulUt', '3171090001', 'SMK 48', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3230, '2017-10-20 10:25:56', 'Asirwada', 'L', 'Bogor', '1984-01-14', 'Islam', 'dsihombing@example.org', '(+62) 763 4404 ', 'Kpg. PHH. Mustofa No. 439, Parepare 42528, Gorontalo', '3171090001', 'SMA 54', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3231, '2017-10-20 10:25:56', 'Gatot', 'L', 'Denpasar', '1984-01-14', 'Islam', 'kuswoyo.dina@example.org', '(+62) 478 9979 ', 'Ki. Jaksa No. 73, Padangsidempuan 53742, KalTeng', '3171090001', 'SMA 59', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3232, '2017-10-20 10:25:56', 'Viktor', 'L', 'Banjarmasin', '1984-01-14', 'Islam', 'pertiwi.kasiyah@example.net', '0574 7089 5378', 'Kpg. Sutarto No. 801, Parepare 15632, JaTeng', '3171090001', 'SMA 59', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3233, '2017-10-20 10:25:56', 'Rudi', 'L', 'Tomohon', '1984-01-14', 'Islam', 'yolanda.malika@example.net', '(+62) 219 2001 ', 'Dk. Bagonwoto  No. 706, Tomohon 10162, JaTim', '3171090001', 'SMK 48', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3234, '2017-10-20 10:25:56', 'Yosef', 'L', 'Bogor', '1984-01-14', 'Islam', 'ldabukke@example.net', '0342 0815 034', 'Psr. Mulyadi No. 671, Subulussalam 30390, KepR', '3171090001', 'SMK 32', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3235, '2017-10-20 10:25:56', 'Artanto', 'L', 'Pagar Alam', '1984-01-14', 'Islam', 'raihan00@example.com', '(+62) 895 9134 ', 'Jr. Dipenogoro No. 15, Tanjung Pinang 59481, DIY', '3171090001', 'SMK 44', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3236, '2017-10-20 10:25:56', 'Purwa', 'L', 'Palopo', '1984-01-14', 'Islam', 'rangga.wibisono@example.net', '(+62) 783 1693 ', 'Ki. Sutan Syahrir No. 174, Bitung 39139, KalSel', '3171090001', 'SMK 22', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3237, '2017-10-20 10:25:56', 'Jefri', 'L', 'Langsa', '1984-01-14', 'Islam', 'ghalimah@example.net', '(+62) 417 8849 ', 'Ki. Jayawijaya No. 784, Kupang 19406, SulTeng', '3171090001', 'SMK 44', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3238, '2017-10-20 10:25:56', 'Teddy', 'L', 'Cilegon', '1984-01-14', 'Islam', 'yrahayu@example.org', '0311 1930 1028', 'Gg. B.Agam Dlm No. 986, Tasikmalaya 29472, SulUt', '3171090001', 'MAN 6', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3239, '2017-10-20 10:25:56', 'Gambira', 'L', 'Batam', '1984-01-14', 'Islam', 'utami.mulyanto@example.org', '0308 5940 7002', 'Ki. Bass No. 424, Pematangsiantar 87070, SulTeng', '3171090001', 'SMK 43', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3240, '2017-10-20 10:25:56', 'Yahya', 'L', 'Cilegon', '1984-01-14', 'Islam', 'fitria72@example.org', '0409 6081 0964', 'Gg. Antapani Lama No. 677, Kupang 38364, Gorontalo', '3171090001', 'SMK 44', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3241, '2017-10-20 10:25:56', 'Pandu', 'L', 'Cimahi', '1984-01-14', 'Islam', 'namaga.nasab@example.net', '0542 7158 1044', 'Jln. BKR No. 829, Depok 13946, NTT', '3171090001', 'SMA 59', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3242, '2017-10-20 10:25:56', 'Vega', 'L', 'Tual', '1984-01-14', 'Islam', 'laksita.cahyanto@example.net', '(+62) 964 4097 ', 'Ki. Ciwastra No. 533, Tanjungbalai 81256, DIY', '3171090001', 'SMK 22', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3243, '2017-10-20 10:25:56', 'Asmuni', 'L', 'Ternate', '1984-01-14', 'Islam', 'jnurdiyanti@example.org', '0397 5221 7024', 'Jr. Tangkuban Perahu No. 954, Metro 42729, JaBar', '3171090001', 'SMK 43', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3244, '2017-10-20 10:25:56', 'Kemal', 'L', 'Pangkal Pinang', '1984-01-14', 'Islam', 'mahendra.kardi@example.net', '(+62) 804 2822 ', 'Dk. Ketandan No. 776, Sibolga 78118, NTT', '3171090001', 'SMA 61', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3245, '2017-10-20 10:25:56', 'Edison', 'L', 'Surakarta', '1984-01-14', 'Islam', 'wwaskita@example.com', '0721 4698 7370', 'Ki. Bakti No. 47, Surabaya 69435, SulTra', '3171090001', 'MAN 6', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3246, '2017-10-20 10:25:56', 'Vega', 'L', 'Tual', '1984-01-14', 'Islam', 'titi.suartini@example.net', '0528 2223 697', 'Psr. Gegerkalong Hilir No. 639, Tidore Kepulauan 36901, JaTeng', '3171090001', 'SMK 43', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3247, '2017-10-20 10:25:56', 'Pangeran', 'L', 'Dumai', '1984-01-14', 'Islam', 'elon.rajata@example.net', '(+62) 867 3842 ', 'Ki. Badak No. 700, Kupang 46092, KalBar', '3171090001', 'SMK 22', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3248, '2017-10-20 10:25:56', 'Bakidin', 'L', 'Pematangsiantar', '1984-01-14', 'Islam', 'irfan36@example.com', '(+62) 604 5142 ', 'Kpg. Kartini No. 951, Mataram 82031, Papua', '3171090001', 'MAN 6', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3249, '2017-10-20 10:25:56', 'Usman', 'L', 'Kotamobagu', '1984-01-14', 'Islam', 'lestari.wirda@example.net', '(+62) 640 7971 ', 'Kpg. Raden Saleh No. 233, Batu 13945, SumSel', '3171090001', 'SMA 54', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3250, '2017-10-20 10:25:56', 'Irfan', 'L', 'Dumai', '1984-01-14', 'Islam', 'lhalim@example.net', '(+62) 339 0536 ', 'Dk. Bambon No. 796, Subulussalam 93582, DIY', '3171090001', 'SMK 22', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3251, '2017-10-20 10:25:56', 'Nyana', 'L', 'Pematangsiantar', '1984-01-14', 'Islam', 'wastuti.titi@example.com', '(+62) 369 6106 ', 'Ds. Cikutra Timur No. 151, Serang 73429, MalUt', '3171090001', 'SMA 61', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3252, '2017-10-20 10:25:56', 'Okta', 'L', 'Banjarbaru', '1984-01-14', 'Islam', 'irawan.kezia@example.com', '0200 9971 5276', 'Dk. Bakti No. 412, Gunungsitoli 35490, Gorontalo', '3171090001', 'SMK 22', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3253, '2017-10-20 10:25:56', 'Anggabaya', 'L', 'Tomohon', '1984-01-14', 'Islam', 'iwaskita@example.org', '(+62) 942 4465 ', 'Ds. Banda No. 598, Tanjung Pinang 70409, Papua', '3171090001', 'SMA 59', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3254, '2017-10-20 10:25:56', 'Jarwa', 'L', 'Bogor', '1984-01-14', 'Islam', 'purwanti.opung@example.net', '0961 2798 5063', 'Gg. HOS. Cjokroaminoto (Pasirkaliki) No. 855, Metro 16420, Maluku', '3171090001', 'SMA 59', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3255, '2017-10-20 10:25:56', 'Kamidin', 'L', 'Banjarbaru', '1984-01-14', 'Islam', 'snasyidah@example.org', '(+62) 734 2249 ', 'Jr. B.Agam Dlm No. 191, Yogyakarta 60707, Banten', '3171090001', 'SMK 32', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3256, '2017-10-20 10:25:56', 'Ihsan', 'L', 'Cilegon', '1984-01-14', 'Islam', 'ujailani@example.org', '(+62) 472 4199 ', 'Psr. Kiaracondong No. 81, Sungai Penuh 61974, Jambi', '3171090001', 'SMA 21', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3257, '2017-10-20 10:25:56', 'Naradi', 'L', 'Solok', '1984-01-14', 'Islam', 'parman.natsir@example.org', '0765 3748 4140', 'Ki. Kyai Mojo No. 12, Administrasi Jakarta Pusat 93047, JaBar', '3171090001', 'SMK 44', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3258, '2017-10-20 10:25:56', 'Sabar', 'L', 'Surakarta', '1984-01-14', 'Islam', 'uutama@example.org', '(+62) 481 6020 ', 'Jr. Ahmad Dahlan No. 675, Prabumulih 35654, Riau', '3171090001', 'MAN 6', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3259, '2017-10-20 10:25:56', 'Jindra', 'L', 'Langsa', '1984-01-14', 'Islam', 'permata.zizi@example.org', '(+62) 622 8358 ', 'Ki. Cihampelas No. 128, Depok 98658, Aceh', '3171090001', 'SMA 8', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3260, '2017-10-20 10:25:56', 'Rafid', 'L', 'Gunungsitoli', '1984-01-14', 'Islam', 'tirta.farida@example.com', '025 0444 6611', 'Ds. Siliwangi No. 879, Mataram 57161, Bengkulu', '3171090001', 'SMK 32', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3261, '2017-10-20 10:25:56', 'Wahyu', 'L', 'Tarakan', '1984-01-14', 'Islam', 'pradipta.ella@example.net', '0541 3808 7794', 'Ki. Thamrin No. 987, Banda Aceh 60597, Maluku', '3171090001', 'SMA 21', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3262, '2017-10-20 10:25:56', 'Warji', 'L', 'Bandar Lampung', '1984-01-14', 'Islam', 'oman.pradipta@example.net', '(+62) 775 0399 ', 'Jr. Yap Tjwan Bing No. 430, Administrasi Jakarta Barat 63389, KalUt', '3171090001', 'SMA 61', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3263, '2017-10-20 10:25:56', 'Prima', 'L', 'Batam', '1984-01-14', 'Islam', 'pzulaika@example.com', '(+62) 734 1521 ', 'Dk. Suryo No. 713, Tomohon 43758, Jambi', '3171090001', 'SMA 21', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3264, '2017-10-20 10:25:56', 'Mulyono', 'L', 'Administrasi Ja', '1984-01-14', 'Islam', 'usman.nasyidah@example.net', '(+62) 893 7054 ', 'Kpg. Bakit  No. 683, Pekanbaru 89944, BaBel', '3171090001', 'MAN 6', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3265, '2017-10-20 10:25:56', 'Hendri', 'L', 'Balikpapan', '1984-01-14', 'Islam', 'damar30@example.org', '(+62) 395 3193 ', 'Ki. Bacang No. 887, Tanjungbalai 36292, DIY', '3171090001', 'MAN 6', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3266, '2017-10-20 10:25:56', 'Lukita', 'L', 'Prabumulih', '1984-01-14', 'Islam', 'lpertiwi@example.com', '(+62) 836 1315 ', 'Dk. Umalas No. 33, Denpasar 68208, JaTeng', '3171090001', 'SMA 54', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3267, '2017-10-20 10:25:56', 'Prabawa', 'L', 'Samarinda', '1984-01-14', 'Islam', 'fnasyiah@example.net', '(+62) 711 3076 ', 'Ds. Bagonwoto  No. 173, Cirebon 59303, Banten', '3171090001', 'SMA 59', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3268, '2017-10-20 10:25:56', 'Darijan', 'L', 'Pematangsiantar', '1984-01-14', 'Islam', 'dongoran.leo@example.com', '(+62) 898 9073 ', 'Ki. Ters. Pasir Koja No. 962, Cilegon 48863, DKI', '3171090001', 'SMK 43', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3269, '2017-10-20 10:25:56', 'Ganjaran', 'L', 'Bandung', '1984-01-14', 'Islam', 'gwidodo@example.org', '0881 5325 3044', 'Ki. Otto No. 97, Payakumbuh 22412, PapBar', '3171090001', 'MAN 3', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3270, '2017-10-20 10:25:56', 'Jaiman', 'L', 'Bima', '1984-01-14', 'Islam', 'asmianto.puspita@example.net', '(+62) 705 9085 ', 'Ki. Perintis Kemerdekaan No. 405, Binjai 99867, Jambi', '3171090001', 'SMA 21', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3271, '2017-10-20 10:25:56', 'Himawan', 'L', 'Gunungsitoli', '1984-01-14', 'Islam', 'xpurwanti@example.org', '(+62) 368 0569 ', 'Ki. Bass No. 546, Pontianak 77769, Papua', '3171090001', 'MAN 6', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3272, '2017-10-20 10:25:56', 'Sakti', 'L', 'Tegal', '1984-01-14', 'Islam', 'lintang91@example.org', '0803 0419 3171', 'Kpg. Dr. Junjunan No. 669, Sukabumi 26396, PapBar', '3171090001', 'SMA 54', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3273, '2017-10-20 10:25:56', 'Radika', 'L', 'Administrasi Ja', '1984-01-14', 'Islam', 'lazuardi.anita@example.net', '(+62) 324 7548 ', 'Dk. Barat No. 515, Probolinggo 42697, Gorontalo', '3171090001', 'SMA 59', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3274, '2017-10-20 10:25:56', 'Cemplunk', 'L', 'Padangpanjang', '1984-01-14', 'Islam', 'ajeng07@example.com', '022 7203 6650', 'Gg. Tentara Pelajar No. 733, Batam 81335, JaTim', '3171090001', 'MAN 3', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3275, '2017-10-20 10:25:56', 'Bakidin', 'L', 'Bekasi', '1984-01-14', 'Islam', 'safitri.faizah@example.org', '025 2505 0857', 'Kpg. Raya Ujungberung No. 481, Mojokerto 86296, SulTeng', '3171090001', 'SMA 61', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3276, '2017-10-20 10:25:56', 'Balidin', 'L', 'Ambon', '1984-01-14', 'Islam', 'winda39@example.com', '0938 2634 969', 'Kpg. S. Parman No. 860, Parepare 40631, SumSel', '3171090001', 'SMK 43', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3277, '2017-10-20 10:25:56', 'Waluyo', 'L', 'Tangerang Selat', '1984-01-14', 'Islam', 'rajata.silvia@example.org', '0990 7121 7120', 'Ds. Ujung No. 5, Batam 18579, Bengkulu', '3171090001', 'SMK 48', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3278, '2017-10-20 10:25:56', 'Nalar', 'L', 'Batu', '1984-01-14', 'Islam', 'danggriawan@example.com', '(+62) 411 8924 ', 'Jln. Astana Anyar No. 288, Tarakan 65398, Bengkulu', '3171090001', 'SMK 22', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3279, '2017-10-20 10:25:56', 'Anggabaya', 'L', 'Palangka Raya', '1984-01-14', 'Islam', 'artanto.farida@example.org', '(+62) 28 4203 6', 'Jr. Rumah Sakit No. 933, Salatiga 39753, Maluku', '3171090001', 'SMK 22', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3280, '2017-10-20 10:25:56', 'Lukita', 'L', 'Tomohon', '1984-01-14', 'Islam', 'ciaobella18@example.org', '0380 8673 269', 'Ki. Ir. H. Juanda No. 539, Mojokerto 91553, KalSel', '3171090001', 'SMK 32', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3281, '2017-10-20 10:25:56', 'Banawi', 'L', 'Samarinda', '1984-01-14', 'Islam', 'wijayanti.novi@example.net', '0237 9197 0684', 'Jln. Bappenas No. 653, Palu 64875, Bengkulu', '3171090001', 'SMK 44', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3282, '2017-10-20 10:25:56', 'Praba', 'L', 'Surakarta', '1984-01-14', 'Islam', 'padma76@example.net', '(+62) 27 2302 2', 'Jr. M.T. Haryono No. 803, Pontianak 45299, Papua', '3171090001', 'SMK 48', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3283, '2017-10-20 10:25:56', 'Pranata', 'L', 'Jambi', '1984-01-14', 'Islam', 'prayoga.pudjiastuti@example.org', '0323 9658 4876', 'Psr. Pahlawan No. 812, Mataram 19920, Maluku', '3171090001', 'SMK 44', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3284, '2017-10-20 10:25:56', 'Agus', 'L', 'Kupang', '1984-01-14', 'Islam', 'wijaya.anita@example.org', '(+62) 908 7857 ', 'Ds. Moch. Toha No. 767, Tangerang Selatan 64622, MalUt', '3171090001', 'SMK 22', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3285, '2017-10-20 10:25:56', 'Teddy', 'L', 'Denpasar', '1984-01-14', 'Islam', 'kuswandari.daliono@example.org', '(+62) 863 2085 ', 'Kpg. Raden Saleh No. 132, Makassar 38770, SumUt', '3171090001', 'MAN 6', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3286, '2017-10-20 10:25:56', 'Galuh', 'L', 'Palopo', '1984-01-14', 'Islam', 'malika96@example.net', '0827 1088 370', 'Dk. Monginsidi No. 992, Administrasi Jakarta Barat 11570, NTT', '3171090001', 'SMK 48', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3287, '2017-10-20 10:25:56', 'Vinsen', 'L', 'Parepare', '1984-01-14', 'Islam', 'nadia.pradipta@example.com', '0206 2963 7420', 'Jln. Gardujati No. 424, Bitung 97804, Gorontalo', '3171090001', 'SMA 8', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3288, '2017-10-20 10:25:56', 'Cakrajiya', 'L', 'Solok', '1984-01-14', 'Islam', 'farah.nasyidah@example.net', '0529 9477 067', 'Ki. Salam No. 59, Tomohon 28973, KalSel', '3171090001', 'SMK 22', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3289, '2017-10-20 10:25:56', 'Labuh', 'L', 'Banjarmasin', '1984-01-14', 'Islam', 'oktaviani.cahyo@example.net', '0887 9780 797', 'Kpg. Sugiyopranoto No. 575, Mataram 25254, NTB', '3171090001', 'SMA 54', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3290, '2017-10-20 10:25:56', 'Heru', 'L', 'Pasuruan', '1984-01-14', 'Islam', 'sidiq.nasyiah@example.com', '0289 6233 074', 'Gg. Sentot Alibasa No. 502, Bogor 50332, JaBar', '3171090001', 'MAN 6', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3291, '2017-10-20 10:25:56', 'Lanjar', 'L', 'Lhokseumawe', '1984-01-14', 'Islam', 'maryati.rama@example.com', '(+62) 549 5027 ', 'Ki. Yogyakarta No. 872, Bandar Lampung 78390, NTT', '3171090001', 'SMA 59', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3292, '2017-10-20 10:25:56', 'Gamanto', 'L', 'Kediri', '1984-01-14', 'Islam', 'rika51@example.org', '0214 1134 632', 'Psr. Merdeka No. 222, Serang 87960, NTT', '3171090001', 'SMA 8', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3293, '2017-10-20 10:25:56', 'Luwar', 'L', 'Subulussalam', '1984-01-14', 'Islam', 'laras.rahayu@example.com', '(+62) 802 3705 ', 'Dk. Suharso No. 827, Salatiga 49767, SulUt', '3171090001', 'SMK 32', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3294, '2017-10-20 10:25:56', 'Dartono', 'L', 'Tegal', '1984-01-14', 'Islam', 'npadmasari@example.com', '(+62) 617 3085 ', 'Dk. Sutoyo No. 66, Pariaman 12751, Papua', '3171090001', 'SMK 22', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3295, '2017-10-20 10:25:56', 'Mursita', 'L', 'Lubuklinggau', '1984-01-14', 'Islam', 'pangestu.muhammad@example.net', '0543 8512 714', 'Jln. R.E. Martadinata No. 686, Bukittinggi 92499, Gorontalo', '3171090001', 'SMA 21', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3296, '2017-10-20 10:25:56', 'Cagak', 'L', 'Blitar', '1984-01-14', 'Islam', 'martana02@example.org', '(+62) 669 4150 ', 'Ki. Sutarto No. 212, Samarinda 18354, PapBar', '3171090001', 'MAN 6', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3297, '2017-10-20 10:25:56', 'Rafi', 'L', 'Palu', '1984-01-14', 'Islam', 'cahyono16@example.net', '0672 2681 740', 'Ds. Raya Ujungberung No. 848, Singkawang 82685, Papua', '3171090001', 'SMK 22', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3298, '2017-10-20 10:25:56', 'Maman', 'L', 'Pematangsiantar', '1984-01-14', 'Islam', 'mandala.queen@example.net', '(+62) 560 0629 ', 'Jr. Ujung No. 529, Pematangsiantar 41976, SumBar', '3171090001', 'SMK 48', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3299, '2017-10-20 10:25:56', 'Dalimin', 'L', 'Makassar', '1984-01-14', 'Islam', 'uda.hidayanto@example.net', '0892 939 574', 'Jln. Nangka No. 897, Pariaman 59291, Lampung', '3171090001', 'MAN 6', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3300, '2017-10-20 10:25:56', 'Karsana', 'L', 'Administrasi Ja', '1984-01-14', 'Islam', 'purwadi.prabowo@example.com', '(+62) 846 268 6', 'Ki. Kalimantan No. 566, Sawahlunto 10036, DIY', '3171090001', 'SMK 44', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3301, '2017-10-20 10:25:56', 'Mulya', 'L', 'Samarinda', '1984-01-14', 'Islam', 'permata.ulya@example.com', '(+62) 24 8730 8', 'Ki. K.H. Maskur No. 181, Banda Aceh 89575, Aceh', '3171090001', 'SMK 32', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3302, '2017-10-20 10:25:56', 'Indra', 'L', 'Gunungsitoli', '1984-01-14', 'Islam', 'kani.pratama@example.org', '0517 3620 5882', 'Gg. Ciumbuleuit No. 882, Pangkal Pinang 23384, SumSel', '3171090001', 'SMA 21', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3303, '2017-10-20 10:25:56', 'Cawuk', 'L', 'Lubuklinggau', '1984-01-14', 'Islam', 'qdongoran@example.net', '(+62) 536 9776 ', 'Gg. Peta No. 358, Sawahlunto 94266, NTB', '3171090001', 'SMA 8', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3304, '2017-10-20 10:25:56', 'Gangsa', 'L', 'Bima', '1984-01-14', 'Islam', 'jnugroho@example.org', '(+62) 435 5390 ', 'Psr. Kali No. 174, Tanjungbalai 19145, SulBar', '3171090001', 'SMA 54', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3305, '2017-10-20 10:25:56', 'Gangsa', 'L', 'Manado', '1984-01-14', 'Islam', 'tina45@example.net', '0656 3708 7608', 'Ds. Dahlia No. 346, Binjai 15893, Papua', '3171090001', 'SMA 8', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3306, '2017-10-20 10:25:56', 'Ajimat', 'L', 'Tomohon', '1984-01-14', 'Islam', 'janet70@example.org', '(+62) 376 3248 ', 'Dk. Ahmad Dahlan No. 206, Denpasar 90403, BaBel', '3171090001', 'SMA 61', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3307, '2017-10-20 10:25:56', 'Jabal', 'L', 'Payakumbuh', '1984-01-14', 'Islam', 'vivi.rahmawati@example.org', '0765 7354 963', 'Dk. Kartini No. 590, Madiun 44622, Riau', '3171090001', 'SMA 59', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3308, '2017-10-20 10:25:56', 'Vino', 'L', 'Surabaya', '1984-01-14', 'Islam', 'rahimah.dono@example.net', '0220 5777 6841', 'Ki. Padma No. 381, Sabang 37926, DKI', '3171090001', 'MAN 6', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3309, '2017-10-20 10:25:56', 'Surya', 'L', 'Ambon', '1984-01-14', 'Islam', 'awibisono@example.org', '0813 4664 596', 'Ds. Suprapto No. 442, Bogor 37092, SulTra', '3171090001', 'SMK 48', 'IPA', 1, 1, 'Website', 89, 2, NULL, '2017-04-02 08:35:14', 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3310, '2017-10-20 10:25:56', 'Prabowo', 'L', 'Solok', '1984-01-14', 'Islam', 'maya.hutagalung@example.com', '0890 0425 2728', 'Jr. Bagonwoto  No. 362, Metro 47109, Riau', '3171090001', 'MAN 6', 'IPA', 2, 2, 'Website', 89, 2, NULL, '2017-04-02 08:35:13', 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3311, '2017-10-20 10:25:56', 'Danuja', 'L', 'Yogyakarta', '1984-01-14', 'Islam', 'xnasyiah@example.net', '0465 5727 1722', 'Ds. Kebonjati No. 153, Pontianak 79177, Gorontalo', '3171090001', 'SMK 32', 'IPA', 1, 1, 'Website', 89, 2, NULL, '2017-04-02 08:35:12', 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3312, '2017-10-20 10:25:56', 'Garang', 'L', 'Bima', '1984-01-14', 'Islam', 'olivia21@example.com', '0751 7404 808', 'Jln. Baha No. 166, Tangerang 85936, SulTeng', '3171090001', 'SMA 54', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3313, '2017-10-20 10:25:56', 'Kurnia', 'L', 'Depok', '1984-01-14', 'Islam', 'tania.marpaung@example.com', '0319 8776 514', 'Dk. Bakau No. 50, Sabang 54485, DIY', '3171090001', 'SMK 44', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3314, '2017-10-20 10:25:56', 'Maryadi', 'L', 'Sukabumi', '1984-01-14', 'Islam', 'alika.simanjuntak@example.com', '(+62) 294 9030 ', 'Kpg. Ters. Buah Batu No. 204, Semarang 27647, KalBar', '3171090001', 'SMA 8', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3315, '2017-10-20 10:25:56', 'Luluh', 'L', 'Cirebon', '1984-01-14', 'Islam', 'zelaya.wibowo@example.com', '0699 1679 1053', 'Jln. Moch. Ramdan No. 996, Probolinggo 70977, Gorontalo', '3171090001', 'MAN 3', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:23:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3316, '2017-10-20 10:25:56', 'Yunita', 'P', 'Batu', '1984-01-14', 'Islam', 'halimah.fitria@example.org', '(+62) 668 0043 ', 'Ki. Yohanes No. 219, Blitar 67416, SulTeng', '3171090001', 'SMA 59', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:26', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3317, '2017-10-20 10:25:56', 'Zizi', 'P', 'Pekalongan', '1984-01-14', 'Islam', 'anom.purwanti@example.com', '(+62) 820 024 6', 'Ki. Mahakam No. 268, Tangerang 48483, NTT', '3171090001', 'MAN 6', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:26', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3318, '2017-10-20 10:25:56', 'Yulia', 'P', 'Sukabumi', '1984-01-14', 'Islam', 'vprasasta@example.net', '0839 5494 3221', 'Psr. Peta No. 811, Bandung 30349, DKI', '3171090001', 'MAN 3', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:26', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3319, '2017-10-20 10:25:56', 'Agnes', 'P', 'Batam', '1984-01-14', 'Islam', 'oktaviani.kemal@example.com', '0448 1257 8000', 'Psr. Panjaitan No. 166, Pariaman 96954, NTB', '3171090001', 'MAN 6', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:26', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3320, '2017-10-20 10:25:56', 'Suci', 'P', 'Sorong', '1984-01-14', 'Islam', 'sabar67@example.net', '0328 5410 095', 'Ki. Wahidin Sudirohusodo No. 755, Padang 90490, JaBar', '3171090001', 'SMK 32', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3321, '2017-10-20 10:25:56', 'Ika', 'P', 'Gorontalo', '1984-01-14', 'Islam', 'yoktaviani@example.net', '0349 3800 5182', 'Kpg. Baladewa No. 75, Mojokerto 99848, Gorontalo', '3171090001', 'SMK 43', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3322, '2017-10-20 10:25:56', 'Kani', 'P', 'Sungai Penuh', '1984-01-14', 'Islam', 'liman.saptono@example.net', '(+62) 707 1052 ', 'Dk. Suniaraja No. 134, Salatiga 96916, Riau', '3171090001', 'SMA 59', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3323, '2017-10-20 10:25:56', 'Salsabila', 'P', 'Medan', '1984-01-14', 'Islam', 'xyolanda@example.com', '0239 5813 7727', 'Kpg. Ciwastra No. 29, Bogor 66458, SulTeng', '3171090001', 'SMK 43', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3324, '2017-10-20 10:25:56', 'Rahmi', 'P', 'Denpasar', '1984-01-14', 'Islam', 'anggraini.jessica@example.net', '(+62) 221 6060 ', 'Jr. Nangka No. 719, Probolinggo 91015, SumUt', '3171090001', 'SMA 8', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3325, '2017-10-20 10:25:56', 'Yuni', 'P', 'Pematangsiantar', '1984-01-14', 'Islam', 'hramadan@example.org', '0812 469 493', 'Kpg. Wahid No. 167, Madiun 59799, Riau', '3171090001', 'SMK 32', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3326, '2017-10-20 10:25:56', 'Cici', 'P', 'Kendari', '1984-01-14', 'Islam', 'elatupono@example.net', '(+62) 321 7965 ', 'Ki. Cikutra Timur No. 450, Batam 91091, Papua', '3171090001', 'SMA 59', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3327, '2017-10-20 10:25:56', 'Clara', 'P', 'Payakumbuh', '1984-01-14', 'Islam', 'lasmanto.rahayu@example.org', '029 6636 965', 'Jln. Fajar No. 216, Parepare 98735, SumUt', '3171090001', 'SMA 8', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3328, '2017-10-20 10:25:56', 'Puput', 'P', 'Ambon', '1984-01-14', 'Islam', 'rprasetya@example.com', '0346 3853 195', 'Psr. Cikutra Timur No. 951, Singkawang 48803, SulSel', '3171090001', 'SMA 59', 'IPS', 2, 2, 'Website', 85, 2, NULL, '2017-11-04 23:26:08', 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3329, '2017-10-20 10:25:56', 'Farhunnisa', 'P', 'Banda Aceh', '1984-01-14', 'Islam', 'pudjiastuti.kamidin@example.net', '0423 0477 3158', 'Jr. Baranang Siang No. 134, Singkawang 17267, JaTeng', '3171090001', 'SMK 48', 'IPS', 2, 2, 'Website', 90, 2, NULL, '2017-11-04 23:47:58', 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3330, '2017-10-20 10:25:56', 'Kamaria', 'P', 'Langsa', '1984-01-14', 'Islam', 'laras.thamrin@example.net', '(+62) 412 6852 ', 'Ds. Gading No. 387, Jambi 21493, Maluku', '3171090001', 'MAN 3', 'IPS', 2, 1, 'Website', 90, 2, NULL, '2017-11-04 23:59:58', 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3331, '2017-10-20 10:25:56', 'Agnes', 'P', 'Kotamobagu', '1984-01-14', 'Islam', 'pudjiastuti.dipa@example.net', '0733 6830 877', 'Psr. Abdul No. 73, Cilegon 92058, Aceh', '3171090001', 'MAN 6', 'IPS', 1, 2, 'Website', 90, 2, NULL, '2017-11-05 00:06:45', 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3332, '2017-10-20 10:25:56', 'Safina', 'P', 'Batu', '1984-01-14', 'Islam', 'panca27@example.org', '0357 8395 8201', 'Psr. Karel S. Tubun No. 552, Tegal 29522, KalUt', '3171090001', 'SMA 54', 'IPS', 2, 1, 'Website', 90, 2, NULL, '2017-11-05 00:47:33', 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3333, '2017-10-20 10:25:56', 'Sabrina', 'P', 'Padangpanjang', '1984-01-14', 'Islam', 'clara21@example.net', '0729 4746 7381', 'Ki. Cut Nyak Dien No. 73, Malang 81979, SumBar', '3171090001', 'SMK 48', 'IPS', 1, 2, 'Website', 90, 2, NULL, '2017-11-05 00:47:38', 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3334, '2017-10-20 10:25:56', 'Ghaliyati', 'P', 'Kupang', '1984-01-14', 'Islam', 'mwaluyo@example.com', '023 3982 448', 'Kpg. Gremet No. 921, Banda Aceh 44320, SulTeng', '3171090001', 'SMA 59', 'IPS', 2, 1, 'Website', 90, 2, NULL, '2017-11-05 00:47:41', 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3335, '2017-10-20 10:25:56', 'Jelita', 'P', 'Tual', '1984-01-14', 'Islam', 'ysaptono@example.org', '(+62) 585 7103 ', 'Dk. Karel S. Tubun No. 876, Palopo 87707, SulTra', '3171090001', 'SMK 43', 'IPS', 2, 2, 'Website', 85, 2, NULL, '2017-11-05 01:05:50', 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3336, '2017-10-20 10:25:56', 'Ani', 'P', 'Manado', '1984-01-14', 'Islam', 'ikhsan.hartati@example.net', '(+62) 430 9043 ', 'Ki. Abang No. 145, Sukabumi 78563, KalBar', '3171090001', 'SMK 48', 'IPS', 2, 2, 'Website', 85, 2, NULL, '2017-11-05 01:07:04', 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3337, '2017-10-20 10:25:56', 'Ellis', 'P', 'Magelang', '1984-01-14', 'Islam', 'damar.saragih@example.net', '(+62) 959 7678 ', 'Psr. Baladewa No. 761, Cilegon 91079, MalUt', '3171090001', 'SMA 54', 'IPS', 1, 1, 'Website', 85, 2, NULL, '2017-11-05 01:07:10', 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3338, '2017-10-20 10:25:56', 'Sakura', 'P', 'Prabumulih', '1984-01-14', 'Islam', 'thamrin.hilda@example.org', '(+62) 865 2497 ', 'Dk. Supono No. 923, Subulussalam 35366, KalTim', '3171090001', 'SMA 8', 'IPS', 2, 2, 'Website', 85, 2, NULL, '2017-11-05 01:07:16', 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3339, '2017-10-20 10:25:56', 'Pia', 'P', 'Probolinggo', '1984-01-14', 'Islam', 'gunarto.garan@example.com', '023 0233 4531', 'Jln. Sudiarto No. 577, Bengkulu 21210, SulSel', '3171090001', 'SMA 54', 'IPS', 1, 2, 'Website', 85, 2, NULL, '2017-12-11 14:52:51', 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3340, '2017-10-20 10:25:56', 'Citra', 'P', 'Langsa', '1984-01-14', 'Islam', 'nyana.halim@example.com', '(+62) 908 0858 ', 'Kpg. Dipenogoro No. 517, Magelang 41092, SulTeng', '3171090001', 'SMK 43', 'IPS', 1, 1, 'Website', 100, 2, NULL, '2018-01-08 22:21:58', 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3341, '2017-10-20 10:25:56', 'Zalindra', 'P', 'Bau-Bau', '1984-01-14', 'Islam', 'bsimbolon@example.net', '0882 786 904', 'Kpg. Lada No. 491, Manado 88851, Papua', '3171090001', 'SMA 59', 'IPS', 2, 1, 'Website', 100, 2, NULL, '2018-01-08 22:22:01', 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3342, '2017-10-20 10:25:56', 'Farhunnisa', 'P', 'Blitar', '1984-01-14', 'Islam', 'rini83@example.net', '(+62) 675 3455 ', 'Ds. Haji No. 339, Banjarbaru 39809, JaTim', '3171090001', 'SMK 32', 'IPS', 1, 1, 'Website', 100, 2, NULL, '2018-02-01 19:46:25', 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3343, '2017-10-20 10:25:56', 'Hani', 'P', 'Banda Aceh', '1984-01-14', 'Islam', 'wsihotang@example.org', '0554 1541 5557', 'Jln. Sudiarto No. 929, Bontang 94777, SumUt', '3171090001', 'SMA 21', 'IPS', 1, 2, 'Website', 100, 3, NULL, '2018-02-01 19:46:28', 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, '2018-02-01 19:48:55', NULL),
-(3344, '2017-10-20 10:25:56', 'Uchita', 'P', 'Administrasi Ja', '1984-01-14', 'Islam', 'hardi96@example.net', '0834 0616 3508', 'Psr. Ciumbuleuit No. 579, Kotamobagu 49955, SulTeng', '3171090001', 'SMK 43', 'IPS', 2, 1, 'Website', 100, 2, NULL, '2018-03-30 22:48:56', 1, NULL, '2017-04-02 01:24:27', '2018-03-30 22:48:56', NULL, NULL, NULL, NULL),
-(3345, '2017-10-20 10:25:56', 'Sabrina', 'P', 'Lhokseumawe', '1984-01-14', 'Islam', 'lsiregar@example.com', '(+62) 216 3826 ', 'Jln. Suryo Pranoto No. 577, Banjar 65094, JaTim', '3171090001', 'SMA 59', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3346, '2017-10-20 10:25:56', 'Zalindra', 'P', 'Madiun', '1984-01-14', 'Islam', 'saadat.dabukke@example.com', '0924 6260 6710', 'Gg. Pasirkoja No. 898, Sabang 97550, JaBar', '3171090001', 'SMA 54', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3347, '2017-10-20 10:25:56', 'Putri', 'P', 'Ternate', '1984-01-14', 'Islam', 'ewidiastuti@example.com', '0914 4305 7574', 'Jln. Abang No. 718, Pagar Alam 11030, Papua', '3171090001', 'SMK 22', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3348, '2017-10-20 10:25:56', 'Olivia', 'P', 'Bengkulu', '1984-01-14', 'Islam', 'melinda28@example.net', '0895 892 880', 'Ds. HOS. Cjokroaminoto (Pasirkaliki) No. 440, Blitar 81993, KepR', '3171090001', 'SMA 59', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:27', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3349, '2017-10-20 10:25:56', 'Elisa', 'P', 'Ternate', '1984-01-14', 'Islam', 'ika33@example.com', '0332 7928 254', 'Ds. Basudewo No. 319, Salatiga 35966, KalSel', '3171090001', 'MAN 3', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3350, '2017-10-20 10:25:56', 'Gilda', 'P', 'Bandung', '1984-01-14', 'Islam', 'kacung.susanti@example.net', '(+62) 571 4717 ', 'Ki. Thamrin No. 315, Cirebon 23765, SulSel', '3171090001', 'SMK 44', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3351, '2017-10-20 10:25:56', 'Kasiyah', 'P', 'Depok', '1984-01-14', 'Islam', 'rrahmawati@example.org', '0301 3498 118', 'Kpg. Raya Setiabudhi No. 972, Gunungsitoli 87333, Papua', '3171090001', 'SMK 22', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3352, '2017-10-20 10:25:56', 'Ika', 'P', 'Surakarta', '1984-01-14', 'Islam', 'kusumo.padma@example.net', '(+62) 869 2435 ', 'Ds. Yohanes No. 964, Bengkulu 90657, SulSel', '3171090001', 'MAN 3', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3353, '2017-10-20 10:25:56', 'Rika', 'P', 'Surabaya', '1984-01-14', 'Islam', 'bahuwarna.suartini@example.net', '(+62) 28 6868 8', 'Ki. Supomo No. 153, Bekasi 48334, Gorontalo', '3171090001', 'SMK 32', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3354, '2017-10-20 10:25:56', 'Gabriella', 'P', 'Surakarta', '1984-01-14', 'Islam', 'salahudin.devi@example.org', '0803 426 275', 'Ds. Gremet No. 138, Prabumulih 24836, SulSel', '3171090001', 'SMK 44', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3355, '2017-10-20 10:25:56', 'Rina', 'P', 'Tanjungbalai', '1984-01-14', 'Islam', 'zulaikha.hutagalung@example.net', '(+62) 22 1916 7', 'Ki. Merdeka No. 308, Banda Aceh 10502, KalTim', '3171090001', 'SMA 59', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3356, '2017-10-20 10:25:56', 'Kamila', 'P', 'Administrasi Ja', '1984-01-14', 'Islam', 'bnamaga@example.org', '0299 4454 704', 'Psr. Ters. Pasir Koja No. 56, Banjarbaru 86011, SulUt', '3171090001', 'SMK 48', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL);
-INSERT INTO `aplikan` (`id`, `tanggal_daftar`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `agama`, `email`, `telepon`, `alamat`, `village_id`, `asal_sekolah`, `jurusan_sekolah`, `konsentrasi_id`, `kelas_id`, `sumber_informasi`, `user_id`, `aplikan_status_id`, `status_detail`, `tanggal_take`, `pilihan_kampus_id`, `token`, `created_at`, `updated_at`, `tanggal_database`, `tanggal_aplikan`, `tanggal_terdaftar`, `tanggal_teregistrasi`) VALUES
-(3357, '2017-10-20 10:25:56', 'Clara', 'P', 'Bontang', '1984-01-14', 'Islam', 'bahuwirya59@example.com', '0384 7762 7253', 'Kpg. Achmad Yani No. 108, Probolinggo 23168, BaBel', '3171090001', 'SMA 59', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3358, '2017-10-20 10:25:56', 'Gilda', 'P', 'Dumai', '1984-01-14', 'Islam', 'yulianti.ridwan@example.org', '0345 3214 0611', 'Ds. Sugiyopranoto No. 109, Dumai 83089, KalTeng', '3171090001', 'SMK 22', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3359, '2017-10-20 10:25:56', 'Jane', 'P', 'Sabang', '1984-01-14', 'Islam', 'aslijan.melani@example.net', '(+62) 26 1844 4', 'Jln. Ciumbuleuit No. 136, Tasikmalaya 32209, JaBar', '3171090001', 'SMA 61', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3360, '2017-10-20 10:25:56', 'Julia', 'P', 'Batu', '1984-01-14', 'Islam', 'maryadi.amalia@example.com', '(+62) 449 9898 ', 'Kpg. Baja Raya No. 928, Banjarbaru 37847, Banten', '3171090001', 'MAN 3', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3361, '2017-10-20 10:25:56', 'Titin', 'P', 'Banjarmasin', '1984-01-14', 'Islam', 'teguh.wibisono@example.net', '0789 0108 2393', 'Psr. Abdul No. 725, Cimahi 35416, SumUt', '3171090001', 'SMK 44', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3362, '2017-10-20 10:25:56', 'Oni', 'P', 'Tasikmalaya', '1984-01-14', 'Islam', 'purwanti.zamira@example.org', '0485 4057 932', 'Psr. Baik No. 668, Palopo 85962, Lampung', '3171090001', 'SMA 59', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3363, '2017-10-20 10:25:56', 'Kartika', 'P', 'Tidore Kepulaua', '1984-01-14', 'Islam', 'palastri.lantar@example.net', '0855 685 705', 'Jr. Hang No. 689, Binjai 33673, BaBel', '3171090001', 'MAN 3', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3364, '2017-10-20 10:25:56', 'Genta', 'P', 'Tomohon', '1984-01-14', 'Islam', 'waskita.panca@example.com', '(+62) 741 0709 ', 'Ds. Dipatiukur No. 565, Surabaya 70877, BaBel', '3171090001', 'SMK 32', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3365, '2017-10-20 10:25:56', 'Ayu', 'P', 'Padangpanjang', '1984-01-14', 'Islam', 'busamah@example.org', '0253 6156 950', 'Jln. Sam Ratulangi No. 576, Banda Aceh 49044, KalTim', '3171090001', 'SMA 21', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3366, '2017-10-20 10:25:56', 'Lala', 'P', 'Bogor', '1984-01-14', 'Islam', 'hana18@example.net', '0874 800 551', 'Jln. Dipenogoro No. 687, Ambon 95481, SumUt', '3171090001', 'SMA 21', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3367, '2017-10-20 10:25:56', 'Chelsea', 'P', 'Madiun', '1984-01-14', 'Islam', 'najmudin.legawa@example.com', '0225 1826 9077', 'Dk. Salak No. 810, Depok 90865, DKI', '3171090001', 'SMK 44', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3368, '2017-10-20 10:25:56', 'Kayla', 'P', 'Salatiga', '1984-01-14', 'Islam', 'ani10@example.net', '(+62) 547 7262 ', 'Psr. Bah Jaya No. 950, Pasuruan 72737, MalUt', '3171090001', 'MAN 6', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3369, '2017-10-20 10:25:56', 'Nova', 'P', 'Subulussalam', '1984-01-14', 'Islam', 'xanana.firmansyah@example.org', '0312 4029 1573', 'Ds. Cemara No. 46, Tangerang 47396, NTT', '3171090001', 'SMK 22', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3370, '2017-10-20 10:25:56', 'Victoria', 'P', 'Magelang', '1984-01-14', 'Islam', 'ikhsan.maheswara@example.com', '(+62) 860 9483 ', 'Kpg. Kebangkitan Nasional No. 139, Administrasi Jakarta Utara 88347, Banten', '3171090001', 'SMK 22', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3371, '2017-10-20 10:25:56', 'Chelsea', 'P', 'Administrasi Ja', '1984-01-14', 'Islam', 'ayu51@example.com', '0980 0405 001', 'Gg. Wora Wari No. 877, Solok 78263, Lampung', '3171090001', 'SMK 48', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3372, '2017-10-20 10:25:56', 'Lala', 'P', 'Administrasi Ja', '1984-01-14', 'Islam', 'saefullah.patricia@example.net', '(+62) 747 0113 ', 'Jln. Nakula No. 475, Bau-Bau 38643, Jambi', '3171090001', 'SMA 59', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3373, '2017-10-20 10:25:56', 'Siti', 'P', 'Jayapura', '1984-01-14', 'Islam', 'aryani.galih@example.com', '(+62) 788 9914 ', 'Dk. Karel S. Tubun No. 200, Tasikmalaya 18947, KalSel', '3171090001', 'SMK 22', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3374, '2017-10-20 10:25:56', 'Vera', 'P', 'Probolinggo', '1984-01-14', 'Islam', 'jprasetyo@example.net', '(+62) 969 8393 ', 'Psr. Lumban Tobing No. 922, Pontianak 43256, Lampung', '3171090001', 'SMK 32', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3375, '2017-10-20 10:25:56', 'Sabrina', 'P', 'Sibolga', '1984-01-14', 'Islam', 'dmulyani@example.com', '(+62) 609 1387 ', 'Kpg. Bambu No. 139, Kendari 42412, SumSel', '3171090001', 'SMK 22', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3376, '2017-10-20 10:25:56', 'Hasna', 'P', 'Tarakan', '1984-01-14', 'Islam', 'palastri.vicky@example.com', '(+62) 694 2242 ', 'Psr. Urip Sumoharjo No. 619, Padangpanjang 28380, Lampung', '3171090001', 'SMK 43', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3377, '2017-10-20 10:25:56', 'Sabrina', 'P', 'Cimahi', '1984-01-14', 'Islam', 'eman.susanti@example.net', '0578 8568 031', 'Ki. Yogyakarta No. 601, Pekanbaru 39980, SulSel', '3171090001', 'SMA 59', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3378, '2017-10-20 10:25:56', 'Endah', 'P', 'Bima', '1984-01-14', 'Islam', 'vrajasa@example.net', '025 5450 276', 'Jr. Babadak No. 725, Pangkal Pinang 13622, Aceh', '3171090001', 'SMK 44', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3379, '2017-10-20 10:25:56', 'Lili', 'P', 'Pangkal Pinang', '1984-01-14', 'Islam', 'pudjiastuti.empluk@example.net', '0342 4152 326', 'Kpg. Panjaitan No. 215, Samarinda 75624, BaBel', '3171090001', 'MAN 3', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3380, '2017-10-20 10:25:56', 'Hani', 'P', 'Lhokseumawe', '1984-01-14', 'Islam', 'nugroho.drajat@example.org', '(+62) 973 0886 ', 'Ds. Karel S. Tubun No. 584, Palembang 43958, DKI', '3171090001', 'SMK 43', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3381, '2017-10-20 10:25:56', 'Ajeng', 'P', 'Tangerang', '1984-01-14', 'Islam', 'najwa97@example.com', '026 4040 5790', 'Kpg. Babadak No. 274, Tidore Kepulauan 54388, SulBar', '3171090001', 'MAN 3', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3382, '2017-10-20 10:25:56', 'Kamaria', 'P', 'Malang', '1984-01-14', 'Islam', 'vega.uyainah@example.com', '0533 9380 2838', 'Jr. Laksamana No. 498, Pagar Alam 47198, SumBar', '3171090001', 'SMK 43', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3383, '2017-10-20 10:25:56', 'Putri', 'P', 'Bekasi', '1984-01-14', 'Islam', 'almira88@example.org', '(+62) 242 7314 ', 'Dk. Diponegoro No. 833, Administrasi Jakarta Selatan 32655, Bali', '3171090001', 'MAN 3', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3384, '2017-10-20 10:25:56', 'Salwa', 'P', 'Ternate', '1984-01-14', 'Islam', 'mhutasoit@example.net', '0829 1043 3107', 'Jr. Ters. Buah Batu No. 287, Pangkal Pinang 25178, Maluku', '3171090001', 'SMA 8', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3385, '2017-10-20 10:25:56', 'Eli', 'P', 'Batam', '1984-01-14', 'Islam', 'thamrin.banawa@example.org', '(+62) 541 8989 ', 'Dk. Jamika No. 867, Pekalongan 85846, Bengkulu', '3171090001', 'SMK 44', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3386, '2017-10-20 10:25:56', 'Puspa', 'P', 'Padangsidempuan', '1984-01-14', 'Islam', 'trajata@example.com', '(+62) 336 4798 ', 'Dk. Sutan Syahrir No. 603, Banjarmasin 37953, KalTim', '3171090001', 'SMA 59', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3387, '2017-10-20 10:25:56', 'Unjani', 'P', 'Palu', '1984-01-14', 'Islam', 'oliva87@example.net', '0406 7040 3695', 'Kpg. Gajah No. 204, Jambi 19028, KalUt', '3171090001', 'SMA 21', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3388, '2017-10-20 10:25:56', 'Bella', 'P', 'Manado', '1984-01-14', 'Islam', 'icha.hidayat@example.net', '0438 9882 5730', 'Jr. Ters. Jakarta No. 79, Pekanbaru 52839, DKI', '3171090001', 'SMA 54', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3389, '2017-10-20 10:25:56', 'Putri', 'P', 'Administrasi Ja', '1984-01-14', 'Islam', 'vandriani@example.net', '0892 8597 698', 'Gg. Abdul Muis No. 513, Tual 23691, DKI', '3171090001', 'SMA 61', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:28', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3390, '2017-10-20 10:25:56', 'Najwa', 'P', 'Tidore Kepulaua', '1984-01-14', 'Islam', 'shania09@example.com', '(+62) 793 0295 ', 'Ki. Haji No. 725, Bontang 82915, JaTeng', '3171090001', 'SMA 21', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3391, '2017-10-20 10:25:56', 'Cinthia', 'P', 'Makassar', '1984-01-14', 'Islam', 'cadriansyah@example.org', '0539 9386 3297', 'Ki. Raden Saleh No. 172, Subulussalam 70305, NTB', '3171090001', 'SMA 8', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3392, '2017-10-20 10:25:56', 'Vera', 'P', 'Surakarta', '1984-01-14', 'Islam', 'jaka85@example.net', '0232 9311 037', 'Ki. Krakatau No. 484, Palangka Raya 47531, Riau', '3171090001', 'SMA 54', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3393, '2017-10-20 10:25:56', 'Zelda', 'P', 'Banjar', '1984-01-14', 'Islam', 'qmaryati@example.net', '(+62) 454 5270 ', 'Gg. Bayan No. 227, Bontang 19558, KalTim', '3171090001', 'SMK 43', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3394, '2017-10-20 10:25:56', 'Anastasia', 'P', 'Palopo', '1984-01-14', 'Islam', 'dsinaga@example.com', '0668 1189 4541', 'Kpg. Pelajar Pejuang 45 No. 592, Mataram 21407, SulUt', '3171090001', 'SMK 22', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3395, '2017-10-20 10:25:56', 'Dian', 'P', 'Cirebon', '1984-01-14', 'Islam', 'galiono.widiastuti@example.org', '(+62) 507 2654 ', 'Ki. Suniaraja No. 635, Tebing Tinggi 32588, JaTim', '3171090001', 'SMK 22', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3396, '2017-10-20 10:25:56', 'Maria', 'P', 'Tangerang', '1984-01-14', 'Islam', 'isihombing@example.org', '0864 6833 3555', 'Ki. Ters. Pasir Koja No. 764, Binjai 84558, Maluku', '3171090001', 'SMA 61', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3397, '2017-10-20 10:25:56', 'Diana', 'P', 'Tasikmalaya', '1984-01-14', 'Islam', 'cahya.wacana@example.org', '0872 8420 3525', 'Psr. Umalas No. 841, Sibolga 84850, KalTim', '3171090001', 'SMK 32', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3398, '2017-10-20 10:25:56', 'Yani', 'P', 'Administrasi Ja', '1984-01-14', 'Islam', 'wacana.kemba@example.net', '(+62) 26 6260 2', 'Dk. Panjaitan No. 597, Sorong 79901, MalUt', '3171090001', 'MAN 3', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3399, '2017-10-20 10:25:56', 'Nilam', 'P', 'Balikpapan', '1984-01-14', 'Islam', 'ohardiansyah@example.org', '(+62) 721 0075 ', 'Psr. Gading No. 773, Pasuruan 75137, BaBel', '3171090001', 'SMK 48', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3400, '2017-10-20 10:25:56', 'Iriana', 'P', 'Palu', '1984-01-14', 'Islam', 'hprakasa@example.com', '(+62) 709 3728 ', 'Jr. Agus Salim No. 262, Lhokseumawe 47475, KalTeng', '3171090001', 'MAN 3', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3401, '2017-10-20 10:25:56', 'Icha', 'P', 'Gunungsitoli', '1984-01-14', 'Islam', 'enteng.pudjiastuti@example.net', '0578 7537 3068', 'Gg. Bakaru No. 476, Palangka Raya 74534, KalSel', '3171090001', 'SMK 22', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3402, '2017-10-20 10:25:56', 'Michelle', 'P', 'Madiun', '1984-01-14', 'Islam', 'bambang.susanti@example.net', '0238 4167 8501', 'Ki. Ters. Pasir Koja No. 128, Bima 11287, Aceh', '3171090001', 'SMA 54', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3403, '2017-10-20 10:25:56', 'Tania', 'P', 'Mojokerto', '1984-01-14', 'Islam', 'puput.nababan@example.org', '0323 9898 214', 'Jr. Eka No. 55, Dumai 11054, JaBar', '3171090001', 'SMA 21', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3404, '2017-10-20 10:25:56', 'Salsabila', 'P', 'Bandar Lampung', '1984-01-14', 'Islam', 'nova22@example.org', '0460 0692 5990', 'Ds. Dr. Junjunan No. 819, Tarakan 63405, SumSel', '3171090001', 'SMK 44', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3405, '2017-10-20 10:25:56', 'Maya', 'P', 'Kendari', '1984-01-14', 'Islam', 'queen30@example.org', '0247 9037 0063', 'Ki. Bagas Pati No. 987, Tarakan 20756, MalUt', '3171090001', 'MAN 6', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3406, '2017-10-20 10:25:56', 'Ade', 'P', 'Madiun', '1984-01-14', 'Islam', 'hutasoit.hasim@example.net', '(+62) 645 8618 ', 'Ki. Ketandan No. 194, Payakumbuh 68764, KalSel', '3171090001', 'MAN 6', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3407, '2017-10-20 10:25:56', 'Zelda', 'P', 'Sukabumi', '1984-01-14', 'Islam', 'lalita.namaga@example.org', '0830 4818 7659', 'Psr. Baranang Siang No. 309, Payakumbuh 37311, JaTeng', '3171090001', 'SMK 32', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3408, '2017-10-20 10:25:56', 'Elma', 'P', 'Tomohon', '1984-01-14', 'Islam', 'juli.lestari@example.net', '0865 8312 061', 'Kpg. K.H. Maskur No. 717, Tebing Tinggi 12751, Bali', '3171090001', 'SMA 21', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3409, '2017-10-20 10:25:56', 'Rini', 'P', 'Tebing Tinggi', '1984-01-14', 'Islam', 'maimunah37@example.com', '(+62) 27 9062 2', 'Ds. Wahidin Sudirohusodo No. 355, Bengkulu 35486, KalTim', '3171090001', 'SMK 48', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3410, '2017-10-20 10:25:56', 'Victoria', 'P', 'Banjarmasin', '1984-01-14', 'Islam', 'clara55@example.net', '0545 4853 262', 'Kpg. Gardujati No. 740, Ternate 41060, KalSel', '3171090001', 'SMA 21', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3411, '2017-10-20 10:25:56', 'Syahrini', 'P', 'Padangsidempuan', '1984-01-14', 'Islam', 'dabukke.kadir@example.org', '(+62) 26 5818 9', 'Jr. Baya Kali Bungur No. 604, Tangerang 77991, SumUt', '3171090001', 'SMK 48', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3412, '2017-10-20 10:25:56', 'Amelia', 'P', 'Serang', '1984-01-14', 'Islam', 'sarah.safitri@example.com', '(+62) 658 4920 ', 'Ki. Surapati No. 298, Administrasi Jakarta Timur 76650, JaBar', '3171090001', 'SMA 59', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3413, '2017-10-20 10:25:56', 'Anita', 'P', 'Bengkulu', '1984-01-14', 'Islam', 'anita97@example.com', '(+62) 572 0960 ', 'Gg. Cihampelas No. 324, Singkawang 57523, Maluku', '3171090001', 'MAN 6', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:24:29', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3414, '2017-10-20 10:25:56', 'Anita', 'P', 'Administrasi Ja', '1984-01-14', 'Islam', 'bajragin.manullang@example.net', '(+62) 991 6267 ', 'Ki. Dewi Sartika No. 394, Prabumulih 21748, SulBar', '3171090001', 'MAN 3', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:05', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3415, '2017-10-20 10:25:56', 'Hani', 'P', 'Ambon', '1984-01-14', 'Islam', 'kasiyah.rahayu@example.com', '(+62) 651 8888 ', 'Gg. Nangka No. 534, Blitar 71201, SulSel', '3171090001', 'SMK 22', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3416, '2017-10-20 10:25:56', 'Betania', 'P', 'Banda Aceh', '1984-01-14', 'Islam', 'dasa14@example.org', '0564 5005 7360', 'Jln. Dipenogoro No. 511, Pariaman 66151, KalSel', '3171090001', 'SMA 54', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3417, '2017-10-20 10:25:56', 'Cornelia', 'P', 'Prabumulih', '1984-01-14', 'Islam', 'yani80@example.com', '0318 7108 277', 'Kpg. Laswi No. 375, Tanjung Pinang 28746, SumBar', '3171090001', 'SMK 22', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3418, '2017-10-20 10:25:56', 'Hesti', 'P', 'Gorontalo', '1984-01-14', 'Islam', 'daruna.nashiruddin@example.net', '(+62) 950 4032 ', 'Ki. Jamika No. 904, Makassar 81117, Bali', '3171090001', 'SMA 61', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3419, '2017-10-20 10:25:56', 'Titin', 'P', 'Bandar Lampung', '1984-01-14', 'Islam', 'amalia06@example.net', '(+62) 745 0833 ', 'Jln. Dewi Sartika No. 926, Bandung 89702, Jambi', '3171090001', 'SMA 8', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3420, '2017-10-20 10:25:56', 'Janet', 'P', 'Pariaman', '1984-01-14', 'Islam', 'cinthia.usada@example.org', '(+62) 965 5657 ', 'Psr. Gajah No. 576, Tasikmalaya 50530, DIY', '3171090001', 'SMA 8', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3421, '2017-10-20 10:25:56', 'Puspa', 'P', 'Tangerang Selat', '1984-01-14', 'Islam', 'unashiruddin@example.com', '(+62) 366 3366 ', 'Jr. Barat No. 877, Tegal 73817, JaTeng', '3171090001', 'SMK 22', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3422, '2017-10-20 10:25:56', 'Nadine', 'P', 'Tegal', '1984-01-14', 'Islam', 'estiono.januar@example.com', '0311 9911 843', 'Jr. Wahid Hasyim No. 605, Subulussalam 90319, SulTeng', '3171090001', 'SMK 22', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3423, '2017-10-20 10:25:56', 'Gasti', 'P', 'Binjai', '1984-01-14', 'Islam', 'nadine53@example.org', '0234 7951 768', 'Jr. Barat No. 768, Administrasi Jakarta Utara 66622, Gorontalo', '3171090001', 'SMA 54', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3424, '2017-10-20 10:25:56', 'Cindy', 'P', 'Banjar', '1984-01-14', 'Islam', 'hassanah.harimurti@example.net', '(+62) 985 6797 ', 'Kpg. Katamso No. 538, Payakumbuh 76374, SulBar', '3171090001', 'SMA 21', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3425, '2017-10-20 10:25:56', 'Silvia', 'P', 'Banjarbaru', '1984-01-14', 'Islam', 'nugraha10@example.com', '0694 5589 611', 'Jln. Baha No. 801, Tarakan 69491, SumBar', '3171090001', 'SMK 43', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3426, '2017-10-20 10:25:56', 'Maimunah', 'P', 'Padang', '1984-01-14', 'Islam', 'samsul92@example.net', '0704 3949 8850', 'Psr. Baranang Siang No. 357, Dumai 22166, Banten', '3171090001', 'SMK 22', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3427, '2017-10-20 10:25:56', 'Ratna', 'P', 'Palu', '1984-01-14', 'Islam', 'usamah.virman@example.net', '(+62) 980 3723 ', 'Ds. Sutarto No. 397, Madiun 41916, SumBar', '3171090001', 'MAN 6', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3428, '2017-10-20 10:25:56', 'Lidya', 'P', 'Padang', '1984-01-14', 'Islam', 'klailasari@example.net', '(+62) 348 0838 ', 'Jln. Adisucipto No. 895, Banjarmasin 92486, NTB', '3171090001', 'SMK 43', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3429, '2017-10-20 10:25:56', 'Rina', 'P', 'Gorontalo', '1984-01-14', 'Islam', 'mangunsong.liman@example.com', '(+62) 978 0639 ', 'Jln. W.R. Supratman No. 503, Pekanbaru 47171, KalUt', '3171090001', 'SMK 32', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3430, '2017-10-20 10:25:56', 'Eli', 'P', 'Tebing Tinggi', '1984-01-14', 'Islam', 'mayasari.aris@example.net', '(+62) 613 5787 ', 'Dk. Kali No. 666, Metro 13035, SulSel', '3171090001', 'SMA 54', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3431, '2017-10-20 10:25:56', 'Hani', 'P', 'Cimahi', '1984-01-14', 'Islam', 'hasan.suryatmi@example.com', '0431 9310 968', 'Psr. Tambun No. 703, Balikpapan 49253, Jambi', '3171090001', 'SMA 21', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3432, '2017-10-20 10:25:56', 'Oliva', 'P', 'Sabang', '1984-01-14', 'Islam', 'bambang97@example.net', '(+62) 901 7619 ', 'Gg. Baja Raya No. 191, Sabang 76924, KalUt', '3171090001', 'SMK 44', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3433, '2017-10-20 10:25:56', 'Rini', 'P', 'Palangka Raya', '1984-01-14', 'Islam', 'suartini.rahman@example.com', '(+62) 785 7327 ', 'Jln. Jagakarsa No. 953, Batu 67641, JaTim', '3171090001', 'SMA 21', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3434, '2017-10-20 10:25:56', 'Yuliana', 'P', 'Sibolga', '1984-01-14', 'Islam', 'maulana.ajeng@example.com', '0813 9732 7527', 'Jln. Ujung No. 193, Padang 88802, SumBar', '3171090001', 'MAN 3', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3435, '2017-10-20 10:25:56', 'Puji', 'P', 'Salatiga', '1984-01-14', 'Islam', 'santoso.ikhsan@example.com', '0530 0843 5429', 'Jr. Baranangsiang No. 565, Pagar Alam 88796, Bali', '3171090001', 'SMA 54', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3436, '2017-10-20 10:25:56', 'Melinda', 'P', 'Mojokerto', '1984-01-14', 'Islam', 'wpadmasari@example.net', '(+62) 397 8877 ', 'Ds. Banal No. 474, Tidore Kepulauan 69347, NTB', '3171090001', 'MAN 3', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3437, '2017-10-20 10:25:56', 'Natalia', 'P', 'Salatiga', '1984-01-14', 'Islam', 'gamani79@example.com', '0210 5847 231', 'Gg. Jend. A. Yani No. 984, Tanjungbalai 81457, KepR', '3171090001', 'SMK 44', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3438, '2017-10-20 10:25:56', 'Zamira', 'P', 'Tarakan', '1984-01-14', 'Islam', 'lestari.halima@example.org', '0914 0190 7006', 'Jr. Rajawali No. 987, Tomohon 66313, SumSel', '3171090001', 'SMK 48', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3439, '2017-10-20 10:25:56', 'Humaira', 'P', 'Jambi', '1984-01-14', 'Islam', 'marpaung.kamal@example.net', '0634 8530 939', 'Kpg. Bagonwoto  No. 16, Yogyakarta 50567, KalBar', '3171090001', 'SMK 48', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3440, '2017-10-20 10:25:56', 'Eva', 'P', 'Padangsidempuan', '1984-01-14', 'Islam', 'cici20@example.net', '0966 1949 5686', 'Jr. Achmad No. 295, Madiun 28457, Lampung', '3171090001', 'SMK 44', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3441, '2017-10-20 10:25:56', 'Putri', 'P', 'Metro', '1984-01-14', 'Islam', 'chelsea.yulianti@example.com', '0521 6469 9275', 'Jln. Cut Nyak Dien No. 89, Sabang 55303, Bengkulu', '3171090001', 'SMK 22', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3442, '2017-10-20 10:25:56', 'Wani', 'P', 'Banjarbaru', '1984-01-14', 'Islam', 'cfirgantoro@example.com', '(+62) 400 0452 ', 'Ds. Baing No. 124, Metro 16575, KalSel', '3171090001', 'SMK 44', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3443, '2017-10-20 10:25:56', 'Laras', 'P', 'Sabang', '1984-01-14', 'Islam', 'susanti.amalia@example.org', '0604 4175 0724', 'Dk. Abdul. Muis No. 109, Bekasi 36638, KalUt', '3171090001', 'SMK 48', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3444, '2017-10-20 10:25:56', 'Sakura', 'P', 'Kupang', '1984-01-14', 'Islam', 'yrajata@example.net', '0214 9138 1613', 'Jr. Yohanes No. 712, Jambi 75038, KalBar', '3171090001', 'SMA 59', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3445, '2017-10-20 10:25:56', 'Karimah', 'P', 'Palu', '1984-01-14', 'Islam', 'oman.lazuardi@example.net', '(+62) 449 4438 ', 'Jr. Basket No. 414, Bontang 44763, SulTra', '3171090001', 'SMA 8', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3446, '2017-10-20 10:25:56', 'Ade', 'P', 'Padangsidempuan', '1984-01-14', 'Islam', 'handayani.kurnia@example.com', '(+62) 725 7133 ', 'Jln. Otto No. 35, Bengkulu 67309, SumUt', '3171090001', 'SMK 43', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3447, '2017-10-20 10:25:56', 'Lintang', 'P', 'Sorong', '1984-01-14', 'Islam', 'winarsih.endah@example.org', '0323 1342 010', 'Ki. Ketandan No. 36, Tanjung Pinang 45858, KalTim', '3171090001', 'SMA 59', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3448, '2017-10-20 10:25:56', 'Irma', 'P', 'Serang', '1984-01-14', 'Islam', 'danu.prayoga@example.org', '027 7690 5426', 'Ki. Ters. Pasir Koja No. 182, Manado 37405, KalUt', '3171090001', 'SMA 59', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3449, '2017-10-20 10:25:56', 'Vivi', 'P', 'Sabang', '1984-01-14', 'Islam', 'rahayu.carla@example.com', '(+62) 241 8560 ', 'Ds. Ciwastra No. 880, Semarang 84776, KalSel', '3171090001', 'SMK 48', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3450, '2017-10-20 10:25:56', 'Elisa', 'P', 'Pekanbaru', '1984-01-14', 'Islam', 'sudiati.maryadi@example.net', '0940 0841 4687', 'Jr. Veteran No. 178, Mojokerto 19288, Aceh', '3171090001', 'SMK 44', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3451, '2017-10-20 10:25:56', 'Azalea', 'P', 'Tanjungbalai', '1984-01-14', 'Islam', 'abudiyanto@example.com', '(+62) 466 7895 ', 'Kpg. Sudiarto No. 527, Lubuklinggau 24701, BaBel', '3171090001', 'SMA 59', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:06', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3452, '2017-10-20 10:25:56', 'Oliva', 'P', 'Mojokerto', '1984-01-14', 'Islam', 'csusanti@example.com', '0381 0992 1270', 'Gg. Suharso No. 506, Bengkulu 77092, KalSel', '3171090001', 'SMA 59', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3453, '2017-10-20 10:25:56', 'Titin', 'P', 'Kendari', '1984-01-14', 'Islam', 'daruna26@example.org', '0382 9926 7179', 'Jln. Bara Tambar No. 109, Padangsidempuan 85497, SumSel', '3171090001', 'SMK 22', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3454, '2017-10-20 10:25:56', 'Ika', 'P', 'Pagar Alam', '1984-01-14', 'Islam', 'rfujiati@example.org', '0848 9789 4800', 'Kpg. Diponegoro No. 8, Salatiga 64026, BaBel', '3171090001', 'SMK 32', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3455, '2017-10-20 10:25:56', 'Aisyah', 'P', 'Cimahi', '1984-01-14', 'Islam', 'rhidayanto@example.org', '0429 9318 4334', 'Kpg. Sutoyo No. 729, Makassar 41812, SumSel', '3171090001', 'SMK 43', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3456, '2017-10-20 10:25:56', 'Nabila', 'P', 'Solok', '1984-01-14', 'Islam', 'ositumorang@example.org', '0742 8227 066', 'Dk. Bara Tambar No. 444, Ternate 80271, NTT', '3171090001', 'SMA 21', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3457, '2017-10-20 10:25:56', 'Paramita', 'P', 'Gorontalo', '1984-01-14', 'Islam', 'jelita72@example.org', '027 6015 7584', 'Psr. Banal No. 277, Serang 26936, KalTeng', '3171090001', 'SMA 61', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3458, '2017-10-20 10:25:56', 'Jasmin', 'P', 'Palu', '1984-01-14', 'Islam', 'makuta00@example.org', '0316 9091 4804', 'Gg. Samanhudi No. 101, Batu 33420, SulUt', '3171090001', 'SMK 44', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3459, '2017-10-20 10:25:56', 'Iriana', 'P', 'Tidore Kepulaua', '1984-01-14', 'Islam', 'anggraini.rahmi@example.net', '(+62) 229 2922 ', 'Dk. Yoga No. 453, Pagar Alam 97679, Jambi', '3171090001', 'SMA 8', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3460, '2017-10-20 10:25:56', 'Puti', 'P', 'Sukabumi', '1984-01-14', 'Islam', 'fpuspasari@example.com', '(+62) 373 3055 ', 'Jr. Merdeka No. 425, Denpasar 74206, Jambi', '3171090001', 'SMA 59', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3461, '2017-10-20 10:25:56', 'Gasti', 'P', 'Samarinda', '1984-01-14', 'Islam', 'rafi.sitorus@example.org', '0410 6794 4390', 'Kpg. Pacuan Kuda No. 105, Dumai 80541, DKI', '3171090001', 'MAN 3', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3462, '2017-10-20 10:25:56', 'Rika', 'P', 'Makassar', '1984-01-14', 'Islam', 'ynarpati@example.net', '0764 1417 5761', 'Ds. R.M. Said No. 276, Probolinggo 40393, Gorontalo', '3171090001', 'SMK 22', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3463, '2017-10-20 10:25:56', 'Olivia', 'P', 'Denpasar', '1984-01-14', 'Islam', 'sadina44@example.org', '(+62) 873 3575 ', 'Jln. Setiabudhi No. 157, Sawahlunto 72599, KepR', '3171090001', 'MAN 6', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3464, '2017-10-20 10:25:56', 'Titin', 'P', 'Kotamobagu', '1984-01-14', 'Islam', 'rahman76@example.com', '(+62) 322 4071 ', 'Kpg. Cikutra Barat No. 367, Tasikmalaya 30676, KalTim', '3171090001', 'SMA 8', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3465, '2017-10-20 10:25:56', 'Widya', 'P', 'Binjai', '1984-01-14', 'Islam', 'hidayanto.irwan@example.net', '0815 4337 365', 'Ki. Ki Hajar Dewantara No. 206, Palangka Raya 46794, Papua', '3171090001', 'SMK 43', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3466, '2017-10-20 10:25:56', 'Jelita', 'P', 'Mataram', '1984-01-14', 'Islam', 'emil61@example.org', '(+62) 891 099 4', 'Ki. Radio No. 681, Cimahi 34301, SulSel', '3171090001', 'SMA 54', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3467, '2017-10-20 10:25:56', 'Intan', 'P', 'Bontang', '1984-01-14', 'Islam', 'palastri.lantar@example.net', '0921 2092 945', 'Jr. Supono No. 476, Tidore Kepulauan 59826, Aceh', '3171090001', 'SMK 32', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3468, '2017-10-20 10:25:56', 'Puput', 'P', 'Tangerang', '1984-01-14', 'Islam', 'csiregar@example.com', '(+62) 21 0335 9', 'Ds. Pattimura No. 817, Mojokerto 49024, Papua', '3171090001', 'SMA 54', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3469, '2017-10-20 10:25:56', 'Diah', 'P', 'Palu', '1984-01-14', 'Islam', 'usamah.danuja@example.net', '(+62) 877 7919 ', 'Ds. Casablanca No. 165, Ambon 12347, Bali', '3171090001', 'SMA 21', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3470, '2017-10-20 10:25:56', 'Calista', 'P', 'Samarinda', '1984-01-14', 'Islam', 'ratih36@example.net', '(+62) 845 764 8', 'Jr. Moch. Yamin No. 804, Tanjung Pinang 69469, Maluku', '3171090001', 'SMA 8', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3471, '2017-10-20 10:25:56', 'Rachel', 'P', 'Cimahi', '1984-01-14', 'Islam', 'warsita44@example.org', '(+62) 28 2483 7', 'Dk. Banceng Pondok No. 47, Pekanbaru 69329, BaBel', '3171090001', 'MAN 6', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3472, '2017-10-20 10:25:56', 'Alika', 'P', 'Tegal', '1984-01-14', 'Islam', 'hassanah.tina@example.net', '(+62) 28 6272 1', 'Ds. Cihampelas No. 80, Metro 79526, KalUt', '3171090001', 'SMA 8', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3473, '2017-10-20 10:25:56', 'Ilsa', 'P', 'Padang', '1984-01-14', 'Islam', 'suartini.cakrabuana@example.org', '(+62) 806 200 1', 'Ki. Laswi No. 855, Salatiga 15031, JaBar', '3171090001', 'SMK 22', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3474, '2017-10-20 10:25:56', 'Yuliana', 'P', 'Banjar', '1984-01-14', 'Islam', 'ihartati@example.org', '0620 7920 636', 'Gg. Abdul. Muis No. 620, Bandung 62810, NTB', '3171090001', 'SMK 32', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3475, '2017-10-20 10:25:56', 'Zalindra', 'P', 'Tangerang Selat', '1984-01-14', 'Islam', 'nsuryono@example.net', '0964 3667 418', 'Ki. Cikutra Timur No. 412, Blitar 60083, Banten', '3171090001', 'SMA 21', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3476, '2017-10-20 10:25:56', 'Keisha', 'P', 'Parepare', '1984-01-14', 'Islam', 'xyuniar@example.org', '0846 9913 9830', 'Dk. Asia Afrika No. 557, Yogyakarta 64159, SulSel', '3171090001', 'SMK 48', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3477, '2017-10-20 10:25:56', 'Kiandra', 'P', 'Tanjungbalai', '1984-01-14', 'Islam', 'pranowo.devi@example.org', '0541 7637 7137', 'Ds. Yogyakarta No. 500, Administrasi Jakarta Pusat 34319, KalUt', '3171090001', 'SMA 8', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3478, '2017-10-20 10:25:56', 'Ade', 'P', 'Banda Aceh', '1984-01-14', 'Islam', 'fwastuti@example.net', '(+62) 326 8586 ', 'Kpg. Camar No. 511, Jayapura 24397, KalSel', '3171090001', 'SMA 61', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3479, '2017-10-20 10:25:56', 'Latika', 'P', 'Dumai', '1984-01-14', 'Islam', 'ifirgantoro@example.net', '0215 6528 857', 'Dk. Jayawijaya No. 473, Tasikmalaya 26644, SulSel', '3171090001', 'SMK 44', 'IPA', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3480, '2017-10-20 10:25:56', 'Uli', 'P', 'Banda Aceh', '1984-01-14', 'Islam', 'namaga.salimah@example.net', '0896 4474 646', 'Jr. Mahakam No. 240, Banjar 36937, Gorontalo', '3171090001', 'SMA 21', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3481, '2017-10-20 10:25:56', 'Sadina', 'P', 'Samarinda', '1984-01-14', 'Islam', 'xsirait@example.org', '(+62) 934 0629 ', 'Ds. Bakau No. 302, Balikpapan 73250, KalUt', '3171090001', 'SMK 32', 'IPA', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3482, '2017-10-20 10:25:56', 'Patricia', 'P', 'Padangsidempuan', '1984-01-14', 'Islam', 'violet34@example.org', '(+62) 443 2785 ', 'Jr. Bakau Griya Utama No. 195, Sungai Penuh 14153, NTT', '3171090001', 'SMA 61', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3483, '2017-10-20 10:25:56', 'Oni', 'P', 'Tomohon', '1984-01-14', 'Islam', 'prasetyo.bakti@example.org', '0610 1931 4870', 'Gg. Wahid Hasyim No. 318, Pagar Alam 53447, Aceh', '3171090001', 'SMK 44', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3484, '2017-10-20 10:25:56', 'Vanya', 'P', 'Pontianak', '1984-01-14', 'Islam', 'mangunsong.tomi@example.net', '0703 4663 9746', 'Ki. Soekarno Hatta No. 359, Tebing Tinggi 42617, SumSel', '3171090001', 'SMK 43', 'IPA', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3485, '2017-10-20 10:25:56', 'Ira', 'P', 'Pekalongan', '1984-01-14', 'Islam', 'odongoran@example.com', '(+62) 562 0312 ', 'Dk. Cikapayang No. 848, Pematangsiantar 39735, PapBar', '3171090001', 'SMA 54', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3486, '2017-10-20 10:25:56', 'Diana', 'P', 'Semarang', '1984-01-14', 'Islam', 'wibowo.nabila@example.net', '0341 3168 942', 'Dk. Bara Tambar No. 197, Batam 23103, SulTra', '3171090001', 'SMK 22', 'IPA', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:07', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3487, '2017-10-20 10:25:56', 'Hilda', 'L', 'Blitar', '1984-01-14', 'Islam', 'halima37@example.org', '(+62) 595 3449 ', 'Ds. Sunaryo No. 215, Bukittinggi 15885, Papua', '3171090001', 'SMK 43', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3488, '2017-10-20 10:25:56', 'Ami', 'L', 'Administrasi Ja', '1984-01-14', 'Islam', 'hafshah16@example.com', '(+62) 651 0494 ', 'Gg. Imam Bonjol No. 255, Surakarta 57422, Aceh', '3171090001', 'SMK 32', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3489, '2017-10-20 10:25:56', 'Putri', 'L', 'Sawahlunto', '1984-01-14', 'Islam', 'kdabukke@example.com', '0387 1820 9826', 'Jr. Rumah Sakit No. 172, Bandung 52014, SulTra', '3171090001', 'SMA 21', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3490, '2017-10-20 10:25:56', 'Queen', 'L', 'Batam', '1984-01-14', 'Islam', 'tari88@example.com', '(+62) 618 6752 ', 'Ki. Abdul No. 118, Balikpapan 44758, Bengkulu', '3171090001', 'MAN 3', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3491, '2017-10-20 10:25:56', 'Puput', 'L', 'Balikpapan', '1984-01-14', 'Islam', 'ulya.mangunsong@example.com', '0321 6603 7802', 'Kpg. Yoga No. 471, Palopo 27756, DKI', '3171090001', 'SMK 44', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3492, '2017-10-20 10:25:56', 'Titi', 'L', 'Blitar', '1984-01-14', 'Islam', 'tampubolon.xanana@example.net', '0899 161 276', 'Kpg. Mahakam No. 297, Tual 39686, Bengkulu', '3171090001', 'SMK 22', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3493, '2017-10-20 10:25:56', 'Wirda', 'L', 'Bau-Bau', '1984-01-14', 'Islam', 'emil.waluyo@example.com', '0733 5642 573', 'Kpg. Jend. Sudirman No. 751, Yogyakarta 58207, SulTeng', '3171090001', 'SMA 59', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3494, '2017-10-20 10:25:56', 'Lintang', 'L', 'Sungai Penuh', '1984-01-14', 'Islam', 'karna73@example.com', '(+62) 765 0814 ', 'Ki. Bahagia  No. 507, Mataram 35857, Jambi', '3171090001', 'SMK 43', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3495, '2017-10-20 10:25:56', 'Lalita', 'L', 'Tanjung Pinang', '1984-01-14', 'Islam', 'prasetya.lili@example.net', '0720 2723 159', 'Gg. Babah No. 232, Padangsidempuan 92385, NTB', '3171090001', 'SMA 8', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3496, '2017-10-20 10:25:56', 'Genta', 'L', 'Balikpapan', '1984-01-14', 'Islam', 'indah91@example.net', '0598 6989 8704', 'Jln. Yogyakarta No. 638, Palopo 98260, KalBar', '3171090001', 'SMK 43', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3497, '2017-10-20 10:25:56', 'Zaenab', 'L', 'Serang', '1984-01-14', 'Islam', 'sabrina.maryadi@example.org', '(+62) 578 4918 ', 'Psr. Astana Anyar No. 145, Blitar 74251, KalUt', '3171090001', 'MAN 3', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3498, '2017-10-20 10:25:56', 'Raisa', 'L', 'Denpasar', '1984-01-14', 'Islam', 'latika.prasasta@example.net', '(+62) 363 3655 ', 'Jln. Panjaitan No. 504, Bau-Bau 21160, PapBar', '3171090001', 'SMA 21', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3499, '2017-10-20 10:25:56', 'Diah', 'L', 'Malang', '1984-01-14', 'Islam', 'wasita.sadina@example.com', '(+62) 919 1366 ', 'Psr. Gardujati No. 942, Palembang 56087, BaBel', '3171090001', 'SMK 22', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3500, '2017-10-20 10:25:56', 'Zelda', 'L', 'Palembang', '1984-01-14', 'Islam', 'dongoran.yunita@example.org', '0841 075 853', 'Ds. Kalimantan No. 246, Denpasar 82202, SumUt', '3171090001', 'SMK 48', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3501, '2017-10-20 10:25:56', 'Amalia', 'L', 'Cirebon', '1984-01-14', 'Islam', 'lanang74@example.net', '(+62) 754 8266 ', 'Jln. Bass No. 334, Subulussalam 90393, JaTim', '3171090001', 'SMK 44', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3502, '2017-10-20 10:25:56', 'Ellis', 'L', 'Surakarta', '1984-01-14', 'Islam', 'marsudi.purwanti@example.com', '(+62) 341 2458 ', 'Jln. Bakau No. 49, Tebing Tinggi 55937, MalUt', '3171090001', 'MAN 3', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3503, '2017-10-20 10:25:56', 'Ella', 'L', 'Cilegon', '1984-01-14', 'Islam', 'nova64@example.net', '0218 2429 170', 'Ds. Banceng Pondok No. 722, Cilegon 41817, Jambi', '3171090001', 'SMA 21', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3504, '2017-10-20 10:25:56', 'Septi', 'L', 'Tual', '1984-01-14', 'Islam', 'purnawati.agus@example.org', '0238 4954 3367', 'Gg. Babakan No. 916, Banjar 47869, SulUt', '3171090001', 'SMK 44', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3505, '2017-10-20 10:25:56', 'Ratna', 'L', 'Parepare', '1984-01-14', 'Islam', 'fitria50@example.net', '0299 8954 494', 'Psr. Dahlia No. 966, Cilegon 77116, SumBar', '3171090001', 'SMK 48', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3506, '2017-10-20 10:25:56', 'Hana', 'L', 'Sorong', '1984-01-14', 'Islam', 'caket31@example.org', '(+62) 218 2044 ', 'Psr. Abdul Muis No. 940, Tidore Kepulauan 31754, Aceh', '3171090001', 'SMA 8', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3507, '2017-10-20 10:25:56', 'Vanesa', 'L', 'Jambi', '1984-01-14', 'Islam', 'purwanti.cawuk@example.org', '(+62) 27 4479 4', 'Ds. Panjaitan No. 182, Kotamobagu 87268, JaTim', '3171090001', 'SMA 59', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3508, '2017-10-20 10:25:56', 'Zamira', 'L', 'Pariaman', '1984-01-14', 'Islam', 'garan84@example.org', '(+62) 908 2706 ', 'Jln. Teuku Umar No. 533, Pekanbaru 80796, DIY', '3171090001', 'SMA 61', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3509, '2017-10-20 10:25:56', 'Fitria', 'L', 'Surakarta', '1984-01-14', 'Islam', 'ozy06@example.com', '0904 3331 023', 'Dk. Agus Salim No. 154, Palangka Raya 40400, NTT', '3171090001', 'MAN 6', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL);
-INSERT INTO `aplikan` (`id`, `tanggal_daftar`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `agama`, `email`, `telepon`, `alamat`, `village_id`, `asal_sekolah`, `jurusan_sekolah`, `konsentrasi_id`, `kelas_id`, `sumber_informasi`, `user_id`, `aplikan_status_id`, `status_detail`, `tanggal_take`, `pilihan_kampus_id`, `token`, `created_at`, `updated_at`, `tanggal_database`, `tanggal_aplikan`, `tanggal_terdaftar`, `tanggal_teregistrasi`) VALUES
-(3510, '2017-10-20 10:25:56', 'Zulaikha', 'L', 'Administrasi Ja', '1984-01-14', 'Islam', 'spangestu@example.org', '(+62) 911 1395 ', 'Jr. Batako No. 322, Padangpanjang 41595, KalSel', '3171090001', 'SMA 21', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3511, '2017-10-20 10:25:56', 'Wulan', 'L', 'Bontang', '1984-01-14', 'Islam', 'fitriani.simbolon@example.org', '027 8281 208', 'Ki. Nangka No. 313, Salatiga 92221, SulSel', '3171090001', 'SMK 32', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3512, '2017-10-20 10:25:56', 'Kamila', 'L', 'Pangkal Pinang', '1984-01-14', 'Islam', 'shastuti@example.com', '(+62) 581 3254 ', 'Ds. Kusmanto No. 438, Tanjungbalai 12231, KalTeng', '3171090001', 'SMK 48', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3513, '2017-10-20 10:25:56', 'Malika', 'L', 'Administrasi Ja', '1984-01-14', 'Islam', 'faizah.permata@example.org', '0899 8908 095', 'Ds. Barasak No. 153, Sabang 98007, Lampung', '3171090001', 'SMK 48', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3514, '2017-10-20 10:25:56', 'Karimah', 'L', 'Cirebon', '1984-01-14', 'Islam', 'emarbun@example.org', '0280 9124 0124', 'Kpg. Yosodipuro No. 481, Administrasi Jakarta Pusat 39230, PapBar', '3171090001', 'SMK 32', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3515, '2017-10-20 10:25:56', 'Puti', 'L', 'Pariaman', '1984-01-14', 'Islam', 'vanesa94@example.org', '0937 5851 380', 'Ki. Ciwastra No. 774, Tebing Tinggi 27409, DKI', '3171090001', 'SMK 48', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3516, '2017-10-20 10:25:56', 'Salimah', 'L', 'Palopo', '1984-01-14', 'Islam', 'paulin.sihombing@example.net', '0476 0319 9939', 'Psr. Yohanes No. 724, Subulussalam 58615, DKI', '3171090001', 'MAN 6', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3517, '2017-10-20 10:25:56', 'Siska', 'L', 'Kendari', '1984-01-14', 'Islam', 'nrima31@example.org', '(+62) 429 3858 ', 'Jln. Bata Putih No. 893, Bima 42533, SulBar', '3171090001', 'SMA 59', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3518, '2017-10-20 10:25:56', 'Fathonah', 'L', 'Bandar Lampung', '1984-01-14', 'Islam', 'khassanah@example.org', '0861 8979 8129', 'Ds. Rajiman No. 161, Subulussalam 99933, DKI', '3171090001', 'SMA 54', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3519, '2017-10-20 10:25:56', 'Rini', 'L', 'Banda Aceh', '1984-01-14', 'Islam', 'tirta.agustina@example.org', '0443 4003 052', 'Jln. Supono No. 838, Bogor 46539, Jambi', '3171090001', 'MAN 6', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3520, '2017-10-20 10:25:56', 'Julia', 'L', 'Padang', '1984-01-14', 'Islam', 'safitri.gawati@example.org', '0508 3198 2880', 'Jln. Ki Hajar Dewantara No. 690, Bukittinggi 72189, SulSel', '3171090001', 'SMK 44', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3521, '2017-10-20 10:25:56', 'Raisa', 'L', 'Mataram', '1984-01-14', 'Islam', 'tri.siregar@example.com', '(+62) 710 3646 ', 'Dk. Kusmanto No. 858, Bitung 79160, SumSel', '3171090001', 'MAN 3', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3522, '2017-10-20 10:25:56', 'Silvia', 'L', 'Manado', '1984-01-14', 'Islam', 'dmelani@example.net', '0928 2636 7189', 'Jr. Sam Ratulangi No. 839, Bontang 84599, PapBar', '3171090001', 'SMA 61', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3523, '2017-10-20 10:25:56', 'Tina', 'L', 'Dumai', '1984-01-14', 'Islam', 'darimin61@example.org', '0581 4264 7211', 'Dk. Acordion No. 829, Gorontalo 82541, SulSel', '3171090001', 'SMK 48', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3524, '2017-10-20 10:25:56', 'Rahmi', 'L', 'Pasuruan', '1984-01-14', 'Islam', 'kenes.mardhiyah@example.com', '0764 2100 7581', 'Psr. Katamso No. 889, Kendari 54429, KalTeng', '3171090001', 'MAN 6', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3525, '2017-10-20 10:25:56', 'Puji', 'L', 'Ternate', '1984-01-14', 'Islam', 'endah.pangestu@example.com', '(+62) 674 4192 ', 'Jr. Imam No. 208, Magelang 76386, NTB', '3171090001', 'SMK 22', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3526, '2017-10-20 10:25:56', 'Syahrini', 'L', 'Tomohon', '1984-01-14', 'Islam', 'budiyanto.tugiman@example.net', '(+62) 26 8271 4', 'Psr. Babadan No. 841, Bitung 67035, JaTim', '3171090001', 'MAN 6', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3527, '2017-10-20 10:25:56', 'Kartika', 'L', 'Palangka Raya', '1984-01-14', 'Islam', 'wfujiati@example.com', '(+62) 509 5424 ', 'Ki. Samanhudi No. 135, Bandung 92697, SulUt', '3171090001', 'MAN 6', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3528, '2017-10-20 10:25:56', 'Rika', 'L', 'Administrasi Ja', '1984-01-14', 'Islam', 'vinsen.yuliarti@example.com', '(+62) 750 1756 ', 'Psr. Yos Sudarso No. 536, Probolinggo 99387, MalUt', '3171090001', 'SMK 32', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3529, '2017-10-20 10:25:56', 'Michelle', 'L', 'Banda Aceh', '1984-01-14', 'Islam', 'ella.lazuardi@example.org', '0220 6101 9670', 'Dk. Dr. Junjunan No. 677, Mojokerto 52683, Gorontalo', '3171090001', 'SMK 44', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3530, '2017-10-20 10:25:56', 'Padmi', 'L', 'Pekanbaru', '1984-01-14', 'Islam', 'budiyanto.tania@example.org', '0524 8271 680', 'Ds. Sumpah Pemuda No. 432, Administrasi Jakarta Timur 37629, Papua', '3171090001', 'MAN 3', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3531, '2017-10-20 10:25:56', 'Sari', 'L', 'Sawahlunto', '1984-01-14', 'Islam', 'kuswoyo.mala@example.com', '(+62) 22 1560 8', 'Jln. Basuki No. 291, Administrasi Jakarta Pusat 21023, JaBar', '3171090001', 'SMA 21', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3532, '2017-10-20 10:25:56', 'Victoria', 'L', 'Lhokseumawe', '1984-01-14', 'Islam', 'oktaviani.febi@example.net', '0348 3448 944', 'Ki. Perintis Kemerdekaan No. 627, Pekalongan 70357, Aceh', '3171090001', 'SMA 61', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3533, '2017-10-20 10:25:56', 'Maida', 'L', 'Administrasi Ja', '1984-01-14', 'Islam', 'yuliarti.harto@example.com', '(+62) 862 0529 ', 'Gg. Basoka No. 517, Cilegon 60830, PapBar', '3171090001', 'SMK 43', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:44', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3534, '2017-10-20 10:25:56', 'Farhunnisa', 'L', 'Subulussalam', '1984-01-14', 'Islam', 'lidya27@example.com', '0304 3714 9116', 'Kpg. Karel S. Tubun No. 571, Sungai Penuh 43792, JaBar', '3171090001', 'SMK 48', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3535, '2017-10-20 10:25:56', 'Tami', 'L', 'Sorong', '1984-01-14', 'Islam', 'jagaraga.tarihoran@example.net', '(+62) 683 3497 ', 'Kpg. Banceng Pondok No. 811, Padangsidempuan 51864, PapBar', '3171090001', 'SMK 22', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3536, '2017-10-20 10:25:56', 'Wirda', 'L', 'Banjarbaru', '1984-01-14', 'Islam', 'oskar.tampubolon@example.net', '(+62) 644 9139 ', 'Jln. Dipatiukur No. 481, Serang 65638, Maluku', '3171090001', 'SMA 21', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3537, '2017-10-20 10:25:56', 'Vera', 'L', 'Bogor', '1984-01-14', 'Islam', 'safitri.cawuk@example.com', '0882 4462 2945', 'Ki. Babakan No. 671, Padangsidempuan 42140, DIY', '3171090001', 'SMA 21', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3538, '2017-10-20 10:25:56', 'Kania', 'L', 'Solok', '1984-01-14', 'Islam', 'lamar.sitompul@example.org', '0466 3557 595', 'Jr. Yogyakarta No. 331, Prabumulih 47994, Papua', '3171090001', 'MAN 3', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3539, '2017-10-20 10:25:56', 'Laras', 'L', 'Kupang', '1984-01-14', 'Islam', 'talia14@example.com', '(+62) 793 6184 ', 'Ki. Jayawijaya No. 709, Palangka Raya 82047, Papua', '3171090001', 'SMK 32', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3540, '2017-10-20 10:25:56', 'Endah', 'L', 'Palangka Raya', '1984-01-14', 'Islam', 'bharyanti@example.net', '(+62) 913 5188 ', 'Gg. Sutoyo No. 475, Tangerang Selatan 33501, JaTim', '3171090001', 'SMA 8', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3541, '2017-10-20 10:25:56', 'Jane', 'L', 'Madiun', '1984-01-14', 'Islam', 'kalim.wasita@example.net', '0455 7271 8069', 'Jln. Raden Saleh No. 450, Palu 93356, KalTim', '3171090001', 'SMK 22', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3542, '2017-10-20 10:25:56', 'Tantri', 'L', 'Dumai', '1984-01-14', 'Islam', 'luluh.sinaga@example.org', '(+62) 857 242 4', 'Kpg. Pelajar Pejuang 45 No. 288, Pasuruan 28513, KalSel', '3171090001', 'SMA 8', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3543, '2017-10-20 10:25:56', 'Ayu', 'L', 'Surabaya', '1984-01-14', 'Islam', 'restu77@example.com', '0638 8886 8799', 'Kpg. Nangka No. 41, Makassar 15224, SumSel', '3171090001', 'SMA 8', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3544, '2017-10-20 10:25:56', 'Yuliana', 'L', 'Semarang', '1984-01-14', 'Islam', 'mhutapea@example.com', '020 4083 931', 'Jr. Ters. Kiaracondong No. 837, Cimahi 90486, Bengkulu', '3171090001', 'SMA 8', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3545, '2017-10-20 10:25:56', 'Nurul', 'L', 'Administrasi Ja', '1984-01-14', 'Islam', 'juli19@example.org', '(+62) 504 3278 ', 'Jr. Abdul Rahmat No. 484, Singkawang 70335, Riau', '3171090001', 'SMA 8', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3546, '2017-10-20 10:25:56', 'Tami', 'L', 'Binjai', '1984-01-14', 'Islam', 'jwahyudin@example.org', '0957 5420 252', 'Ds. Basket No. 259, Surakarta 84572, KalTeng', '3171090001', 'SMA 54', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3547, '2017-10-20 10:25:56', 'Yunita', 'L', 'Batam', '1984-01-14', 'Islam', 'jumadi13@example.org', '0306 2338 3329', 'Jr. Baja No. 485, Ternate 39652, KepR', '3171090001', 'SMK 43', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3548, '2017-10-20 10:25:56', 'Paulin', 'L', 'Pasuruan', '1984-01-14', 'Islam', 'pratiwi.prabu@example.net', '0734 7183 345', 'Ki. Sutarjo No. 255, Palangka Raya 66508, KalTim', '3171090001', 'SMA 59', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3549, '2017-10-20 10:25:56', 'Qori', 'L', 'Tangerang Selat', '1984-01-14', 'Islam', 'jail.wijayanti@example.org', '0307 3345 588', 'Psr. Rajiman No. 937, Gunungsitoli 59546, KalSel', '3171090001', 'SMK 32', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3550, '2017-10-20 10:25:56', 'Ayu', 'L', 'Cilegon', '1984-01-14', 'Islam', 'farhunnisa96@example.com', '0393 9481 1050', 'Jr. Bak Air No. 684, Bima 87804, Lampung', '3171090001', 'MAN 3', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3551, '2017-10-20 10:25:56', 'Anastasia', 'L', 'Metro', '1984-01-14', 'Islam', 'chandra.farida@example.com', '0828 4259 4806', 'Ds. Gajah Mada No. 694, Surabaya 30737, Bengkulu', '3171090001', 'SMA 21', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3552, '2017-10-20 10:25:56', 'Kamaria', 'L', 'Tanjungbalai', '1984-01-14', 'Islam', 'qfirgantoro@example.com', '(+62) 449 9879 ', 'Jln. Yos No. 586, Tanjungbalai 28029, Aceh', '3171090001', 'SMA 59', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3553, '2017-10-20 10:25:56', 'Amalia', 'L', 'Mojokerto', '1984-01-14', 'Islam', 'tamba.digdaya@example.com', '0689 7665 737', 'Dk. Ciumbuleuit No. 693, Sungai Penuh 73552, SumBar', '3171090001', 'SMA 59', 'IPS', 1, 2, 'Website', NULL, 3, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, '2018-01-03 00:00:00', NULL),
-(3554, '2017-10-20 10:25:56', 'Raisa', 'L', 'Tarakan', '1984-01-14', 'Islam', 'pradana.qori@example.net', '(+62) 407 7403 ', 'Jln. Kebonjati No. 234, Mojokerto 78247, NTT', '3171090001', 'MAN 6', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3555, '2017-10-20 10:25:56', 'Widya', 'L', 'Bau-Bau', '1984-01-14', 'Islam', 'upradana@example.net', '(+62) 881 1976 ', 'Gg. Achmad No. 632, Pekanbaru 85265, JaTim', '3171090001', 'SMA 54', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3556, '2017-10-20 10:25:56', 'Kezia', 'L', 'Surakarta', '1984-01-14', 'Islam', 'karimah37@example.org', '(+62) 504 3274 ', 'Jr. Mahakam No. 91, Singkawang 79659, SulTeng', '3171090001', 'SMK 44', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3557, '2017-10-20 10:25:56', 'Yulia', 'L', 'Malang', '1984-01-14', 'Islam', 'suryatmi.teddy@example.com', '0264 1552 4177', 'Gg. Katamso No. 504, Sabang 54566, SulBar', '3171090001', 'MAN 3', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3558, '2017-10-20 10:25:56', 'Gawati', 'L', 'Serang', '1984-01-14', 'Islam', 'balamantri.rajasa@example.org', '0499 7665 3126', 'Ki. Yap Tjwan Bing No. 38, Depok 77567, BaBel', '3171090001', 'SMA 59', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3559, '2017-10-20 10:25:56', 'Aurora', 'L', 'Mojokerto', '1984-01-14', 'Islam', 'padmasari.kamila@example.org', '0593 1997 432', 'Psr. HOS. Cjokroaminoto (Pasirkaliki) No. 713, Pasuruan 78263, Maluku', '3171090001', 'SMK 43', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3560, '2017-10-20 10:25:56', 'Laras', 'L', 'Banjarmasin', '1984-01-14', 'Islam', 'keisha.januar@example.com', '(+62) 902 2068 ', 'Kpg. R.M. Said No. 211, Bima 86340, NTT', '3171090001', 'SMK 43', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3561, '2017-10-20 10:25:56', 'Sakura', 'L', 'Bogor', '1984-01-14', 'Islam', 'icha22@example.com', '(+62) 744 8539 ', 'Kpg. Ters. Pasir Koja No. 953, Probolinggo 45412, Aceh', '3171090001', 'SMA 59', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3562, '2017-10-20 10:25:56', 'Vivi', 'L', 'Administrasi Ja', '1984-01-14', 'Islam', 'elon39@example.org', '0859 628 345', 'Kpg. Ters. Kiaracondong No. 945, Cilegon 76358, Lampung', '3171090001', 'SMK 43', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3563, '2017-10-20 10:25:56', 'Ami', 'L', 'Bau-Bau', '1984-01-14', 'Islam', 'yance.mandasari@example.net', '020 1496 7184', 'Gg. Reksoninten No. 234, Bandung 24416, SulSel', '3171090001', 'SMK 43', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3564, '2017-10-20 10:25:56', 'Lidya', 'L', 'Palangka Raya', '1984-01-14', 'Islam', 'tarihoran.hani@example.com', '0510 2595 027', 'Dk. Camar No. 511, Bandung 84848, SulUt', '3171090001', 'MAN 6', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3565, '2017-10-20 10:25:56', 'Belinda', 'L', 'Medan', '1984-01-14', 'Islam', 'maheswara.ilsa@example.net', '(+62) 589 0923 ', 'Ki. Sumpah Pemuda No. 719, Bukittinggi 21307, KalUt', '3171090001', 'SMA 8', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3566, '2017-10-20 10:25:56', 'Gawati', 'L', 'Pariaman', '1984-01-14', 'Islam', 'uwinarsih@example.org', '0745 7897 712', 'Jr. Nakula No. 254, Pagar Alam 96737, SulTra', '3171090001', 'SMA 54', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3567, '2017-10-20 10:25:56', 'Amalia', 'L', 'Madiun', '1984-01-14', 'Islam', 'utami.ganep@example.net', '0520 4372 340', 'Gg. Astana Anyar No. 796, Yogyakarta 64044, SumUt', '3171090001', 'SMK 22', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:45', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3568, '2017-10-20 10:25:56', 'Yulia', 'L', 'Binjai', '1984-01-14', 'Islam', 'ngunarto@example.com', '0614 5722 7662', 'Kpg. Yogyakarta No. 722, Bontang 22908, MalUt', '3171090001', 'SMA 54', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3569, '2017-10-20 10:25:56', 'Yulia', 'L', 'Mojokerto', '1984-01-14', 'Islam', 'eva.utami@example.org', '029 6336 488', 'Jln. Madiun No. 387, Solok 95490, SulTeng', '3171090001', 'SMA 54', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3570, '2017-10-20 10:25:56', 'Uli', 'L', 'Pekalongan', '1984-01-14', 'Islam', 'handayani.bahuraksa@example.net', '(+62) 504 1685 ', 'Dk. Bappenas No. 692, Payakumbuh 59222, Bali', '3171090001', 'SMK 43', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3571, '2017-10-20 10:25:56', 'Lili', 'L', 'Tanjung Pinang', '1984-01-14', 'Islam', 'mutia.natsir@example.net', '(+62) 524 3509 ', 'Dk. Tentara Pelajar No. 686, Salatiga 72934, KalTeng', '3171090001', 'SMA 8', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3572, '2017-10-20 10:25:56', 'Syahrini', 'L', 'Prabumulih', '1984-01-14', 'Islam', 'manullang.puspa@example.net', '(+62) 828 9529 ', 'Kpg. Bhayangkara No. 415, Pangkal Pinang 23326, Bali', '3171090001', 'SMK 44', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3573, '2017-10-20 10:25:56', 'Kartika', 'L', 'Gorontalo', '1984-01-14', 'Islam', 'dwahyuni@example.com', '(+62) 882 2315 ', 'Dk. Tangkuban Perahu No. 864, Kendari 38507, Jambi', '3171090001', 'SMA 59', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3574, '2017-10-20 10:25:56', 'Oliva', 'L', 'Pekalongan', '1984-01-14', 'Islam', 'titin97@example.org', '(+62) 991 8663 ', 'Kpg. Hasanuddin No. 800, Administrasi Jakarta Timur 21009, JaBar', '3171090001', 'MAN 6', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3575, '2017-10-20 10:25:56', 'Puspa', 'L', 'Sibolga', '1984-01-14', 'Islam', 'tprasetyo@example.net', '0561 5098 0483', 'Gg. Yos Sudarso No. 144, Subulussalam 41435, SulTra', '3171090001', 'SMA 54', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3576, '2017-10-20 10:25:56', 'Yuni', 'L', 'Tanjungbalai', '1984-01-14', 'Islam', 'pprakasa@example.com', '020 2613 2058', 'Ds. Karel S. Tubun No. 423, Tarakan 54650, JaTeng', '3171090001', 'SMA 61', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3577, '2017-10-20 10:25:56', 'Qori', 'L', 'Kotamobagu', '1984-01-14', 'Islam', 'gunarto.cindy@example.com', '(+62) 29 9317 4', 'Kpg. Gedebage Selatan No. 951, Salatiga 69791, NTB', '3171090001', 'MAN 6', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3578, '2017-10-20 10:25:56', 'Carla', 'L', 'Palu', '1984-01-14', 'Islam', 'pangestu.winarsih@example.com', '(+62) 22 4714 0', 'Dk. Gajah Mada No. 520, Lubuklinggau 38341, Aceh', '3171090001', 'SMK 48', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3579, '2017-10-20 10:25:56', 'Keisha', 'L', 'Lhokseumawe', '1984-01-14', 'Islam', 'jyuliarti@example.org', '0656 0287 564', 'Gg. Jambu No. 220, Banjarmasin 25233, Lampung', '3171090001', 'MAN 6', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3580, '2017-10-20 10:25:56', 'Suci', 'L', 'Cirebon', '1984-01-14', 'Islam', 'swaluyo@example.org', '(+62) 427 0080 ', 'Jr. Bara No. 769, Pasuruan 81853, JaBar', '3171090001', 'MAN 3', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3581, '2017-10-20 10:25:56', 'Halima', 'L', 'Administrasi Ja', '1984-01-14', 'Islam', 'karma.damanik@example.org', '(+62) 526 6248 ', 'Gg. Cikutra Timur No. 5, Dumai 81964, SulSel', '3171090001', 'MAN 3', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3582, '2017-10-20 10:25:56', 'Janet', 'L', 'Kupang', '1984-01-14', 'Islam', 'jsudiati@example.org', '0602 5169 5369', 'Gg. Adisumarmo No. 353, Tegal 95172, Bengkulu', '3171090001', 'SMK 44', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3583, '2017-10-20 10:25:56', 'Lili', 'L', 'Banjarmasin', '1984-01-14', 'Islam', 'rahmawati.vivi@example.org', '029 3335 628', 'Jln. Merdeka No. 515, Pariaman 72514, SulUt', '3171090001', 'SMK 43', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3584, '2017-10-20 10:25:56', 'Uli', 'P', 'Tomohon', '1984-01-14', 'Islam', 'utama.hamima@example.com', '0968 7526 3785', 'Ds. Wahid No. 698, Malang 82281, SulSel', '3171090001', 'SMA 59', 'IPS', 2, 2, 'Website', 90, 2, NULL, '2017-11-04 23:47:48', 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3585, '2017-10-20 10:25:56', 'Almira', 'P', 'Pagar Alam', '1984-01-14', 'Islam', 'siregar.patricia@example.com', '0798 6034 101', 'Ki. Kalimantan No. 860, Magelang 62028, JaTeng', '3171090001', 'SMK 48', 'IPS', 2, 2, 'Website', 90, 2, NULL, '2017-11-04 23:59:50', 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3586, '2017-10-20 10:25:56', 'Jamalia', 'P', 'Depok', '1984-01-14', 'Islam', 'yulianti.anita@example.org', '0514 5751 4627', 'Psr. Imam No. 413, Palangka Raya 89461, JaTim', '3171090001', 'SMA 21', 'IPS', 1, 2, 'Website', 90, 2, NULL, '2017-11-05 00:00:04', 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3587, '2017-10-20 10:25:56', 'Kasiyah', 'P', 'Sorong', '1984-01-14', 'Islam', 'nuraini.martana@example.net', '0472 5646 017', 'Ki. W.R. Supratman No. 123, Pematangsiantar 15954, Lampung', '3171090001', 'SMA 21', 'IPS', 1, 2, 'Website', 90, 2, NULL, '2017-11-05 00:46:17', 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3588, '2017-10-20 10:25:56', 'Ayu', 'P', 'Tangerang', '1984-01-14', 'Islam', 'wastuti.arsipatra@example.net', '0918 0531 409', 'Dk. Mulyadi No. 299, Medan 89182, Bali', '3171090001', 'SMK 43', 'IPS', 1, 1, 'Website', 90, 2, NULL, '2017-11-05 00:47:35', 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3589, '2017-10-20 10:25:56', 'Dina', 'P', 'Tomohon', '1984-01-14', 'Islam', 'situmorang.fitriani@example.net', '(+62) 921 8938 ', 'Jln. Karel S. Tubun No. 522, Tanjungbalai 37117, SulTeng', '3171090001', 'SMA 59', 'IPS', 2, 2, 'Website', 90, 2, NULL, '2017-11-05 00:47:40', 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3590, '2017-10-20 10:25:56', 'Dewi', 'P', 'Gorontalo', '1984-01-14', 'Islam', 'elisa63@example.org', '(+62) 739 1489 ', 'Jln. Batako No. 56, Lhokseumawe 48889, DKI', '3171090001', 'SMA 21', 'IPS', 1, 1, 'Website', 85, 2, NULL, '2017-11-05 01:05:46', 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3591, '2017-10-20 10:25:56', 'Devi', 'P', 'Balikpapan', '1984-01-14', 'Islam', 'lailasari.jessica@example.net', '0621 7505 2042', 'Ds. Suryo Pranoto No. 415, Depok 91708, DKI', '3171090001', 'SMA 8', 'IPS', 2, 1, 'Website', 85, 2, NULL, '2017-11-05 01:06:31', 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3592, '2017-10-20 10:25:56', 'Betania', 'P', 'Gorontalo', '1984-01-14', 'Islam', 'rahayu52@example.org', '(+62) 22 4670 6', 'Kpg. Baladewa No. 407, Pekalongan 56791, NTB', '3171090001', 'SMA 54', 'IPS', 1, 2, 'Website', 85, 2, NULL, '2017-11-05 01:07:06', 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3593, '2017-10-20 10:25:56', 'Ida', 'P', 'Tomohon', '1984-01-14', 'Islam', 'lprastuti@example.net', '(+62) 845 1312 ', 'Psr. Lembong No. 914, Kotamobagu 16614, KalBar', '3171090001', 'SMK 32', 'IPS', 2, 2, 'Website', 85, 2, NULL, '2017-11-05 01:07:14', 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3594, '2017-10-20 10:25:56', 'Ulya', 'P', 'Tanjungbalai', '1984-01-14', 'Islam', 'auyainah@example.org', '(+62) 490 9691 ', 'Psr. Pacuan Kuda No. 413, Tidore Kepulauan 74529, Bengkulu', '3171090001', 'SMA 61', 'IPS', 2, 1, 'Website', 85, 2, NULL, '2017-12-11 14:52:59', 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3595, '2017-10-20 10:25:56', 'Amelia', 'P', 'Bima', '1984-01-14', 'Islam', 'ypertiwi@example.org', '026 5789 130', 'Ds. Abdul. Muis No. 230, Semarang 89267, JaTim', '3171090001', 'SMK 22', 'IPS', 1, 2, 'Website', 100, 2, NULL, '2018-02-01 19:46:21', 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3596, '2017-10-20 10:25:56', 'Kayla', 'P', 'Pagar Alam', '1984-01-14', 'Islam', 'prasetyo.farah@example.net', '(+62) 385 7823 ', 'Kpg. Laksamana No. 531, Pekanbaru 37897, Papua', '3171090001', 'SMA 61', 'IPS', 2, 2, 'Website', 100, 2, NULL, '2018-01-08 22:22:00', 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3597, '2017-10-20 10:25:56', 'Ghaliyati', 'P', 'Kediri', '1984-01-14', 'Islam', 'hesti.ramadan@example.com', '(+62) 688 7749 ', 'Ki. Ki Hajar Dewantara No. 370, Gorontalo 66509, Aceh', '3171090001', 'SMA 61', 'IPS', 1, 2, 'Website', 100, 2, NULL, '2018-02-01 19:46:23', 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3598, '2017-10-20 10:25:56', 'Talia', 'P', 'Tanjung Pinang', '1984-01-14', 'Islam', 'galiono.wulandari@example.com', '(+62) 962 0405 ', 'Dk. Rajawali No. 796, Pasuruan 39101, KalTeng', '3171090001', 'MAN 3', 'IPS', 1, 1, 'Website', 100, 2, NULL, '2018-02-01 19:46:27', 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:47:49', NULL, NULL, NULL, NULL),
-(3599, '2017-10-20 10:25:56', 'Ani', 'P', 'Madiun', '1984-01-14', 'Islam', 'kani27@example.org', '0285 8908 9150', 'Jln. Cut Nyak Dien No. 923, Ambon 49664, SumSel', '3171090001', 'SMA 21', 'IPS', 1, 1, 'Website', 100, 3, NULL, '2018-02-01 19:46:30', 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, '2018-02-01 19:48:44', NULL),
-(3600, '2017-10-20 10:25:56', 'Intan', 'L', 'Parepare', '1984-01-14', 'Islam', 'asirait@example.net', '0807 0670 480', 'Jr. Tubagus Ismail No. 473, Malang 27276, KepR', '3171090001', 'SMA 59', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:46', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3601, '2017-10-20 10:25:56', 'Iriana', 'L', 'Lhokseumawe', '1984-01-14', 'Islam', 'nasyiah.jaiman@example.net', '0950 9293 6965', 'Kpg. Yogyakarta No. 196, Tanjungbalai 43732, KalTeng', '3171090001', 'SMK 32', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3602, '2017-10-20 10:25:56', 'Unjani', 'L', 'Pematangsiantar', '1984-01-14', 'Islam', 'lsamosir@example.org', '0949 4105 067', 'Psr. Kusmanto No. 786, Tomohon 83291, MalUt', '3171090001', 'SMA 54', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3603, '2017-10-20 10:25:56', 'Rini', 'L', 'Banjar', '1984-01-14', 'Islam', 'nugraha.sudiati@example.org', '0725 0531 6105', 'Psr. Kali No. 342, Bogor 73890, SumUt', '3171090001', 'SMA 61', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3604, '2017-10-20 10:25:56', 'Najwa', 'L', 'Tasikmalaya', '1984-01-14', 'Islam', 'legawa99@example.net', '(+62) 355 9147 ', 'Ki. Qrisdoren No. 752, Semarang 91198, Papua', '3171090001', 'SMK 48', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3605, '2017-10-20 10:25:56', 'Vera', 'L', 'Metro', '1984-01-14', 'Islam', 'daruna61@example.net', '(+62) 638 7440 ', 'Jr. Supomo No. 464, Pariaman 92885, DIY', '3171090001', 'MAN 6', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3606, '2017-10-20 10:25:56', 'Nadine', 'L', 'Kotamobagu', '1984-01-14', 'Islam', 'uli.farida@example.net', '(+62) 379 5025 ', 'Dk. Gambang No. 282, Salatiga 24752, DIY', '3171090001', 'SMK 22', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3607, '2017-10-20 10:25:56', 'Rahmi', 'L', 'Pangkal Pinang', '1984-01-14', 'Islam', 'prasasta.anom@example.org', '028 3287 292', 'Ds. Bambon No. 804, Metro 43144, JaTim', '3171090001', 'SMA 54', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3608, '2017-10-20 10:25:56', 'Tania', 'L', 'Surakarta', '1984-01-14', 'Islam', 'hpuspita@example.org', '(+62) 820 6442 ', 'Ds. Batako No. 513, Kediri 83451, SumUt', '3171090001', 'MAN 6', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3609, '2017-10-20 10:25:56', 'Diana', 'L', 'Tegal', '1984-01-14', 'Islam', 'cornelia06@example.net', '0829 4574 4755', 'Dk. Jakarta No. 622, Padangpanjang 27645, SulBar', '3171090001', 'MAN 3', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3610, '2017-10-20 10:25:56', 'Icha', 'L', 'Cilegon', '1984-01-14', 'Islam', 'yosef73@example.net', '(+62) 602 1779 ', 'Jln. Jaksa No. 250, Ambon 32501, SulSel', '3171090001', 'SMK 43', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3611, '2017-10-20 10:25:56', 'Kartika', 'L', 'Tual', '1984-01-14', 'Islam', 'cornelia.pangestu@example.net', '0858 4699 410', 'Psr. Wahid Hasyim No. 57, Pasuruan 92694, MalUt', '3171090001', 'SMA 21', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3612, '2017-10-20 10:25:56', 'Maria', 'L', 'Batu', '1984-01-14', 'Islam', 'qwahyuni@example.org', '(+62) 912 3106 ', 'Kpg. Cikapayang No. 404, Surakarta 23637, Jambi', '3171090001', 'SMK 43', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3613, '2017-10-20 10:25:56', 'Aurora', 'L', 'Pontianak', '1984-01-14', 'Islam', 'purnawati.nasrullah@example.org', '(+62) 987 5164 ', 'Gg. Kyai Gede No. 373, Bandung 59629, KalTeng', '3171090001', 'MAN 6', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3614, '2017-10-20 10:25:56', 'Sabrina', 'L', 'Bogor', '1984-01-14', 'Islam', 'aurora08@example.net', '(+62) 915 6402 ', 'Gg. Abdul No. 968, Kendari 83886, SumSel', '3171090001', 'SMK 22', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3615, '2017-10-20 10:25:56', 'Anastasia', 'L', 'Bengkulu', '1984-01-14', 'Islam', 'balamantri82@example.net', '(+62) 24 0820 0', 'Kpg. Agus Salim No. 306, Bima 65551, KalTim', '3171090001', 'SMA 61', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3616, '2017-10-20 10:25:56', 'Kania', 'L', 'Pekalongan', '1984-01-14', 'Islam', 'rpermata@example.net', '(+62) 914 6663 ', 'Jr. Ronggowarsito No. 801, Pekanbaru 30583, SulUt', '3171090001', 'SMA 59', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3617, '2017-10-20 10:25:56', 'Dian', 'L', 'Semarang', '1984-01-14', 'Islam', 'dipa.utama@example.org', '0887 935 078', 'Gg. Nakula No. 858, Administrasi Jakarta Selatan 84424, SulBar', '3171090001', 'MAN 6', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3618, '2017-10-20 10:25:56', 'Shakila', 'L', 'Tebing Tinggi', '1984-01-14', 'Islam', 'xpurwanti@example.org', '(+62) 896 1498 ', 'Jln. Bak Air No. 736, Bukittinggi 88327, KalTim', '3171090001', 'SMA 59', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3619, '2017-10-20 10:25:56', 'Safina', 'L', 'Samarinda', '1984-01-14', 'Islam', 'simanjuntak.kambali@example.com', '(+62) 636 2211 ', 'Gg. Elang No. 801, Makassar 56641, JaTim', '3171090001', 'MAN 6', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3620, '2017-10-20 10:25:56', 'Sarah', 'L', 'Lubuklinggau', '1984-01-14', 'Islam', 'saka.handayani@example.net', '0557 1638 4490', 'Dk. Bakau Griya Utama No. 536, Subulussalam 55069, Aceh', '3171090001', 'SMA 21', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:47', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3621, '2017-10-20 10:25:56', 'Fitriani', 'P', 'Madiun', '1984-01-14', 'Islam', 'znashiruddin@example.org', '0240 7389 642', 'Ds. Dr. Junjunan No. 201, Sorong 42539, SumBar', '3171090001', 'MAN 3', 'IPS', 2, 2, 'Website', 85, 2, NULL, '2017-04-02 08:31:27', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3622, '2017-10-20 10:25:56', 'Gawati', 'P', 'Balikpapan', '1984-01-14', 'Islam', 'saefullah.elvina@example.com', '(+62) 804 3038 ', 'Dk. Ters. Pasir Koja No. 989, Bau-Bau 49090, SulTeng', '3171090001', 'SMA 59', 'IPS', 2, 1, 'Website', 89, 2, NULL, '2017-04-02 08:34:59', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3623, '2017-10-20 10:25:56', 'Shakila', 'P', 'Parepare', '1984-01-14', 'Islam', 'gawati.rahayu@example.com', '(+62) 27 4362 0', 'Jr. Yohanes No. 459, Pekanbaru 65193, Banten', '3171090001', 'SMK 48', 'IPS', 2, 2, 'Website', 89, 2, NULL, '2017-06-10 07:10:35', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3624, '2017-10-20 10:25:56', 'Yulia', 'P', 'Bandar Lampung', '1984-01-14', 'Islam', 'ratna11@example.net', '0492 0080 2064', 'Jln. Bara No. 594, Kediri 94970, SumSel', '3171090001', 'SMK 44', 'IPS', 2, 1, 'Website', 89, 2, NULL, '2017-06-10 07:10:57', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3625, '2017-10-20 10:25:56', 'Nadine', 'P', 'Denpasar', '1984-01-14', 'Islam', 'jkuswandari@example.com', '(+62) 773 2595 ', 'Jr. Mahakam No. 71, Parepare 71903, Banten', '3171090001', 'SMA 54', 'IPS', 2, 1, 'Website', 89, 2, NULL, '2017-06-10 07:16:35', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3626, '2017-10-20 10:25:56', 'Mutia', 'P', 'Mojokerto', '1984-01-14', 'Islam', 'bakidin.kuswoyo@example.org', '(+62) 391 2121 ', 'Gg. Tambun No. 948, Pontianak 21879, JaBar', '3171090001', 'MAN 3', 'IPS', 2, 2, 'Website', 89, 2, NULL, '2017-06-10 07:16:54', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3627, '2017-10-20 10:25:56', 'Olivia', 'P', 'Palu', '1984-01-14', 'Islam', 'prasetyo.genta@example.com', '0870 9741 830', 'Dk. Warga No. 720, Palu 55222, SulBar', '3171090001', 'SMK 22', 'IPS', 1, 1, 'Website', 89, 2, NULL, '2017-06-10 07:18:30', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3628, '2017-10-20 10:25:56', 'Sadina', 'P', 'Pangkal Pinang', '1984-01-14', 'Islam', 'gada.budiyanto@example.net', '0649 0175 771', 'Kpg. Sudirman No. 909, Gunungsitoli 27603, SulTra', '3171090001', 'MAN 3', 'IPS', 1, 1, 'Website', 89, 2, NULL, '2017-06-10 07:19:04', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3629, '2017-10-20 10:25:56', 'Indah', 'P', 'Pangkal Pinang', '1984-01-14', 'Islam', 'ayu32@example.org', '0840 4242 6510', 'Jln. Bakin No. 955, Yogyakarta 43357, SumSel', '3171090001', 'SMA 8', 'IPS', 2, 1, 'Website', 89, 2, NULL, '2017-06-10 07:19:06', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3630, '2017-10-20 10:25:56', 'Kamila', 'P', 'Tanjungbalai', '1984-01-14', 'Islam', 'hariyah.mutia@example.org', '0996 2905 778', 'Jln. Jend. Sudirman No. 834, Tebing Tinggi 82191, KalSel', '3171090001', 'SMK 48', 'IPS', 1, 1, 'Website', 89, 2, NULL, '2017-06-10 15:11:33', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3631, '2017-10-20 10:25:56', 'Ira', 'P', 'Sorong', '1984-01-14', 'Islam', 'hsaragih@example.com', '(+62) 968 9631 ', 'Jln. Baing No. 187, Singkawang 59874, KalBar', '3171090001', 'SMK 48', 'IPS', 2, 1, 'Website', 85, 2, NULL, '2017-07-11 21:41:53', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3632, '2017-10-20 10:25:56', 'Novi', 'P', 'Administrasi Ja', '1984-01-14', 'Islam', 'gpermata@example.com', '0848 1757 088', 'Ds. BKR No. 227, Madiun 75823, JaBar', '3171090001', 'MAN 3', 'IPS', 1, 1, 'Website', 85, 2, NULL, '2017-07-25 21:56:44', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3633, '2017-10-20 10:25:56', 'Icha', 'P', 'Lhokseumawe', '1984-01-14', 'Islam', 'martaka20@example.org', '(+62) 450 6697 ', 'Ds. S. Parman No. 215, Jayapura 18926, Bali', '3171090001', 'SMA 8', 'IPS', 2, 1, 'Website', 85, 2, NULL, '2017-08-07 00:22:06', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3634, '2017-10-20 10:25:56', 'Suci', 'P', 'Tual', '1984-01-14', 'Islam', 'viman.situmorang@example.com', '(+62) 210 3751 ', 'Ki. Dipatiukur No. 687, Parepare 37600, MalUt', '3171090001', 'SMK 22', 'IPS', 2, 1, 'Website', 90, 3, NULL, '2017-08-07 22:20:01', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, '2018-01-10 00:06:08', NULL),
-(3635, '2017-10-20 10:25:56', 'Rahmi', 'P', 'Manado', '1984-01-14', 'Islam', 'tarihoran.zizi@example.net', '(+62) 412 1858 ', 'Gg. Wahidin No. 327, Surakarta 63280, KalUt', '3171090001', 'SMK 22', 'IPS', 2, 1, 'Website', 90, 4, NULL, '2017-08-14 16:05:33', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, '2018-01-01 00:00:00', '2018-01-02 00:00:00'),
-(3636, '2017-10-20 10:25:56', 'Puti', 'P', 'Jambi', '1984-01-14', 'Islam', 'balapati36@example.org', '(+62) 799 9841 ', 'Jr. Bayam No. 80, Tual 89906, SumSel', '3171090001', 'SMK 44', 'IPS', 1, 1, 'Website', 90, 4, NULL, '2017-09-04 18:05:45', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, '2018-01-01 00:00:00', '2018-01-08 00:00:00'),
-(3637, '2017-10-20 10:25:56', 'Latika', 'P', 'Administrasi Ja', '1984-01-14', 'Islam', 'kartika88@example.net', '027 2315 0106', 'Psr. Yos No. 673, Lubuklinggau 78031, JaTim', '3171090001', 'SMK 48', 'IPS', 2, 1, 'Website', 90, 4, NULL, '2017-09-04 18:05:48', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, '2017-09-04 00:00:00', '2017-11-01 00:00:00'),
-(3638, '2017-10-20 10:25:56', 'Kania', 'P', 'Ambon', '1984-01-14', 'Islam', 'puji16@example.net', '0615 5232 8579', 'Ki. Yap Tjwan Bing No. 868, Jambi 90375, Banten', '3171090001', 'SMK 44', 'IPS', 1, 2, 'Website', 90, 4, NULL, '2017-09-04 21:17:18', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, '2017-12-04 00:00:00', '2018-01-03 00:00:00'),
-(3639, '2017-10-20 10:25:56', 'Lidya', 'P', 'Tarakan', '1984-01-14', 'Islam', 'shania.prasetya@example.com', '0301 4231 5199', 'Dk. Tambak No. 581, Batu 63142, KepR', '3171090001', 'SMA 61', 'IPS', 1, 1, 'Website', 90, 2, NULL, '2017-09-09 22:49:27', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3640, '2017-10-20 10:25:56', 'Kezia', 'P', 'Dumai', '1984-01-14', 'Islam', 'gunarto.dinda@example.com', '023 3764 9900', 'Jln. Raya Setiabudhi No. 262, Sabang 50031, Riau', '3171090001', 'SMK 22', 'IPS', 2, 2, 'Website', 85, 2, NULL, '2017-07-25 16:56:49', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3641, '2017-10-20 10:25:56', 'Calista', 'P', 'Administrasi Ja', '1984-01-14', 'Islam', 'amaulana@example.net', '(+62) 259 3655 ', 'Jr. Rajiman No. 946, Pasuruan 10645, SulTeng', '3171090001', 'MAN 6', 'IPS', 2, 2, 'Website', 85, 2, NULL, '2017-07-25 16:55:57', 1, NULL, '2017-04-02 01:25:56', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3642, '2017-10-20 10:25:56', 'Yuni', 'P', 'Administrasi Ja', '1984-01-14', 'Islam', 'puspa.maheswara@example.org', '0920 5344 022', 'Ds. Ikan No. 884, Samarinda 27818, NTB', '3171090001', 'SMA 61', 'IPS', 1, 2, 'Website', 90, 3, NULL, '2017-09-09 22:49:57', 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, '2018-01-03 00:00:00', NULL),
-(3643, '2017-10-20 10:25:56', 'Ilsa', 'P', 'Yogyakarta', '1984-01-14', 'Islam', 'pfirgantoro@example.net', '(+62) 264 5023 ', 'Dk. R.E. Martadinata No. 252, Administrasi Jakarta Timur 45207, NTB', '3171090001', 'MAN 3', 'IPS', 1, 1, 'Website', 90, 2, NULL, '2017-09-09 22:49:25', 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3644, '2017-10-20 10:25:56', 'Novi', 'P', 'Tasikmalaya', '1984-01-14', 'Islam', 'alika.januar@example.net', '0937 8953 4000', 'Dk. Padang No. 147, Palopo 32577, KalSel', '3171090001', 'SMK 44', 'IPS', 2, 2, 'Website', 90, 2, NULL, '2017-10-21 19:11:07', 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3645, '2017-10-20 10:25:56', 'Gabriella', 'P', 'Pariaman', '1984-01-14', 'Islam', 'jnainggolan@example.net', '(+62) 215 5979 ', 'Ki. Bakhita No. 651, Ambon 13266, SulSel', '3171090001', 'SMK 43', 'IPS', 2, 2, 'Website', 90, 2, NULL, '2017-10-21 19:11:08', 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3646, '2017-10-20 10:25:56', 'Nurul', 'P', 'Administrasi Ja', '1984-01-14', 'Islam', 'mmardhiyah@example.net', '0966 3000 2505', 'Gg. Basudewo No. 305, Palembang 18813, NTT', '3171090001', 'MAN 6', 'IPS', 1, 1, 'Website', 90, 2, NULL, '2017-09-09 22:49:22', 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3647, '2017-10-20 10:25:56', 'Farhunnisa', 'P', 'Bitung', '1984-01-14', 'Islam', 'dian79@example.com', '0457 9290 1267', 'Ki. Nanas No. 800, Makassar 90240, NTB', '3171090001', 'SMK 43', 'IPS', 2, 1, 'Website', 90, 2, NULL, '2017-10-21 19:11:10', 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3648, '2017-10-20 10:25:56', 'Vanesa', 'P', 'Administrasi Ja', '1984-01-14', 'Islam', 'winarno.dipa@example.net', '0692 4324 660', 'Jln. Qrisdoren No. 503, Subulussalam 88634, DIY', '3171090001', 'SMA 59', 'IPS', 1, 2, 'Website', 90, 2, NULL, '2017-10-21 20:51:50', 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3649, '2017-10-20 10:25:56', 'Puput', 'P', 'Magelang', '1984-01-14', 'Islam', 'marbun.farah@example.org', '(+62) 233 4794 ', 'Ds. Bacang No. 378, Kendari 41545, NTB', '3171090001', 'SMA 61', 'IPS', 2, 2, 'Website', 90, 2, NULL, '2017-10-21 22:29:33', 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3650, '2017-10-20 10:25:56', 'Eva', 'P', 'Batam', '1984-01-14', 'Islam', 'hassanah.kasiran@example.net', '(+62) 23 6928 8', 'Dk. Tambun No. 483, Pangkal Pinang 31958, Papua', '3171090001', 'SMK 22', 'IPS', 1, 2, 'Website', 90, 2, NULL, '2017-10-21 22:29:34', 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3651, '2017-10-20 10:25:56', 'Faizah', 'P', 'Dumai', '1984-01-14', 'Islam', 'emayasari@example.net', '(+62) 983 1313 ', 'Ki. Babakan No. 684, Bau-Bau 78954, Bengkulu', '3171090001', 'SMK 44', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3652, '2017-10-20 10:25:56', 'Elma', 'P', 'Sawahlunto', '1984-01-14', 'Islam', 'yance83@example.com', '(+62) 416 2067 ', 'Ds. Acordion No. 594, Pagar Alam 18257, Lampung', '3171090001', 'SMA 8', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3653, '2017-10-20 10:25:56', 'Rika', 'P', 'Tomohon', '1984-01-14', 'Islam', 'uhidayat@example.net', '0839 1026 381', 'Ds. Rajiman No. 530, Semarang 36233, Gorontalo', '3171090001', 'MAN 3', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3654, '2017-10-20 10:25:56', 'Salimah', 'P', 'Malang', '1984-01-14', 'Islam', 'dasa.simbolon@example.net', '(+62) 749 6392 ', 'Psr. Acordion No. 356, Padangpanjang 71236, SulUt', '3171090001', 'SMA 8', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3655, '2017-10-20 10:25:56', 'Gabriella', 'P', 'Administrasi Ja', '1984-01-14', 'Islam', 'nababan.mutia@example.org', '0828 1869 9707', 'Gg. Sutami No. 736, Lhokseumawe 30336, Papua', '3171090001', 'MAN 6', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3656, '2017-10-20 10:25:56', 'Olivia', 'P', 'Samarinda', '1984-01-14', 'Islam', 'bakda26@example.org', '(+62) 486 7293 ', 'Jr. Gardujati No. 18, Semarang 70323, JaTeng', '3171090001', 'SMA 8', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3657, '2017-10-20 10:25:56', 'Qori', 'P', 'Bengkulu', '1984-01-14', 'Islam', 'jprabowo@example.org', '0781 3191 904', 'Jr. Siliwangi No. 183, Sawahlunto 63848, Bengkulu', '3171090001', 'SMK 22', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3658, '2017-10-20 10:25:56', 'Natalia', 'P', 'Gunungsitoli', '1984-01-14', 'Islam', 'agnes.suryatmi@example.net', '0649 3753 117', 'Kpg. Sugiyopranoto No. 871, Jambi 14408, Maluku', '3171090001', 'SMA 21', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3659, '2017-10-20 10:25:56', 'Dalima', 'P', 'Ternate', '1984-01-14', 'Islam', 'qori.namaga@example.com', '0900 4302 9575', 'Jr. Dewi Sartika No. 849, Kotamobagu 80515, Bengkulu', '3171090001', 'SMK 32', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL);
-INSERT INTO `aplikan` (`id`, `tanggal_daftar`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `agama`, `email`, `telepon`, `alamat`, `village_id`, `asal_sekolah`, `jurusan_sekolah`, `konsentrasi_id`, `kelas_id`, `sumber_informasi`, `user_id`, `aplikan_status_id`, `status_detail`, `tanggal_take`, `pilihan_kampus_id`, `token`, `created_at`, `updated_at`, `tanggal_database`, `tanggal_aplikan`, `tanggal_terdaftar`, `tanggal_teregistrasi`) VALUES
-(3660, '2017-10-20 10:25:56', 'Cindy', 'P', 'Sabang', '1984-01-14', 'Islam', 'bnurdiyanti@example.org', '0855 0814 4266', 'Jln. Padma No. 809, Solok 79230, PapBar', '3171090001', 'SMK 32', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3661, '2017-10-20 10:25:56', 'Ika', 'P', 'Solok', '1984-01-14', 'Islam', 'xsantoso@example.com', '0220 1173 3197', 'Jr. Abdul. Muis No. 326, Subulussalam 64974, SulTra', '3171090001', 'SMK 48', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3662, '2017-10-20 10:25:56', 'Belinda', 'P', 'Padangpanjang', '1984-01-14', 'Islam', 'jnurdiyanti@example.org', '(+62) 364 6933 ', 'Kpg. Salak No. 584, Payakumbuh 74494, Jambi', '3171090001', 'SMA 54', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3663, '2017-10-20 10:25:56', 'Chelsea', 'P', 'Administrasi Ja', '1984-01-14', 'Islam', 'zmelani@example.com', '0535 3718 6934', 'Ki. Sam Ratulangi No. 8, Sawahlunto 82175, SulBar', '3171090001', 'SMA 21', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3664, '2017-10-20 10:25:56', 'Uchita', 'P', 'Madiun', '1984-01-14', 'Islam', 'gawati.maheswara@example.com', '(+62) 27 0686 5', 'Ki. Jagakarsa No. 160, Gunungsitoli 71080, DKI', '3171090001', 'SMK 48', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3665, '2017-10-20 10:25:56', 'Widya', 'P', 'Palembang', '1984-01-14', 'Islam', 'harimurti76@example.net', '023 7053 527', 'Jln. Sutami No. 704, Magelang 24155, NTB', '3171090001', 'SMK 43', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3666, '2017-10-20 10:25:56', 'Endah', 'P', 'Pematangsiantar', '1984-01-14', 'Islam', 'lsalahudin@example.com', '0531 8898 368', 'Gg. Basudewo No. 2, Metro 16477, KalUt', '3171090001', 'SMA 21', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3667, '2017-10-20 10:25:56', 'Elma', 'P', 'Kediri', '1984-01-14', 'Islam', 'budiyanto.salwa@example.com', '0586 8714 790', 'Jr. Surapati No. 328, Jayapura 54362, Lampung', '3171090001', 'SMA 8', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3668, '2017-10-20 10:25:56', 'Syahrini', 'P', 'Tomohon', '1984-01-14', 'Islam', 'usuryono@example.org', '(+62) 844 2492 ', 'Gg. Raya Setiabudhi No. 901, Pontianak 77722, KalSel', '3171090001', 'SMA 54', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3669, '2017-10-20 10:25:56', 'Zaenab', 'P', 'Bogor', '1984-01-14', 'Islam', 'tira.rahimah@example.com', '0711 9222 179', 'Dk. Bayam No. 222, Gorontalo 36416, SumSel', '3171090001', 'MAN 6', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3670, '2017-10-20 10:25:56', 'Puput', 'P', 'Banjar', '1984-01-14', 'Islam', 'asantoso@example.net', '0284 0678 831', 'Jr. Batako No. 467, Gorontalo 45799, PapBar', '3171090001', 'SMA 21', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3671, '2017-10-20 10:25:56', 'Dalima', 'P', 'Langsa', '1984-01-14', 'Islam', 'wacana.banawi@example.org', '0765 0644 4417', 'Jln. Adisucipto No. 545, Bengkulu 40439, DIY', '3171090001', 'SMA 61', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3672, '2017-10-20 10:25:56', 'Ellis', 'P', 'Kotamobagu', '1984-01-14', 'Islam', 'tina08@example.org', '(+62) 860 5409 ', 'Dk. Bappenas No. 491, Bima 62612, DIY', '3171090001', 'SMK 44', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3673, '2017-10-20 10:25:56', 'Yulia', 'P', 'Jambi', '1984-01-14', 'Islam', 'hasanah.ulya@example.org', '(+62) 587 6523 ', 'Gg. Dipenogoro No. 237, Administrasi Jakarta Selatan 84831, Bengkulu', '3171090001', 'SMK 22', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3674, '2017-10-20 10:25:56', 'Chelsea', 'P', 'Madiun', '1984-01-14', 'Islam', 'tania.nababan@example.com', '(+62) 440 6885 ', 'Gg. Bakaru No. 258, Depok 59685, SulTeng', '3171090001', 'SMA 59', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3675, '2017-10-20 10:25:56', 'Citra', 'P', 'Pariaman', '1984-01-14', 'Islam', 'vanesa33@example.net', '(+62) 914 6359 ', 'Ds. Hang No. 398, Semarang 34618, MalUt', '3171090001', 'SMK 48', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3676, '2017-10-20 10:25:56', 'Almira', 'P', 'Banda Aceh', '1984-01-14', 'Islam', 'dpradana@example.com', '(+62) 408 7961 ', 'Gg. Bahagia  No. 423, Lhokseumawe 83884, SumSel', '3171090001', 'SMK 43', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3677, '2017-10-20 10:25:56', 'Dian', 'P', 'Tebing Tinggi', '1984-01-14', 'Islam', 'xagustina@example.net', '(+62) 774 0579 ', 'Dk. Bak Mandi No. 748, Lhokseumawe 69622, MalUt', '3171090001', 'SMA 59', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3678, '2017-10-20 10:25:56', 'Azalea', 'P', 'Tebing Tinggi', '1984-01-14', 'Islam', 'hhandayani@example.net', '(+62) 401 9456 ', 'Jln. Moch. Toha No. 617, Singkawang 79739, KalSel', '3171090001', 'SMK 48', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3679, '2017-10-20 10:25:56', 'Shakila', 'P', 'Banjarmasin', '1984-01-14', 'Islam', 'danu89@example.com', '(+62) 751 6895 ', 'Ki. Sunaryo No. 132, Lubuklinggau 92495, Bengkulu', '3171090001', 'SMA 61', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3680, '2017-10-20 10:25:56', 'Fathonah', 'P', 'Lhokseumawe', '1984-01-14', 'Islam', 'cakrawangsa04@example.org', '0916 1382 870', 'Ki. Bakhita No. 445, Tual 48503, SulTeng', '3171090001', 'SMA 59', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3681, '2017-10-20 10:25:56', 'Kasiyah', 'P', 'Sungai Penuh', '1984-01-14', 'Islam', 'puput56@example.net', '(+62) 313 4435 ', 'Psr. Diponegoro No. 463, Gunungsitoli 82321, Bengkulu', '3171090001', 'SMK 43', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3682, '2017-10-20 10:25:56', 'Yuni', 'P', 'Bandung', '1984-01-14', 'Islam', 'tamba.cengkal@example.org', '(+62) 353 0919 ', 'Kpg. Basuki Rahmat  No. 734, Blitar 63438, Maluku', '3171090001', 'SMK 43', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3683, '2017-10-20 10:25:56', 'Citra', 'P', 'Ternate', '1984-01-14', 'Islam', 'mangunsong.yani@example.net', '(+62) 942 5400 ', 'Ds. Moch. Toha No. 705, Magelang 61847, Maluku', '3171090001', 'SMA 54', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3684, '2017-10-20 10:25:56', 'Maria', 'P', 'Bima', '1984-01-14', 'Islam', 'laksmiwati.emil@example.org', '0895 5431 722', 'Jln. Pasir Koja No. 807, Blitar 34591, JaBar', '3171090001', 'SMA 54', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3685, '2017-10-20 10:25:56', 'Nadia', 'P', 'Lhokseumawe', '1984-01-14', 'Islam', 'jhutasoit@example.org', '(+62) 972 4901 ', 'Psr. Rumah Sakit No. 62, Kendari 43930, Aceh', '3171090001', 'MAN 3', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3686, '2017-10-20 10:25:56', 'Pia', 'P', 'Surabaya', '1984-01-14', 'Islam', 'sitompul.pandu@example.com', '0508 4174 852', 'Dk. Bazuka Raya No. 854, Salatiga 38766, DKI', '3171090001', 'SMA 54', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3687, '2017-10-20 10:25:56', 'Aisyah', 'P', 'Tangerang', '1984-01-14', 'Islam', 'fsafitri@example.org', '(+62) 25 2016 8', 'Ki. Abdul Rahmat No. 368, Mojokerto 41966, Riau', '3171090001', 'SMA 21', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3688, '2017-10-20 10:25:56', 'Ciaobella', 'P', 'Ambon', '1984-01-14', 'Islam', 'rpertiwi@example.com', '0530 7314 2090', 'Jr. Moch. Yamin No. 514, Kediri 16504, NTT', '3171090001', 'SMA 8', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3689, '2017-10-20 10:25:56', 'Siska', 'P', 'Pariaman', '1984-01-14', 'Islam', 'zsudiati@example.com', '(+62) 207 2966 ', 'Dk. Zamrud No. 266, Surabaya 12661, SumSel', '3171090001', 'SMK 43', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3690, '2017-10-20 10:25:56', 'Vera', 'P', 'Pekanbaru', '1984-01-14', 'Islam', 'hakim.vivi@example.com', '(+62) 770 4622 ', 'Kpg. Sukabumi No. 828, Kotamobagu 86240, MalUt', '3171090001', 'SMA 59', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3691, '2017-10-20 10:25:56', 'Victoria', 'P', 'Gorontalo', '1984-01-14', 'Islam', 'yulianti.kasiyah@example.com', '(+62) 665 0151 ', 'Ds. W.R. Supratman No. 950, Kediri 81173, Gorontalo', '3171090001', 'SMK 48', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3692, '2017-10-20 10:25:56', 'Maida', 'P', 'Tanjung Pinang', '1984-01-14', 'Islam', 'unjani.utama@example.org', '(+62) 29 9727 6', 'Psr. Bhayangkara No. 675, Pariaman 63650, SumSel', '3171090001', 'SMK 43', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3693, '2017-10-20 10:25:56', 'Jane', 'P', 'Metro', '1984-01-14', 'Islam', 'unjani34@example.org', '(+62) 484 8498 ', 'Gg. W.R. Supratman No. 429, Banjarbaru 74030, Lampung', '3171090001', 'SMK 22', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3694, '2017-10-20 10:25:56', 'Endah', 'P', 'Malang', '1984-01-14', 'Islam', 'winda31@example.org', '0704 6862 853', 'Gg. Tentara Pelajar No. 623, Denpasar 66160, KalBar', '3171090001', 'SMK 22', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3695, '2017-10-20 10:25:56', 'Ulya', 'P', 'Jayapura', '1984-01-14', 'Islam', 'talia94@example.org', '0203 0471 7396', 'Jr. Baranang Siang No. 273, Tangerang 69000, SulTra', '3171090001', 'SMA 61', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3696, '2017-10-20 10:25:56', 'Janet', 'P', 'Tasikmalaya', '1984-01-14', 'Islam', 'salwa.pertiwi@example.net', '0259 8415 968', 'Gg. Salam No. 408, Palangka Raya 40205, SumUt', '3171090001', 'SMK 22', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3697, '2017-10-20 10:25:56', 'Tiara', 'P', 'Sorong', '1984-01-14', 'Islam', 'hariyah.ghaliyati@example.org', '0326 8066 450', 'Kpg. Bakau No. 486, Jambi 96856, SulSel', '3171090001', 'SMA 54', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3698, '2017-10-20 10:25:56', 'Dian', 'P', 'Sabang', '1984-01-14', 'Islam', 'anggraini.wardaya@example.org', '020 0768 605', 'Jln. Gedebage Selatan No. 105, Administrasi Jakarta Pusat 27088, KalSel', '3171090001', 'SMA 8', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3699, '2017-10-20 10:25:56', 'Ani', 'P', 'Kupang', '1984-01-14', 'Islam', 'paris43@example.com', '(+62) 600 1487 ', 'Jln. Sudirman No. 108, Manado 27214, Banten', '3171090001', 'SMK 48', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3700, '2017-10-20 10:25:56', 'Rika', 'P', 'Medan', '1984-01-14', 'Islam', 'xharyanti@example.org', '0550 4555 833', 'Ki. Dipenogoro No. 911, Banda Aceh 22948, Riau', '3171090001', 'MAN 6', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3701, '2017-10-20 10:25:56', 'Tiara', 'P', 'Pasuruan', '1984-01-14', 'Islam', 'hasanah.paramita@example.net', '(+62) 605 2197 ', 'Ds. PHH. Mustofa No. 267, Bima 20276, SulTeng', '3171090001', 'SMK 22', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3702, '2017-10-20 10:25:56', 'Cornelia', 'P', 'Padangpanjang', '1984-01-14', 'Islam', 'jelita65@example.com', '(+62) 507 2761 ', 'Jln. Ikan No. 830, Gunungsitoli 31914, DKI', '3171090001', 'MAN 6', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3703, '2017-10-20 10:25:56', 'Kezia', 'P', 'Administrasi Ja', '1984-01-14', 'Islam', 'lestari.tiara@example.net', '(+62) 240 5897 ', 'Jr. Warga No. 752, Administrasi Jakarta Timur 98375, BaBel', '3171090001', 'SMA 61', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3704, '2017-10-20 10:25:56', 'Karimah', 'P', 'Administrasi Ja', '1984-01-14', 'Islam', 'karma80@example.net', '027 4030 5668', 'Gg. Achmad No. 366, Bandar Lampung 64943, SumUt', '3171090001', 'MAN 6', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3705, '2017-10-20 10:25:56', 'Azalea', 'P', 'Cilegon', '1984-01-14', 'Islam', 'zyolanda@example.org', '(+62) 398 3665 ', 'Jln. Rumah Sakit No. 226, Probolinggo 63029, Aceh', '3171090001', 'MAN 3', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:58', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3706, '2017-10-20 10:25:56', 'Silvia', 'P', 'Subulussalam', '1984-01-14', 'Islam', 'handayani.melinda@example.org', '0776 3223 7819', 'Ki. Achmad Yani No. 648, Surakarta 22291, SulSel', '3171090001', 'SMK 22', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3707, '2017-10-20 10:25:56', 'Devi', 'P', 'Padang', '1984-01-14', 'Islam', 'pratama.dodo@example.org', '0904 3404 6823', 'Ki. Basoka Raya No. 716, Surakarta 81927, JaBar', '3171090001', 'SMA 21', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3708, '2017-10-20 10:25:56', 'Ulya', 'P', 'Bima', '1984-01-14', 'Islam', 'yuliarti.wadi@example.net', '0340 2060 983', 'Dk. Suharso No. 1, Medan 75967, MalUt', '3171090001', 'SMK 43', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3709, '2017-10-20 10:25:56', 'Gawati', 'P', 'Pagar Alam', '1984-01-14', 'Islam', 'aurora.rahmawati@example.com', '(+62) 576 9852 ', 'Dk. Perintis Kemerdekaan No. 601, Mojokerto 16530, NTT', '3171090001', 'SMA 8', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3710, '2017-10-20 10:25:56', 'Titi', 'P', 'Madiun', '1984-01-14', 'Islam', 'maman87@example.com', '(+62) 24 2435 3', 'Jln. Dahlia No. 210, Serang 36280, DKI', '3171090001', 'SMK 48', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3711, '2017-10-20 10:25:56', 'Puput', 'P', 'Banjar', '1984-01-14', 'Islam', 'padmi15@example.net', '0202 2235 8953', 'Kpg. Cokroaminoto No. 113, Tebing Tinggi 60398, Maluku', '3171090001', 'SMA 54', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3712, '2017-10-20 10:25:56', 'Carla', 'P', 'Mojokerto', '1984-01-14', 'Islam', 'tari.laksmiwati@example.net', '026 3998 8424', 'Kpg. Baik No. 535, Administrasi Jakarta Barat 32633, DKI', '3171090001', 'SMA 59', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3713, '2017-10-20 10:25:56', 'Calista', 'P', 'Lubuklinggau', '1984-01-14', 'Islam', 'dpangestu@example.org', '(+62) 405 2408 ', 'Dk. Jagakarsa No. 18, Palopo 25793, Gorontalo', '3171090001', 'SMA 59', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3714, '2017-10-20 10:25:56', 'Lili', 'P', 'Pekalongan', '1984-01-14', 'Islam', 'elisa.kusmawati@example.org', '0638 2140 885', 'Ki. Bakit  No. 167, Sungai Penuh 41148, Banten', '3171090001', 'SMK 48', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3715, '2017-10-20 10:25:56', 'Olivia', 'P', 'Lhokseumawe', '1984-01-14', 'Islam', 'padmi.puspasari@example.org', '0274 1194 814', 'Gg. Kyai Mojo No. 830, Palangka Raya 85734, SulTeng', '3171090001', 'SMK 32', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3716, '2017-10-20 10:25:56', 'Tina', 'P', 'Madiun', '1984-01-14', 'Islam', 'ophelia.uwais@example.com', '(+62) 820 502 2', 'Kpg. Basoka No. 124, Metro 41333, SumBar', '3171090001', 'SMK 44', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3717, '2017-10-20 10:25:56', 'Ratna', 'P', 'Binjai', '1984-01-14', 'Islam', 'edi.hartati@example.org', '(+62) 806 8199 ', 'Dk. Flora No. 105, Lubuklinggau 93211, MalUt', '3171090001', 'SMK 22', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3718, '2017-10-20 10:25:56', 'Silvia', 'P', 'Banjarmasin', '1984-01-14', 'Islam', 'hutagalung.mariadi@example.net', '(+62) 272 2653 ', 'Psr. R.M. Said No. 87, Administrasi Jakarta Timur 87490, KalUt', '3171090001', 'SMK 44', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3719, '2017-10-20 10:25:56', 'Hafshah', 'P', 'Banjarmasin', '1984-01-14', 'Islam', 'vmangunsong@example.org', '(+62) 455 1290 ', 'Psr. Bakti No. 150, Kupang 75863, SulTeng', '3171090001', 'MAN 6', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3720, '2017-10-20 10:25:56', 'Maida', 'P', 'Palangka Raya', '1984-01-14', 'Islam', 'tyulianti@example.com', '0853 4556 064', 'Psr. Nangka No. 27, Tebing Tinggi 46981, JaTim', '3171090001', 'SMK 43', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3721, '2017-10-20 10:25:56', 'Violet', 'P', 'Balikpapan', '1984-01-14', 'Islam', 'uadriansyah@example.com', '0532 6410 433', 'Dk. Madrasah No. 628, Padangpanjang 28553, Lampung', '3171090001', 'SMK 44', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3722, '2017-10-20 10:25:56', 'Raina', 'P', 'Parepare', '1984-01-14', 'Islam', 'galih70@example.org', '0403 8129 159', 'Dk. Abdul No. 893, Pekanbaru 49623, KepR', '3171090001', 'SMA 59', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3723, '2017-10-20 10:25:56', 'Oliva', 'P', 'Blitar', '1984-01-14', 'Islam', 'unarpati@example.com', '(+62) 613 8774 ', 'Jln. Yap Tjwan Bing No. 217, Tanjung Pinang 39771, Gorontalo', '3171090001', 'SMK 22', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3724, '2017-10-20 10:25:56', 'Carla', 'P', 'Kendari', '1984-01-14', 'Islam', 'radika37@example.org', '(+62) 799 3626 ', 'Ds. Casablanca No. 327, Padangpanjang 49217, NTB', '3171090001', 'SMK 43', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3725, '2017-10-20 10:25:56', 'Salimah', 'P', 'Pariaman', '1984-01-14', 'Islam', 'shidayanto@example.org', '0401 3138 8373', 'Psr. Villa No. 407, Bogor 38456, SulUt', '3171090001', 'SMA 61', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3726, '2017-10-20 10:25:56', 'Nilam', 'P', 'Bandung', '1984-01-14', 'Islam', 'apratama@example.org', '(+62) 352 5639 ', 'Psr. Kebangkitan Nasional No. 986, Bengkulu 40693, Papua', '3171090001', 'MAN 6', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3727, '2017-10-20 10:25:56', 'Ina', 'P', 'Tangerang', '1984-01-14', 'Islam', 'patricia.pratiwi@example.org', '0204 9637 4148', 'Psr. Kebangkitan Nasional No. 819, Bima 35166, JaTim', '3171090001', 'SMK 43', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3728, '2017-10-20 10:25:56', 'Zulfa', 'P', 'Ternate', '1984-01-14', 'Islam', 'raina.situmorang@example.net', '(+62) 609 5743 ', 'Psr. Kebonjati No. 839, Madiun 92714, Maluku', '3171090001', 'SMK 22', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3729, '2017-10-20 10:25:56', 'Sabrina', 'P', 'Tebing Tinggi', '1984-01-14', 'Islam', 'jsihotang@example.org', '(+62) 370 0232 ', 'Jln. Raden Saleh No. 658, Malang 27617, NTB', '3171090001', 'MAN 6', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3730, '2017-10-20 10:25:56', 'Ira', 'P', 'Mojokerto', '1984-01-14', 'Islam', 'luhung22@example.net', '(+62) 890 137 0', 'Gg. Dahlia No. 754, Palopo 46703, BaBel', '3171090001', 'SMA 54', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3731, '2017-10-20 10:25:56', 'Latika', 'P', 'Gunungsitoli', '1984-01-14', 'Islam', 'csuwarno@example.net', '0733 5559 0090', 'Jln. Bagis Utama No. 771, Manado 75221, KalTim', '3171090001', 'SMK 22', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3732, '2017-10-20 10:25:56', 'Widya', 'P', 'Probolinggo', '1984-01-14', 'Islam', 'ynurdiyanti@example.net', '0340 8586 364', 'Jr. Ciumbuleuit No. 245, Dumai 81098, Jambi', '3171090001', 'SMA 61', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3733, '2017-10-20 10:25:56', 'Zalindra', 'P', 'Pagar Alam', '1984-01-14', 'Islam', 'pratiwi.yuliana@example.org', '0903 6904 9781', 'Jr. Tangkuban Perahu No. 646, Banjar 61427, JaTeng', '3171090001', 'SMK 22', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3734, '2017-10-20 10:25:56', 'Kamaria', 'P', 'Bitung', '1984-01-14', 'Islam', 'rahmi16@example.com', '(+62) 319 2581 ', 'Jr. Abdul Rahmat No. 434, Surabaya 91337, DKI', '3171090001', 'SMA 59', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3735, '2017-10-20 10:25:56', 'Vivi', 'P', 'Tarakan', '1984-01-14', 'Islam', 'gunawan.yance@example.org', '(+62) 403 7312 ', 'Kpg. M.T. Haryono No. 16, Kupang 29392, SumUt', '3171090001', 'SMA 59', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3736, '2017-10-20 10:25:56', 'Ratih', 'P', 'Palembang', '1984-01-14', 'Islam', 'agus08@example.net', '(+62) 389 6654 ', 'Jln. Batako No. 796, Makassar 44485, MalUt', '3171090001', 'SMK 32', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3737, '2017-10-20 10:25:56', 'Chelsea', 'P', 'Ternate', '1984-01-14', 'Islam', 'budiman.chandra@example.net', '(+62) 691 8710 ', 'Ki. Sutarjo No. 721, Tangerang 39312, SumSel', '3171090001', 'SMA 21', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:25:59', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3738, '2017-10-20 10:25:56', 'Siska', 'P', 'Solok', '1984-01-14', 'Islam', 'sakti49@example.com', '(+62) 640 9284 ', 'Kpg. Jend. Sudirman No. 568, Pariaman 25386, KepR', '3171090001', 'SMK 44', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:26:00', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3739, '2017-10-20 10:25:56', 'Raina', 'P', 'Palangka Raya', '1984-01-14', 'Islam', 'fprabowo@example.com', '021 5732 883', 'Ki. Merdeka No. 476, Sorong 19762, SulTra', '3171090001', 'MAN 6', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:26:00', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3740, '2017-10-20 10:25:56', 'Hafshah', 'P', 'Jambi', '1984-01-14', 'Islam', 'puput.kuswoyo@example.net', '0259 3685 4567', 'Jln. Baja Raya No. 29, Gorontalo 24492, SumBar', '3171090001', 'SMA 8', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:26:00', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3741, '2017-10-20 10:25:56', 'Syahrini', 'P', 'Bontang', '1984-01-14', 'Islam', 'anita.haryanti@example.com', '0243 9129 301', 'Dk. Flores No. 328, Samarinda 86828, Lampung', '3171090001', 'SMK 32', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:26:00', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3742, '2017-10-20 10:25:56', 'Vanya', 'P', 'Gorontalo', '1984-01-14', 'Islam', 'jjanuar@example.net', '0773 4825 199', 'Ki. Pahlawan No. 7, Medan 68093, Lampung', '3171090001', 'SMA 21', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:26:00', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3743, '2017-10-20 10:25:56', 'Violet', 'P', 'Bitung', '1984-01-14', 'Islam', 'bprayoga@example.net', '021 6183 2427', 'Ds. Banceng Pondok No. 502, Magelang 74536, SumBar', '3171090001', 'SMA 61', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:26:00', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3744, '2017-10-20 10:25:56', 'Michelle', 'P', 'Binjai', '1984-01-14', 'Islam', 'mustofa.rafid@example.net', '0417 2500 066', 'Ds. Ikan No. 71, Pasuruan 49824, DIY', '3171090001', 'SMA 21', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:26:00', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3745, '2017-10-20 10:25:56', 'Safina', 'P', 'Sungai Penuh', '1984-01-14', 'Islam', 'rahayu.kusmawati@example.com', '0797 8393 1215', 'Psr. Labu No. 558, Sabang 27101, Bali', '3171090001', 'MAN 6', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:26:00', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3746, '2017-10-20 10:25:56', 'Ellis', 'P', 'Samarinda', '1984-01-14', 'Islam', 'csusanti@example.net', '0975 4702 7119', 'Kpg. Raya Ujungberung No. 973, Padangsidempuan 50875, Aceh', '3171090001', 'MAN 6', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:26:00', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3747, '2017-10-20 10:25:56', 'Siti', 'P', 'Palembang', '1984-01-14', 'Islam', 'jaswadi.yuniar@example.com', '0784 2914 843', 'Gg. Baik No. 766, Administrasi Jakarta Barat 88057, Gorontalo', '3171090001', 'SMA 54', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:26:00', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3748, '2017-10-20 10:25:56', 'Jessica', 'P', 'Surabaya', '1984-01-14', 'Islam', 'puspita.siska@example.com', '0384 6306 516', 'Ds. Panjaitan No. 790, Sibolga 75847, KalSel', '3171090001', 'SMA 59', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:26:00', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3749, '2017-10-20 10:25:56', 'Halima', 'P', 'Bima', '1984-01-14', 'Islam', 'permata.purwa@example.net', '0811 5111 232', 'Jln. Sadang Serang No. 438, Tanjung Pinang 24862, MalUt', '3171090001', 'SMK 43', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:26:00', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3750, '2017-10-20 10:25:56', 'Ajeng', 'P', 'Tarakan', '1984-01-14', 'Islam', 'kayla.lailasari@example.org', '(+62) 273 2049 ', 'Jln. Katamso No. 567, Medan 20485, KalUt', '3171090001', 'MAN 3', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:26:00', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3751, '2017-10-20 10:25:56', 'Janet', 'P', 'Tarakan', '1984-01-14', 'Islam', 'gsuryono@example.com', '(+62) 992 2011 ', 'Dk. Warga No. 305, Bandar Lampung 51430, BaBel', '3171090001', 'SMA 21', 'IPS', 2, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:26:00', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3752, '2017-10-20 10:25:56', 'Ulya', 'P', 'Pontianak', '1984-01-14', 'Islam', 'ana.prabowo@example.net', '(+62) 441 3109 ', 'Jln. Sugiyopranoto No. 619, Tanjungbalai 52865, NTT', '3171090001', 'MAN 6', 'IPS', 1, 2, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:26:00', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3753, '2017-10-20 10:25:56', 'Tira', 'P', 'Sawahlunto', '1984-01-14', 'Islam', 'raina.yulianti@example.org', '0850 590 732', 'Jln. Bacang No. 374, Solok 36192, KalSel', '3171090001', 'SMA 54', 'IPS', 1, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:26:00', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3754, '2017-10-20 10:25:56', 'Novi', 'P', 'Tangerang Selat', '1984-01-14', 'Islam', 'rahayu48@example.org', '021 2566 273', 'Jr. Tangkuban Perahu No. 893, Administrasi Jakarta Selatan 53185, SumBar', '3171090001', 'SMA 59', 'IPS', 2, 1, 'Website', NULL, 2, NULL, NULL, 1, NULL, '2017-04-02 01:26:00', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3757, '2017-10-20 10:25:56', 'Annisa', 'P', 'Jakarta', '1984-02-12', 'Islam', 'annisa@gmail.com', '0878954655456', 'Maharaja', '3171090001', 'SMA 59', 'IPS', 1, 1, 'Teman', 90, 3, NULL, '2017-08-21 00:43:33', 1, 'QmBric4j6HYuBeir5kJiFg3V98FFHTqFCzgZLG3xVg4f5Ddie7S33gbAvHArNmnwRMdab1tqqLIY9qErdywkBeqozl5B2UVgnU2PCpa3A6PjN0jeT9bk5L4t', '2017-08-20 10:43:33', '2018-03-28 19:35:15', NULL, NULL, '2018-02-18 00:29:16', NULL),
-(3758, '2018-01-08 20:26:38', 'Annisa Cherrybelle', 'W', 'jakarta', '2018-01-15', 'Islam', 'annisa@gmail.com', '524654546545', 'Tebet dalam', '3171090001', 'SMA 59', 'IPS', 1, 1, 'Website', 100, 2, NULL, '2018-02-01 19:46:18', 1, 'LXKhcf4HG8QBJ2P9vTluxlzTABwG7Ts3rpzQTQ7z7iFLxW76Zxo2QY32224bN3gxpIQtChFTc85RXX2II5m16F0WVZUskjYgSqGmRTjAIIdmIYDVn31V38QY', '2018-01-08 06:26:38', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3759, '2018-01-08 22:14:48', 'Muhammad Rizky', 'L', 'Jakarta', '2016-11-28', 'islam', 'mrizky@gmail.com', '9838434388', 'Depok', '3171090001', 'SMA 59', 'IPS', 1, 1, 'Teman', 100, 2, NULL, '2018-02-01 19:46:17', NULL, NULL, '2018-01-08 08:14:48', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3760, '2018-01-08 22:14:49', 'Zakaria', 'L', 'Tangerang', '1985-05-25', 'Islam', 'zakariaqqww4535@gmail.com', '85695599590', 'Jalan Karyawan III No.53 RT 002 RW 007', '3171090001', 'SMA 112', 'IPS', 1, 1, 'Brosur', 100, 4, NULL, '2018-01-08 22:22:43', NULL, NULL, '2018-01-08 08:14:49', '2018-03-28 19:35:15', NULL, NULL, '2017-10-02 00:00:00', '2017-12-01 00:00:00'),
-(3761, '2018-01-08 22:19:20', 'Muhaimin', 'L', 'Jakarta', '2016-11-28', 'islam', 'muhaiminis@gmail.com', '9838434388', 'Depok', '3171090001', 'SMA 59', 'IPS', 1, 1, 'Teman', 100, 2, NULL, '2018-01-08 22:22:40', NULL, NULL, '2018-01-08 08:19:20', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3762, '2018-01-08 22:19:20', 'Milla Kunis', 'L', 'Tangerang', '1985-05-25', 'Islam', 'millakunis@gmail.com', '85695599590', 'Jalan Karyawan III No.53 RT 002 RW 007', '3171090001', 'SMA 112', 'IPS', 1, 1, 'Brosur', 100, 3, NULL, '2018-01-08 22:22:41', NULL, NULL, '2018-01-08 08:19:20', '2018-03-28 19:35:15', NULL, NULL, '2018-02-17 23:59:05', NULL),
-(3763, '2018-01-08 22:20:57', 'Adelle', 'L', 'Jakarta', '2016-11-28', 'islam', 'adelle123@gmail.com', '9838434388', 'Depok', '3171090001', 'SMA 59', 'IPS', 1, 1, 'Teman', 100, 2, NULL, '2018-01-08 22:22:37', NULL, NULL, '2018-01-08 08:20:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3764, '2018-01-08 22:20:57', 'John Doe', 'L', 'Tangerang', '1985-05-25', 'Islam', 'johndoe34@gmail.com', '85695599590', 'Jalan Karyawan III No.53 RT 002 RW 007', '3171090001', 'SMA 112', 'IPS', 1, 1, 'Brosur', 100, 2, NULL, '2018-01-08 22:22:39', NULL, NULL, '2018-01-08 08:20:57', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3783, '2018-02-25 21:22:49', 'Basrul Yandri', 'P', NULL, NULL, NULL, 'order.flo@gmail.com', '087878718285', NULL, '3171090001', NULL, NULL, 2, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, '2018-02-25 07:22:49', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3786, '2018-03-14 22:59:43', 'Lifia Niala', 'P', NULL, NULL, NULL, 'lifia@ymail.com', '08767678999', NULL, '3171090001', NULL, NULL, 1, 3, NULL, 100, 2, NULL, '2018-03-14 22:59:43', 1, NULL, '2018-03-14 08:59:43', '2018-03-28 19:35:15', NULL, NULL, NULL, NULL),
-(3817, '2018-03-28 04:13:47', 'Basrul Yandri', 'P', NULL, NULL, NULL, 'rolloic@gmail.com', '087878718285', NULL, '3171090001', NULL, NULL, 2, NULL, NULL, 100, 2, NULL, '2018-03-30 22:48:35', NULL, NULL, '2018-03-27 14:13:47', '2018-03-30 22:48:35', NULL, NULL, NULL, NULL),
-(3840, '2018-01-25 00:00:00', 'FIRDA FIRNANDA', 'P', 'BOGOR', NULL, 'ISLAM', 'firdafirnanda2104@yahoo.com', NULL, 'KP. PONDOK MIRI RT 002/005', NULL, 'SMK KESEHATAN LETRIS 2', NULL, 2, 1, 'SEKOLAH', 105, 3, NULL, NULL, NULL, NULL, '2018-04-11 04:17:53', '2018-04-11 18:17:53', NULL, NULL, NULL, NULL),
-(3841, '2018-01-26 00:00:00', 'YELIANA SEPTIANI NOOR', 'P', 'SERANG', NULL, 'ISLAM', 'yeliasn14@gamil.com', NULL, 'JL. KINAYUNGAN IV NO 93, PONDOK KACANG BARAT', NULL, 'SMA NEGERI 2 TANJUNG KARANG', NULL, 2, 1, 'SAUDARA', 105, 4, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3842, '2018-01-29 00:00:00', 'WULAN YUANITA', 'P', 'GARUT', NULL, 'ISLAM', 'wulan.yuanita234@gmail.com', NULL, 'KP. PASAR KOLOT DESA MALANGBONG KEC. MALANGBONG', NULL, 'SMK BHAKTI KENCANA CIAWI', NULL, 2, 1, NULL, 105, 3, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3843, '2018-01-29 00:00:00', 'SALLWA AHMAD THALIB', 'P', 'JAKARTA', NULL, 'ISLAM', 'salwa.a.talib@gmail.com', NULL, 'JL. HAJI MAWI WARUJAYA RT/RW 07/04 NO 216 PARUNG', NULL, 'SMK BHAKTI KENCANA CIAWI', NULL, 2, 1, NULL, 105, 4, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3844, '2018-01-30 00:00:00', 'IKA FITRIA NINGSIH', 'P', 'WONOGIRI', NULL, 'ISLAM', 'ika637857@gmail.com', NULL, 'KP. BUARAN TIMUR RT 11 RW 04 KEL. JELUPANG KEC. SERPONG UTARA', NULL, 'SMK KESEHATAN LETRIS 1', NULL, 2, 2, 'HIKMAYATI (MAHASISWA)', 105, 4, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3845, '2018-01-30 00:00:00', 'EVI PUSPITASARI', 'P', 'JAKARTA', NULL, 'ISLAM', 'stikes123456evipuspitasari@gmail.com', NULL, 'JL. H. BASIR, GANG MUSOLAH RT 005/RW 005', NULL, 'SMK KESEHATAN BANTEN', NULL, 2, 1, 'TEMAN', 105, 3, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3846, '2018-02-12 00:00:00', 'AGY YOGYANA SUJANA', 'L', 'TASIKMALAYA', NULL, 'ISLAM', 'yogyanasujanaa@gmail.com', NULL, 'KP. CITOE RT 04/02, KEL.CIDADAP, KEC. KARANGNUNGGAL', NULL, 'SMA NEGERI 3 TASIKMALAYA', NULL, 2, 1, NULL, 105, 3, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3847, '2018-02-13 00:00:00', 'AWALIA FARHATI', 'P', 'JAKARTA', NULL, 'ISLAM', 'stikes123456rekawidiyawatikusnadi@gmail.com', NULL, 'JL. SUMATERA RT 002/RW017 JOMBANG RAWALELE CIPUTAT', NULL, 'SMK NEGERI 4 TANGERANG SELATAN', NULL, 1, 1, NULL, 105, 3, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3848, '2018-02-19 00:00:00', 'REKA WIDIYAWATI KUSNADI', 'P', 'BOGOR', NULL, 'ISLAM', 'rekawidiyawati30@gmail.com', NULL, 'JL. JAMBU RT 01/RW 04 KELURAHAN KEDAUNG', NULL, 'SMK SASMITA JAYA (KESEHATAN)', NULL, 2, 2, 'SENDIRI', 104, 3, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3849, '2018-01-08 00:00:00', 'NUR PAUJIYAH RAHAYU', 'P', 'TANGERANG', NULL, 'ISLAM', 'rahayunurpau@gmail.com', NULL, 'JL. JOMBANG RAYA PONDOK AREN RT 02/04', NULL, 'SMK KESEHATAN LETRIS 1', NULL, 2, 1, 'SENDIRI', 104, 4, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3850, '2018-02-21 00:00:00', 'AGUSTIA WATI', 'P', 'TANGERANG', NULL, 'ISLAM', 'agustiawati95@gmail.com', NULL, 'JL. MASJID NURUL IKWAN RT 01/03 KEC. PONDOK AREN KEL. PONDOK KACANG', NULL, 'SMK KESEHATAN LETRIS 1', NULL, 2, 1, 'PRESENTASI', 105, 4, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3851, '2018-02-21 00:00:00', 'MUGANA', 'L', 'BANTUL', NULL, 'KRISTEN', 'muganahana@gmail.com', NULL, 'PERUMAHAN GRIYA SERPONG ASRI BLK BOUGENVILE T 09 RT 08 RW 05 SURADITA, CISAUK', NULL, 'AKPER NOTOKUSUMO YOGYAKARTA', NULL, 2, 1, 'ALUMNI DAN TEMAN KERJA RS MEDIKA', 105, 3, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3852, '2018-02-24 00:00:00', 'RESTI FAUZIATI', 'P', 'PANDEGLANG', NULL, 'ISLAM', 'stikes123456restifauziah@gmail.com', NULL, 'PARUNG PANJANG', NULL, 'SMK KESEHATAN KHARISMA', NULL, 2, 2, 'PRESENTASI', 101, 3, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3853, '2018-02-24 00:00:00', 'RINI FAUZIAH', 'P', 'PANDEGLANG', NULL, 'ISLAM', 'stikes123456rinifauziah@gmail.com', NULL, 'PARUNG PANJANG', NULL, 'SMK KESEHATAN KHARISMA', NULL, 2, 2, 'PRESENTASI', 101, 3, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3854, '2018-03-07 00:00:00', 'MELLYNIA EKA PRATIWY', 'P', 'JAKARTA', NULL, 'ISLAM', 'mellyniapratiwy196@gmail.com', NULL, 'ASRAMA POLRI RT 03/ RW 02 NO 45, CILEDUG', NULL, 'SMK KESEHATAN LETRIS 1', NULL, 2, 1, 'PRESENTASI', 105, 3, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3855, '2018-03-07 00:00:00', 'ALIESTIYA NANDA PUTRI', 'P', 'TANGERANG', NULL, 'ISLAM', 'alistyaa.putri@gmail.com', NULL, 'JL. AMD BABAKAN POCIS, RT 001/001 KEC. SETU', NULL, 'SMK KESEHATAN LETRIS 1', NULL, 2, 1, 'PRESENTASI', 105, 3, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3856, '2018-02-28 00:00:00', 'SITI MELYTAMALA AZIZ', 'P', 'TANGERANG', NULL, 'ISLAM', 'stikes123456sitimelytamalaaziz@gmail.com', NULL, 'KP. PALASARI RT 002/002 CURUG TANGERANG', NULL, 'SMK KESEHATAN KHARISMA', NULL, 2, 1, 'PRESENTASI', 105, 4, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3857, '2018-03-10 00:00:00', 'SHAVITRI RAHMA YANTI', 'P', 'TANGERANG', NULL, 'ISLAM', 'shavitrirahmayanti123@gmail.com', NULL, 'JL. SALEM 1 SERPONG, RT 002/ RW 008', NULL, 'SMK KESEHATAN LETRIS INDONESIA 2', NULL, 2, 2, 'PRESENTASI', 104, 4, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3858, '2018-03-19 00:00:00', 'RYVA RUDYANA SUJANA', 'L', 'TASIKMALAYA', NULL, 'ISLAM', 'ryva.rudyanasujana@yahoo.co.id', NULL, 'GRIYA SARANA BSD BLOK D 23 RT 002 RW 005 KELURAHAN PAGEDANGAN KECAMATAN PAGEDANGAN', NULL, 'STIKes BHAKTI TUNAS HUSADA TASIKMALAYA', NULL, 2, 3, 'SENDIRI', 104, 4, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3859, '2018-03-21 00:00:00', 'ENENG HASANAH', 'P', 'BANDUNG', NULL, 'ISLAM', 'stikes123456enenghasanah@gmail.com', NULL, 'KAMPUNG LEBAKWANGI RT 003 RW 001 PARUNG', NULL, 'AKADEMI KEPERAWATAN PPNI JAWA BARAT', NULL, 2, 3, 'SENDIRI', 105, 4, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3860, '2018-03-21 00:00:00', 'AREHA BINAR FEBRINESA', 'P', 'SERANG', NULL, 'ISLAM', 'stikes123456arehabinar@gmail.com', NULL, 'TAMAN PIPITAN INDAH BLOK B6 NO 61 WALANTAKA', NULL, 'SMK KESEHATAN HUSADA PRATAMA', NULL, 2, 1, 'PRESENTASI', 105, 3, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3861, '2018-04-05 00:00:00', 'TALIA ROSALI', 'P', 'TANGERANG', NULL, 'ISLAM', 'talia.rosali79@gmail.com', NULL, 'JL. H. RASAM RT 04 RW 02 PARIGI BARU', NULL, 'SMK KESEHATAN LETRIS INDONESIA 1', NULL, 2, 1, 'SENDIRI', 105, 3, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3862, '2018-04-10 00:00:00', 'SITI MARITO PURBA', 'P', 'MEDAN', NULL, 'KRISTEN PROTESTAN', 'stikes123456sitimarito@gmail.com', NULL, 'JL. HIDUP BARU KELURAHAN SERUA KECAMATAN CIPUTAT', NULL, 'SMAN 1 DOLOKSANGGUL', NULL, 2, 1, 'RISKA THEODORE', 105, 3, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3863, '2017-12-29 00:00:00', 'ULFAH DESTIANI', 'P', NULL, NULL, 'ISLAM', 'stikes123456ulfahdestiani@gmail.com', NULL, 'JL. TAMAN GADUNG 5 PONDOK RANJI', NULL, 'STIKES ASSAFI\'IYAH', NULL, 3, 1, 'TAHU SENDIRI', 104, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3864, '2017-12-29 00:00:00', 'RYAN DENY ARIZKI', 'L', 'PEMALANG', NULL, 'ISLAM', 'stikes123456ryandenyarizki@gmail.com', NULL, 'JL. KRAMAT 2 NO 44A PANGKALAN JATI, CINERE, DEPOK', NULL, 'AKPER KESDAM IV DIPOEGORO', NULL, 2, 3, 'INTERNET', 104, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:54', '2018-04-11 18:17:54', NULL, NULL, NULL, NULL),
-(3865, '2017-11-06 00:00:00', 'I GEDE N. AGUNG ALIT PUTRAYANA', 'L', 'DENPASAR', NULL, 'HINDU', 'igustiputra57@gmail.com', NULL, 'PAMULANG 2 BENDA TIMUR 12A BLOK E 347', NULL, 'STIKES BANTEN', NULL, 3, 1, 'TAHU SENDIRI', 104, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3866, '2017-10-19 00:00:00', 'ADITYA ATMAJA PUTRA', 'L', 'JAKARTA', NULL, 'ISLAM', 'adityaap406@gmail.com', NULL, 'JL. BRATASENA IX BLOK T5 NO. 11', NULL, 'SMAN 6 TANGSEL', NULL, 2, 1, 'TAHU SENDIRI', 103, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3867, '2018-01-26 00:00:00', 'MAUREN SALSABILLA PUTRI', 'P', 'TANGERANG', NULL, 'ISLAM', 'maurensalsabl@gmail.com', NULL, 'JL. SUKA DAMAI II NO. 8A RT 02 RW 04 SERUA INDAH, CIPUTAT', NULL, 'SMKN 4 TANGSEL', NULL, 2, 1, 'AYU MHS BIDAN', 104, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3868, '2018-01-15 00:00:00', 'FERIAL', 'L', 'JAKARTA', NULL, 'ISLAM', 'ferial.ferrr@gmail.com', NULL, 'JL. UTAMA SELATAN III NO. 40 RT 010 / 04 KEL. CENGKARENG BARAT', NULL, 'SMK KESEHATAN ASY - SYIFA', NULL, 2, 1, 'DINA FENTY MHS 1C', 101, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3869, '2018-02-01 00:00:00', 'HAPPY DITIA PUTRI AYU LAKSANA MENTARI ', 'P', 'JAKARTA', NULL, 'ISLAM', 'happyditiaol@gmail.com', NULL, 'JL. TALAS III RT 03 RW 02 PAMULANG', NULL, 'SMK SASMITA JAYA (KESEHATAN)', NULL, 2, 1, 'TALITHA MHS PERAWAT', 104, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3870, '2018-01-31 00:00:00', 'SURTI LESTARI', 'P', 'GROBOGAN', NULL, 'ISLAM', 'stikes123456surtilestari@gmail.com', NULL, 'TANGERANG SELATAN', NULL, 'SMK MUHAMMADIYAH GUBUK', NULL, 2, 2, 'GIM', 103, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3871, '2018-02-10 00:00:00', 'EUIS RACHMAWATI AZIZAH AHIDIN', 'P', 'KUNINGAN', NULL, 'ISLAM', 'azizah.euis17@gmail.com', NULL, 'JL. GRIYA SASMITA ASRI', NULL, 'SMAN 6 TANGSEL', NULL, 2, 1, 'TAHU SENDIRI', 101, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3872, '2018-02-10 00:00:00', 'NUR KARIMAH WINATA', 'P', 'LAMPUNG', NULL, 'ISLAM', 'nurkarimah7061@gmail.com', NULL, 'PERUM ADIYASA BLOK E14 RT 06 RW 07', NULL, 'SMKN 9 KAB TANGERANG', NULL, 2, 1, 'TAHU SENDIRI', 101, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3873, '2018-02-19 00:00:00', 'RIFQA ADELIA ZAYYAH', 'P', 'JAKARTA', NULL, 'ISLAM', 'rifqaadelia41@gmail.com', NULL, 'JL. DAMAI RT 05 RW 05 PETUKANGAN SELATAN', NULL, 'SMK KESEHATAN LETRIS 1', NULL, 2, 1, 'PRESENTASI', 105, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3874, '2018-02-19 00:00:00', 'ANANDA APRILIA N', 'P', 'JAKARTA', NULL, 'ISLAM', 'yupigullaly69@gmail.com', NULL, 'PERUMAHAN TAMAN SERPONG INDAH CURUG NO C-9', NULL, 'SMA DWI PUTRA', NULL, 2, 1, 'SERING LEWAT IMC', 104, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3875, '2018-02-21 00:00:00', 'DESY NURHAKIKI', 'P', 'TEGAL', NULL, 'ISLAM', 'stikes123456desynurhakiki@gmail.com', NULL, 'TIMBANGREJA KEC LEBAKSIU', NULL, 'PKBM BHAKTI ASIH CILEDUG', NULL, 1, 1, 'TAHU SENDIRI', 105, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3876, '2018-02-21 00:00:00', 'INTAN VERONIKA OKTAVIA', 'P', 'PURBALINGGA', NULL, 'ISLAM', 'stikes123456intanveronika@gmail.com', NULL, 'KP. PARUNG SERAB RT 002 RW 10', NULL, 'PKBM BHAKTI ASIH CILEDUG', NULL, 1, 1, 'TAHU SENDIRI', 105, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3877, '2018-02-21 00:00:00', 'RITA GEOVANI', 'P', 'JAKARTA', NULL, 'ISLAM', 'ritagiovani@gmail.com', NULL, 'KP. SUSUKAN RT 001 RW 004 PAMIJAHAN', NULL, 'SMK RAFFLESIA BOGOR', NULL, 2, 1, 'PRESENTASI', 105, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3878, '2018-02-28 00:00:00', 'WIIDIYATUN NUFUS', 'P', 'TANGERANG', NULL, 'ISLAM', 'stikes123456widiyatunnufus@gmail.com', NULL, 'KP. KANDANG RT 05 RW 02 DESA MEKARWANGI', NULL, 'SMK KESEHATAN KHARISMA', NULL, 2, 1, 'PRESENTASI', 105, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3879, '2018-02-28 00:00:00', 'SITI KRISMONIKA SARI', 'P', 'TANGERANG', NULL, 'ISLAM', 'stikes123456sitikrismonika@gmail.com', NULL, 'KP. KUTRUK DS. KUTRUK KEC JAMBE RT 003 RW 002', NULL, 'SMK KESEHATAN KHARISMA', NULL, 2, 1, 'PRESENTASI', 105, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3880, '2018-02-28 00:00:00', 'SRI RAHAYU', 'P', 'TANGERANG', NULL, 'ISLAM', 'stikes123456srirahayyu@gmail.com', NULL, 'KP. PALASARI RT 002/001 CURUG TANGERANG', NULL, 'SMK KESEHATAN KHARISMA', NULL, 2, 1, 'PRESENTASI', 105, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3881, '2018-02-28 00:00:00', 'ANGGITA MAHARANI', 'P', 'TANGERANG', NULL, 'ISLAM', 'anggitamaharani@gmail.com', NULL, 'KP. KANDANG RT 07 RW 03 DESA MEKARWANGI KEC. CISAUK', NULL, 'SMK KESEHATAN KHARISMA', NULL, 2, 1, 'PRESENTASI', 105, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3882, '2018-03-05 00:00:00', 'TIKA GUMAYANG SARI', 'P', 'PEMALANG', NULL, 'ISLAM', 'tikagumayangsari8@gmal.com', NULL, 'KP. BULAK RT 05 RW 09 NO. 32', NULL, 'MA UMMUL QURO AL - ISLAMI', NULL, 2, 1, 'TAHU SENDIRI', 105, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3883, '2018-03-08 00:00:00', 'DEDE KARLINA', 'P', 'TANGERANG', NULL, 'ISLAM', 'ddkarlina11@gmail.com', NULL, 'KP. BONISARI RT 002 RW 002 DESA BONISARI KEC PAKU HAJI', NULL, 'SMAN 20 KAB. TANGERANG', NULL, 2, 1, 'PRESENTASI', 105, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3884, '2018-03-08 00:00:00', 'MELAWATI', 'P', 'TANGERANG', NULL, 'ISLAM', 'stikes123456melawati@gmail.com', NULL, 'KP. CITVIS DESA SURYA BAHARI KEC PAKU HAJI RT 01 RW 01', NULL, 'SMAN 20 KAB. TANGERANG', NULL, 2, 1, 'PRESENTASI', 105, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3885, '2018-03-21 00:00:00', 'FAUZIAH APRILIA EFFENDI', 'P', 'TANGERANG', NULL, 'ISLAM', 'faprilia59@gmail.com', NULL, 'JULAN MASJID XIV NO. 26 RT 03 RW 007 CILEDUG TANGERANG', NULL, 'SMK YADIKA 4', NULL, 2, 1, 'TAHU SENDIRI', 105, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL);
-INSERT INTO `aplikan` (`id`, `tanggal_daftar`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `agama`, `email`, `telepon`, `alamat`, `village_id`, `asal_sekolah`, `jurusan_sekolah`, `konsentrasi_id`, `kelas_id`, `sumber_informasi`, `user_id`, `aplikan_status_id`, `status_detail`, `tanggal_take`, `pilihan_kampus_id`, `token`, `created_at`, `updated_at`, `tanggal_database`, `tanggal_aplikan`, `tanggal_terdaftar`, `tanggal_teregistrasi`) VALUES
-(3886, '2018-03-24 00:00:00', 'MARYATI', 'P', 'KULON PROGO', NULL, 'ISLAM', 'stikes123456maryati@gmail.com', NULL, 'VILLA DAGO TOL BLOK H2 NO 12A CIPUTAT', NULL, 'SPK', NULL, 2, 2, 'BROCHURE', 105, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:55', '2018-04-11 18:17:55', NULL, NULL, NULL, NULL),
-(3887, '2018-04-10 00:00:00', 'NADIA FEBRIYANI', 'P', 'GROBOGAN', NULL, 'ISLAM', 'nadiafebriyani5@gmail.com', NULL, 'PERUM RIVERA HIII BLOK BG NO. 26', NULL, 'SMK SASMITA JAYA (KESEHATAN)', NULL, 2, 1, 'TALITHA MHS PERAWAT', 85, 2, NULL, '2018-07-17 20:24:14', NULL, NULL, '2018-04-11 04:17:55', '2018-07-17 20:24:14', NULL, NULL, NULL, NULL),
-(3888, '2018-04-10 00:00:00', 'DEWI LESTARI', 'P', 'LAMONGAN', NULL, 'ISLAM', 'dewi88585@gmail.com', NULL, 'JL. H EMAN II RT 01 RW 06 NO 95 PONDOK PINANG', NULL, 'SMK SASMITA JAYA (KESEHATAN)', NULL, 2, 1, 'TALITHA MHS PERAWAT', 105, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:56', '2018-04-11 18:17:56', NULL, NULL, NULL, NULL),
-(3889, '2018-04-10 00:00:00', 'CANTIKA AUDIA PUTRI', 'P', 'BOGOR', NULL, 'ISLAM', 'stikes123456cantikaaudia@gmail.com', NULL, 'KP. KEBON KOPI RT 05 RW 06 GUNUNG SINDUR', NULL, 'SMK SASMITA JAYA (KESEHATAN)', NULL, 2, 1, 'TALITHA MHS PERAWAT', 105, 2, NULL, NULL, NULL, NULL, '2018-04-11 04:17:56', '2018-04-11 18:17:56', NULL, NULL, NULL, NULL),
-(3890, '2018-07-17 22:23:52', 'Basrul Yandri', 'P', NULL, NULL, NULL, 'digicrea08@gmail.com', '081235645645', NULL, NULL, NULL, NULL, 2, NULL, NULL, 85, 2, NULL, '2018-07-17 22:24:16', NULL, NULL, '2018-07-17 08:23:52', '2018-07-17 22:24:16', NULL, NULL, NULL, NULL),
-(3891, '2018-07-17 22:25:09', 'Dina', 'W', NULL, NULL, NULL, 'dina.yandri@gmail.com', '085771119095', NULL, NULL, NULL, NULL, 2, NULL, NULL, 85, 2, NULL, '2018-07-17 22:25:18', NULL, NULL, '2018-07-17 08:25:09', '2018-07-17 22:25:18', NULL, NULL, NULL, NULL);
-
---
--- Triggers `aplikan`
---
-DELIMITER $$
-CREATE TRIGGER `update_aplikan` BEFORE UPDATE ON `aplikan` FOR EACH ROW SET NEW.`updated_at` = NOW()
-$$
-DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `aplikan_status`
---
-
-CREATE TABLE `aplikan_status` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(45) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-
---
--- Dumping data for table `aplikan_status`
---
-
-INSERT INTO `aplikan_status` (`id`, `nama`, `created_at`, `updated_at`) VALUES
-(1, 'Database', '2016-08-27 08:07:55', '0000-00-00 00:00:00'),
-(2, 'Aplikan', '2016-08-27 08:07:55', '0000-00-00 00:00:00'),
-(3, 'Terdaftar', '2016-08-27 08:08:18', '2017-08-14 11:24:25'),
-(4, 'Teregistrasi', '2016-11-13 15:23:17', '0000-00-00 00:00:00');
-
---
--- Triggers `aplikan_status`
---
-DELIMITER $$
-CREATE TRIGGER `update_aplikan_status` BEFORE UPDATE ON `aplikan_status` FOR EACH ROW SET NEW.`updated_at` = NOW()
-$$
-DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `aplikan_track`
---
-
-CREATE TABLE `aplikan_track` (
-  `id` int(11) NOT NULL,
-  `aplikan_id` int(11) NOT NULL,
-  `nama_proses` varchar(100) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `aplikan_track`
---
-
-INSERT INTO `aplikan_track` (`id`, `aplikan_id`, `nama_proses`, `user_id`, `created_at`, `updated_at`) VALUES
-(2, 3208, 'pendaftaran', 90, '2017-08-08 00:36:45', '2017-08-08 00:36:45'),
-(3, 3209, 'pendaftaran', 90, '2017-08-11 23:51:53', '2017-08-11 23:51:53'),
-(4, 3210, 'pendaftaran', 90, '2017-08-15 00:19:29', '2017-08-15 00:19:29'),
-(5, 3553, 'pendaftaran', 90, '2017-08-19 10:37:38', '2017-08-20 00:37:38'),
-(6, 3211, 'pendaftaran', 90, '2017-08-19 10:50:19', '2017-08-20 00:50:19'),
-(7, 3212, 'pendaftaran', 90, '2017-08-19 10:56:23', '2017-08-20 00:56:23'),
-(8, 3213, 'pendaftaran', 90, '2017-08-19 10:56:45', '2017-08-20 00:56:45'),
-(9, 3214, 'pendaftaran', 90, '2017-08-19 10:57:57', '2017-08-20 00:57:57'),
-(10, 3215, 'pendaftaran', 90, '2017-08-19 10:58:01', '2017-08-20 00:58:01'),
-(11, 3757, 'pendaftaran', 90, '2017-08-26 11:10:09', '2017-08-27 01:10:09'),
-(12, 3216, 'pendaftaran', 90, '2017-08-30 05:56:28', '2017-08-30 19:56:28'),
-(13, 3217, 'pendaftaran', 90, '2017-08-30 07:14:43', '2017-08-30 21:14:43'),
-(14, 3218, 'pendaftaran', 90, '2017-08-30 07:14:55', '2017-08-30 21:14:55'),
-(15, 3634, 'pendaftaran', 90, '2017-08-30 07:25:11', '2017-08-30 21:25:11'),
-(16, 3219, 'pendaftaran', 90, '2017-08-30 07:26:02', '2017-08-30 21:26:02'),
-(17, 3210, 'registrasi', 90, '2017-08-30 07:48:21', '2017-08-30 21:48:21'),
-(18, 3208, 'registrasi', 90, '2017-08-30 08:05:37', '2017-08-30 22:05:37'),
-(19, 3637, 'pendaftaran', 90, '2017-09-04 04:16:16', '2017-09-04 18:16:16'),
-(20, 3636, 'pendaftaran', 90, '2017-09-04 04:18:56', '2017-09-04 18:18:56'),
-(21, 3635, 'pendaftaran', 90, '2017-09-04 04:22:25', '2017-09-04 18:22:25'),
-(22, 3635, 'registrasi', 90, '2017-09-04 06:42:43', '2017-09-04 20:42:43'),
-(23, 3638, 'pendaftaran', 90, '2017-09-04 07:21:43', '2017-09-04 21:21:43'),
-(24, 3638, 'registrasi', 90, '2017-09-04 07:25:37', '2017-09-04 21:25:37'),
-(25, 3642, 'pendaftaran', 90, '2017-09-09 08:55:57', '2017-09-09 22:55:57'),
-(26, 3655, 'released', 90, '2017-10-21 07:23:02', '2017-10-21 21:23:02'),
-(27, 3654, 'released', 90, '2017-10-21 07:25:18', '2017-10-21 21:25:18'),
-(28, 3653, 'released', 90, '2017-10-21 07:25:23', '2017-10-21 21:25:23'),
-(29, 3652, 'released', 90, '2017-10-21 07:25:27', '2017-10-21 21:25:27'),
-(30, 3651, 'released', 90, '2017-10-21 07:25:29', '2017-10-21 21:25:29'),
-(31, 3650, 'released', 90, '2017-10-21 07:25:30', '2017-10-21 21:25:30'),
-(32, 3650, 'taken', 90, '2017-10-21 07:27:29', '2017-10-21 21:27:29'),
-(33, 3651, 'taken', 90, '2017-10-21 07:27:30', '2017-10-21 21:27:30'),
-(34, 3651, 'released', 90, '2017-10-21 07:28:36', '2017-10-21 21:28:36'),
-(35, 3651, 'taken', 90, '2017-10-21 08:23:12', '2017-10-21 22:23:12'),
-(36, 3652, 'taken', 90, '2017-10-21 08:23:18', '2017-10-21 22:23:18'),
-(37, 3652, 'released', 90, '2017-10-21 08:29:04', '2017-10-21 22:29:04'),
-(38, 3651, 'released', 90, '2017-10-21 08:29:26', '2017-10-21 22:29:26'),
-(39, 3650, 'released', 90, '2017-10-21 08:29:27', '2017-10-21 22:29:27'),
-(40, 3649, 'released', 90, '2017-10-21 08:29:29', '2017-10-21 22:29:29'),
-(41, 3649, 'taken', 90, '2017-10-21 08:29:33', '2017-10-21 22:29:33'),
-(42, 3650, 'taken', 90, '2017-10-21 08:29:34', '2017-10-21 22:29:34'),
-(43, 3651, 'taken', 90, '2017-10-21 08:29:36', '2017-10-21 22:29:36'),
-(44, 3651, 'released', 90, '2017-10-21 08:29:47', '2017-10-21 22:29:47'),
-(45, 3651, 'taken', 90, '2017-10-21 08:29:51', '2017-10-21 22:29:51'),
-(46, 3651, 'released', 90, '2017-10-28 10:01:50', '2017-10-29 00:01:50'),
-(47, 3328, 'taken', 90, '2017-10-28 10:02:07', '2017-10-29 00:02:07'),
-(48, 3328, 'released', 90, '2017-10-28 10:02:19', '2017-10-29 00:02:19'),
-(49, 3328, 'taken', 85, '2017-11-04 09:26:08', '2017-11-04 23:26:08'),
-(50, 3584, 'taken', 90, '2017-11-04 09:47:48', '2017-11-04 23:47:48'),
-(51, 3329, 'taken', 90, '2017-11-04 09:47:58', '2017-11-04 23:47:58'),
-(52, 3585, 'taken', 90, '2017-11-04 09:59:50', '2017-11-04 23:59:50'),
-(53, 3330, 'taken', 90, '2017-11-04 09:59:58', '2017-11-04 23:59:58'),
-(54, 3586, 'taken', 90, '2017-11-04 10:00:05', '2017-11-05 00:00:05'),
-(55, 3331, 'taken', 90, '2017-11-04 10:06:45', '2017-11-05 00:06:45'),
-(56, 3587, 'taken', 90, '2017-11-04 10:46:17', '2017-11-05 00:46:17'),
-(57, 3332, 'taken', 90, '2017-11-04 10:47:33', '2017-11-05 00:47:33'),
-(58, 3588, 'taken', 90, '2017-11-04 10:47:36', '2017-11-05 00:47:36'),
-(59, 3333, 'taken', 90, '2017-11-04 10:47:38', '2017-11-05 00:47:38'),
-(60, 3589, 'taken', 90, '2017-11-04 10:47:40', '2017-11-05 00:47:40'),
-(61, 3334, 'taken', 90, '2017-11-04 10:47:42', '2017-11-05 00:47:42'),
-(62, 3590, 'taken', 85, '2017-11-04 11:05:46', '2017-11-05 01:05:46'),
-(63, 3335, 'taken', 85, '2017-11-04 11:05:51', '2017-11-05 01:05:51'),
-(64, 3591, 'taken', 85, '2017-11-04 11:06:31', '2017-11-05 01:06:31'),
-(65, 3336, 'taken', 85, '2017-11-04 11:07:04', '2017-11-05 01:07:04'),
-(66, 3592, 'taken', 85, '2017-11-04 11:07:06', '2017-11-05 01:07:06'),
-(67, 3337, 'taken', 85, '2017-11-04 11:07:10', '2017-11-05 01:07:10'),
-(68, 3593, 'taken', 85, '2017-11-04 11:07:14', '2017-11-05 01:07:14'),
-(69, 3338, 'taken', 85, '2017-11-04 11:07:16', '2017-11-05 01:07:16'),
-(70, 3339, 'taken', 85, '2017-12-11 00:52:51', '2017-12-11 14:52:51'),
-(71, 3594, 'taken', 85, '2017-12-11 00:52:59', '2017-12-11 14:52:59'),
-(72, 3763, 'released', 100, '2018-01-08 08:21:34', '2018-01-08 22:21:34'),
-(73, 3764, 'released', 100, '2018-01-08 08:21:37', '2018-01-08 22:21:37'),
-(74, 3340, 'taken', 100, '2018-01-08 08:21:58', '2018-01-08 22:21:58'),
-(75, 3596, 'taken', 100, '2018-01-08 08:22:00', '2018-01-08 22:22:00'),
-(76, 3341, 'taken', 100, '2018-01-08 08:22:01', '2018-01-08 22:22:01'),
-(77, 3758, 'released', 100, '2018-01-08 08:22:20', '2018-01-08 22:22:20'),
-(78, 3762, 'released', 100, '2018-01-08 08:22:22', '2018-01-08 22:22:22'),
-(79, 3761, 'released', 100, '2018-01-08 08:22:28', '2018-01-08 22:22:28'),
-(80, 3759, 'released', 100, '2018-01-08 08:22:28', '2018-01-08 22:22:28'),
-(81, 3760, 'released', 100, '2018-01-08 08:22:29', '2018-01-08 22:22:29'),
-(82, 3763, 'taken', 100, '2018-01-08 08:22:37', '2018-01-08 22:22:37'),
-(83, 3764, 'taken', 100, '2018-01-08 08:22:39', '2018-01-08 22:22:39'),
-(84, 3761, 'taken', 100, '2018-01-08 08:22:40', '2018-01-08 22:22:40'),
-(85, 3762, 'taken', 100, '2018-01-08 08:22:41', '2018-01-08 22:22:41'),
-(86, 3760, 'taken', 100, '2018-01-08 08:22:43', '2018-01-08 22:22:43'),
-(87, 3209, 'registrasi', 100, '2018-01-09 07:41:06', '2018-01-09 21:41:06'),
-(88, 3760, 'pendaftaran', 100, '2018-01-09 07:42:06', '2018-01-09 21:42:06'),
-(89, 3760, 'registrasi', 100, '2018-01-09 08:11:33', '2018-01-09 22:11:33'),
-(90, 3762, 'pendaftaran', 100, '2018-01-28 09:52:11', '2018-01-28 23:52:11'),
-(91, 3759, 'taken', 100, '2018-02-01 05:46:17', '2018-02-01 19:46:17'),
-(92, 3758, 'taken', 100, '2018-02-01 05:46:19', '2018-02-01 19:46:19'),
-(93, 3595, 'taken', 100, '2018-02-01 05:46:21', '2018-02-01 19:46:21'),
-(94, 3597, 'taken', 100, '2018-02-01 05:46:23', '2018-02-01 19:46:23'),
-(95, 3342, 'taken', 100, '2018-02-01 05:46:25', '2018-02-01 19:46:25'),
-(96, 3598, 'taken', 100, '2018-02-01 05:46:27', '2018-02-01 19:46:27'),
-(97, 3343, 'taken', 100, '2018-02-01 05:46:28', '2018-02-01 19:46:28'),
-(98, 3599, 'taken', 100, '2018-02-01 05:46:30', '2018-02-01 19:46:30'),
-(99, 3599, 'pendaftaran', 100, '2018-02-01 05:48:10', '2018-02-01 19:48:10'),
-(100, 3343, 'pendaftaran', 100, '2018-02-01 05:48:19', '2018-02-01 19:48:19'),
-(101, 3223, 'pendaftaran', 100, '2018-02-01 09:07:47', '2018-02-01 23:07:47'),
-(102, 3224, 'pendaftaran', 100, '2018-02-01 09:08:01', '2018-02-01 23:08:01'),
-(103, 3225, 'pendaftaran', 100, '2018-02-01 09:14:24', '2018-02-01 23:14:24'),
-(104, 3225, 'registrasi', 100, '2018-02-01 09:17:07', '2018-02-01 23:17:07'),
-(105, 3218, 'registrasi', 100, '2018-02-17 10:24:03', '2018-02-18 00:24:03'),
-(106, 3214, 'registrasi', 100, '2018-02-17 10:24:25', '2018-02-18 00:24:25'),
-(107, 3215, 'registrasi', 100, '2018-02-17 10:32:46', '2018-02-18 00:32:46'),
-(108, 3216, 'registrasi', 100, '2018-02-17 10:32:58', '2018-02-18 00:32:58'),
-(109, 3226, 'pendaftaran', 100, '2018-02-18 09:01:02', '2018-02-18 23:01:02'),
-(110, 3817, 'taken', 100, '2018-03-30 08:48:35', '2018-03-30 22:48:35'),
-(111, 3344, 'taken', 100, '2018-03-30 08:48:56', '2018-03-30 22:48:56'),
-(112, 3887, 'taken', 85, '2018-07-17 06:24:14', '2018-07-17 20:24:14'),
-(113, 3890, 'taken', 85, '2018-07-17 08:24:17', '2018-07-17 22:24:17'),
-(114, 3891, 'taken', 85, '2018-07-17 08:25:18', '2018-07-17 22:25:18');
-
---
--- Triggers `aplikan_track`
---
-DELIMITER $$
-CREATE TRIGGER `update_aplikan_track` BEFORE UPDATE ON `aplikan_track` FOR EACH ROW SET NEW.`updated_at` = NOW()
-$$
-DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `biaya`
---
-
-CREATE TABLE `biaya` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(100) NOT NULL,
-  `deskripsi` text NOT NULL,
-  `nominal` int(11) NOT NULL,
-  `jenis_biaya_id` int(11) NOT NULL,
-  `tahun_akademik_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `biaya`
---
-
-INSERT INTO `biaya` (`id`, `nama`, `deskripsi`, `nominal`, `jenis_biaya_id`, `tahun_akademik_id`, `created_at`, `updated_at`) VALUES
-(1, 'Pendaftaran', 'Biaya Pendaftaran', 150000, 1, 1, '2017-08-11 10:26:05', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -8052,171 +7189,6 @@ INSERT INTO `districts` (`id`, `regency_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fakultas`
---
-
-CREATE TABLE `fakultas` (
-  `id` int(11) NOT NULL,
-  `kode_fakultas` varchar(45) NOT NULL,
-  `nama` varchar(100) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `fakultas`
---
-
-INSERT INTO `fakultas` (`id`, `kode_fakultas`, `nama`, `created_at`, `updated_at`) VALUES
-(1, 'FIKES', 'Fakultas Ilmu Kesehatan', '2017-07-25 04:45:00', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `followup`
---
-
-CREATE TABLE `followup` (
-  `id` int(11) NOT NULL,
-  `aplikan_id` int(11) NOT NULL,
-  `keterangan` text NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `followup`
---
-
-INSERT INTO `followup` (`id`, `aplikan_id`, `keterangan`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 3206, 'Test', 85, '2017-06-13 09:43:41', '0000-00-00 00:00:00'),
-(2, 3208, 'Tes juga', 85, '2017-06-13 09:43:41', '0000-00-00 00:00:00'),
-(3, 3206, 'tes nana', 86, '2017-06-13 09:44:15', '0000-00-00 00:00:00'),
-(4, 3621, 'test', 85, '2017-06-14 00:36:58', '2017-06-14 00:36:58'),
-(5, 3621, 'test lagi', 85, '2017-06-14 00:37:48', '2017-06-14 00:37:48'),
-(6, 3631, 'jumlat mau datang', 85, '2017-07-25 15:30:52', '2017-07-25 15:30:52'),
-(7, 3631, 'Minggu depan registrasi', 85, '2017-07-25 15:53:25', '2017-07-25 15:53:25'),
-(8, 3635, 'mau datang hari sabtu', 90, '2017-08-14 23:58:38', '2017-08-14 23:58:38'),
-(9, 3634, 'test lagi', 90, '2017-08-30 07:24:33', '2017-08-30 21:24:33'),
-(10, 3634, 'jumat', 90, '2017-08-30 07:24:42', '2017-08-30 21:24:42'),
-(11, 3634, 'test mulu', 90, '2017-08-30 07:24:57', '2017-08-30 21:24:57'),
-(12, 3635, 'Yes, mau daftar besok', 90, '2017-08-30 07:30:49', '2017-08-30 21:30:49'),
-(13, 3635, 'Yes, mau daftar besok', 90, '2017-08-30 07:30:49', '2017-08-30 21:30:49'),
-(14, 3757, 'Datang sama orang tua, kemungkinan besar daftar dalam waktu dekat', 90, '2017-08-30 07:31:15', '2017-08-30 21:31:15'),
-(15, 3757, 'test mulu', 90, '2017-09-04 04:06:10', '2017-09-04 18:06:10'),
-(16, 3635, 'dsfsdfsdf', 90, '2017-09-04 07:26:36', '2017-09-04 21:26:36'),
-(17, 3636, 'Sudah datang, tapi masih pikir2', 90, '2017-09-04 07:26:50', '2017-09-04 21:26:50'),
-(18, 3642, 'Mau tanya2 dulu', 90, '2017-09-09 08:55:44', '2017-09-09 22:55:44'),
-(19, 3651, 'test aja', 90, '2017-10-28 10:01:47', '2017-10-29 00:01:47'),
-(20, 3328, 'test aja', 90, '2017-10-28 10:02:16', '2017-10-29 00:02:16'),
-(21, 3763, 'test aja', 100, '2018-01-08 08:21:07', '2018-01-08 22:21:07'),
-(22, 3760, 'Hari Jumat Mau datang', 100, '2018-01-09 07:40:41', '2018-01-09 21:40:41'),
-(23, 3786, 'Masih tanya2', 100, '2018-03-28 07:03:13', '2018-03-28 21:03:13'),
-(24, 3786, 'besok mau daftar', 100, '2018-03-30 08:45:52', '2018-03-30 22:45:52'),
-(25, 3599, 'Konsultasi sama orang tua dulu', 100, '2018-03-30 08:53:36', '2018-03-30 22:53:36'),
-(26, 3887, 'test', 85, '2018-07-17 06:25:00', '2018-07-17 20:25:00');
-
---
--- Triggers `followup`
---
-DELIMITER $$
-CREATE TRIGGER `update_followup` BEFORE UPDATE ON `followup` FOR EACH ROW SET NEW.`updated_at` = NOW()
-$$
-DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `kelas`
---
-
-CREATE TABLE `kelas` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(45) NOT NULL,
-  `label` char(10) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `kelas`
---
-
-INSERT INTO `kelas` (`id`, `nama`, `label`, `created_at`, `updated_at`) VALUES
-(1, 'REGULER PAGI', 'A', '2016-08-20 08:39:53', '2016-10-09 23:50:41'),
-(2, 'REGULER SORE', 'B', '2016-08-20 08:39:53', '2016-10-09 23:50:45'),
-(3, 'NON REGULER 1', 'C', '2016-10-09 09:49:12', '2016-10-09 23:50:48'),
-(4, 'NON REGULER 2', 'D', '2016-10-09 09:49:24', '2016-10-09 23:50:50'),
-(5, 'REGULER MALAM', 'E', '2016-12-07 02:39:57', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `konsentrasi`
---
-
-CREATE TABLE `konsentrasi` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(100) NOT NULL,
-  `alias` varchar(10) NOT NULL,
-  `jenjang` varchar(45) NOT NULL,
-  `gelar` varchar(45) NOT NULL,
-  `prodi_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `konsentrasi`
---
-
-INSERT INTO `konsentrasi` (`id`, `nama`, `alias`, `jenjang`, `gelar`, `prodi_id`, `created_at`, `updated_at`) VALUES
-(1, 'Kebidanan', 'BDN', 'D3', 'Amd', 1, '2017-07-25 04:54:17', '0000-00-00 00:00:00'),
-(2, 'Keperawatan', 'PRW', 'S1', '', 2, '2017-07-25 04:54:17', '0000-00-00 00:00:00'),
-(3, 'NERS', 'NERS', 'D3', '', 3, '2017-10-21 10:33:57', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `melayani`
---
-
-CREATE TABLE `melayani` (
-  `id` int(11) NOT NULL,
-  `aplikan_id` int(11) NOT NULL,
-  `keterangan` text NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `melayani`
---
-
-INSERT INTO `melayani` (`id`, `aplikan_id`, `keterangan`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 3211, 'Tanya2 aja', 85, '2017-08-07 01:30:44', '2017-08-07 01:30:44'),
-(2, 3206, 'Baru tanya2 saja , katanya mau datang lagi hari sabtu', 85, '2017-08-14 16:06:50', '2017-08-14 16:06:50'),
-(3, 3209, 'Mau daftar besok', 85, '2017-08-15 01:28:50', '2017-08-15 01:28:50'),
-(4, 3460, 'Besok mau registrasi', 90, '2017-09-04 04:13:02', '2017-09-04 18:13:02'),
-(5, 3636, 'besok mau registrasi', 90, '2017-09-04 04:15:07', '2017-09-04 18:15:07'),
-(6, 3209, 'tanya2 dulu', 90, '2017-09-09 08:49:10', '2017-09-09 22:49:10'),
-(7, 3216, 'Mau registrasi', 90, '2017-09-09 08:58:20', '2017-09-09 22:58:20'),
-(8, 3786, 'Melayani dengan senyuman', 100, '2018-03-28 08:20:55', '2018-03-28 22:20:55'),
-(9, 3738, 'Sempat datang hari Jumat, tapi libur. sekarang mau daftar', 100, '2018-03-31 05:33:45', '2018-03-31 19:33:45');
-
---
--- Triggers `melayani`
---
-DELIMITER $$
-CREATE TRIGGER `update_melayani` BEFORE UPDATE ON `melayani` FOR EACH ROW SET NEW.`updated_at` = NOW()
-$$
-DELIMITER ;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `menus`
 --
 
@@ -8235,7 +7207,9 @@ INSERT INTO `menus` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (1, 'Top', '2017-10-17 05:42:18', '2017-10-17 05:42:18'),
 (2, 'Under Logo', '2018-03-15 11:29:23', '2018-08-27 07:17:51'),
 (3, 'Footer Bantuan', '2018-03-15 11:30:37', '2018-03-15 11:38:46'),
-(4, 'Footer Menu', '2018-03-15 11:31:19', '2018-03-15 11:38:54');
+(4, 'Footer Menu', '2018-03-15 11:31:19', '2018-03-15 11:38:54'),
+(5, 'Footer 1', '2018-08-29 16:02:23', '2018-08-29 16:02:23'),
+(6, 'Footer 2', '2018-08-29 16:05:45', '2018-08-29 16:05:45');
 
 -- --------------------------------------------------------
 
@@ -8285,7 +7259,13 @@ INSERT INTO `menu_items` (`id`, `label`, `link`, `parent`, `sort`, `class`, `men
 (33, 'CIMA Operational', '#', 0, 7, '', 2, 0, '2018-08-27 07:21:25', '2018-08-27 07:22:50'),
 (34, 'CIMA Certificate', '#', 0, 8, '', 2, 0, '2018-08-27 07:21:43', '2018-08-27 07:22:50'),
 (35, 'Courses', '#', 30, 3, '', 2, 2, '2018-08-27 07:22:29', '2018-08-27 07:22:49'),
-(36, 'Study Text', '#', 30, 4, '', 2, 2, '2018-08-27 07:22:37', '2018-08-27 07:22:49');
+(36, 'Study Text', '#', 30, 4, '', 2, 2, '2018-08-27 07:22:37', '2018-08-27 07:22:49'),
+(37, 'Testimonials', '#', 0, 0, '', 5, 0, '2018-08-29 16:02:48', '2018-08-29 16:04:03'),
+(38, 'Exam Dates', '#', 0, 1, '', 5, 0, '2018-08-29 16:02:58', '2018-08-29 16:04:03'),
+(39, 'CIMA Syllabus', '#', 0, 2, '', 5, 0, '2018-08-29 16:03:41', '2018-08-29 16:04:03'),
+(40, 'Partnership & Affiliates', '#', 0, 3, '', 5, 0, '2018-08-29 16:04:00', '2018-08-29 16:05:08'),
+(41, 'F.A.Q', '#', 0, 0, '', 6, 0, '2018-08-29 16:05:57', '2018-08-29 16:06:09'),
+(42, 'Contact', '#', 0, 1, '', 6, 0, '2018-08-29 16:06:07', '2018-08-29 16:06:09');
 
 -- --------------------------------------------------------
 
@@ -8332,8 +7312,8 @@ INSERT INTO `options` (`id`, `option_key`, `option_value`, `created_at`, `update
 (4, 'tahun_akademik_aktif', '2017/2018', '2017-10-21 07:51:24', '2017-10-21 21:52:18'),
 (5, 'mulai_tahun_akademik', '2017-09-10', '2017-10-21 07:59:57', '0000-00-00 00:00:00'),
 (6, 'akhir_tahun_akademik', '2018-09-09', '2017-10-21 08:01:55', '0000-00-00 00:00:00'),
-(7, 'theme_option_amount_of_slider', '2', '2017-11-01 08:00:42', '2018-08-27 13:12:08'),
-(8, 'theme_option_slider_contents', 'a:3:{i:0;s:2:\"18\";i:1;s:2:\"24\";i:2;s:2:\"31\";}', '2017-11-01 08:35:29', '2018-08-27 13:12:08'),
+(7, 'theme_option_amount_of_slider', '2', '2017-11-01 08:00:42', '2018-08-29 22:32:39'),
+(8, 'theme_option_slider_contents', 'a:3:{i:0;s:2:\"31\";i:1;s:2:\"32\";i:2;s:2:\"33\";}', '2017-11-01 08:35:29', '2018-08-29 22:32:39'),
 (9, 'theme_option_logo', '/photos/logo_BAF-min.png', '2018-01-04 09:44:46', '2018-08-27 19:06:38'),
 (10, 'theme_option_hotline', '087878917753', '2018-01-04 10:04:14', '2018-08-27 19:06:38'),
 (11, 'theme_option_facebook_url', 'https://www.facebook.com/bafstudies/', '2018-01-04 10:11:01', '2018-08-27 19:06:38'),
@@ -8363,66 +7343,6 @@ DELIMITER $$
 CREATE TRIGGER `update_options` BEFORE UPDATE ON `options` FOR EACH ROW SET NEW.`updated_at` = NOW()
 $$
 DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pembayaran`
---
-
-CREATE TABLE `pembayaran` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL COMMENT 'user yg input pembayaran',
-  `no_bukti_bayar` varchar(45) DEFAULT NULL,
-  `tgl_bayar` date NOT NULL,
-  `nominal` int(11) DEFAULT NULL,
-  `tagihan_id` int(11) DEFAULT NULL,
-  `nama_pengirim` varchar(45) DEFAULT NULL,
-  `no_rekening_pengirim` varchar(45) DEFAULT NULL,
-  `bank_pengirim` varchar(45) DEFAULT NULL,
-  `keterangan` varchar(45) DEFAULT NULL,
-  `pembayaran_via_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pembayaran`
---
-
-INSERT INTO `pembayaran` (`id`, `user_id`, `no_bukti_bayar`, `tgl_bayar`, `nominal`, `tagihan_id`, `nama_pengirim`, `no_rekening_pengirim`, `bank_pengirim`, `keterangan`, `pembayaran_via_id`, `created_at`, `updated_at`) VALUES
-(8, 91, NULL, '2017-08-15', 150000, 109, NULL, NULL, NULL, NULL, 1, '2017-08-15 01:23:48', '2017-08-15 01:23:48'),
-(9, 91, NULL, '2017-08-15', 150000, 110, NULL, NULL, NULL, NULL, 1, '2017-08-15 01:24:47', '2017-08-15 01:24:47'),
-(12, 91, '123', '2017-08-27', 150000, 111, '', '', '', NULL, 1, '2017-08-19 23:11:20', '2017-08-20 13:11:20'),
-(13, 91, '1234', '2017-08-20', 150000, 112, '', '', '', NULL, 1, '2017-08-20 01:27:56', '2017-08-20 15:27:56'),
-(14, 91, '1234', '2017-08-30', 150000, 113, '', '', '', NULL, 1, '2017-08-30 07:38:12', '2017-08-30 21:38:12'),
-(15, 91, '12345', '2017-08-30', 2500000, 122, '', '', '', NULL, 1, '2017-08-30 08:09:01', '2017-08-30 22:09:01'),
-(16, 91, '321', '2017-09-04', 150000, 123, '', '', '', NULL, 1, '2017-09-04 04:17:26', '2017-09-04 18:17:26'),
-(17, 91, '352', '2017-09-04', 150000, 124, '', '', '', NULL, 1, '2017-09-04 04:19:32', '2017-09-04 18:19:32'),
-(18, 91, '875', '2017-09-04', 150000, 125, '', '', '', NULL, 1, '2017-09-04 04:23:19', '2017-09-04 18:23:19'),
-(19, 91, '654', '2017-09-04', 2500000, 126, '', '', '', NULL, 1, '2017-09-04 06:43:30', '2017-09-04 20:43:30'),
-(20, 91, '854', '2017-09-04', 150000, 127, '', '', '', NULL, 1, '2017-09-04 07:25:16', '2017-09-04 21:25:16'),
-(21, 91, '147', '2017-09-04', 150000, 128, '', '', '', NULL, 1, '2017-09-04 07:25:56', '2017-09-04 21:25:56'),
-(22, 91, '658', '2017-09-09', 150000, 129, '', '', '', NULL, 1, '2017-09-09 08:56:44', '2017-09-09 22:56:44'),
-(23, 91, '123456789', '2018-01-09', 250000, 131, '', '', '', NULL, 1, '2018-01-09 08:10:03', '2018-01-09 22:10:03'),
-(24, 91, '321456987', '2018-01-09', 1500000, 132, '', '', '', NULL, 1, '2018-01-09 08:12:04', '2018-01-09 22:12:04'),
-(25, 91, '6547892156', '2018-01-10', 1500000, 121, '', '', '', NULL, 1, '2018-01-09 10:00:56', '2018-01-10 00:00:56'),
-(26, 91, '6548935478', '2018-01-10', 1500000, 130, '', '', '', NULL, 1, '2018-01-09 10:01:11', '2018-01-10 00:01:11'),
-(27, 91, '329745126589', '2018-01-10', 150000, 120, '', '', '', NULL, 1, '2018-01-09 10:02:05', '2018-01-10 00:02:05'),
-(28, 91, '913547896423', '2018-01-10', 150000, 118, '', '', '', NULL, 1, '2018-01-09 10:05:27', '2018-01-10 00:05:27'),
-(29, 91, '95132146879841365', '2018-01-10', 150000, 119, '', '', '', NULL, 1, '2018-01-09 10:06:08', '2018-01-10 00:06:08'),
-(30, 91, '65423158975654', '2018-02-01', 150000, 134, '', '', '', NULL, 1, '2018-02-01 05:48:44', '2018-02-01 19:48:44'),
-(31, 91, '981346970255', '2018-02-01', 150000, 135, '', '', '', NULL, 1, '2018-02-01 05:48:55', '2018-02-01 19:48:55'),
-(32, 91, '325155445489444545', '2018-02-01', 150000, 138, '', '', '', NULL, 1, '2018-02-01 09:16:20', '2018-02-01 23:16:20'),
-(33, 91, '389874546615695', '2018-02-01', 2500000, 139, '', '', '', NULL, 1, '2018-02-01 09:17:20', '2018-02-01 23:17:20'),
-(34, 91, '32145687745874585', '2018-02-17', 150000, 133, '', '', '', NULL, 1, '2018-02-17 09:59:05', '2018-02-17 23:59:05'),
-(35, 91, '250000033545454554', '2018-02-18', 2500000, 141, '', '', '', NULL, 1, '2018-02-17 10:24:44', '2018-02-18 00:24:44'),
-(36, 91, '96876218465454', '2018-02-18', 150000, 114, '', '', '', NULL, 1, '2018-02-17 10:29:05', '2018-02-18 00:29:05'),
-(37, 91, '971368746561000', '2018-02-18', 150000, 115, '', '', '', NULL, 1, '2018-02-17 10:29:16', '2018-02-18 00:29:16'),
-(38, 91, '32197582169874554654', '2018-02-18', 150000, 116, '', '', '', NULL, 1, '2018-02-17 10:29:48', '2018-02-18 00:29:48'),
-(39, 91, '6556465431187789784', '2018-02-18', 100000, 117, '', '', '', NULL, 1, '2018-02-17 10:30:00', '2018-02-18 00:30:00'),
-(40, 91, '7486413484100215454', '2018-02-18', 180000, 137, '', '', '', NULL, 1, '2018-02-18 08:34:31', '2018-02-18 22:34:31'),
-(41, 91, '654554587897987987', '2018-02-18', 150000, 144, '', '', '', NULL, 1, '2018-02-18 09:03:38', '2018-02-18 23:03:38');
 
 -- --------------------------------------------------------
 
@@ -8626,36 +7546,6 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pilihan_kampus`
---
-
-CREATE TABLE `pilihan_kampus` (
-  `id` int(11) NOT NULL,
-  `pt_id` int(11) NOT NULL,
-  `nama_kampus` varchar(100) NOT NULL,
-  `alamat` text,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pilihan_kampus`
---
-
-INSERT INTO `pilihan_kampus` (`id`, `pt_id`, `nama_kampus`, `alamat`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Kampus Bintaro', 'Bintaro', '2017-08-20 09:38:46', '0000-00-00 00:00:00');
-
---
--- Triggers `pilihan_kampus`
---
-DELIMITER $$
-CREATE TRIGGER `update_pilihan_kampus` BEFORE UPDATE ON `pilihan_kampus` FOR EACH ROW SET NEW.`updated_at` = NOW()
-$$
-DELIMITER ;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `posts`
 --
 
@@ -8686,8 +7576,9 @@ INSERT INTO `posts` (`id`, `user_id`, `published_at`, `title`, `body`, `excerpt`
 (28, 85, '2017-02-08 17:11:15', 'Training Basic Trauma And Cardiac Life Support (BTCLS)', '<div>STIKes IMC Bintaro bekerjasama dengan Yayasan Ambulance &nbsp;Gawat Darurat 118</div>\r\n<div>Mengadakan Training BTCLS bagi Perawat dan Mahasiswa/i Keperawatan.</div>\r\n<div>Training akan diselenggarakan tanggal 13 s/d 17 Februari 2017</div>\r\n<div>Bertempat di Gedung Aula STIKes IMC Bintaro.</div>\r\n<div>Buruan Daftar Harga Promo.....</div>\r\n<div><img src=\"/stikes-imc-l53/public/photos/BTCLS.jpg\" alt=\"\" width=\"595\" height=\"842\" /></div>', 'STIKes IMC Bintaro bekerjasama dengan Yayasan Ambulance  Gawat Darurat 118\r\nMengadakan Training BTCLS bagi Perawat dan Mahasiswa/i Keperawatan.\r\nTraining akan diselenggarakan tanggal 13 s/d 17 Februari 2017\r\nBertempat di Gedung Aula STIKes IMC Bintaro.\r\nBuruan Daftar Harga Promo.....', 'published', 'training-basic-trauma-and-cardiac-life-support-btcls', 'post', NULL, NULL, 0, '/photos/training-btcls.jpg', '2018-03-20 03:11:15', '2018-03-20 18:06:32'),
 (29, 85, '2016-12-06 17:16:19', 'Seminar Kesehatan : Tantangan digital Teknologi di STIKES IMC Bintaro', '<p style=\"font-weight: 400;\">BEM STIKes IMCBintaro Proudly Present</p>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<p style=\"font-weight: 400;\">5 sektor Prioritas dalam MEA yaitu Health, Hospitality, Oil and Gas, Construction, dan Manufacture. Perawat memerlukan Peningkatan Kemampuan Berbahasa Inggris dan Penguasaan Tekhnologi Informasi Digital dalam persaingannya menghadapi tenaga kesehatan dari Negara lain. Lalu yang menjadi pertanyaan saat ini Mengapa harus Digital ? Apakah ada Standart Praktek Dokumentasi Digital ? Bagaimana cara menggunakan System Digital dalam Proses Keperawatan ?</p>\r\n<p style=\"font-weight: 400;\">SeminarKesehatan :</p>\r\n<p style=\"font-weight: 400; text-align: center;\"><strong>Tantangan Digital Tekhnologi Terhadap Proses Perawatan dan Peluang Kerja Tenaga Kesehatan di Generasi Milenial</strong></p>\r\n<p style=\"font-weight: 400;\">Dengan Pembicara :</p>\r\n<p style=\"font-weight: 400;\">Ns. AirinS.Kep., MM</p>\r\n<p style=\"font-weight: 400;\">(Kepala Unit Perawatan dan Tim Akreditasi RS Pondok Indah Jakarta Selatan)</p>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<p style=\"font-weight: 400;\">Hari, Tanggal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :Selasa, 13 Desember 2016</p>\r\n<p style=\"font-weight: 400;\">Tempat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :Aula STIKes IMC Bintaro</p>\r\n<p style=\"font-weight: 400;\">HTM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</p>\r\n<p style=\"font-weight: 400;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; Mahasiswa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :Rp. 100.000</p>\r\n<p style=\"font-weight: 400;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; Umum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :Rp. 150.000</p>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<p style=\"font-weight: 400;\">Fasilitas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</p>\r\n<ol>\r\n<li style=\"font-weight: 400;\">SertifikatTerakreditasi PPNI 1 SKP</li>\r\n<li style=\"font-weight: 400;\">Lunch Box</li>\r\n<li style=\"font-weight: 400;\">Seminar Kit</li>\r\n</ol>\r\n<p style=\"font-weight: 400;\">Informasi Pendaftaran :</p>\r\n<p style=\"font-weight: 400;\">Yessi Agustini (No. Hp : 0896 9911 2840, Pin Bbm :5E87F4F8)</p>\r\n<p style=\"font-weight: 400;\">Dea Rahmadiyani ( No. Hp 0896 5555 2765, Pin Bbm :5D2638CD)</p>\r\n<p style=\"font-weight: 400;\">Niken (0812 1221 6040)</p>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<p style=\"font-weight: 400;\">Pembayaran Transfer :</p>\r\n<p style=\"font-weight: 400;\">Atas Nama : Ilmu Kesehatan Ichsan</p>\r\n<p><span style=\"font-weight: 400;\">BankMandiri No. Rek 164 000 0424 657 (Harap Konfirmasi Sebelum &amp; SesudahTransfer)</span></p>\r\n<p><span style=\"font-weight: 400;\"><img src=\"/stikes-imc-l53/public/photos/seminar kesehatan stikes IMC Bintaro.jpg\" alt=\"\" width=\"940\" height=\"1476\" /></span></p>', '5 sektor Prioritas dalam MEA yaitu Health, Hospitality, Oil and Gas, Construction, dan Manufacture. Perawat memerlukan Peningkatan Kemampuan Berbahasa Inggris dan Penguasaan Tekhnologi Informasi Digital dalam persaingannya menghadapi tenaga kesehatan dari Negara lain', 'published', 'seminar-kesehatan-tantangan-digital-teknologi-di-stikes-imc-bintaro', 'post', NULL, NULL, 0, '/photos/digital-teknologi-kesehatan.jpg', '2018-03-20 03:16:19', '2018-03-20 18:09:48'),
 (30, 85, '2017-08-22 18:58:31', 'MEDICAL CHECK UP CALON MAHASISWA/I BARU STIKES IMC BINTARO T.A 2016-2017', '<p>Puluhan calon mahasiswa baru tahun ajaran 2016/2017 STIKes IMC Bintaro menjalankan tes kesehatan di RS IMC Bintaro, Senin (22/08/2016). Pemeriksaan ini adalah bagian wajib dari syarat bagi mahasiswa baru setelah melakukan daftar ulang.&nbsp;</p>\r\n<p><img src=\"/stikes-imc-l53/public/photos/basrul.jpg\" alt=\"\" width=\"100\" height=\"100\" />Para mahasiswa yang melakukan tes tersebut adalah mereka yang lulus dari semua jalur ujian masuk, baik prestasi maupun reguler. Adapun pada kegiatan ini dibagi menjadi dua sesi mengingat jumlah peserta yang cukup banyak dan tidak terselesaikan bila hanya satu hari pelaksanaan.&nbsp;</p>\r\n<p>Jenis pemeriksaannya meliputi pemeriksaan fisik head to toe, tinggi badan, berat badan, tekanan darah, pemeriksaan visus mata, buta warna, foto thorax, lab. darah lengkap, urine test, narkoba dan sebagainya. Hal ini dianggap penting agar para mahasiswa baru STIKes IMC Bintaro yang menuntut ilmu adalah mahasiswa yang sehat.</p>\r\n<p><img src=\"/stikes-imc-l53/public/photos/mahasiswa baru  STIKes IMC Bintaro menjalankan tes kesehatan.jpg\" alt=\"\" width=\"940\" height=\"705\" /></p>', 'Puluhan calon mahasiswa baru tahun ajaran 2016/2017 STIKes IMC Bintaro menjalankan tes kesehatan di RS IMC Bintaro, Senin (22/08/2016). Pemeriksaan ini adalah bagian wajib dari syarat bagi mahasiswa baru setelah melakukan daftar ulang. \r\n\r\n', 'published', 'medical-check-up-calon-mahasiswa-i-baru-stikes-imc-bintaro-t-a-2016-2017', 'post', NULL, NULL, 0, '/photos/mahasiswa baru  STIKes IMC Bintaro menjalankan tes kesehatan.jpg', '2018-03-20 04:58:31', '2018-05-09 22:47:08'),
-(31, 85, '2018-08-27 13:08:50', 'The Great Aim of Education is not Knowledge, But Action', '<p>On completion of the CIMA professional qualification, you will be awarded the Chartered Global Management Accountant (CGMA) designation, recognizing your value and showcasing your professionalism, business and leadership skills , ethics and&nbsp;</p>', 'On completion of the CIMA professional qualification, you will be awarded the Chartered Global Management Accountant (CGMA) designation, recognizing your value and showcasing your professionalism, business and leadership skills , ethics and ', 'published', 'the-great-aim-of-education-is-not-knowledge-but-action', 'page', NULL, NULL, 0, '/photos/baf-silder.jpg', '2018-08-27 06:08:50', '2018-08-27 13:08:50'),
-(32, 85, '2018-08-27 20:10:42', 'CIMA Strategic – Objective Test Courses', '<p>Want to<strong>&nbsp;pass your CIMA exams</strong>&nbsp;in the quickest and easiest possible way?</p>\r\n<p>&nbsp;</p>\r\n<p>We have designed&nbsp;<strong>high quality online courses</strong>&nbsp;for the E3, P3 and F3 exams that will give you the very best chance of passing! And we&rsquo;re so confident you&rsquo;ll agree we have a<strong>&nbsp;double guarantee</strong>&nbsp;that ensures you are completely satisfied.</p>', 'We have designed high quality online courses for the E3, P3 and F3 exams that will give you the very best chance of passing! And we’re so confident you’ll agree we have a double guarantee that ensures you are completely satisfied.', 'published', 'cima-strategic-objective-test-courses', 'page', NULL, NULL, 0, '', '2018-08-27 13:10:42', '2018-08-27 20:10:42');
+(31, 85, '2018-08-27 13:08:50', 'The Great Aim of Education is not Knowledge, But Action', '<p>On completion of the CIMA professional qualification, you will be awarded the Chartered Global Management Accountant (CGMA) designation, recognizing your value and showcasing your professionalism, business and leadership skills , ethics and&nbsp;</p>', 'On completion of the CIMA professional qualification, you will be awarded the Chartered Global Management Accountant (CGMA) designation, recognizing your value and showcasing your professionalism, business and leadership skills , ethics and ', 'published', 'the-great-aim-of-education-is-not-knowledge-but-action', 'page', NULL, NULL, 0, '/photos/baf-silder-(1).jpg', '2018-08-27 06:08:50', '2018-08-29 22:29:49'),
+(32, 85, '2018-08-27 20:10:42', 'CIMA Strategic – Objective Test Courses', '<p>Want to<strong>&nbsp;pass your CIMA exams</strong>&nbsp;in the quickest and easiest possible way?</p>\r\n<p>&nbsp;</p>\r\n<p>We have designed&nbsp;<strong>high quality online courses</strong>&nbsp;for the E3, P3 and F3 exams that will give you the very best chance of passing! And we&rsquo;re so confident you&rsquo;ll agree we have a<strong>&nbsp;double guarantee</strong>&nbsp;that ensures you are completely satisfied.</p>', 'We have designed high quality online courses for the E3, P3 and F3 exams that will give you the very best chance of passing! And we’re so confident you’ll agree we have a double guarantee that ensures you are completely satisfied.', 'published', 'cima-strategic-objective-test-courses', 'page', NULL, NULL, 0, '/photos/cima-slider.jpg', '2018-08-27 13:10:42', '2018-08-29 22:28:07'),
+(33, 85, '2018-08-29 22:32:28', 'CIMA Accredited Global Learning Partner For Indonesia', 'Test content in english ', '', 'published', 'join-us-now', 'page', NULL, NULL, 0, '/photos/lalith-baf.jpg', '2018-08-29 15:32:28', '2018-08-29 22:34:12');
 
 -- --------------------------------------------------------
 
@@ -8727,30 +7618,6 @@ INSERT INTO `post_tag` (`id`, `post_id`, `tag_id`, `created_at`, `updated_at`) V
 (27, 29, 11, '2018-03-20 03:16:20', NULL),
 (30, 31, 7, '2018-03-20 07:42:16', NULL),
 (32, 30, 17, '2018-05-09 08:47:08', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `prodi`
---
-
-CREATE TABLE `prodi` (
-  `id` int(11) NOT NULL,
-  `kode` varchar(100) NOT NULL,
-  `nama` varchar(100) NOT NULL,
-  `fakultas_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `prodi`
---
-
-INSERT INTO `prodi` (`id`, `kode`, `nama`, `fakultas_id`, `created_at`, `updated_at`) VALUES
-(1, 'BDN', 'Kebidanan', 1, '2017-07-25 04:46:56', '0000-00-00 00:00:00'),
-(2, 'PRW', 'Keperawatan', 1, '2017-07-25 04:47:13', '0000-00-00 00:00:00'),
-(3, 'NERS', 'NERS', 1, '2017-10-21 10:32:56', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -9436,66 +8303,6 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tagihan`
---
-
-CREATE TABLE `tagihan` (
-  `id` int(11) NOT NULL,
-  `object_id` int(11) NOT NULL,
-  `object_name` char(20) NOT NULL,
-  `nama_biaya` char(45) DEFAULT NULL,
-  `nominal` int(15) NOT NULL,
-  `keterangan` text NOT NULL,
-  `status` varchar(45) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tagihan`
---
-
-INSERT INTO `tagihan` (`id`, `object_id`, `object_name`, `nama_biaya`, `nominal`, `keterangan`, `status`, `created_at`, `updated_at`) VALUES
-(109, 3208, 'aplikan', 'Pendaftaran', 150000, 'Biaya Pendaftaran', 'dibayar', '2017-08-08 00:36:45', '2017-08-15 01:23:48'),
-(110, 3209, 'aplikan', 'Pendaftaran', 150000, 'Biaya Pendaftaran', 'dibayar', '2017-08-11 23:51:53', '2017-08-15 01:24:47'),
-(111, 3210, 'aplikan', 'Pendaftaran', 150000, 'Biaya Pendaftaran', 'dibayar', '2017-08-15 00:19:29', '2017-08-20 13:11:20'),
-(112, 3553, 'aplikan', 'Pendaftaran', 150000, 'Biaya Pendaftaran', 'dibayar', '2017-08-19 10:37:38', '2017-08-20 15:27:56'),
-(113, 3214, 'aplikan', 'Pendaftaran', 150000, 'Biaya Pendaftaran', 'dibayar', '2017-08-19 10:57:57', '2017-08-30 21:38:12'),
-(114, 3215, 'aplikan', 'Pendaftaran', 150000, 'Biaya Pendaftaran', 'dibayar', '2017-08-19 10:58:01', '2018-02-18 00:29:05'),
-(115, 3757, 'aplikan', 'Pendaftaran', 150000, 'Biaya Pendaftaran', 'dibayar', '2017-08-26 11:10:09', '2018-02-18 00:29:16'),
-(116, 3216, 'aplikan', 'Pendaftaran', 150000, 'Biaya Pendaftaran', 'dibayar', '2017-08-30 05:56:28', '2018-02-18 00:29:48'),
-(117, 3217, 'aplikan', 'Pendaftaran', 100000, 'Diskon 50.000', 'dibayar', '2017-08-30 07:14:43', '2018-02-18 00:30:00'),
-(118, 3218, 'aplikan', 'Pendaftaran', 150000, '', 'dibayar', '2017-08-30 07:14:55', '2018-01-10 00:05:27'),
-(119, 3634, 'aplikan', 'Pendaftaran', 150000, '', 'dibayar', '2017-08-30 07:25:11', '2018-01-10 00:06:08'),
-(120, 3219, 'aplikan', 'Pendaftaran', 150000, '', 'dibayar', '2017-08-30 07:26:02', '2018-01-10 00:02:05'),
-(121, 3210, 'aplikan', 'Registrasi', 1500000, '', 'dibayar', '2017-08-30 07:48:21', '2018-01-10 00:00:56'),
-(122, 3208, 'aplikan', 'Registrasi', 2500000, '', 'dibayar', '2017-08-30 08:05:37', '2017-08-30 22:09:01'),
-(123, 3637, 'aplikan', 'Pendaftaran', 150000, '', 'dibayar', '2017-09-04 04:16:16', '2017-09-04 18:17:26'),
-(124, 3636, 'aplikan', 'Pendaftaran', 150000, '', 'dibayar', '2017-09-04 04:18:56', '2017-09-04 18:19:32'),
-(125, 3635, 'aplikan', 'Pendaftaran', 150000, '', 'dibayar', '2017-09-04 04:22:25', '2017-09-04 18:23:20'),
-(126, 3635, 'aplikan', 'Registrasi', 2500000, '', 'dibayar', '2017-09-04 06:42:43', '2017-09-04 20:43:30'),
-(127, 3638, 'aplikan', 'Pendaftaran', 150000, '', 'dibayar', '2017-09-04 07:21:43', '2017-09-04 21:25:16'),
-(128, 3638, 'aplikan', 'Registrasi', 150000, '', 'dibayar', '2017-09-04 07:25:37', '2017-09-04 21:25:56'),
-(129, 3642, 'aplikan', 'Pendaftaran', 150000, '', 'dibayar', '2017-09-09 08:55:57', '2017-09-09 22:56:44'),
-(130, 3209, 'aplikan', 'Registrasi', 1500000, '', 'dibayar', '2018-01-09 07:41:06', '2018-01-10 00:01:11'),
-(131, 3760, 'aplikan', 'Pendaftaran', 250000, '', 'dibayar', '2018-01-09 07:42:06', '2018-01-09 22:10:03'),
-(132, 3760, 'aplikan', 'Registrasi', 1500000, '', 'dibayar', '2018-01-09 08:11:33', '2018-01-09 22:12:04'),
-(133, 3762, 'aplikan', 'Pendaftaran', 150000, '', 'dibayar', '2018-01-28 09:52:11', '2018-02-17 23:59:05'),
-(134, 3599, 'aplikan', 'Pendaftaran', 150000, '', 'dibayar', '2018-02-01 05:48:10', '2018-02-01 19:48:44'),
-(135, 3343, 'aplikan', 'Pendaftaran', 150000, '', 'dibayar', '2018-02-01 05:48:20', '2018-02-01 19:48:55'),
-(136, 3223, 'aplikan', 'Pendaftaran', 150000, '', 'tertagih', '2018-02-01 09:07:47', '2018-02-01 23:07:47'),
-(137, 3224, 'aplikan', 'Pendaftaran', 180000, '', 'dibayar', '2018-02-01 09:08:01', '2018-02-18 22:34:31'),
-(138, 3225, 'aplikan', 'Pendaftaran', 150000, '', 'dibayar', '2018-02-01 09:14:24', '2018-02-01 23:16:20'),
-(139, 3225, 'aplikan', 'Registrasi', 2500000, '', 'dibayar', '2018-02-01 09:17:07', '2018-02-01 23:17:20'),
-(140, 3218, 'aplikan', 'Registrasi', 2500000, 'dgdgd', 'tertagih', '2018-02-17 10:24:03', '2018-02-18 00:24:03'),
-(141, 3214, 'aplikan', 'Registrasi', 2500000, '', 'dibayar', '2018-02-17 10:24:25', '2018-02-18 00:24:44'),
-(142, 3215, 'aplikan', 'Registrasi', 2500000, '', 'tertagih', '2018-02-17 10:32:46', '2018-02-18 00:32:46'),
-(143, 3216, 'aplikan', 'Registrasi', 2500000, '', 'tertagih', '2018-02-17 10:32:58', '2018-02-18 00:32:58'),
-(144, 3226, 'aplikan', 'Pendaftaran', 150000, '', 'dibayar', '2018-02-18 09:01:02', '2018-02-18 23:03:38');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tags`
 --
 
@@ -9525,6 +8332,31 @@ INSERT INTO `tags` (`id`, `name`, `label`, `created_at`, `updated_at`) VALUES
 (15, 'mahasiswa-baru', 'mahasiswa baru', '2018-03-20 05:00:21', '2018-03-20 19:00:21'),
 (16, 'mahasiswa-baru', 'mahasiswa baru', '2018-05-09 08:44:44', '2018-05-09 22:44:44'),
 (17, 'mahasiswa-baru', 'mahasiswa baru', '2018-05-09 08:47:08', '2018-05-09 22:47:08');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `translations`
+--
+
+CREATE TABLE `translations` (
+  `id` int(11) NOT NULL,
+  `foreign_key_id` int(11) NOT NULL,
+  `table_name` varchar(100) NOT NULL,
+  `field_name` varchar(100) NOT NULL,
+  `content` text NOT NULL,
+  `language_code` char(10) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `translations`
+--
+
+INSERT INTO `translations` (`id`, `foreign_key_id`, `table_name`, `field_name`, `content`, `language_code`, `created_at`, `updated_at`) VALUES
+(1, 33, 'posts', 'title', 'Mitra CIMA yang terakreditasi untuk Indonesia', 'id', '2018-08-29 18:19:39', '0000-00-00 00:00:00'),
+(2, 33, 'posts', 'body', 'test konten dalam bahasa Indonesia', 'id', '2018-08-29 19:25:40', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -91709,39 +90541,6 @@ INSERT INTO `villages` (`id`, `district_id`, `name`) VALUES
 --
 
 --
--- Indexes for table `aplikan`
---
-ALTER TABLE `aplikan`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `kelas_id` (`kelas_id`),
-  ADD KEY `village_id` (`village_id`),
-  ADD KEY `village_id_2` (`village_id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `konsentrasi_id` (`konsentrasi_id`),
-  ADD KEY `pilihan_kampus` (`pilihan_kampus_id`),
-  ADD KEY `status_aplikan_id` (`aplikan_status_id`);
-
---
--- Indexes for table `aplikan_status`
---
-ALTER TABLE `aplikan_status`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `aplikan_track`
---
-ALTER TABLE `aplikan_track`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `biaya`
---
-ALTER TABLE `biaya`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `jenis_biaya` (`jenis_biaya_id`),
-  ADD KEY `tahun_akademik` (`tahun_akademik_id`);
-
---
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
@@ -91761,37 +90560,6 @@ ALTER TABLE `category_post`
 ALTER TABLE `districts`
   ADD PRIMARY KEY (`id`),
   ADD KEY `districts_id_index` (`regency_id`);
-
---
--- Indexes for table `fakultas`
---
-ALTER TABLE `fakultas`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `followup`
---
-ALTER TABLE `followup`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `kelas`
---
-ALTER TABLE `kelas`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `konsentrasi`
---
-ALTER TABLE `konsentrasi`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `prodi_id` (`prodi_id`);
-
---
--- Indexes for table `melayani`
---
-ALTER TABLE `melayani`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `menus`
@@ -91819,15 +90587,6 @@ ALTER TABLE `options`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pembayaran`
---
-ALTER TABLE `pembayaran`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_pembayaran_pembayaran_via1_idx` (`pembayaran_via_id`),
-  ADD KEY `pembayaran_via_id` (`pembayaran_via_id`),
-  ADD KEY `notagihan` (`tagihan_id`);
-
---
 -- Indexes for table `permissions`
 --
 ALTER TABLE `permissions`
@@ -91847,12 +90606,6 @@ ALTER TABLE `permission_role`
   ADD KEY `permission_id` (`permission_id`);
 
 --
--- Indexes for table `pilihan_kampus`
---
-ALTER TABLE `pilihan_kampus`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
@@ -91863,13 +90616,6 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `post_tag`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `prodi`
---
-ALTER TABLE `prodi`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fakultas_id` (`fakultas_id`);
 
 --
 -- Indexes for table `provinces`
@@ -91904,16 +90650,15 @@ ALTER TABLE `roles`
   ADD UNIQUE KEY `groups_name_unique` (`name`);
 
 --
--- Indexes for table `tagihan`
---
-ALTER TABLE `tagihan`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_tagihan_mahasiswa1_idx` (`object_id`);
-
---
 -- Indexes for table `tags`
 --
 ALTER TABLE `tags`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `translations`
+--
+ALTER TABLE `translations`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -91941,30 +90686,6 @@ ALTER TABLE `villages`
 --
 
 --
--- AUTO_INCREMENT for table `aplikan`
---
-ALTER TABLE `aplikan`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3892;
-
---
--- AUTO_INCREMENT for table `aplikan_status`
---
-ALTER TABLE `aplikan_status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `aplikan_track`
---
-ALTER TABLE `aplikan_track`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
-
---
--- AUTO_INCREMENT for table `biaya`
---
-ALTER TABLE `biaya`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
@@ -91977,46 +90698,16 @@ ALTER TABLE `category_post`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `fakultas`
---
-ALTER TABLE `fakultas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `followup`
---
-ALTER TABLE `followup`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
---
--- AUTO_INCREMENT for table `kelas`
---
-ALTER TABLE `kelas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `konsentrasi`
---
-ALTER TABLE `konsentrasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `melayani`
---
-ALTER TABLE `melayani`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -92031,12 +90722,6 @@ ALTER TABLE `options`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT for table `pembayaran`
---
-ALTER TABLE `pembayaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
-
---
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
@@ -92049,28 +90734,16 @@ ALTER TABLE `permission_role`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 
 --
--- AUTO_INCREMENT for table `pilihan_kampus`
---
-ALTER TABLE `pilihan_kampus`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `post_tag`
 --
 ALTER TABLE `post_tag`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
---
--- AUTO_INCREMENT for table `prodi`
---
-ALTER TABLE `prodi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pt`
@@ -92091,16 +90764,16 @@ ALTER TABLE `roles`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `tagihan`
---
-ALTER TABLE `tagihan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
-
---
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `translations`
+--
+ALTER TABLE `translations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`

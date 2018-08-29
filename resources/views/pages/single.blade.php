@@ -19,12 +19,12 @@
 				<!-- Content -->
 				<div class="content">
 					<div class="page-header">
-						<h1>{{$post->title}}</h1>
+						<h1>{{$post->trans('title')}}</h1>
 					</div>
 					<!-- Single Page -->
 						<div class="page">
 							
-							{!!$post->body!!}
+							{!!$post->trans('body')!!}
 						</div>
 						<!-- End Single Page -->
 				</div>

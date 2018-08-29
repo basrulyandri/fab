@@ -57,6 +57,13 @@ class Kernel extends HttpKernel
         'rbac' => \App\Http\Middleware\RbacMiddleware::class,
         'can-manage-aplikan' => \App\Http\Middleware\CanManageAplikanMiddleware::class,
         'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
-        'cors' => \App\Http\Middleware\Cors::class
+        'cors' => \App\Http\Middleware\Cors::class,
+
+        // LOCALIZATION REDIRECTION MIDDLEWARE
+        'localize' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
+        'localizationRedirect' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,
+        'localeSessionRedirect' => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
+                'localeViewPath' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class
+        // END LOCALIZATION REDIRECTION MIDDLEWARE
     ];
 }
