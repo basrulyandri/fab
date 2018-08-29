@@ -10,44 +10,33 @@
 <div class="overall">
 	<div class="inner">
 		<div class="container">
-			<div class="page-header">
-				<h3><a style="color: #FFF;" href="#"><i class="icon-globe"></i> <span>PROGRAM</span> STIKES IMC</a></h3>
-			</div>
-			<!-- Simple Box -->
+			
 			<div class="row-fluid">			
 				<div class="span{{numberToColumn(getOption('theme_option_featured_program_amount'))}}">
 					<div class="simple-box">
-					<img class="img-circle icon-rollo-service" src="{{url('assets/frontend')}}/images/rollo-icons/icon-bidan.png" alt="">
+					<i class="icon-check icon-2x icon-round"><span></span></i>
 						<!-- <i class="icon-tags icon-2x icon-round"><span></span></i> -->
-						<a href="#"><h3>Kebidanan</h3></a>
-						<h4></h4>
-						<p>Menghasilkan bidan profesional, memiliki kompetensi, mampu bekerja dengan penuh kasih, dan mampu mengola pelayanan kesehatan dalam populasi tertentu</p>						
+						<a href="#"><h3>Enterprise Pillar</h3></a>
+						<h4>Short Description</h4>
+						<p>Focus on how to formulate as well as effectively implement strategy. It emphasizes how change management, project management and relationship management and the structuring of Organisations can help to successfully implement strategy.</p>						
 					</div>
 				</div>
 				<div class="span{{numberToColumn(getOption('theme_option_featured_program_amount'))}}">
 					<div class="simple-box">
-						<img class="img-circle icon-rollo-service" src="{{url('assets/frontend')}}/images/rollo-icons/icon-perawat.png" alt="">
-						<a href=""><h3>Keperawatan</h3></a>
-						<h4></h4>
-						<p>Berorientasi pada pengembangan lulusan ners yang profesional dan dapat memenuhi kebutuhan pengguna serta memiliki kompetensi unggulan keperawatan gerontik.</p>						
+						<i class="icon-book icon-2x icon-round"><span></span></i>
+						<a href=""><h3>Performance Pillar</h3></a>
+						<h4>Short Description</h4>
+						<p>Focus on the tools and techniques of management accounting and risk management to ensure a realistic strategy and to monitor implantation. It covers budgets and cost management and develops the ability to identify, classify, evaluate and manage risk.</p>						
 					</div>
 				</div>
 				<div class="span{{numberToColumn(getOption('theme_option_featured_program_amount'))}}">
 					<div class="simple-box">
-						<img class="img-circle icon-rollo-service" src="{{url('assets/frontend')}}/images/rollo-icons/icon-perawat.png" alt="">
-						<a href="#"><h3>Profesi NERS</h3></a>
-						<h4></h4>						
-						<p>program studi penyelenggara akademik dan profesi yang mampu berdaya saing global serta unggul dibidang Keperawatan Gerontik pada tahun 2023.</p>						
+						<i class="icon-tablet icon-2x icon-round"><span></span></i>
+						<a href="#"><h3>Finance Pillar</h3></a>
+						<h4>Short Description</h4>						
+						<p>Focus on how to prepare and interpret financial statements with an understanding of the regulatory framework and external reporting requirements. It looks at tax implications of financing decisions and formulating financial strategy.</p>						
 					</div>
-				</div>
-				<div class="span{{numberToColumn(getOption('theme_option_featured_program_amount'))}}">
-					<div class="simple-box">
-						<img class="img-circle icon-rollo-service" src="{{url('assets/frontend')}}/images/rollo-icons/icon-PCA.png" alt="">
-						<a href="#"><h3>Personal Care Assistant</h3></a>
-						<h4></h4>						
-						<p>Pusat Pelatihan dan Penyedia Sumber Daya Manusia di Indonesia dengan standar Internasional.</p>
-					</div>
-				</div>
+				</div>				
 			</div>
 			<!-- End Simple Box -->
 		</div>
@@ -56,49 +45,41 @@
 <div class="main">
 	<div class="container">
 		<div class="row-fluid">
-			<div class="span4">
-				<article>
-					<figure>
-						<a href="single.html"><img src="{{url('/')}}{{getOption('theme_option_sambutan_image')}}" alt=""></a>
-					</figure>
-					<div class="date animated fadeInUp" style="opacity: 1;">						
-						<div class="pull-right">
-							<h3>{{getOption('theme_option_sambutan_nama')}}</h3>
-						</div>
-					</div>
-					
-				</article>
-			</div>
-			
-			<div class="span8">
-				<div class="content-box">
-					<h3>{{getOption('theme_option_sambutan_title')}}</h3>
-					<blockquote>
-					  <p>{!!getOption('theme_option_sambutan_content')!!}</p>
-					  <!-- <small>13 April <cite title="Source Title">2014</cite></small> -->
-					</blockquote>
+			<div class="span12">
+				<div class="description shadow-large">
+					<h3>CIMA AS A PROFESSIONAL QUALIFICATION:</h3>
 				</div>
+				<img src="images/CIMA.jpg" style="float: left; margin: 0 10px 10px 0; width:400px;">
+				<p>The CIMA Professional Qualification is recognized worldwide as the most relevant global finance qualification for a career in business. By studying with CIMA you will be joining a global Organisation powered by two of the world’s leading accounting bodies (AICPA- the American Institute of Certified Public Accountants and CIMA) to make management accounting the most valued profession in business worldwide.</p>
+
+				<p>On completion of the CIMA professional qualification, you will be awarded the Chartered Global Management Accountant (CGMA) designation, recognizing your value and showcasing your professionalism, business and leadership skills , ethics and commitment.</p>
+
+				<p>By becoming a CIMA you will be joining the world’s largest professional body of management accountants and become part of a truly global network of over 600,000 current and next generation finance professionals.</p>
+
+				<p>Only the CIMA Professional Qualification can give you the right mix of skills, knowledge and experience needed add value to Organization and drive business success. The whole qualification consists of three main pillars.</p>
 			</div>
-		</div>		
-		<div class="callout">
+		</div>	
+
+		<div class="callout shadow-large">
 			<div class="callout-wrap">
 				<div class="row-fluid">
 					<div class="span10">
 						<div class="message">
-							<h4>DOWNLOAD BROSUR LENGKAP STIKES IMC</h4>
-							<p>Untuk mendapatkan Informasi lengkap mengenai Program-program yang ada di STIKERS IMC Bintaro, anda bisa mendownload brosur disini</p>
+							<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat dolorem accusantium architecto.</h4>
+							<p>Voluptates expedita non explicabo dolorem nobis neque ullam magnam magni doloribus quisquam veniam voluptatem nihil sunt.. Dolorum laboriosam sit repudiandae dicta impedit laudantium odit repellendus quo aut magnam soluta vitae quam fugit eos quae.</p>
 						</div>
 					</div>
 					<div class="span2">
 						<div class="pull-right">
 							<div class="button">
-								<a href="{{route('page.download.brosur')}}" class="btn btn-info btn-large">Download Sekarang</a>
+								<a href="baf-register.html" class="btn btn-large">Enroll Now</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>	
+		
 
 		<!-- <div class="row-fluid">
 			<div class="description shadow-large">				

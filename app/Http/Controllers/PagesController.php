@@ -12,6 +12,7 @@ class PagesController extends Controller
 {
 	public function index(Request $request)
 	{
+		//dd(\Menu::getByName('Under Logo'));
 		if($request->has('psr')){
 			\Cookie::queue('psr', $request->psr, time() + (86400 * 30));		
 		}

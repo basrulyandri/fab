@@ -19,12 +19,8 @@ class AuthController extends Controller
             'password' => 'required',
         ]);  
     	if(Auth::attempt(['email' => $request->input('email'),'password' => $request->input('password')])){
-                \Log::useDailyFiles(storage_path().'/logs/app.log');
-                \Log::info('User "'.auth()->user()->username.'" successfully login.');
                 return redirect()->intended('/dashboard');
             }                      
-        \Log::useDailyFiles(storage_path().'/logs/app.log');
-        \Log::warning('A user is failed to login.');
         return redirect()->route('auth.login')->withInput();
     }
     

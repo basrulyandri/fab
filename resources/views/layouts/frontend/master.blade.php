@@ -7,7 +7,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>STIKes IMC Bintaro | Sekolah Tinggi Ilmu Kesehatan dengan penempatan kerja di Jepang</title>
+	<title>British Academy Of Finance</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
 	<meta name="author" content="Basrul Yandri">
 	@yield('og')
@@ -59,16 +59,16 @@
 			<div class="top-bar">
 				<div class="container">
 					<div class="row">
-						<div class="span7 hidden-phone">
+						<div class="span10 hidden-phone">
 							<!-- Menu Top -->
 							<ul class="menu-top unstyled inline">							
-								@foreach(\Menu::getByName('Top Header') as $menu)								
+								@foreach(\Menu::getByName('Top') as $menu)								
 									<li><a href="{{$menu['link']}}" class="visible-desktop">{{$menu['label']}}</a></li>
 								@endforeach	
 							</ul>
 							<!-- End Menu Top -->
 						</div>
-						<div class="span5">
+						<div class="span2">
 							<!-- Access -->
 							<ul class="access unstyled">								
 								@if(!auth()->user())
@@ -107,7 +107,7 @@
 						<div class="span8">
 							<br class="hidden-phone">
 							<div class="pull-right">
-								<h2 class="text-info"><span>HOTLINE:</span> {{getOption('theme_option_hotline')}}</h2>
+								<h2 class="text-info"><img style="width:30px;" src="https://stickeroid.com/uploads/pic/thumb/stickeroid_5a3e1ffa54f47.png"></span> {{getOption('theme_option_hotline')}}</h2>
 								<!-- Social Widget -->
 							<ul class="social-icons social-dark inline">
 								@if(getOption('theme_option_facebook_url') !='')
@@ -120,9 +120,12 @@
 								@if(getOption('theme_option_instagram_url') !='')
 									<li><a target="_blank" href="{{getOption('theme_option_instagram_url')}}" data-toggle="tooltip" title="" class="twitter" data-original-title="instagram"><i class="icon-instagram"></i></a></li>
 								@endif
+								@if(getOption('theme_option_linkedin_url') !='')
+									<li><a target="_blank" href="{{getOption('theme_option_linkedin_url')}}" data-toggle="tooltip" title="" class="twitter" data-original-title="linkedin"><i class="icon-linkedin"></i></a></li>
+								@endif
 
 								@if(getOption('theme_option_youtube_url') !='')
-									<li><a target="_blank" href="{{getOption('theme_option_youtube_url')}}" data-toggle="tooltip" title="" class="twitter" data-original-title="Twitter"><i class="icon-youtube"></i></a></li>
+									<li><a target="_blank" href="{{getOption('theme_option_youtube_url')}}" data-toggle="tooltip" title="" class="twitter" data-original-title="Youtube"><i class="icon-youtube"></i></a></li>
 								@endif
 								
 							</ul>
@@ -180,11 +183,10 @@
 							<h3><i class="icon-book"></i> About Us</h3>
 							<p>STIKES IMC adalah penyelenggara pendidikan vokasi, akademik, dan profesi terbaik bertaraf nasional dan international, yang berbasis intelektual dan kreativitas, enteurship, dan memiliki daya saing unggul dibidang Keperawatan dan Kebidanan di Banten pada tahun 2022.</a>.</p>							
 							<address>
-								<strong>Alamat</strong><br>
-								<i class="icon-map-marker"></i> Komplek RS. IMC Bintaro Jaya Sektor 9, Jalan Raya Jombang No.56, Kota Tanggerang Selatan, Banten 15414<br>
-								<i class="icon-phone"></i> (123) 456-7890 <br>
-								<i class="icon-mobile-phone"></i> 0811 1078877 <br>
-								<i class="icon-envelope"></i> stikesimcbintaro@yahoo.com
+								<strong>Address</strong><br>
+								<i class="icon-map-marker"></i> {{getOption('theme_option_address')}}<br>
+								<i class="icon-mobile-phone"></i> {{getOption('theme_option_hotline')}} <br>
+								<i class="icon-envelope"></i> {{getOption('theme_option_email')}}
 							</address>
 							<!-- End About us -->
 						</div>
@@ -202,9 +204,12 @@
 								@if(getOption('theme_option_instagram_url') !='')
 									<li><a target="_blank" href="{{getOption('theme_option_instagram_url')}}" data-toggle="tooltip" title="" class="twitter" data-original-title="instagram"><i class="icon-instagram"></i></a></li>
 								@endif
+								@if(getOption('theme_option_linkedin_url') !='')
+									<li><a target="_blank" href="{{getOption('theme_option_linkedin_url')}}" data-toggle="tooltip" title="" class="twitter" data-original-title="linkedin"><i class="icon-linkedin"></i></a></li>
+								@endif
 
 								@if(getOption('theme_option_youtube_url') !='')
-									<li><a target="_blank" href="{{getOption('theme_option_youtube_url')}}" data-toggle="tooltip" title="" class="twitter" data-original-title="Twitter"><i class="icon-youtube"></i></a></li>
+									<li><a target="_blank" href="{{getOption('theme_option_youtube_url')}}" data-toggle="tooltip" title="" class="twitter" data-original-title="twitter"><i class="icon-youtube"></i></a></li>
 								@endif
 							</ul>
 							<!-- End Social Widget -->

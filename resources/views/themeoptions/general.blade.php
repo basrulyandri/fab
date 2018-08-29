@@ -56,10 +56,28 @@
                         @endif
                       </div>
                     </div>
+
+                    <div class='form-group{{$errors->has('theme_option_address') ? ' has-error' : ''}}'>
+                      {!!Form::label('theme_option_address','Address',['class' => 'col-sm-2 control-label'])!!}
+                      <div class="col-sm-10">
+                        {!!Form::textarea('theme_option_address',getOption('theme_option_address'),['class' => 'form-control','placeholder' => 'Address'])!!}
+                        @if($errors->has('theme_option_address'))
+                          <span class="help-block">{{$errors->first('theme_option_address')}}</span>
+                        @endif
+                      </div>
+                    </div>
                     <hr>
 
                     <h3>Social Media</h3>  
-
+                    <div class='form-group{{$errors->has('theme_option_email') ? ' has-error' : ''}}'>
+                      {!!Form::label('theme_option_email','Email',['class' => 'col-sm-2 control-label'])!!}
+                      <div class="col-sm-10">
+                        {!!Form::text('theme_option_email',getOption('theme_option_email'),['class' => 'form-control','placeholder' => 'Email','required' => 'true'])!!}
+                        @if($errors->has('theme_option_email'))
+                          <span class="help-block">{{$errors->first('theme_option_email')}}</span>
+                        @endif
+                      </div>
+                    </div>
                     <div class='form-group{{$errors->has('theme_option_facebook_url') ? ' has-error' : ''}}'>
                       {!!Form::label('theme_option_facebook_url','Facebook URL',['class' => 'col-sm-2 control-label'])!!}
                       <div class="col-sm-10">
@@ -86,6 +104,15 @@
                         {!!Form::text('theme_option_instagram_url',getOption('theme_option_instagram_url'),['class' => 'form-control','placeholder' => 'Instagram URL','required' => 'true'])!!}
                         @if($errors->has('theme_option_instagram_url'))
                           <span class="help-block">{{$errors->first('theme_option_instagram_url')}}</span>
+                        @endif
+                      </div>
+                    </div>
+                    <div class='form-group{{$errors->has('theme_option_linkedin_url') ? ' has-error' : ''}}'>
+                      {!!Form::label('theme_option_linkedin_url','Linkedin URl',['class' => 'col-sm-2 control-label'])!!}
+                      <div class="col-sm-10">
+                        {!!Form::text('theme_option_linkedin_url',getOption('theme_option_linkedin_url'),['class' => 'form-control','placeholder' => 'Linkedin URL','required' => 'true'])!!}
+                        @if($errors->has('theme_option_linkedin_url'))
+                          <span class="help-block">{{$errors->first('theme_option_linkedin_url')}}</span>
                         @endif
                       </div>
                     </div>

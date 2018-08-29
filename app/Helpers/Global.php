@@ -2,7 +2,9 @@
 
 function getOption($key,$serialize = false){
 	$option = \App\Option::whereOptionKey($key)->first();
-
+	if(!$option){
+		return null;
+	}
 	if($serialize){
 		return unserialize($option->option_value);
 	}

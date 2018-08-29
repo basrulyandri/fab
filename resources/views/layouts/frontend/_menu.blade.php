@@ -8,7 +8,19 @@
 							@if(!empty($menu['child']))
 							<ul>
 								@foreach($menu['child'] as $child)
-									<li><a href="{{$child['link']}}">{{$child['label']}}</a></li>	
+									<li {{(!empty($child['child'])) ? 'class="parent"' : ''}}>
+									<a href="{{$child['link']}}">
+										{{$child['label']}}
+										
+									</a>
+									@if(!empty($child['child']))
+										<ul>
+											@foreach($child['child'] as $child2)
+												<li><a href="{{$child2['link']}}">{{$child2['label']}}</a></li>
+											@endforeach
+										</ul>										
+									@endif
+									</li>
 								@endforeach
 							</ul>	
 							@endif

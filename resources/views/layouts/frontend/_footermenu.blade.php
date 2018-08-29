@@ -6,7 +6,7 @@
 			<li><a href="{{$menu['link']}}"><i class="fa fa-plus"></i> {{$menu['label']}}</a></li>
 		@endforeach	
 	</ul>
-	<h3><i class="icon-info-sign"></i> Bantuan</h3>
+	<h3><i class="icon-info-sign"></i> Help</h3>
 	<ul class="menu-footer unstyled suport">
 		@foreach(\Menu::getByName('Footer Bantuan') as $menu)								
 			<li><a href="{{$menu['link']}}"><i class="fa fa-plus"></i> {{$menu['label']}}</a></li>

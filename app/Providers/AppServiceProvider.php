@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
         setlocale(LC_ALL, 'id');
         date_default_timezone_set("Asia/Jakarta");
         view()->composer('layouts.frontend._menu',function($view){
-            $view->with('menus',Menu::getByName('Top'));
+            $view->with('menus',Menu::getByName('Under Logo'));
         });
     }
 

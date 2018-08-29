@@ -78,7 +78,7 @@
                            </span>
                            <input id="thumbnail" class="form-control" type="text" name="thumbnail">
                          </div>
-                         <img src="{{url('assets/backend')}}/img/no-thumbnail.jpg" id="holder" style="margin-top:15px;width:100%">                        -->
+                         <img src="{{url('assets/backend')}}/img/no-thumbnail.jpg" id="holder" style="margin-top:15px;width:100%">
                     </div>
                 </div>
                 <input type="submit" class="btn btn-primary" value="Publish">
