@@ -107,7 +107,7 @@
 						<div class="span8">
 							<br class="hidden-phone">
 							<div class="pull-right">
-								<h2 class="text-info"><img style="width:30px;" src="https://stickeroid.com/uploads/pic/thumb/stickeroid_5a3e1ffa54f47.png"></span> {{getOption('theme_option_hotline')}}</h2>
+								<h2 class="text-info"><a href="https://api.whatsapp.com/send?phone={{getOption('theme_option_hotline')}}&text=Halo%20BAF"><img style="width:30px;" src="https://stickeroid.com/uploads/pic/thumb/stickeroid_5a3e1ffa54f47.png"></span> {{getOption('theme_option_hotline')}}</a></h2>
 								<!-- Social Widget -->
 							<ul class="social-icons social-dark inline">
 								@if(getOption('theme_option_facebook_url') !='')
@@ -181,7 +181,7 @@
 						<div class="span3">
 							<!-- About us -->
 							<h3><i class="icon-book"></i> About Us</h3>
-							<p>STIKES IMC adalah penyelenggara pendidikan vokasi, akademik, dan profesi terbaik bertaraf nasional dan international, yang berbasis intelektual dan kreativitas, enteurship, dan memiliki daya saing unggul dibidang Keperawatan dan Kebidanan di Banten pada tahun 2022.</a>.</p>							
+							<p>The British Academy Of Finance (BAF) os CIMA accredited learning partner for Indonesia.</a>.</p>							
 							<address>
 								<strong>Address</strong><br>
 								<i class="icon-map-marker"></i> {{getOption('theme_option_address')}}<br>
@@ -245,7 +245,7 @@
 					<div class="row">
 						<div class="span6">
 							<p>
-								Copyright &copy; 2017 STIKES IMC - All Rights Reserved. <span class="author">Powered by <a href="http://rolloic.com">Rollo ITC</a>.</span>
+								Copyright &copy; 2018 BAF - All Rights Reserved. <span class="author">Powered by <a href="http://rolloic.com">Rollo ITC</a>.</span>
 							</p>
 						</div>
 						<div class="span6">							

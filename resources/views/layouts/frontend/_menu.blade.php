@@ -27,6 +27,22 @@
 						</li>
 					@endforeach					
 				</ul>	
+				<div class="pull-right">
+								<div id="language" class="language visible-desktop">
+									<a href="#" class="current"><i class="icon-globe"></i> <span>English</span> <i class="icon-angle-down"></i></a>
+									<div class="language-selector">
+										<div class="page-header">
+											<h5><i class="icon-globe"></i> Select your language <span class="pull-right"><a href="#" class="close"><i class="icon-remove-sign"></i></a></span></h5>
+										</div>
+										<ul class="unstyled">
+											<li class="select"><img src="{{asset('assets/frontend')}}/images/flags/us.png" alt=""> <a href="#">English</a></li>
+											<li><a href="#"><img src="{{asset('assets/frontend')}}/images/flags/id.png" alt=""> Indonesia</a></li>											
+										</ul>
+										<hr>
+										
+									</div>
+								</div>
+							</div>
 			</div>
 		</div>
 	</div>

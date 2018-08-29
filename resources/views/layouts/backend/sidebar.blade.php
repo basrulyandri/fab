@@ -59,11 +59,7 @@
                         @endif
                     </ul>
                 </li>  
-                @if(auth()->user()->isKeuangan())
-                <li>
-                    <a href="{{route('tagihan.index')}}"><i class="fa fa-money"></i> <span class="nav-label">Tagihan</span><span class="label label-warning pull-right">{{jmlTagihan('tertagih')}}</span></a>
-                </li>  
-                @endif
+              
                 @if(auth()->user()->isAdmin())
                 <li>
                     <a href="{{route('posts.index')}}"><i class="fa fa-pie-chart"></i> <span class="nav-label">Posts</span></a>

@@ -11,23 +11,29 @@
 <div class="main">
 	<div class="container">
 		<div class="row">
-					<div class="span8">
-						<!-- Content -->
-						<div class="content">
-							<div class="page-header">
-								<h1>{{$post->title}}</h1>
-							</div>
-							<!-- Single Page -->
-								<div class="page">
-									
-									{!!$post->body!!}
-								</div>
-								<!-- End Single Page -->
-						</div>
-						<!-- End Content -->
+			@if($post->type == 'page')
+				<div class="span12">
+			@else
+				<div class="span8">
+			@endif
+				<!-- Content -->
+				<div class="content">
+					<div class="page-header">
+						<h1>{{$post->title}}</h1>
 					</div>
-					@include('layouts.frontend.sidebar')
+					<!-- Single Page -->
+						<div class="page">
+							
+							{!!$post->body!!}
+						</div>
+						<!-- End Single Page -->
 				</div>
+				<!-- End Content -->
+			</div>
+			@if($post->type == 'post')
+				@include('layouts.frontend.sidebar')
+			@endif
+		</div>
 	</div>
 </div>
 @stop

@@ -49,7 +49,7 @@
 				<div class="description shadow-large">
 					<h3>CIMA AS A PROFESSIONAL QUALIFICATION:</h3>
 				</div>
-				<img src="images/CIMA.jpg" style="float: left; margin: 0 10px 10px 0; width:400px;">
+				<img src="{{asset('assets/frontend')}}/images/CIMA.jpg" style="float: left; margin: 0 10px 10px 0; width:400px;">
 				<p>The CIMA Professional Qualification is recognized worldwide as the most relevant global finance qualification for a career in business. By studying with CIMA you will be joining a global Organisation powered by two of the world’s leading accounting bodies (AICPA- the American Institute of Certified Public Accountants and CIMA) to make management accounting the most valued profession in business worldwide.</p>
 
 				<p>On completion of the CIMA professional qualification, you will be awarded the Chartered Global Management Accountant (CGMA) designation, recognizing your value and showcasing your professionalism, business and leadership skills , ethics and commitment.</p>

@@ -17,22 +17,6 @@ Route::get('/pass',function(){
 	$user->save();
 });
 
-Route::get('/', [
-		'uses' => 'PagesController@index',
-		'as' => 'page.index',
-	]);
-
-
-Route::get('page/download/brosur', [
-		'uses' => 'PagesController@downloadbrosur',
-		'as' => 'page.download.brosur',
-	]);
-
-Route::post('page/download/brosur', [
-		'uses' => 'PagesController@postdownloadbrosur',
-		'as' => 'post.page.download.brosur',
-	]);
-
 Route::group(['middleware' => 'rbac'],function(){
 	Route::get('roles',[
 		'uses' => 'RoleController@index',
@@ -279,14 +263,7 @@ Route::group(['middleware' => 'rbac'],function(){
 			'uses' => 'SettingKampusController@update',
 			'as' => 'post.settings.kampus.update',
 		]);
-	Route::get('tagihan', [
-			'uses' => 'TagihanController@index',
-			'as' => 'tagihan.index',
-		]);
-	Route::post('tagihan/bayar', [
-			'uses' => 'TagihanController@bayar',
-			'as' => 'post.bayar.tagihan',
-		]);
+	
 	Route::get('reports', [
 			'uses' => 'ReportController@index',
 			'as' => 'report.index',
@@ -398,50 +375,64 @@ Route::group(['middleware' => 'rbac'],function(){
 	
 });
 
-Route::get('auth/error/401', [
-		'uses' => 'AuthController@error401',
-		'as' => 'auth.error401',
+
+
+	Route::get('/', [
+			'uses' => 'PagesController@index',
+			'as' => 'page.index',
+		]);
+
+
+	Route::get('page/download/brosur', [
+			'uses' => 'PagesController@downloadbrosur',
+			'as' => 'page.download.brosur',
+		]);
+
+	Route::post('page/download/brosur', [
+			'uses' => 'PagesController@postdownloadbrosur',
+			'as' => 'post.page.download.brosur',
+		]);
+
+	Route::get('auth/error/401', [
+			'uses' => 'AuthController@error401',
+			'as' => 'auth.error401',
+		]);
+
+	Route::get('login',[
+		'uses' => 'AuthController@login',
+		'as' => 'auth.login',
+		'middleware' => 'guest',
 	]);
 
-Route::get('login',[
-	'uses' => 'AuthController@login',
-	'as' => 'auth.login',
-	'middleware' => 'guest',
-]);
-
-Route::post('dologin',[
-	'uses' => 'AuthController@dologin',
-	'as' => 'auth.dologin',
-]);
-
-Route::get('logout',[
-	'uses' => 'AuthController@logout',
-	'as' => 'auth.logout',
-]);
-
-Route::get('searchWilayah',[
-	'uses' => 'DashboardController@cariWilayah',
-	'as' => 'search.wilayah',
-]);
-
-Route::get('downloadfileexcelimportaplikan', [
-		'uses' => 'AplikanController@downloadfileexcelimportaplikan',
-		'as' => 'download.contoh.file.import.aplikan',
+	Route::post('dologin',[
+		'uses' => 'AuthController@dologin',
+		'as' => 'auth.dologin',
 	]);
 
-Route::get('/{slug}', [
-		'uses' => 'PagesController@single',
-		'as' => 'page.single',
+	Route::get('logout',[
+		'uses' => 'AuthController@logout',
+		'as' => 'auth.logout',
 	]);
 
-Route::get('kategori/{slug}', [
-		'uses' => 'PagesController@category',
-		'as' => 'page.category',
+	Route::get('searchWilayah',[
+		'uses' => 'DashboardController@cariWilayah',
+		'as' => 'search.wilayah',
 	]);
-// Route::post('thumbnail/upload',[
-// 	'uses' => 'PostController@ajaxUploadThumbnail',
-// 	'as' => 'ajax.upload.thumbnail',
-// ]);
+
+	Route::get('/{slug}', [
+			'uses' => 'PagesController@single',
+			'as' => 'page.single',
+		]);
+
+	Route::get('category/{slug}', [
+			'uses' => 'PagesController@category',
+			'as' => 'page.category',
+		]);
+	// Route::post('thumbnail/upload',[
+	// 	'uses' => 'PostController@ajaxUploadThumbnail',
+	// 	'as' => 'ajax.upload.thumbnail',
+	// ]);
+
 Route::get('tags/search',[
 	'as' => 'tags.search',
 	'uses' => 'TagsController@search'
