@@ -2,7 +2,7 @@
 @section('header')
     <link href="{{url('assets/backend')}}/css/plugins/dropzone/dropzone.css" rel="stylesheet">
     <link rel="stylesheet" href="{{url('assets/backend')}}/js/plugins/bootstrap-tags-input/src/bootstrap-tagsinput.css">
-    <link rel="stylesheet" href="{{url('assets/backend')}}/js/plugins/typeahead/typeahead.css">
+    
 
 @endsection
 @section('title')
@@ -22,7 +22,7 @@
                 </li>                
             </ol>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-8">           
             
         </div>
     </div>
@@ -30,13 +30,12 @@
         <div class="row">
         <div class="col-lg-9">
                 <div class="ibox float-e-margins">                    
-                    <div class="ibox-content">
-                    
+                    <div class="ibox-content">                    
                     {!!Form::open(['route' => 'post.create','class' => 'form-horizontal'])!!}
                         <div class='form-group{{$errors->has('title') ? ' has-error' : ''}}'>
                             {!!Form::label('title','Title',['class' => 'col-sm-2 control-label'])!!}
-                            <div class="col-sm-10">
-                              {!!Form::text('title',old('title'),['class' => 'form-control','placeholder' => 'Title','required' => 'true'])!!}
+                            <div class="col-sm-10">                              
+                                {!!Form::text('title',old('title'),['class' => 'form-control','placeholder' => 'Title','required' => 'true'])!!}                                
                               @if($errors->has('title'))
                                 <span class="help-block">{{$errors->first('title')}}</span>
                               @endif
@@ -46,7 +45,7 @@
                         <div class='form-group{{$errors->has('body') ? ' has-error' : ''}}'>
                             {!!Form::label('body','Body',['class' => 'col-sm-2 control-label'])!!}
                             <div class="col-sm-10">
-                              {!!Form::textarea('body',old('body'),['class' => 'form-control','placeholder' => 'Body','id' => 'tinyMCE'])!!}
+                              {!!Form::textarea('body',old('body'),['class' => 'form-control tinyMCE','placeholder' => 'Body'])!!}
                               @if($errors->has('body'))
                                 <span class="help-block">{{$errors->first('body')}}</span>
                               @endif
@@ -105,7 +104,7 @@
                          <img src="{{url('assets/backend')}}/img/no-thumbnail.jpg" id="holder" style="margin-top:15px;width:100%">  
 
                         <div class="alert alert-warning">                                            
-                            Untuk Slider thumbnail harus berukuran 1170 x 400 px
+                            If this post for slider, best thumbnail size is 1170 x 400 px
                         </div>                      
                     </div>
                 </div>
@@ -139,54 +138,17 @@
         </div>
     </div>
 
+
     
     
 @stop
 
 @section('footer')   
-<script src="{{url('assets/backend')}}/js/plugins/jquery-ui/jquery-ui.min.js"></script>
-<script src="{{url('assets/backend')}}/js/plugins/tinymce/tinymce.min.js"></script>
-
 <script src="{{url('assets/backend')}}/js/plugins/bootstrap-tags-input/src/bootstrap-tagsinput.js"></script>
-<script src="{{url('assets/backend')}}/js/plugins/typeahead/typeahead.js"></script>
-<script src="{{url('/')}}/vendor/laravel-filemanager/js/lfm.js"></script>
+
 <script>
-        $(document).ready(function() {   
-            var editor_config = {
-                path_absolute : "{{ URL::to('/') }}/",
-                selector: "#tinyMCE",
-                plugins: [
-                  "advlist autolink lists link image charmap print preview hr anchor pagebreak",
-                  "searchreplace wordcount visualblocks visualchars code fullscreen",
-                  "insertdatetime media nonbreaking save table contextmenu directionality",
-                  "emoticons template paste textcolor colorpicker textpattern"
-                ],
-                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
-                relative_urls: false,
-                file_browser_callback : function(field_name, url, type, win) {
-                  var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
-                  var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
-
-                  var cmsURL = editor_config.path_absolute + 'admin/rollo-filemanager?field_name=' + field_name;
-                  if (type == 'image') {
-                    cmsURL = cmsURL + "&type=Images";
-                  } else {
-                    cmsURL = cmsURL + "&type=Files";
-                  }
-
-                  tinyMCE.activeEditor.windowManager.open({
-                    file : cmsURL,
-                    title : 'Filemanager',
-                    width : x * 0.8,
-                    height : y * 0.8,
-                    resizable : "yes",
-                    close_previous : "no"
-                  });
-                }
-              };
-        
-            tinymce.init(editor_config);  
-            var domain = "{{url('/')}}/admin/rollo-filemanager";         
+        $(document).ready(function() {
+          var domain = "{{url('/')}}/admin/rollo-filemanager";
             $('#uploadbutton').filemanager('image', {prefix: domain});
             //bootstrap-tags-input-and-typeahead
             var tagsName = new Bloodhound({

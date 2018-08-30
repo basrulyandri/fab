@@ -372,6 +372,10 @@ Route::group(['middleware' => 'rbac'],function(){
 			'uses' => 'SettingController@mailing',
 			'as' => 'setting.mailing',
 		]);
+	Route::post('translate/update', [
+			'uses' => 'TranslateController@update',
+			'as' => 'translate.update',
+		]);
 	
 });
 
@@ -452,3 +456,7 @@ Route::post('thumbnail/upload',[
 	'uses' => 'PostController@ajaxUploadThumbnail',
 	'as' => 'ajax.upload.thumbnail',
 ]);
+Route::post('ajax/translate/modal', [
+		'uses' => 'TranslateController@ajaxTranslateModal',
+		'as' => 'ajax.load.translate.modal',
+	]);

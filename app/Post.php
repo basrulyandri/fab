@@ -4,11 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use App\Traits\Translatable;
 
 class Post extends Model
 {
 
-    use Sluggable;
+    use Sluggable, Translatable;
 
     /**
      * Return the sluggable configuration array for this model.
@@ -113,19 +114,5 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function trans($field)
-    {
-        //dd(config('app.fallback_locale'));
-        if(\LaravelLocalization::getCurrentLocale() == config('app.fallback_locale')){
-            return $this->{$field};
-        }
-
-        $translation = $this->translation()->whereTableName('posts')->whereFieldName($field)->whereLanguageCode(\LaravelLocalization::getCurrentLocale())->first();
-        if(!$translation){
-            return $this->{$field};
-        }
-
-        return $translation->content;
-
-    }
+    
 }

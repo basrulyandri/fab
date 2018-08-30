@@ -23,7 +23,7 @@
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
        
-          {!! Menu::render() !!}
+          {!! \Menu::render() !!}
         </div>
     </div>        
     

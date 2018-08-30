@@ -1,10 +1,10 @@
 @extends('layouts.frontend.master')
 @section('og')
     <meta property="og:type" content="website" /> 
-    <meta property="og:title" content="STIKES IMC BINTARO | Sekolah Tinggi Ilmu Kesehatan di tangerang" />
-    <meta property="og:description" content="Sekolah Tinggi Ilmu Kesehatan di Bintaro Jakarta Selatan yang menciptakan lulusan profesional sesuai dengan kebutuhan kerja dan penempatan kerja di Jepang" />
+    <meta property="og:title" content="{{getOption('web_title')}}" />
+    <meta property="og:description" content="{{getOption('web_description')}}" />
     <meta property="og:image" content="{{url('/')}}/assets/frontend/images/STIKES-IMC-BINTARO-OG-IMAGE.jpg" />
-    <meta name="description" content="Sekolah Tinggi Ilmu Kesehatan di Bintaro Jakarta Selatan yang menciptakan lulusan profesional sesuai dengan kebutuhan kerja dan penempatan kerja di Jepang" />
+    <meta name="description" content="{{getOption('web_description')}}" />
 @stop
 @section('content')
 <div class="overall">
@@ -93,7 +93,7 @@
 				<!-- Content -->
 				<div class="content">
 					<div class="page-header">
-						<h2><a href="single.html"><i class="icon-globe"></i> <span>Berita</span> STIKES IMC</a></h2>
+						<h2><a href="single.html"><i class="icon-globe"></i> <span>CIMA</span> Course</a></h2>
 					</div>
 					<!-- Upcoming Events -->
 					<section>
@@ -108,14 +108,14 @@
 											<a href="{{route('page.single',['slug' => $lp->slug])}}" title="{{$lp->title}}"><img style="width: 100%;" src="{{url('/')}}/{{$lp->thumb()}}" alt="{{$lp->title}}"></a>
 										</figure>
 										<div class="date">
-											<small><i class="icon-picture"></i> {{$lp->categories_comma()}}</small>
+											<small><i class="icon-picture"></i> </small>
 											<div class="pull-right">
-												<small>{{$lp->published_at->format('d M Y')}}</small>
+												<small></small>
 											</div>
 										</div>
 										<div class="body">
-											<h4><a href="{{route('page.single',['slug' => $lp->slug])}}" title="{{$lp->title}}">{{$lp->title}}</a></h4>
-											<p>{{$lp->excerpt}}</p>
+											<h4><a href="{{route('page.single',['slug' => $lp->slug])}}" title="{{$lp->title}}">{{$lp->trans('title')}}</a></h4>
+											<p>{{$lp->trans('excerpt')}}</p>
 											<div class="more">
 												<a href="{{route('page.single',['slug' => $lp->slug])}}" title="{{$lp->title}}"><i class="icon-circle-arrow-right"></i> <span class="hidden-tablet">Read more</span></a>
 												<!-- <div class="pull-right">

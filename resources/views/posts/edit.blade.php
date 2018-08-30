@@ -36,7 +36,10 @@
                         <div class='form-group{{$errors->has('title') ? ' has-error' : ''}}'>
                             {!!Form::label('title','Title',['class' => 'col-sm-2 control-label'])!!}
                             <div class="col-sm-10">
-                              {!!Form::text('title',$post->title,['class' => 'form-control','placeholder' => 'Title','required' => 'true'])!!}
+                              <div class="input-group">
+                                {!!Form::text('title',$post->title,['class' => 'form-control','placeholder' => 'Title','required' => 'true'])!!}
+                                <span class="input-group-btn"> <a class="btn btn-primary translateBtn" foreign-key-id="{{$post->id}}" table-name="posts" field-name="title" data-toggle="modal" model-name="Post" is-html="0" href='#translate'>Translate</a> </span>
+                              </div>
                               @if($errors->has('title'))
                                 <span class="help-block">{{$errors->first('title')}}</span>
                               @endif

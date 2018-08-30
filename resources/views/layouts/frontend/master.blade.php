@@ -7,7 +7,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>British Academy Of Finance</title>
+	<title>{{getOption('web_title')}}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
 	<meta name="author" content="Basrul Yandri">
 	@yield('og')
@@ -100,7 +100,7 @@
 						<div class="span4">
 							<!-- Logo -->
 							<div class="logo">
-								<a href="{{route('page.index')}}"><img id="logo" src="{{url('/').getOption('theme_option_logo')}}" alt="STIKES IMC BINTARO"></a>								
+								<a href="{{route('page.index')}}"><img id="logo" src="{{url('/').getOption('theme_option_logo')}}" alt="{{getOption('web_title')}}"></a>								
 							</div>
 							<!-- End Logo -->
 						</div>
