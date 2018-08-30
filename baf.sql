@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 29, 2018 at 09:33 PM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Generation Time: Aug 30, 2018 at 07:42 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.1.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -66,10 +66,10 @@ CREATE TABLE `category_post` (
 INSERT INTO `category_post` (`id`, `category_id`, `post_id`, `created_at`, `updated_at`) VALUES
 (1, 1, 11, '2017-11-01 09:01:46', NULL),
 (2, 1, 13, '2017-11-01 09:04:57', NULL),
-(3, 1, 27, '2018-03-20 03:07:07', NULL),
-(4, 1, 28, '2018-03-20 03:11:15', NULL),
-(5, 1, 29, '2018-03-20 03:16:20', NULL),
-(6, 1, 30, '2018-03-20 04:58:31', NULL);
+(7, 1, 34, '2018-08-30 13:09:29', NULL),
+(8, 1, 35, '2018-08-30 13:14:24', NULL),
+(9, 1, 36, '2018-08-30 13:14:47', NULL),
+(10, 1, 37, '2018-08-30 13:15:20', NULL);
 
 -- --------------------------------------------------------
 
@@ -7251,7 +7251,7 @@ INSERT INTO `menu_items` (`id`, `label`, `link`, `parent`, `sort`, `class`, `men
 (25, 'Basket', '#', 0, 7, '', 1, 0, '2018-08-27 07:15:04', '2018-08-27 07:15:26'),
 (26, 'F.A.Q', '#', 0, 8, '', 1, 0, '2018-08-27 07:15:16', '2018-08-27 07:15:26'),
 (27, 'Contact', '#', 0, 9, '', 1, 0, '2018-08-27 07:15:24', '2018-08-27 07:15:26'),
-(28, 'CIMA Home', '#', 0, 0, '', 2, 0, '2018-08-27 07:18:10', '2018-08-27 07:18:13'),
+(28, 'CIMA Home', 'cima-home', 0, 0, '', 2, 0, '2018-08-27 07:18:10', '2018-08-30 16:11:28'),
 (29, 'CIMA Strategic', '#', 0, 1, '', 2, 0, '2018-08-27 07:18:34', '2018-08-27 07:19:29'),
 (30, 'Objective Tests', 'http://localhost/baf/public/cima-strategic-objective-test-courses', 29, 2, '', 2, 1, '2018-08-27 07:19:02', '2018-08-27 13:11:11'),
 (31, 'Case Study', '#', 29, 5, '', 2, 1, '2018-08-27 07:19:15', '2018-08-27 07:22:50'),
@@ -7314,12 +7314,12 @@ INSERT INTO `options` (`id`, `option_key`, `option_value`, `created_at`, `update
 (6, 'akhir_tahun_akademik', '2018-09-09', '2017-10-21 08:01:55', '0000-00-00 00:00:00'),
 (7, 'theme_option_amount_of_slider', '2', '2017-11-01 08:00:42', '2018-08-29 22:32:39'),
 (8, 'theme_option_slider_contents', 'a:3:{i:0;s:2:\"31\";i:1;s:2:\"32\";i:2;s:2:\"33\";}', '2017-11-01 08:35:29', '2018-08-29 22:32:39'),
-(9, 'theme_option_logo', '/photos/logo_BAF-min.png', '2018-01-04 09:44:46', '2018-08-27 19:06:38'),
-(10, 'theme_option_hotline', '087878917753', '2018-01-04 10:04:14', '2018-08-27 19:06:38'),
-(11, 'theme_option_facebook_url', 'https://www.facebook.com/bafstudies/', '2018-01-04 10:11:01', '2018-08-27 19:06:38'),
-(12, 'theme_option_twitter_url', 'q', '2018-01-04 10:13:25', '2018-08-27 19:06:38'),
-(13, 'theme_option_instagram_url', 'q', '2018-01-04 10:13:25', '2018-08-27 19:06:38'),
-(14, 'theme_option_youtube_url', 'q', '2018-01-04 10:13:36', '2018-08-27 19:06:38'),
+(9, 'theme_option_logo', '/photos/logo-british-academy-of-finance-min.png', '2018-01-04 09:44:46', '2018-08-30 20:04:00'),
+(10, 'theme_option_hotline', '087878917753', '2018-01-04 10:04:14', '2018-08-30 20:04:00'),
+(11, 'theme_option_facebook_url', 'https://www.facebook.com/bafstudies/', '2018-01-04 10:11:01', '2018-08-30 20:04:00'),
+(12, 'theme_option_twitter_url', 'q', '2018-01-04 10:13:25', '2018-08-30 20:04:00'),
+(13, 'theme_option_instagram_url', 'q', '2018-01-04 10:13:25', '2018-08-30 20:04:00'),
+(14, 'theme_option_youtube_url', 'q', '2018-01-04 10:13:36', '2018-08-30 20:04:01'),
 (15, 'email_from', 'digicrea08@gmail.com', '2018-02-24 09:54:03', '2018-07-17 20:01:12'),
 (16, 'email_from_label', 'STIKES IMC Bintaro', '2018-02-24 09:55:33', '2018-07-17 20:01:12'),
 (17, 'subject_email_notification_download_brosur_to_aplikan', 'Permintaan Download Brosur anda telah kami terima', '2018-02-24 10:29:00', '2018-07-17 20:01:12'),
@@ -7332,9 +7332,11 @@ INSERT INTO `options` (`id`, `option_key`, `option_value`, `created_at`, `update
 (24, 'theme_option_sambutan_image', '/photos/ketua-stikes-imc-peter.jpg', '2018-03-15 10:48:11', '2018-03-16 01:12:04'),
 (25, 'theme_option_sambutan_content', 'Perwujudan misi ini perlu sejalan Kondisinya perkembangan internasional antara lain perkembangan ilmu pengetahuan dan teknologi dan pemberlakuan pasar bebas, maka tujuan pendidikan tenaga kesehatan diarahkan untuk menghasilkan tenaga kesehatan yang kompeten, profesional, dan berdaya saing yang jumlah dan jenisnya sesuai dengan kebutuhan pasar kerja dalam tatanan pelayanan kesehatan di tingkat nasional dan global', '2018-03-15 10:48:22', '2018-03-16 01:12:04'),
 (26, 'theme_option_sambutan_nama', 'Ir. Peter M Simanjuntak, MBA', '2018-03-15 11:08:46', '2018-03-16 01:12:04'),
-(27, 'theme_option_address', 'Gedung Perkantoran International Finance Center Tower 2, Lantai 33 Jl. Jend. Sudirman Kav.22-23 Jakarta Selatan 12920', '2018-08-27 12:11:13', '0000-00-00 00:00:00'),
-(28, 'theme_option_email', 'info@bafstudies.com', '2018-08-27 12:14:41', '0000-00-00 00:00:00'),
-(29, 'theme_option_linkedin_url', 'q', '2018-08-27 12:24:42', '0000-00-00 00:00:00');
+(27, 'theme_option_address', 'Gedung Perkantoran International Finance Center Tower 2, Lantai 33 Jl. Jend. Sudirman Kav.22-23 Jakarta Selatan 12920', '2018-08-27 12:11:13', '2018-08-30 20:04:00'),
+(28, 'theme_option_email', 'info@bafstudies.com', '2018-08-27 12:14:41', '2018-08-30 20:04:00'),
+(29, 'theme_option_linkedin_url', 'q', '2018-08-27 12:24:42', '2018-08-30 20:04:01'),
+(30, 'web_title', 'The British Academy Of Finance', '2018-08-30 12:56:41', '2018-08-30 20:04:00'),
+(31, 'web_description', 'CIMA accredited learning partner for Indonesia.', '2018-08-30 12:56:41', '2018-08-30 20:04:00');
 
 --
 -- Triggers `options`
@@ -7572,13 +7574,14 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `user_id`, `published_at`, `title`, `body`, `excerpt`, `status`, `slug`, `type`, `media_type`, `filename`, `parent`, `thumbnail`, `created_at`, `updated_at`) VALUES
-(27, 85, '2017-03-31 17:07:06', 'SEMINAR KESEHATAN PERAN ORANGTUA DAN TENAGA KESEHATAN UNTUK MENGHINDARI KEKERASAN PADA ANAK', '<p style=\"font-weight: 400;\">KPAI menyatakan kekerasan pada anakselalu meningkat setiap tahun. Anak bisa menjadi korban ataupun perilakukekerasan dari lingkungannya baik dilingkungan keluarga, dilingkungan sekolahdan dilingkungan masyarakat. Dalam beberapa situasi terkadang tanpa disadariorangtua dapat membahayakan atau melukai anak yang biasanya tanpa disadaridengan jelas. Kendala yang dihadapi saat ini adalah kurangnya kesadaranmasyarakat dan Petugas Masyarakat untuk melaporkan kejadian kekerasan&nbsp; terhadap anak.</p>\r\n<p style=\"font-weight: 400;\">Komisi Perlindungan Anak Indonesia (KPAI)bersama Kementerian Kesehatan sejak tahun 2010 telah menjadikan<strong>&nbsp;Puskesmas dan RS sebagaibasis data kekerasan terhadap anak.</strong>&nbsp;Tugas utama Puskesmasdan Rumah sakit adalah menangani semua kasus kekerasan yang terjadi di lingkungansebagai bagian persyaratan sebuah kota layak anak.&nbsp;<strong>Petugas kesehatan&nbsp;yangmenangani kekerasan anak&nbsp;mempunyai kewajiban untuk melapor kepadakepolisian,</strong>&nbsp;dalamhal ini Unit perlindungan Perempuan dan Anak yang ada di seluruh Polres / Polwildan Polda. Apabila tidak melaporkan terdapat ancaman mendapatkan sanksi.Peraturan Menkes ini merupakan&nbsp;tindak lanjut dari pasal 108 KUHP dan UUPerlindungan anak no 23/2002.&nbsp;&nbsp;<strong>Peranpetugas kesehatan mulai dari tingkat Puskesmas dalam mencegah kekerasan padaAnak adalah Wajib Lapor&nbsp;kepada aparat berwajib</strong><strong>&nbsp;</strong><strong>bila menerima pasien yang dicurigai merupakananak korban kekerasan. Oleh sebab itu, STIKes IMC Bintaro mengajak seluruhkalangan baik mahasiswa maupun umum untuk dapat berperan aktif serta menyadari akanpentingnya hal ini</strong><strong>.</strong></p>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<p style=\"font-weight: 400;\">Tema:</p>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<p style=\"font-weight: 400;\">Peran Orangtua dan Tenaga Kesehatan UntukMenghindari Kekerasan Pada Anak</p>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<p style=\"font-weight: 400;\">DenganPembicara :</p>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<ol>\r\n<li style=\"font-weight: 400;\">Ns. Adin Syefudin, S.Kep&nbsp;(KepalaPPNI Tangerang Selatan)</li>\r\n<li style=\"font-weight: 400;\">MaulinaHandayani, S.Kp., M.Sc (Dosen Keperawatan Anak UIN Jakarta)</li>\r\n<li style=\"font-weight: 400;\">SitiAminah Waluyo, S.Pd., M.Kes (Ketua Program Studi DIII Kebidanan STIKes IMCBintaro)</li>\r\n</ol>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<p style=\"font-weight: 400;\">Hari, Tanggal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Sabtu, 08 April 2017</p>\r\n<p style=\"font-weight: 400;\">Waktu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 08.00 s.d Selesai</p>\r\n<p style=\"font-weight: 400;\">Tempat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Aula STIKes IMC Bintaro</p>\r\n<p style=\"font-weight: 400;\">HTM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</p>\r\n<p style=\"font-weight: 400;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Mahasiswa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Rp. 150.000</p>\r\n<p style=\"font-weight: 400;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; Umum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Rp. 200.000</p>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<p style=\"font-weight: 400;\">Fasilitas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</p>\r\n<ol>\r\n<li style=\"font-weight: 400;\">SertifikatTerakreditasi</li>\r\n<li style=\"font-weight: 400;\">Snack &amp; LunchBox</li>\r\n<li style=\"font-weight: 400;\">Seminar Kit</li>\r\n</ol>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<p style=\"font-weight: 400;\">Informasi Pendaftaran :</p>\r\n<p style=\"font-weight: 400;\">Dolla (0812 9810 -9685)</p>\r\n<p style=\"font-weight: 400;\">Weni (0822 1157 -9476)</p>\r\n<p style=\"font-weight: 400;\">Ayu Lestari (0897 6946 - 146)</p>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<p style=\"font-weight: 400;\">Cara Pendaftaran :</p>\r\n<p style=\"font-weight: 400;\">SMRIMC_NAMALENGKAP_MAHASISWA/UMUM_ASALINSTITUSI_NO.HP</p>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<p style=\"font-weight: 400;\">Pembayaran Transfer :</p>\r\n<p style=\"font-weight: 400;\">Atas Nama : IlmuKesehatan Ichsan</p>\r\n<p style=\"font-weight: 400;\">Bank Mandiri No. Rek164 000 0424 657 (Harap Konfirmasi Sebelum &amp; Sesudah Transfer)</p>\r\n<p style=\"font-weight: 400;\">&nbsp;<img src=\"/stikes-imc-l53/public/photos/seminar perlindungan anak.jpg\" alt=\"\" width=\"940\" height=\"1253\" /></p>', 'Peran Orangtua dan Tenaga Kesehatan Untuk Menghindari Kekerasan Pada Anak\r\npembicara :\r\nNs. Adin Syefudin, S.Kep (Kepala PPNI Tangerang Selatan)\r\nMaulinaHandayani, S.Kp., M.Sc (Dosen Keperawatan Anak UIN Jakarta)\r\nSitiAminah Waluyo, S.Pd., M.Kes (Ketua Program Studi DIII Kebidanan STIKes IMCBintaro)', 'published', 'seminar-kesehatan-peran-orangtua-dan-tenaga-kesehatan-untuk-menghindari-kekerasan-pada-anak', 'post', NULL, NULL, 0, '/photos/kekerasan-anak-dan-pencabulan-jadi-sorotan.jpg', '2018-03-20 03:07:06', '2018-03-20 17:52:01'),
-(28, 85, '2017-02-08 17:11:15', 'Training Basic Trauma And Cardiac Life Support (BTCLS)', '<div>STIKes IMC Bintaro bekerjasama dengan Yayasan Ambulance &nbsp;Gawat Darurat 118</div>\r\n<div>Mengadakan Training BTCLS bagi Perawat dan Mahasiswa/i Keperawatan.</div>\r\n<div>Training akan diselenggarakan tanggal 13 s/d 17 Februari 2017</div>\r\n<div>Bertempat di Gedung Aula STIKes IMC Bintaro.</div>\r\n<div>Buruan Daftar Harga Promo.....</div>\r\n<div><img src=\"/stikes-imc-l53/public/photos/BTCLS.jpg\" alt=\"\" width=\"595\" height=\"842\" /></div>', 'STIKes IMC Bintaro bekerjasama dengan Yayasan Ambulance  Gawat Darurat 118\r\nMengadakan Training BTCLS bagi Perawat dan Mahasiswa/i Keperawatan.\r\nTraining akan diselenggarakan tanggal 13 s/d 17 Februari 2017\r\nBertempat di Gedung Aula STIKes IMC Bintaro.\r\nBuruan Daftar Harga Promo.....', 'published', 'training-basic-trauma-and-cardiac-life-support-btcls', 'post', NULL, NULL, 0, '/photos/training-btcls.jpg', '2018-03-20 03:11:15', '2018-03-20 18:06:32'),
-(29, 85, '2016-12-06 17:16:19', 'Seminar Kesehatan : Tantangan digital Teknologi di STIKES IMC Bintaro', '<p style=\"font-weight: 400;\">BEM STIKes IMCBintaro Proudly Present</p>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<p style=\"font-weight: 400;\">5 sektor Prioritas dalam MEA yaitu Health, Hospitality, Oil and Gas, Construction, dan Manufacture. Perawat memerlukan Peningkatan Kemampuan Berbahasa Inggris dan Penguasaan Tekhnologi Informasi Digital dalam persaingannya menghadapi tenaga kesehatan dari Negara lain. Lalu yang menjadi pertanyaan saat ini Mengapa harus Digital ? Apakah ada Standart Praktek Dokumentasi Digital ? Bagaimana cara menggunakan System Digital dalam Proses Keperawatan ?</p>\r\n<p style=\"font-weight: 400;\">SeminarKesehatan :</p>\r\n<p style=\"font-weight: 400; text-align: center;\"><strong>Tantangan Digital Tekhnologi Terhadap Proses Perawatan dan Peluang Kerja Tenaga Kesehatan di Generasi Milenial</strong></p>\r\n<p style=\"font-weight: 400;\">Dengan Pembicara :</p>\r\n<p style=\"font-weight: 400;\">Ns. AirinS.Kep., MM</p>\r\n<p style=\"font-weight: 400;\">(Kepala Unit Perawatan dan Tim Akreditasi RS Pondok Indah Jakarta Selatan)</p>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<p style=\"font-weight: 400;\">Hari, Tanggal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :Selasa, 13 Desember 2016</p>\r\n<p style=\"font-weight: 400;\">Tempat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :Aula STIKes IMC Bintaro</p>\r\n<p style=\"font-weight: 400;\">HTM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</p>\r\n<p style=\"font-weight: 400;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; Mahasiswa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :Rp. 100.000</p>\r\n<p style=\"font-weight: 400;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; Umum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :Rp. 150.000</p>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<p style=\"font-weight: 400;\">Fasilitas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</p>\r\n<ol>\r\n<li style=\"font-weight: 400;\">SertifikatTerakreditasi PPNI 1 SKP</li>\r\n<li style=\"font-weight: 400;\">Lunch Box</li>\r\n<li style=\"font-weight: 400;\">Seminar Kit</li>\r\n</ol>\r\n<p style=\"font-weight: 400;\">Informasi Pendaftaran :</p>\r\n<p style=\"font-weight: 400;\">Yessi Agustini (No. Hp : 0896 9911 2840, Pin Bbm :5E87F4F8)</p>\r\n<p style=\"font-weight: 400;\">Dea Rahmadiyani ( No. Hp 0896 5555 2765, Pin Bbm :5D2638CD)</p>\r\n<p style=\"font-weight: 400;\">Niken (0812 1221 6040)</p>\r\n<p style=\"font-weight: 400;\">&nbsp;</p>\r\n<p style=\"font-weight: 400;\">Pembayaran Transfer :</p>\r\n<p style=\"font-weight: 400;\">Atas Nama : Ilmu Kesehatan Ichsan</p>\r\n<p><span style=\"font-weight: 400;\">BankMandiri No. Rek 164 000 0424 657 (Harap Konfirmasi Sebelum &amp; SesudahTransfer)</span></p>\r\n<p><span style=\"font-weight: 400;\"><img src=\"/stikes-imc-l53/public/photos/seminar kesehatan stikes IMC Bintaro.jpg\" alt=\"\" width=\"940\" height=\"1476\" /></span></p>', '5 sektor Prioritas dalam MEA yaitu Health, Hospitality, Oil and Gas, Construction, dan Manufacture. Perawat memerlukan Peningkatan Kemampuan Berbahasa Inggris dan Penguasaan Tekhnologi Informasi Digital dalam persaingannya menghadapi tenaga kesehatan dari Negara lain', 'published', 'seminar-kesehatan-tantangan-digital-teknologi-di-stikes-imc-bintaro', 'post', NULL, NULL, 0, '/photos/digital-teknologi-kesehatan.jpg', '2018-03-20 03:16:19', '2018-03-20 18:09:48'),
-(30, 85, '2017-08-22 18:58:31', 'MEDICAL CHECK UP CALON MAHASISWA/I BARU STIKES IMC BINTARO T.A 2016-2017', '<p>Puluhan calon mahasiswa baru tahun ajaran 2016/2017 STIKes IMC Bintaro menjalankan tes kesehatan di RS IMC Bintaro, Senin (22/08/2016). Pemeriksaan ini adalah bagian wajib dari syarat bagi mahasiswa baru setelah melakukan daftar ulang.&nbsp;</p>\r\n<p><img src=\"/stikes-imc-l53/public/photos/basrul.jpg\" alt=\"\" width=\"100\" height=\"100\" />Para mahasiswa yang melakukan tes tersebut adalah mereka yang lulus dari semua jalur ujian masuk, baik prestasi maupun reguler. Adapun pada kegiatan ini dibagi menjadi dua sesi mengingat jumlah peserta yang cukup banyak dan tidak terselesaikan bila hanya satu hari pelaksanaan.&nbsp;</p>\r\n<p>Jenis pemeriksaannya meliputi pemeriksaan fisik head to toe, tinggi badan, berat badan, tekanan darah, pemeriksaan visus mata, buta warna, foto thorax, lab. darah lengkap, urine test, narkoba dan sebagainya. Hal ini dianggap penting agar para mahasiswa baru STIKes IMC Bintaro yang menuntut ilmu adalah mahasiswa yang sehat.</p>\r\n<p><img src=\"/stikes-imc-l53/public/photos/mahasiswa baru  STIKes IMC Bintaro menjalankan tes kesehatan.jpg\" alt=\"\" width=\"940\" height=\"705\" /></p>', 'Puluhan calon mahasiswa baru tahun ajaran 2016/2017 STIKes IMC Bintaro menjalankan tes kesehatan di RS IMC Bintaro, Senin (22/08/2016). Pemeriksaan ini adalah bagian wajib dari syarat bagi mahasiswa baru setelah melakukan daftar ulang. \r\n\r\n', 'published', 'medical-check-up-calon-mahasiswa-i-baru-stikes-imc-bintaro-t-a-2016-2017', 'post', NULL, NULL, 0, '/photos/mahasiswa baru  STIKes IMC Bintaro menjalankan tes kesehatan.jpg', '2018-03-20 04:58:31', '2018-05-09 22:47:08'),
 (31, 85, '2018-08-27 13:08:50', 'The Great Aim of Education is not Knowledge, But Action', '<p>On completion of the CIMA professional qualification, you will be awarded the Chartered Global Management Accountant (CGMA) designation, recognizing your value and showcasing your professionalism, business and leadership skills , ethics and&nbsp;</p>', 'On completion of the CIMA professional qualification, you will be awarded the Chartered Global Management Accountant (CGMA) designation, recognizing your value and showcasing your professionalism, business and leadership skills , ethics and ', 'published', 'the-great-aim-of-education-is-not-knowledge-but-action', 'page', NULL, NULL, 0, '/photos/baf-silder-(1).jpg', '2018-08-27 06:08:50', '2018-08-29 22:29:49'),
 (32, 85, '2018-08-27 20:10:42', 'CIMA Strategic – Objective Test Courses', '<p>Want to<strong>&nbsp;pass your CIMA exams</strong>&nbsp;in the quickest and easiest possible way?</p>\r\n<p>&nbsp;</p>\r\n<p>We have designed&nbsp;<strong>high quality online courses</strong>&nbsp;for the E3, P3 and F3 exams that will give you the very best chance of passing! And we&rsquo;re so confident you&rsquo;ll agree we have a<strong>&nbsp;double guarantee</strong>&nbsp;that ensures you are completely satisfied.</p>', 'We have designed high quality online courses for the E3, P3 and F3 exams that will give you the very best chance of passing! And we’re so confident you’ll agree we have a double guarantee that ensures you are completely satisfied.', 'published', 'cima-strategic-objective-test-courses', 'page', NULL, NULL, 0, '/photos/cima-slider.jpg', '2018-08-27 13:10:42', '2018-08-29 22:28:07'),
-(33, 85, '2018-08-29 22:32:28', 'CIMA Accredited Global Learning Partner For Indonesia', 'Test content in english ', '', 'published', 'join-us-now', 'page', NULL, NULL, 0, '/photos/lalith-baf.jpg', '2018-08-29 15:32:28', '2018-08-29 22:34:12');
+(33, 85, '2018-08-29 22:32:28', 'CIMA Accredited Global Learning Partner For Indonesia', 'Test content in english ', '', 'published', 'join-us-now', 'page', NULL, NULL, 0, '/photos/lalith-baf.jpg', '2018-08-29 15:32:28', '2018-08-29 22:34:12'),
+(34, 85, '2018-08-30 20:09:29', 'CIMA Certificate', '<p>Certificate case study exam</p>', 'Certificate case study exam', 'published', 'cima-certificate', 'post', NULL, NULL, 0, '/photos/cima certificate.jpg', '2018-08-30 13:09:29', '2018-08-30 20:21:24'),
+(35, 85, '2018-08-30 20:14:24', 'CIMA Operation', '<p>Operational case study exam</p>', 'Operational case study exam', 'published', 'cima-operation', 'post', NULL, NULL, 0, '/photos/cima operational.jpg', '2018-08-30 13:14:24', '2018-08-30 20:20:58'),
+(36, 85, '2018-08-30 20:14:46', 'CIMA Management', '<p>Management case study exam</p>', 'Management case study exam', 'published', 'cima-management', 'post', NULL, NULL, 0, '/photos/cima manegement.jpg', '2018-08-30 13:14:46', '2018-08-30 20:20:39'),
+(37, 85, '2018-08-30 20:15:20', 'CIMA STRATEGIC', '<p>Strategic Case Study Exam</p>', 'Strategic Case Study Exam', 'published', 'cima-strategic', 'post', NULL, NULL, 0, '/photos/CIMA STRATEGIC.jpg', '2018-08-30 13:15:20', '2018-08-30 20:20:09'),
+(38, 85, '2018-08-30 23:03:42', 'CIMA HOME', '<p><strong>It takes strategic vision to lead </strong></p>', 'It takes strategic vision to lead\r\n', 'published', 'cima-home', 'page', NULL, NULL, 0, '/photos/CIMA.jpg', '2018-08-30 16:03:42', '2018-08-30 23:03:42');
 
 -- --------------------------------------------------------
 
@@ -7617,7 +7620,11 @@ INSERT INTO `post_tag` (`id`, `post_id`, `tag_id`, `created_at`, `updated_at`) V
 (26, 29, 8, '2018-03-20 03:16:19', NULL),
 (27, 29, 11, '2018-03-20 03:16:20', NULL),
 (30, 31, 7, '2018-03-20 07:42:16', NULL),
-(32, 30, 17, '2018-05-09 08:47:08', NULL);
+(32, 30, 17, '2018-05-09 08:47:08', NULL),
+(33, 34, 7, '2018-08-30 13:09:29', NULL),
+(34, 35, 7, '2018-08-30 13:14:24', NULL),
+(35, 36, 7, '2018-08-30 13:14:46', NULL),
+(36, 37, 7, '2018-08-30 13:15:20', NULL);
 
 -- --------------------------------------------------------
 
@@ -7669,71 +7676,6 @@ INSERT INTO `provinces` (`id`, `name`) VALUES
 ('82', 'MALUKU UTARA'),
 ('91', 'PAPUA BARAT'),
 ('94', 'PAPUA');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pt`
---
-
-CREATE TABLE `pt` (
-  `id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `slug` varchar(100) DEFAULT NULL,
-  `status` varchar(45) NOT NULL,
-  `subscription_type` varchar(45) NOT NULL,
-  `verification_file` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pt`
---
-
-INSERT INTO `pt` (`id`, `name`, `slug`, `status`, `subscription_type`, `verification_file`, `created_at`, `updated_at`) VALUES
-(1, 'STIKES IMC Bintaro', 'stikesimc', 'active', '', NULL, '2017-06-09 23:15:33', '2017-12-24 16:50:27');
-
---
--- Triggers `pt`
---
-DELIMITER $$
-CREATE TRIGGER `update_pt` BEFORE UPDATE ON `pt` FOR EACH ROW SET NEW.`updated_at` = NOW()
-$$
-DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pt_options`
---
-
-CREATE TABLE `pt_options` (
-  `id` int(11) NOT NULL,
-  `pt_id` int(11) NOT NULL,
-  `option_key` varchar(100) NOT NULL,
-  `option_value` longtext NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pt_options`
---
-
-INSERT INTO `pt_options` (`id`, `pt_id`, `option_key`, `option_value`, `created_at`, `updated_at`) VALUES
-(3, 1, 'bentuk_pt', '0', '2017-06-14 02:08:36', '2017-06-15 11:03:04'),
-(4, 1, 'nominal_biaya_pendaftaran', '150000', '2017-08-19 10:57:51', '2017-08-20 00:57:51'),
-(5, 1, 'bayar_via', 'a:2:{i:1;s:5:\"Tunai\";i:2;s:41:\"MANDIRI 7197977878 a.n STIKES IMC BINTARO\";}', '2017-08-19 11:09:29', '2017-08-20 01:09:29'),
-(6, 1, 'nama_institusi', 'STIKES IMC BINTARO', '2017-09-04 08:09:12', '2017-09-04 22:24:08');
-
---
--- Triggers `pt_options`
---
-DELIMITER $$
-CREATE TRIGGER `updated_pt_options` BEFORE INSERT ON `pt_options` FOR EACH ROW SET NEW.`updated_at` = NOW()
-$$
-DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -8346,6 +8288,7 @@ CREATE TABLE `translations` (
   `field_name` varchar(100) NOT NULL,
   `content` text NOT NULL,
   `language_code` char(10) NOT NULL,
+  `is_html` int(2) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -8354,9 +8297,15 @@ CREATE TABLE `translations` (
 -- Dumping data for table `translations`
 --
 
-INSERT INTO `translations` (`id`, `foreign_key_id`, `table_name`, `field_name`, `content`, `language_code`, `created_at`, `updated_at`) VALUES
-(1, 33, 'posts', 'title', 'Mitra CIMA yang terakreditasi untuk Indonesia', 'id', '2018-08-29 18:19:39', '0000-00-00 00:00:00'),
-(2, 33, 'posts', 'body', 'test konten dalam bahasa Indonesia', 'id', '2018-08-29 19:25:40', '0000-00-00 00:00:00');
+INSERT INTO `translations` (`id`, `foreign_key_id`, `table_name`, `field_name`, `content`, `language_code`, `is_html`, `created_at`, `updated_at`) VALUES
+(1, 33, 'posts', 'title', 'Mitra CIMA yang terakreditasi untuk Indonesia', 'id', 0, '2018-08-29 18:19:39', '0000-00-00 00:00:00'),
+(2, 33, 'posts', 'body', 'test konten dalam bahasa Indonesia', 'id', 1, '2018-08-29 19:25:40', '0000-00-00 00:00:00'),
+(3, 37, 'posts', 'title', 'CIMA STRATEGIS', 'id', 0, '2018-08-30 15:38:41', '2018-08-30 22:38:41'),
+(4, 36, 'posts', 'title', 'CIMA Manajemen', 'id', 0, '2018-08-30 15:44:46', '2018-08-30 22:44:46'),
+(5, 34, 'posts', 'title', 'CIMA Sertifikasi', 'id', 0, '2018-08-30 15:46:18', '2018-08-30 22:46:18'),
+(6, 35, 'posts', 'title', 'CIMA Operasi', 'id', 0, '2018-08-30 15:46:54', '2018-08-30 22:46:54'),
+(7, 38, 'posts', 'title', 'Beranda CIMA', 'id', 0, '2018-08-30 16:14:50', '2018-08-30 23:14:50'),
+(8, 38, 'posts', 'body', '<p>Untuk memimpin diperlukan visi yang strategis</p>', 'id', 1, '2018-08-30 16:17:32', '2018-08-30 23:17:32');
 
 -- --------------------------------------------------------
 
@@ -90624,18 +90573,6 @@ ALTER TABLE `provinces`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pt`
---
-ALTER TABLE `pt`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `pt_options`
---
-ALTER TABLE `pt_options`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `regencies`
 --
 ALTER TABLE `regencies`
@@ -90695,7 +90632,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `category_post`
 --
 ALTER TABLE `category_post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `menus`
@@ -90719,7 +90656,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `options`
 --
 ALTER TABLE `options`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -90737,25 +90674,13 @@ ALTER TABLE `permission_role`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `post_tag`
 --
 ALTER TABLE `post_tag`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
---
--- AUTO_INCREMENT for table `pt`
---
-ALTER TABLE `pt`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `pt_options`
---
-ALTER TABLE `pt_options`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -90773,7 +90698,7 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `translations`
 --
 ALTER TABLE `translations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
