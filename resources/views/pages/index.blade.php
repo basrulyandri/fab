@@ -3,14 +3,42 @@
     <meta property="og:type" content="website" /> 
     <meta property="og:title" content="{{getOption('web_title')}}" />
     <meta property="og:description" content="{{getOption('web_description')}}" />
-    <meta property="og:image" content="{{url('/')}}/assets/frontend/images/STIKES-IMC-BINTARO-OG-IMAGE.jpg" />
+    <meta property="og:image" content="{{url('/')}}/assets/frontend/images/british academy of finance Indonesia.jpg" />
     <meta name="description" content="{{getOption('web_description')}}" />
 @stop
 @section('content')
 <div class="overall">
 	<div class="inner">
 		<div class="container">
-			
+			@if(\LaravelLocalization::getCurrentLocale() == 'id')
+				<div class="row-fluid">			
+				<div class="span{{numberToColumn(getOption('theme_option_featured_program_amount'))}}">
+					<div class="simple-box">
+					<i class="icon-check icon-2x icon-round"><span></span></i>
+						<!-- <i class="icon-tags icon-2x icon-round"><span></span></i> -->
+						<a href="#"><h3>Pilar Perusahaan</h3></a>
+						<h4>Deskripsi</h4>
+						<p>Fokus pada bagaimana memformulasi seefektif mungkin penerapan strategi. Penekanannya pada manajemen perubahan, manajemen proyek dan hubungan manajemen dan menstrukturisasi manajemen agar berhasil menerapkan strategi.</p>						
+					</div>
+				</div>
+				<div class="span{{numberToColumn(getOption('theme_option_featured_program_amount'))}}">
+					<div class="simple-box">
+						<i class="icon-book icon-2x icon-round"><span></span></i>
+						<a href=""><h3>Pilar Kinerja</h3></a>
+						<h4>Deskripsi</h4>
+						<p>Fokus pada tools dan teknik manajemen akunting dan manajemen resiko to memastikan strategi yang realistis dan untuk memonitor pemasukan. Hal ini melingkupi anggaran dan biaya manajemen dan mengembangkan kemampuan mengidentifikasi, klasifikasi, evaluasi dan mengelola resiko.</p>						
+					</div>
+				</div>
+				<div class="span{{numberToColumn(getOption('theme_option_featured_program_amount'))}}">
+					<div class="simple-box">
+						<i class="icon-tablet icon-2x icon-round"><span></span></i>
+						<a href="#"><h3>Pilar Keuangan</h3></a>
+						<h4>Deskripsi</h4>						
+						<p>Fokus pada bagaimana menyiapkan dan menafsirkan lporan keuangan dengan pemahaman tentang kerangka peraturan dan persyaratan pelaporan eksternal. Hal ini melihat implikasi pajak dari keputusan pembiayaan dan merumuskan strategi keuangan.</p>						
+					</div>
+				</div>				
+			</div>
+			@else
 			<div class="row-fluid">			
 				<div class="span{{numberToColumn(getOption('theme_option_featured_program_amount'))}}">
 					<div class="simple-box">
@@ -38,13 +66,49 @@
 					</div>
 				</div>				
 			</div>
+			@endif
 			<!-- End Simple Box -->
 		</div>
 	</div>
 </div>
 <div class="main">
 	<div class="container">
-		<div class="row-fluid">
+			@if(\LaravelLocalization::getCurrentLocale() == 'id')
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="description shadow-large">
+						<h3>CIMA UNTUK KUALIFIKASI PROFESIONAL:</h3>
+					</div>
+					<img src="{{asset('assets/frontend')}}/images/CIMA.jpg" style="float: left; margin: 0 10px 10px 0; width:400px;">
+					<p>Kualifikasi Profesional dari CIMA diakui dunia sebagai kualifikasi keuangan yang paling relevan secara global untuk karir. Dengan mengikuti program CIMA anda kan bergabung dengan sebuah organisasi global yang didukung oleh dua badan akuntansi terkemuka di dunia (AICPA- the American Institute of Certified Public Accountants and CIMA) yang membuat manajemen akunting sebagai profesi paling bergengsi di dunia bisnis..</p>
+
+					<p>Ketika anda memiliki kualifikasi profesional dari CIMA, anda akan dianugrahi the Chartered Global Management Accountant (CGMA) designation, pengakuan kapasitas anda, dan menampilkan keahlian profesionalisme, bisnis dan kepemimpinan, etika dan komitmen Anda.</p>
+
+					<p>Dengan menjadi lulusan CIMA anda akan bergabung dengan badan manajemen akuntan profesional terbesar di dunia dan menjadi bagian dari jaringan global lebih dari 600.000 para profesional di bidang keuangan.</p>
+
+					<p>Hanya Kualifikasi Profesional dari CIMA yang dapat memberikan anda paduan yang baik dari skill, pengetahuan dan pengalaman yang dibutuhkan sebagai nilai tambah kepada institusi kepada arah kesuksesan bisnis. Semua kualifikasi ini terdiri dari 3 pilar: Pilar Perusahaan, Pilar kinerja dan Pilar Keuangan. </p>
+				</div>
+				</div>	
+				<div class="callout shadow-large">
+				<div class="callout-wrap">
+					<div class="row-fluid">
+						<div class="span10">
+							<div class="message">
+								<h1>Memandu Anda Meraih Kesuksesan</h1>
+							</div>
+						</div>
+						<div class="span2">
+							<div class="pull-right">
+								<div class="button">
+									<a href="{{route('page.register')}}" class="btn btn-large">Daftar Sekarang</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+			@else
+			<div class="row-fluid">
 			<div class="span12">
 				<div class="description shadow-large">
 					<h3>CIMA AS A PROFESSIONAL QUALIFICATION:</h3>
@@ -56,29 +120,29 @@
 
 				<p>By becoming a CIMA you will be joining the world’s largest professional body of management accountants and become part of a truly global network of over 600,000 current and next generation finance professionals.</p>
 
-				<p>Only the CIMA Professional Qualification can give you the right mix of skills, knowledge and experience needed add value to Organization and drive business success. The whole qualification consists of three main pillars.</p>
+				<p>Only the CIMA Professional Qualification can give you the right mix of skills, knowledge and experience needed add value to Organization and drive business success. The whole qualification consists of three main pillars: Enterprise Pillar, Performance Pillar and Financial Pillar.</p>
 			</div>
-		</div>	
-
-		<div class="callout shadow-large">
-			<div class="callout-wrap">
-				<div class="row-fluid">
-					<div class="span10">
-						<div class="message">
-							<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat dolorem accusantium architecto.</h4>
-							<p>Voluptates expedita non explicabo dolorem nobis neque ullam magnam magni doloribus quisquam veniam voluptatem nihil sunt.. Dolorum laboriosam sit repudiandae dicta impedit laudantium odit repellendus quo aut magnam soluta vitae quam fugit eos quae.</p>
+			</div>	
+			<div class="callout shadow-large">
+				<div class="callout-wrap">
+					<div class="row-fluid">
+						<div class="span10">
+							<div class="message">
+								<h1>Will walk you though for success</h1>
+							</div>
 						</div>
-					</div>
-					<div class="span2">
-						<div class="pull-right">
-							<div class="button">
-								<a href="baf-register.html" class="btn btn-large">Enroll Now</a>
+						<div class="span2">
+							<div class="pull-right">
+								<div class="button">
+									<a href="{{route('page.register')}}" class="btn btn-large">Enroll Now</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>	
+			</div>	
+			@endif
+
 		
 
 		<!-- <div class="row-fluid">

@@ -6,8 +6,7 @@
 								<div class="ad-336 ad-336-widget">
 									<div class="image">
 										<a href="{{route('page.download.brosur')}}"><img src="{{url('assets/frontend')}}/images/banners/300x250.jpg" alt="Advertising"></a>
-									</div>
-									<div class="advertising"></div>
+									</div>									
 								</div>
 								<!-- End Ad-336 Widget -->
 							</div>						

@@ -66,4 +66,9 @@ class PagesController extends Controller
 		$posts = $category->posts()->paginate(10);
 		return view('pages.category',compact('category','posts'));
 	}
+
+	public function register()
+    {
+        return view('pages.register');
+    }
 }

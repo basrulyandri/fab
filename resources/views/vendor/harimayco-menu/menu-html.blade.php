@@ -134,7 +134,8 @@ $currentUrl = url()->current();
 																	<p class="description description-thin">
 																		<label for="edit-menu-item-title-{{$m->id}}"> Label
 																			<br>
-																			<input type="text" id="idlabelmenu_{{$m->id}}" class="widefat edit-menu-item-title" name="idlabelmenu_{{$m->id}}" value="{{$m->label}}">
+																			<span class="input-group-btn">
+																			<input type="text" id="idlabelmenu_{{$m->id}}" class="widefat edit-menu-item-title" name="idlabelmenu_{{$m->id}}" value="{{$m->label}}"><a class="btn btn-sm btn-primary translateBtn" foreign-key-id="{{$m->id}}" table-name="menu_items" field-name="label" data-toggle="modal" model-name="MenuItems" is-html="0" href='#translate' style="color:#fff;">Trans</a></span>
 																		</label>
 																	</p>
 

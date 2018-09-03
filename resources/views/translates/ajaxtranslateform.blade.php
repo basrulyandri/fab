@@ -10,7 +10,7 @@
     <div class='form-group{{$errors->has('content') ? ' has-error' : ''}}'>
       {!!Form::label('content','Translation',['class' => 'col-sm-2 control-label'])!!}
       <div class="col-sm-10">
-        {!!Form::textarea('content','',['class' => 'form-control tinyMCE','placeholder' => 'Content','style' => 'height:350px;'])!!}
+        {!!Form::textarea('content',$content,['class' => 'form-control tinyMCE','placeholder' => 'Content','style' => 'height:350px;'])!!}
         @if($errors->has('content'))
           <span class="help-block">{{$errors->first('content')}}</span>
         @endif

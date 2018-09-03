@@ -18,7 +18,7 @@
                     <a href="{{route('posts.index')}}">Posts</a>
                 </li> 
                 <li class="active">
-                    <a href="{{route('post.add')}}">Add New</a>
+                    <a href="{{route('post.edit',$post)}}">Edit</a>
                 </li>                
             </ol>
         </div>

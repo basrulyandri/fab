@@ -17,6 +17,7 @@ class Post extends Model
      * @return array
      */
 
+    protected $table = 'posts';
     protected $dates = ['published_at'];
 
     public function sluggable()

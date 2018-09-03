@@ -63,7 +63,7 @@
 							<!-- Menu Top -->
 							<ul class="menu-top unstyled inline">							
 								@foreach(\Menu::getByName('Top') as $menu)								
-									<li><a href="{{$menu['link']}}" class="visible-desktop">{{$menu['label']}}</a></li>
+									<li><a href="{{$menu['link']}}" class="visible-desktop">{{\Harimayco\Menu\Models\MenuItems::find($menu['id'])->trans('label')}}</a></a></li>
 								@endforeach	
 							</ul>
 							<!-- End Menu Top -->

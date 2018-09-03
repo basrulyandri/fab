@@ -185,6 +185,7 @@
                     data: {_token: _token,table_name:table_name,field_name:field_name,foreign_key_id:foreign_key_id,model_name:model_name,is_html:is_html},
                 })
                 .success(function(data) {
+                  console.log(data);
                     $('#bodyTranslate').html(data.html);
                 });
                 

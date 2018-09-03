@@ -67,4 +67,6 @@ class StaticPageController extends Controller
         $post->delete($id);
         return redirect()->route('static.pages.index')->with('success','Post has been deleted successfully.');
     }
+
+    
 }

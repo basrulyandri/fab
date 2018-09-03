@@ -4,19 +4,19 @@
 			<div class="span12">
 				<ul class="menu fading">
 					@foreach($menus as $menu)								
-						<li class="active"><a href="{{$menu['link']}}">{{$menu['label']}}</a>
+						<li class="active"><a href="{{$menu['link']}}">{{\Harimayco\Menu\Models\MenuItems::find($menu['id'])->trans('label')}}</a>
 							@if(!empty($menu['child']))
 							<ul>
 								@foreach($menu['child'] as $child)
 									<li {{(!empty($child['child'])) ? 'class="parent"' : ''}}>
 									<a href="{{$child['link']}}">
-										{{$child['label']}}
+										{{\Harimayco\Menu\Models\MenuItems::find($child['id'])->trans('label')}}</a>
 										
 									</a>
 									@if(!empty($child['child']))
 										<ul>
 											@foreach($child['child'] as $child2)
-												<li><a href="{{$child2['link']}}">{{$child2['label']}}</a></li>
+												<li><a href="{{$child2['link']}}">{{\Harimayco\Menu\Models\MenuItems::find($child2['id'])->trans('label')}}</a></a></li>
 											@endforeach
 										</ul>										
 									@endif

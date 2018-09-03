@@ -3,7 +3,7 @@
     
 @endsection
 @section('title')
-  Add New Page
+  Menu
 @stop
 
 @section('content')

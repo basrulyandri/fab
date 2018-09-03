@@ -385,63 +385,68 @@ Route::group(
 		'prefix' => LaravelLocalization::setLocale(),
 		'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
 	], function()
-{
-	Route::get('/', [
-			'uses' => 'PagesController@index',
-			'as' => 'page.index',
+	{
+		Route::get('/', [
+				'uses' => 'PagesController@index',
+				'as' => 'page.index',
+			]);
+
+
+		Route::get('page/download/brosur', [
+				'uses' => 'PagesController@downloadbrosur',
+				'as' => 'page.download.brosur',
+			]);
+
+		Route::post('page/download/brosur', [
+				'uses' => 'PagesController@postdownloadbrosur',
+				'as' => 'post.page.download.brosur',
+			]);
+
+		Route::get('auth/error/401', [
+				'uses' => 'AuthController@error401',
+				'as' => 'auth.error401',
+			]);
+
+		Route::get('login',[
+			'uses' => 'AuthController@login',
+			'as' => 'auth.login',
+			'middleware' => 'guest',
 		]);
 
-
-	Route::get('page/download/brosur', [
-			'uses' => 'PagesController@downloadbrosur',
-			'as' => 'page.download.brosur',
+		Route::post('dologin',[
+			'uses' => 'AuthController@dologin',
+			'as' => 'auth.dologin',
 		]);
 
-	Route::post('page/download/brosur', [
-			'uses' => 'PagesController@postdownloadbrosur',
-			'as' => 'post.page.download.brosur',
+		Route::get('logout',[
+			'uses' => 'AuthController@logout',
+			'as' => 'auth.logout',
 		]);
 
-	Route::get('auth/error/401', [
-			'uses' => 'AuthController@error401',
-			'as' => 'auth.error401',
+		Route::get('searchWilayah',[
+			'uses' => 'DashboardController@cariWilayah',
+			'as' => 'search.wilayah',
 		]);
 
-	Route::get('login',[
-		'uses' => 'AuthController@login',
-		'as' => 'auth.login',
-		'middleware' => 'guest',
-	]);
+		Route::get('/register', [
+				'uses' => 'PagesController@register',
+				'as' => 'page.register',
+			]);
+		Route::get('/{slug}', [
+				'uses' => 'PagesController@single',
+				'as' => 'page.single',
+			]);
 
-	Route::post('dologin',[
-		'uses' => 'AuthController@dologin',
-		'as' => 'auth.dologin',
-	]);
-
-	Route::get('logout',[
-		'uses' => 'AuthController@logout',
-		'as' => 'auth.logout',
-	]);
-
-	Route::get('searchWilayah',[
-		'uses' => 'DashboardController@cariWilayah',
-		'as' => 'search.wilayah',
-	]);
-
-	Route::get('/{slug}', [
-			'uses' => 'PagesController@single',
-			'as' => 'page.single',
-		]);
-
-	Route::get('category/{slug}', [
-			'uses' => 'PagesController@category',
-			'as' => 'page.category',
-		]);
-	// Route::post('thumbnail/upload',[
-	// 	'uses' => 'PostController@ajaxUploadThumbnail',
-	// 	'as' => 'ajax.upload.thumbnail',
-	// ]);
+		Route::get('category/{slug}', [
+				'uses' => 'PagesController@category',
+				'as' => 'page.category',
+			]);
+		// Route::post('thumbnail/upload',[
+		// 	'uses' => 'PostController@ajaxUploadThumbnail',
+		// 	'as' => 'ajax.upload.thumbnail',
+		// ]);
 });
+
 Route::get('tags/search',[
 	'as' => 'tags.search',
 	'uses' => 'TagsController@search'

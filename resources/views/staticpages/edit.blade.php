@@ -35,7 +35,7 @@
                             <div class="col-sm-10">
                               <div class="input-group">
                               {!!Form::text('title',$page->title,['class' => 'form-control','placeholder' => 'Title','required' => 'true'])!!}
-                              <span class="input-group-btn"> <a class="btn btn-primary translateBtn" foreign-key-id="{{$page->id}}" table-name="posts" field-name="title" data-toggle="modal" model-name="Post" is-html="0" href='#translate'>Translate</a> </span>
+                              <span class="input-group-btn"> <a class="btn btn-primary translateBtn" foreign-key-id="{{$page->id}}" table-name="posts" field-name="title" data-toggle="modal" model-name="Post" is-html="0" href='#translate'>Translate Title</a> </span>
                               </div>
                               @if($errors->has('title'))
                                 <span class="help-block">{{$errors->first('title')}}</span>
@@ -47,7 +47,7 @@
                             {!!Form::label('body','Body',['class' => 'col-sm-2 control-label'])!!}
                             <div class="col-sm-10">
                               {!!Form::textarea('body',$page->body,['class' => 'form-control','placeholder' => 'Body','id' => 'tinyMCE'])!!}
-                              <a class="btn btn-primary translateBtn" foreign-key-id="{{$page->id}}" table-name="posts" field-name="body" data-toggle="modal" model-name="Post" is-html="1" href='#translate'>Translate</a>
+                              <a class="btn btn-primary translateBtn" foreign-key-id="{{$page->id}}" table-name="posts" field-name="body" data-toggle="modal" model-name="Post" is-html="1" href='#translate'>Translate Body</a>
                               @if($errors->has('body'))
                                 <span class="help-block">{{$errors->first('body')}}</span>
                               @endif
@@ -59,6 +59,7 @@
                            {!!Form::label('excerpt','Excerpt',['class' => 'col-sm-2 control-label'])!!}
                            <div class="col-sm-10">
                              {!!Form::textarea('excerpt',$page->excerpt,['class' => 'form-control','placeholder' => 'Excerpt'])!!}
+                             <a class="btn btn-primary translateBtn" foreign-key-id="{{$page->id}}" table-name="posts" field-name="excerpt" data-toggle="modal" model-name="Post" is-html="0" href='#translate'>Translate Excerpt</a>
                              @if($errors->has('excerpt'))
                                <span class="help-block">{{$errors->first('excerpt')}}</span>
                              @endif

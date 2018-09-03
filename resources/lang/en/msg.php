@@ -7,5 +7,9 @@ return [
 	'help' => 'Help',
 	'login' => 'Login',
 	'logout' => 'Logout',
-	'register' => 'Register'
+	'register' => 'Register',
+	'enroll_to' => 'Enroll to',
+	'first_name' => 'First Name',
+	'last_name' => 'Last Name',
+	'phone_number' => 'Phone Number'
 ];

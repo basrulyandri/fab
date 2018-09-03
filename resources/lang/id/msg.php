@@ -7,5 +7,9 @@ return [
 	'help' => 'Bantuan',
 	'login' => 'Masuk',
 	'logout' => 'Keluar',
-	'register' => 'Daftar'
+	'register' => 'Daftar',
+	'enroll_to' => 'Pendaftaran',
+	'first_name' => 'Nama Depan',
+	'last_name' => 'Nama Belakang',
+	'phone_number' => 'No. Telpon'
 ];

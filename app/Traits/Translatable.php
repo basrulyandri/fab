@@ -9,7 +9,7 @@ trait Translatable {
             return $this->{$field};
         }
 
-        $translation = $this->translation()->whereTableName('posts')->whereFieldName($field)->whereLanguageCode(\LaravelLocalization::getCurrentLocale())->first();
+        $translation = $this->translation()->whereTableName($this->table)->whereFieldName($field)->whereLanguageCode(\LaravelLocalization::getCurrentLocale())->first();
         if(!$translation){
             return $this->{$field};
         }
