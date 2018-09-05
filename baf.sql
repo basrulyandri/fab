@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 30, 2018 at 07:42 PM
+-- Generation Time: Sep 05, 2018 at 09:28 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.1.19
 
@@ -70,6 +70,51 @@ INSERT INTO `category_post` (`id`, `category_id`, `post_id`, `created_at`, `upda
 (8, 1, 35, '2018-08-30 13:14:24', NULL),
 (9, 1, 36, '2018-08-30 13:14:47', NULL),
 (10, 1, 37, '2018-08-30 13:15:20', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courseitems`
+--
+
+CREATE TABLE `courseitems` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `description` text,
+  `course_id` int(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `courseitems`
+--
+
+INSERT INTO `courseitems` (`id`, `title`, `slug`, `description`, `course_id`, `created_at`, `updated_at`) VALUES
+(1, 'Study Text', 'study-text', '<h2>sfsd sdfsd sdfsd fsdfs&nbsp;</h2>', 2, '2018-09-05 16:55:39', '2018-09-05 23:55:39');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courses`
+--
+
+CREATE TABLE `courses` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text,
+  `slug` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `courses`
+--
+
+INSERT INTO `courses` (`id`, `title`, `description`, `slug`, `created_at`, `updated_at`) VALUES
+(2, 'CIMA STRATEGIC', '<p>asdasda asdasdas sadads<strong> sdadasdadads</strong></p>', 'cima-strategic', '2018-09-05 16:36:34', '2018-09-05 23:38:55');
 
 -- --------------------------------------------------------
 
@@ -7290,6 +7335,21 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `modules`
+--
+
+CREATE TABLE `modules` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text,
+  `courseitem_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `datetime` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `options`
 --
 
@@ -7576,7 +7636,7 @@ CREATE TABLE `posts` (
 INSERT INTO `posts` (`id`, `user_id`, `published_at`, `title`, `body`, `excerpt`, `status`, `slug`, `type`, `media_type`, `filename`, `parent`, `thumbnail`, `created_at`, `updated_at`) VALUES
 (31, 85, '2018-08-27 13:08:50', 'The Great Aim of Education is not Knowledge, But Action', '<p>On completion of the CIMA professional qualification, you will be awarded the Chartered Global Management Accountant (CGMA) designation, recognizing your value and showcasing your professionalism, business and leadership skills , ethics and&nbsp;</p>', 'On completion of the CIMA professional qualification, you will be awarded the Chartered Global Management Accountant (CGMA) designation, recognizing your value and showcasing your professionalism, business and leadership skills , ethics and ', 'published', 'the-great-aim-of-education-is-not-knowledge-but-action', 'page', NULL, NULL, 0, '/photos/baf-silder-(1).jpg', '2018-08-27 06:08:50', '2018-08-29 22:29:49'),
 (32, 85, '2018-08-27 20:10:42', 'CIMA Strategic – Objective Test Courses', '<p>Want to<strong>&nbsp;pass your CIMA exams</strong>&nbsp;in the quickest and easiest possible way?</p>\r\n<p>&nbsp;</p>\r\n<p>We have designed&nbsp;<strong>high quality online courses</strong>&nbsp;for the E3, P3 and F3 exams that will give you the very best chance of passing! And we&rsquo;re so confident you&rsquo;ll agree we have a<strong>&nbsp;double guarantee</strong>&nbsp;that ensures you are completely satisfied.</p>', 'We have designed high quality online courses for the E3, P3 and F3 exams that will give you the very best chance of passing! And we’re so confident you’ll agree we have a double guarantee that ensures you are completely satisfied.', 'published', 'cima-strategic-objective-test-courses', 'page', NULL, NULL, 0, '/photos/cima-slider.jpg', '2018-08-27 13:10:42', '2018-08-29 22:28:07'),
-(33, 85, '2018-08-29 22:32:28', 'CIMA Accredited Global Learning Partner For Indonesia', 'Test content in english ', '', 'published', 'join-us-now', 'page', NULL, NULL, 0, '/photos/lalith-baf.jpg', '2018-08-29 15:32:28', '2018-08-29 22:34:12'),
+(33, 85, '2018-08-29 22:32:28', 'CIMA Accredited Global Learning Partner For Indonesia', '<p>Test content in english</p>', 'Excerpt in en english', 'published', 'join-us-now', 'page', NULL, NULL, 0, '/photos/lalith-baf.jpg', '2018-08-29 15:32:28', '2018-09-03 17:51:22'),
 (34, 85, '2018-08-30 20:09:29', 'CIMA Certificate', '<p>Certificate case study exam</p>', 'Certificate case study exam', 'published', 'cima-certificate', 'post', NULL, NULL, 0, '/photos/cima certificate.jpg', '2018-08-30 13:09:29', '2018-08-30 20:21:24'),
 (35, 85, '2018-08-30 20:14:24', 'CIMA Operation', '<p>Operational case study exam</p>', 'Operational case study exam', 'published', 'cima-operation', 'post', NULL, NULL, 0, '/photos/cima operational.jpg', '2018-08-30 13:14:24', '2018-08-30 20:20:58'),
 (36, 85, '2018-08-30 20:14:46', 'CIMA Management', '<p>Management case study exam</p>', 'Management case study exam', 'published', 'cima-management', 'post', NULL, NULL, 0, '/photos/cima manegement.jpg', '2018-08-30 13:14:46', '2018-08-30 20:20:39'),
@@ -8298,14 +8358,22 @@ CREATE TABLE `translations` (
 --
 
 INSERT INTO `translations` (`id`, `foreign_key_id`, `table_name`, `field_name`, `content`, `language_code`, `is_html`, `created_at`, `updated_at`) VALUES
-(1, 33, 'posts', 'title', 'Mitra CIMA yang terakreditasi untuk Indonesia', 'id', 0, '2018-08-29 18:19:39', '0000-00-00 00:00:00'),
-(2, 33, 'posts', 'body', 'test konten dalam bahasa Indonesia', 'id', 1, '2018-08-29 19:25:40', '0000-00-00 00:00:00'),
+(1, 33, 'posts', 'title', 'Mitra terakreditasi CIMA untuk Indonesia lagi', 'id', 0, '2018-08-29 18:19:39', '2018-09-03 17:48:17'),
+(2, 33, 'posts', 'body', '<p>Test konten dalam bahasa Indonesia nih lala</p>', 'id', 1, '2018-08-29 19:25:40', '2018-09-03 17:50:20'),
 (3, 37, 'posts', 'title', 'CIMA STRATEGIS', 'id', 0, '2018-08-30 15:38:41', '2018-08-30 22:38:41'),
 (4, 36, 'posts', 'title', 'CIMA Manajemen', 'id', 0, '2018-08-30 15:44:46', '2018-08-30 22:44:46'),
 (5, 34, 'posts', 'title', 'CIMA Sertifikasi', 'id', 0, '2018-08-30 15:46:18', '2018-08-30 22:46:18'),
 (6, 35, 'posts', 'title', 'CIMA Operasi', 'id', 0, '2018-08-30 15:46:54', '2018-08-30 22:46:54'),
 (7, 38, 'posts', 'title', 'Beranda CIMA', 'id', 0, '2018-08-30 16:14:50', '2018-08-30 23:14:50'),
-(8, 38, 'posts', 'body', '<p>Untuk memimpin diperlukan visi yang strategis</p>', 'id', 1, '2018-08-30 16:17:32', '2018-08-30 23:17:32');
+(8, 38, 'posts', 'body', '<p>Untuk memimpin diperlukan visi yang strategis</p>', 'id', 1, '2018-08-30 16:17:32', '2018-08-30 23:17:32'),
+(10, 33, 'posts', 'excerpt', 'Excerpt dalam bahasa Indonesia', 'id', 0, '2018-09-03 10:51:05', '2018-09-03 17:51:05'),
+(11, 28, 'menu_items', 'label', 'Beranda CIMA', 'id', 0, '2018-09-03 11:02:00', '2018-09-03 18:02:00'),
+(12, 18, 'menu_items', 'label', 'Tentang Kami', 'id', 0, '2018-09-03 11:15:59', '2018-09-03 18:15:59'),
+(13, 19, 'menu_items', 'label', 'Testimoni', 'id', 0, '2018-09-03 11:18:13', '2018-09-03 18:18:13'),
+(14, 22, 'menu_items', 'label', 'Peserta', 'id', 0, '2018-09-03 11:18:29', '2018-09-03 18:18:29'),
+(15, 23, 'menu_items', 'label', 'Kemitraan & Afiliasi', 'id', 0, '2018-09-03 11:18:44', '2018-09-03 18:18:44'),
+(16, 24, 'menu_items', 'label', 'Karir', 'id', 0, '2018-09-03 11:18:53', '2018-09-03 18:18:53'),
+(17, 27, 'menu_items', 'label', 'Kontak', 'id', 0, '2018-09-03 11:19:03', '2018-09-03 18:19:03');
 
 -- --------------------------------------------------------
 
@@ -90504,6 +90572,18 @@ ALTER TABLE `category_post`
   ADD KEY `post_id` (`post_id`);
 
 --
+-- Indexes for table `courseitems`
+--
+ALTER TABLE `courseitems`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `courses`
+--
+ALTER TABLE `courses`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `districts`
 --
 ALTER TABLE `districts`
@@ -90527,6 +90607,12 @@ ALTER TABLE `menu_items`
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `modules`
+--
+ALTER TABLE `modules`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -90635,6 +90721,18 @@ ALTER TABLE `category_post`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `courseitems`
+--
+ALTER TABLE `courseitems`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `courses`
+--
+ALTER TABLE `courses`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
@@ -90651,6 +90749,12 @@ ALTER TABLE `menu_items`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `modules`
+--
+ALTER TABLE `modules`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `options`
@@ -90698,7 +90802,7 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `translations`
 --
 ALTER TABLE `translations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`

@@ -376,6 +376,12 @@ Route::group(['middleware' => 'rbac'],function(){
 			'uses' => 'TranslateController@update',
 			'as' => 'translate.update',
 		]);
+	Route::delete('courses/deleteAll', 'CourseController@deleteAll')->name('courses.deleteAll');
+	Route::resource('courses', 'CourseController');
+	Route::delete('courseitems/deleteAll', 'CourseitemController@deleteAll')->name('courseitems.deleteAll');
+	Route::resource('courseitems', 'CourseitemController');
+	Route::delete('modules/deleteAll', 'ModuleController@deleteAll')->name('modules.deleteAll');
+	Route::resource('modules', 'ModuleController');
 	
 });
 

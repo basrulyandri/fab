@@ -14,7 +14,7 @@
                             <li><a href="{{route('auth.logout')}}">Logout</a></li>
                         </ul>
                     </div>
-                    <small>STIKES IMC</small>
+                    <small>BAF</small>
                     <div class="logo-element">
                         Rollo
                     </div>
@@ -56,10 +56,14 @@
                     <a href="{{route('menus.index')}}"><i class="fa fa-wrench"></i><span class="nav-label"> Menus</span></a>
                 </li>
                 @endif
-                
+                <li>
+                    <a href="{{route('courses.index')}}"><i class="fa fa-book"></i> <span class="nav-label">Courses</span></a>
+                </li>
+
                 <li>
                     <a href="{{route('report.index')}}"><i class="fa fa-pie-chart"></i> <span class="nav-label">Reports</span></a>
                 </li>
+
 
                 <li>
                     <a target="_blank" href="{{route('page.index')}}"><i class="fa fa-home"></i> <span class="nav-label">Visit Site</span></a>
