@@ -19,6 +19,7 @@ class CourseController extends Controller
 
     public function store(Request $request)
     {
+        //dd($request->all());
         $course = Course::create($request->all());
 
         return redirect()->back()->with('success','Product has been created Successfully');

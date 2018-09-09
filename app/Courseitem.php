@@ -11,7 +11,7 @@ class Courseitem extends Model
     use Sluggable, Translatable;
     protected $guarded = ['id'];
     
-    protected $fillable = [ "title","description","course_id", ];
+    protected $fillable = [ "title","description","course_id",'thumbnail' ];
 
     public function sluggable()
     {

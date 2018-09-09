@@ -1,5 +1,7 @@
 @extends('layouts.backend.master')
-
+@section('title')
+  Edit Course Item | {{$courseitem->title}}
+@stop
 @section('content')
 
 <div class="row wrapper border-bottom white-bg page-heading">
@@ -34,15 +36,15 @@
                         @endif
                       </div>
                     </div>
-                    <div class="form-group{{$errors->has("description") ? " has-error" : ""}}">
-                      {!!Form::label("description","Description",["class" => "col-sm-2 control-label"])!!}
+                    <div class='form-group{{$errors->has('description') ? ' has-error' : ''}}'>
+                      {!!Form::label('description','Description',['class' => 'col-sm-2 control-label'])!!}
                       <div class="col-sm-10">
-                        {!!Form::text("description",$courseitem->description,["class" => "form-control","placeholder" => "Description"])!!}
-                        @if($errors->has("description"))
-                          <span class="help-block">{{$errors->first("description")}}</span>
+                        {!!Form::textarea('description',$courseitem->description,['class' => 'form-control tinyMCE','placeholder' => 'Description'])!!}
+                        @if($errors->has('description'))
+                          <span class="help-block">{{$errors->first('description')}}</span>
                         @endif
                       </div>
-                    </div>
+                    </div>                    
                     <div class="form-group{{$errors->has("course_id") ? " has-error" : ""}}">
                       {!!Form::label("course_id","Course_id",["class" => "col-sm-2 control-label"])!!}
                       <div class="col-sm-10">
@@ -52,6 +54,20 @@
                         @endif
                       </div>
                     </div>
+                    <div class='form-group{{$errors->has('description') ? ' has-error' : ''}}'>
+              {!!Form::label('thumbnail','thumbnail',['class' => 'col-sm-2 control-label'])!!}
+              <div class="col-sm-10">
+              <div class="input-group">
+                 <span class="input-group-btn">
+                   <a id="uploadbutton" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                     <i class="fa fa-picture-o"></i> Choose
+                   </a>
+                 </span>
+                 <input id="thumbnail" class="form-control" type="text" name="thumbnail" value="{{$courseitem->thumbnail}}">
+               </div>
+               <img src="{{url('/').$courseitem->thumbnail}}" id="holder" style="margin-top:15px;width:20%">          
+             </div>
+            </div>              
                     
               <input type="submit" class="btn btn-primary" value="Update">
             {!!Form::close()!!}          
@@ -59,4 +75,13 @@
   </div>   
 </div>
 
+@stop
+
+@section('footer')
+  <script>
+    $(document).ready(function(){
+      var domain = "{{url('/')}}/admin/rollo-filemanager";
+      $('#uploadbutton').filemanager('image', {prefix: domain});      
+    });
+  </script>
 @stop

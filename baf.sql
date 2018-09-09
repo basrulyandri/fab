@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2018 at 09:28 PM
+-- Generation Time: Sep 09, 2018 at 09:53 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.1.19
 
@@ -83,6 +83,7 @@ CREATE TABLE `courseitems` (
   `slug` varchar(255) NOT NULL,
   `description` text,
   `course_id` int(255) NOT NULL,
+  `thumbnail` longtext,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -91,8 +92,8 @@ CREATE TABLE `courseitems` (
 -- Dumping data for table `courseitems`
 --
 
-INSERT INTO `courseitems` (`id`, `title`, `slug`, `description`, `course_id`, `created_at`, `updated_at`) VALUES
-(1, 'Study Text', 'study-text', '<h2>sfsd sdfsd sdfsd fsdfs&nbsp;</h2>', 2, '2018-09-05 16:55:39', '2018-09-05 23:55:39');
+INSERT INTO `courseitems` (`id`, `title`, `slug`, `description`, `course_id`, `thumbnail`, `created_at`, `updated_at`) VALUES
+(3, 'sdfsdf', 'sdfsdf', '<p>fsdfsdf</p>', 4, '/photos/CIMA STRATEGIC.jpg', '2018-09-06 15:08:43', '2018-09-06 22:08:43');
 
 -- --------------------------------------------------------
 
@@ -105,6 +106,8 @@ CREATE TABLE `courses` (
   `title` varchar(255) NOT NULL,
   `description` text,
   `slug` varchar(255) NOT NULL,
+  `course_order` int(11) DEFAULT '0',
+  `thumbnail` longtext,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -113,8 +116,11 @@ CREATE TABLE `courses` (
 -- Dumping data for table `courses`
 --
 
-INSERT INTO `courses` (`id`, `title`, `description`, `slug`, `created_at`, `updated_at`) VALUES
-(2, 'CIMA STRATEGIC', '<p>asdasda asdasdas sadads<strong> sdadasdadads</strong></p>', 'cima-strategic', '2018-09-05 16:36:34', '2018-09-05 23:38:55');
+INSERT INTO `courses` (`id`, `title`, `description`, `slug`, `course_order`, `thumbnail`, `created_at`, `updated_at`) VALUES
+(5, 'CIMA Certificate', '', 'cima-certificate', 0, '/photos/cima certificate.jpg', '2018-09-06 15:15:13', '2018-09-08 02:09:03'),
+(6, 'CIMA OPerational', '<p>CIMA OPerational</p>', 'cima-operational', 1, '/photos/cima operational.jpg', '2018-09-06 15:15:45', '2018-09-06 22:15:45'),
+(7, 'CIMA Management', '<p>CIMA Management</p>', 'cima-management', 2, '/photos/cima manegement.jpg', '2018-09-06 15:16:23', '2018-09-06 22:16:23'),
+(8, 'CIMA STRATEGIC', '<div class=\"row-fluid\">\r\n<div class=\"span12\">\r\n<div class=\"description shadow-large\">\r\n<h3>Our courses</h3>\r\n<p>Want to pass your CIMA exams in the quickest and easiest possible way?</p>\r\n<p>We have designed high quality online courses for the E3, P3 and F3 exams that will give you the very best chance of passing! And we&rsquo;re so confident you&rsquo;ll agree we have a double guarantee that ensures you are completely satisfied.</p>\r\n</div>\r\n</div>\r\n</div>\r\n<h2>Why study with us?</h2>\r\n<div class=\"row-fluid\">\r\n<div class=\"span4\">\r\n<h4>Focused on ensuring you pass</h4>\r\n<ul>\r\n<li><strong>Study texts</strong> focused on making complex topics easy to understand.</li>\r\n<li><strong>Video tuition</strong> covering everything you need to pass</li>\r\n<li>An <strong>exam practice</strong> kit with detailed solutions</li>\r\n<li><strong>Revision notes</strong> to enable you to revise quickly and easily.</li>\r\n<li><strong>Full syllabus coverage</strong> so you will be prepared for every exam topic</li>\r\n<li><strong>5 mock exams</strong> containing exam standard questions</li>\r\n<li><strong>Experienced CIMA</strong> tutors on hand to answer all your questions</li>\r\n<li>A <strong>personal coach</strong> to guide and support you through the course</li>\r\n<li>An active <strong>online community</strong> so you feel part of a team working together to pass</li>\r\n</ul>\r\n</div>\r\n<div class=\"span4\">\r\n<h4>Minimise study time</h4>\r\n<ul>\r\n<li>Our videos <strong>simplify each chapter into about an hour of focused tuition</strong> to enable you to learn the whole syllabus in the easiest and quickest way possible</li>\r\n<li>Audio downloads are provided for you to <strong>listen whilst on the move</strong></li>\r\n<li>Our study text aims to <strong>simplify each topic</strong> using clear easy to understand examples so you pick topics up easily</li>\r\n<li>Our revision notes mean you can <strong>quickly revise the whole syllabus</strong></li>\r\n<li>All courses are flexible so you can <strong>study wherever and whenever suits you</strong></li>\r\n<li>Detailed solutions to all questions mean you <strong>learn quickly from your mistakes</strong></li>\r\n</ul>\r\n</div>\r\n<div class=\"span4\">\r\n<h4>Value for money</h4>\r\n<ul>\r\n<ul>\r\n<li>We aim to provide the best value for money in the market with the <strong>highest quality products all at a great price</strong></li>\r\n<li>We work hard to ensure we have the <strong>highest quality</strong> study materials prepared by our highly trained staff</li>\r\n<li>With everything online, we can <strong>regularly update our material</strong> to improve it based on student feedback</li>\r\n<li>As everything is online we don&rsquo;t have the overheads of many of our competitors. We are able to provide a wide range of materials at a</li>\r\n</ul>\r\n</ul>\r\n<strong>price which is far lower than the market leading provider</strong>\r\n<ul>.</ul>\r\n</div>\r\n</div>\r\n<h2>Our double guarantee</h2>\r\n<div class=\"row-fluid\">\r\n<div class=\"col-md-10\">\r\n<p><strong>1. Money back guarantee</strong></p>\r\n<p>To make sure that you are completely satisfied with our course materials and support, we have a 14-day full money back guarantee. If you&rsquo;re not happy with the course for any reason we will refund your fees in full.</p>\r\n<p>Our aim is to ensure you&rsquo;re happy to try us out safe in the knowledge that it won&rsquo;t cost you a penny if it&rsquo;s not right for you.</p>\r\n<p><strong>2. Pass guarantee</strong></p>\r\n<p>You get full course access for 12 months as standard. However, if you still haven&rsquo;t passed in that time, then we will extend your access until you do!</p>\r\n</div>\r\n<div class=\"col-md-2\">&nbsp;</div>\r\n</div>\r\n<div class=\"callout shadow-large\">\r\n<div class=\"callout-wrap\">\r\n<div class=\"row-fluid\">\r\n<div class=\"span9\">\r\n<div class=\"message\">\r\n<p><strong>1. Money back guarantee</strong></p>\r\n<p>To make sure that you are completely satisfied with our course materials and support, we have a 14-day full money back guarantee. If you&rsquo;re not happy with the course for any reason we will refund your fees in full.</p>\r\n<p>Our aim is to ensure you&rsquo;re happy to try us out safe in the knowledge that it won&rsquo;t cost you a penny if it&rsquo;s not right for you.</p>\r\n<p><strong>2. Pass guarantee</strong></p>\r\n<p>You get full course access for 12 months as standard. However, if you still haven&rsquo;t passed in that time, then we will extend your access until you do!</p>\r\n</div>\r\n</div>\r\n<div class=\"span3\"><img src=\"https://www.astranti.com/wp-content/uploads/2017/12/Satisfaction3.jpg\" alt=\"\" /></div>\r\n</div>\r\n</div>\r\n</div>', 'cima-strategic', 3, '/photos/CIMA STRATEGIC.jpg', '2018-09-06 15:16:50', '2018-09-08 02:28:34');
 
 -- --------------------------------------------------------
 
@@ -7388,10 +7394,10 @@ INSERT INTO `options` (`id`, `option_key`, `option_value`, `created_at`, `update
 (20, 'content_email_notification_download_brosur_to_user', '<p style=\"text-align: center;\">Test aja ini mah</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Contoh notifikasi</strong></p>', '2018-02-24 10:45:28', '2018-07-17 20:01:12'),
 (21, 'list_user_notifikasi_dowload_brosur', 'a:1:{i:0;s:20:\"digicrea08@gmail.com\";}', '2018-02-25 06:37:38', '2018-07-17 20:01:12'),
 (22, 'file_brosur', '/files/inhouse_transfer_2.pdf', '2018-02-25 07:09:41', '2018-07-17 20:01:13'),
-(23, 'theme_option_sambutan_title', 'Sambutan Ketua', '2018-03-15 10:47:45', '2018-03-16 01:12:04'),
-(24, 'theme_option_sambutan_image', '/photos/ketua-stikes-imc-peter.jpg', '2018-03-15 10:48:11', '2018-03-16 01:12:04'),
-(25, 'theme_option_sambutan_content', 'Perwujudan misi ini perlu sejalan Kondisinya perkembangan internasional antara lain perkembangan ilmu pengetahuan dan teknologi dan pemberlakuan pasar bebas, maka tujuan pendidikan tenaga kesehatan diarahkan untuk menghasilkan tenaga kesehatan yang kompeten, profesional, dan berdaya saing yang jumlah dan jenisnya sesuai dengan kebutuhan pasar kerja dalam tatanan pelayanan kesehatan di tingkat nasional dan global', '2018-03-15 10:48:22', '2018-03-16 01:12:04'),
-(26, 'theme_option_sambutan_nama', 'Ir. Peter M Simanjuntak, MBA', '2018-03-15 11:08:46', '2018-03-16 01:12:04'),
+(23, 'theme_option_sambutan_title', 'Welcom', '2018-03-15 10:47:45', '2018-09-09 00:55:16'),
+(24, 'theme_option_sambutan_image', '/photos/WhatsApp Image 2018-08-28 at 2.10.14 PM (1).jpeg', '2018-03-15 10:48:11', '2018-09-09 00:55:16'),
+(25, 'theme_option_sambutan_content', 'Welcom', '2018-03-15 10:48:22', '2018-09-09 00:55:16'),
+(26, 'theme_option_sambutan_nama', 'Lalith De Silva', '2018-03-15 11:08:46', '2018-09-09 00:55:16'),
 (27, 'theme_option_address', 'Gedung Perkantoran International Finance Center Tower 2, Lantai 33 Jl. Jend. Sudirman Kav.22-23 Jakarta Selatan 12920', '2018-08-27 12:11:13', '2018-08-30 20:04:00'),
 (28, 'theme_option_email', 'info@bafstudies.com', '2018-08-27 12:14:41', '2018-08-30 20:04:00'),
 (29, 'theme_option_linkedin_url', 'q', '2018-08-27 12:24:42', '2018-08-30 20:04:01'),
@@ -7641,7 +7647,8 @@ INSERT INTO `posts` (`id`, `user_id`, `published_at`, `title`, `body`, `excerpt`
 (35, 85, '2018-08-30 20:14:24', 'CIMA Operation', '<p>Operational case study exam</p>', 'Operational case study exam', 'published', 'cima-operation', 'post', NULL, NULL, 0, '/photos/cima operational.jpg', '2018-08-30 13:14:24', '2018-08-30 20:20:58'),
 (36, 85, '2018-08-30 20:14:46', 'CIMA Management', '<p>Management case study exam</p>', 'Management case study exam', 'published', 'cima-management', 'post', NULL, NULL, 0, '/photos/cima manegement.jpg', '2018-08-30 13:14:46', '2018-08-30 20:20:39'),
 (37, 85, '2018-08-30 20:15:20', 'CIMA STRATEGIC', '<p>Strategic Case Study Exam</p>', 'Strategic Case Study Exam', 'published', 'cima-strategic', 'post', NULL, NULL, 0, '/photos/CIMA STRATEGIC.jpg', '2018-08-30 13:15:20', '2018-08-30 20:20:09'),
-(38, 85, '2018-08-30 23:03:42', 'CIMA HOME', '<p><strong>It takes strategic vision to lead </strong></p>', 'It takes strategic vision to lead\r\n', 'published', 'cima-home', 'page', NULL, NULL, 0, '/photos/CIMA.jpg', '2018-08-30 16:03:42', '2018-08-30 23:03:42');
+(38, 85, '2018-08-30 23:03:42', 'CIMA HOME', '<p><strong>It takes strategic vision to lead </strong></p>', 'It takes strategic vision to lead\r\n', 'published', 'cima-home', 'page', NULL, NULL, 0, '/photos/CIMA.jpg', '2018-08-30 16:03:42', '2018-08-30 23:03:42'),
+(39, 85, '2018-09-08 22:49:59', 'Testimonials', '<div class=\"carousel\">\r\n<div class=\"row-fluid\">\r\n<div class=\"span6\">\r\n<div class=\"testimonial\">\r\n<p>Through the dedicated support of Pak Lalith, I was able to pass the OCS on my first attempt. Extremely professional, with a true commitment to his students and flexibility to accommodate learners worldwide, enabled me to juggle work, family, personal commitments and still pass on attempt no 1. The mock exams were extremely useful and their prompt feedback....</p>\r\n</div>\r\n<div class=\"media\">\r\n<div class=\"media-left d-flex mr-3\"><img src=\"/baf/public/photos/shares/faza-adrizal.jpg\" alt=\"\" /></div>\r\n<div class=\"media-body\">\r\n<div class=\"overview\">\r\n<div class=\"name\"><strong>Faza Adrizal</strong></div>\r\n<div class=\"details\">Commercial Finance for Beverage at Unilever</div>\r\n<div class=\"star-rating\">CIMA Operational Case Study (OCS) &ndash; November 2017 &ndash; 95 Marks</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class=\"span6\">\r\n<div class=\"testimonial\">\r\n<p>Thank you, The British Academy of Finance (BAF) , for everything, and a special thanks to my tutor, Mr. Lalith De Silva, he was beyond helpful. The tutor support and mock evaluation gave me the confidence I needed to pass my OCS. I will definitely be using BAF for Managerial level. Thank you once again.</p>\r\n</div>\r\n<div class=\"media\">\r\n<div class=\"media-left d-flex mr-3\"><img src=\"/baf/public/photos/shares/gracia-panjaitan.jpg\" alt=\"\" /></div>\r\n<div class=\"media-body\">\r\n<div class=\"overview\">\r\n<div class=\"name\"><strong>Gracia Panjaitan</strong></div>\r\n<div class=\"details\">Assistant Supply Chain Finance Manager at Unilever Indonesia</div>\r\n<div class=\"star-rating\">CIMA Operational Case Study (OCS) &ndash; November 2017 &ndash; 88 Marks</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>', '', 'published', 'testimonials', 'page', NULL, NULL, 0, '/photos/shares/gracia-panjaitan.jpg', '2018-09-08 15:49:59', '2018-09-08 23:45:50');
 
 -- --------------------------------------------------------
 
@@ -8373,7 +8380,9 @@ INSERT INTO `translations` (`id`, `foreign_key_id`, `table_name`, `field_name`, 
 (14, 22, 'menu_items', 'label', 'Peserta', 'id', 0, '2018-09-03 11:18:29', '2018-09-03 18:18:29'),
 (15, 23, 'menu_items', 'label', 'Kemitraan & Afiliasi', 'id', 0, '2018-09-03 11:18:44', '2018-09-03 18:18:44'),
 (16, 24, 'menu_items', 'label', 'Karir', 'id', 0, '2018-09-03 11:18:53', '2018-09-03 18:18:53'),
-(17, 27, 'menu_items', 'label', 'Kontak', 'id', 0, '2018-09-03 11:19:03', '2018-09-03 18:19:03');
+(17, 27, 'menu_items', 'label', 'Kontak', 'id', 0, '2018-09-03 11:19:03', '2018-09-03 18:19:03'),
+(18, 8, 'courses', 'description', '<div class=\"row-fluid\">\r\n<div class=\"span12\">\r\n<div class=\"description shadow-large\">\r\n<h3>Kursus Kami</h3>\r\n<p>Mau lulus test CIMA dengan cepat dan mudah?</p>\r\n<p>Kami telah mendesain kursus online berkualitas tinggi untuk E3, P3 dan F3 yang akan memberikan kesempatan terbaik bagi anda untuk lulus. Dan kami juga percaya anda akan setuju jika kami memberikan garansi yang memastikan anda puas.</p>\r\n</div>\r\n</div>\r\n</div>\r\n<h2>Why study with us?</h2>\r\n<div class=\"row-fluid\">\r\n<div class=\"span4\">\r\n<h4>Focused on ensuring you pass</h4>\r\n<ul>\r\n<li><strong>Study texts</strong> focused on making complex topics easy to understand.</li>\r\n<li><strong>Video tuition</strong> covering everything you need to pass</li>\r\n<li>An <strong>exam practice</strong> kit with detailed solutions</li>\r\n<li><strong>Revision notes</strong> to enable you to revise quickly and easily.</li>\r\n<li><strong>Full syllabus coverage</strong> so you will be prepared for every exam topic</li>\r\n<li><strong>5 mock exams</strong> containing exam standard questions</li>\r\n<li><strong>Experienced CIMA</strong> tutors on hand to answer all your questions</li>\r\n<li>A <strong>personal coach</strong> to guide and support you through the course</li>\r\n<li>An active <strong>online community</strong> so you feel part of a team working together to pass</li>\r\n</ul>\r\n</div>\r\n<div class=\"span4\">\r\n<h4>Minimise study time</h4>\r\n<ul>\r\n<li>Our videos <strong>simplify each chapter into about an hour of focused tuition</strong> to enable you to learn the whole syllabus in the easiest and quickest way possible</li>\r\n<li>Audio downloads are provided for you to <strong>listen whilst on the move</strong></li>\r\n<li>Our study text aims to <strong>simplify each topic</strong> using clear easy to understand examples so you pick topics up easily</li>\r\n<li>Our revision notes mean you can <strong>quickly revise the whole syllabus</strong></li>\r\n<li>All courses are flexible so you can <strong>study wherever and whenever suits you</strong></li>\r\n<li>Detailed solutions to all questions mean you <strong>learn quickly from your mistakes</strong></li>\r\n</ul>\r\n</div>\r\n<div class=\"span4\">\r\n<h4>Value for money</h4>\r\n<ul>\r\n<ul>\r\n<li>We aim to provide the best value for money in the market with the <strong>highest quality products all at a great price</strong></li>\r\n<li>We work hard to ensure we have the <strong>highest quality</strong> study materials prepared by our highly trained staff</li>\r\n<li>With everything online, we can <strong>regularly update our material</strong> to improve it based on student feedback</li>\r\n<li>As everything is online we don&rsquo;t have the overheads of many of our competitors. We are able to provide a wide range of materials at a</li>\r\n</ul>\r\n</ul>\r\n<strong>price which is far lower than the market leading provider</strong>\r\n<ul>.</ul>\r\n</div>\r\n</div>\r\n<h2>Our double guarantee</h2>\r\n<div class=\"row-fluid\">\r\n<div class=\"col-md-10\">\r\n<p><strong>1. Money back guarantee</strong></p>\r\n<p>To make sure that you are completely satisfied with our course materials and support, we have a 14-day full money back guarantee. If you&rsquo;re not happy with the course for any reason we will refund your fees in full.</p>\r\n<p>Our aim is to ensure you&rsquo;re happy to try us out safe in the knowledge that it won&rsquo;t cost you a penny if it&rsquo;s not right for you.</p>\r\n<p><strong>2. Pass guarantee</strong></p>\r\n<p>You get full course access for 12 months as standard. However, if you still haven&rsquo;t passed in that time, then we will extend your access until you do!</p>\r\n</div>\r\n<div class=\"col-md-2\">&nbsp;</div>\r\n</div>\r\n<div class=\"callout shadow-large\">\r\n<div class=\"callout-wrap\">\r\n<div class=\"row-fluid\">\r\n<div class=\"span9\">\r\n<div class=\"message\">\r\n<p><strong>1. Money back guarantee</strong></p>\r\n<p>To make sure that you are completely satisfied with our course materials and support, we have a 14-day full money back guarantee. If you&rsquo;re not happy with the course for any reason we will refund your fees in full.</p>\r\n<p>Our aim is to ensure you&rsquo;re happy to try us out safe in the knowledge that it won&rsquo;t cost you a penny if it&rsquo;s not right for you.</p>\r\n<p><strong>2. Pass guarantee</strong></p>\r\n<p>You get full course access for 12 months as standard. However, if you still haven&rsquo;t passed in that time, then we will extend your access until you do!</p>\r\n</div>\r\n</div>\r\n<div class=\"span3\"><img src=\"https://www.astranti.com/wp-content/uploads/2017/12/Satisfaction3.jpg\" alt=\"\" /></div>\r\n</div>\r\n</div>\r\n</div>', 'id', 1, '2018-09-07 19:31:06', '2018-09-08 02:38:38'),
+(19, 8, 'courses', 'title', 'CIMA STRATEGIS', 'id', 0, '2018-09-07 19:44:32', '2018-09-08 02:44:32');
 
 -- --------------------------------------------------------
 
@@ -8412,7 +8421,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `username`, `email`, `password`, `activated`, `activation_code`, `activated_at`, `last_login`, `reset_password_code`, `remember_token`, `first_name`, `last_name`, `api_token`, `about`, `address`, `phone`, `facebook_url`, `twitter_url`, `google_plus_url`, `created_at`, `updated_at`, `photo`) VALUES
-(85, 2, 'admin', 'digicrea08@gmail.com', '$2y$10$I4cxs7.ScXYMoUtxLU3Vu.nQYdjlFL6XvL.Z3xfYKGUiBYnG4Q01O', 1, NULL, NULL, NULL, 'DyIU8daVDV79KYftqqLVWpgXMFtbL2ww', '2K2qMGE3iDtb33FpggmcrI7IglLwVEE8Nm9Y8jq0pgHOTZKrMY40XeWWeHjX', 'Basrul', 'Yandri', '', 'Seseorang yang baru tau kalau ternyata kita gak bisa garuk kuping pake sikut :D', 'Perumahan Maharaja Blok N5-12 Depok', '081290751101', 'https://www.facebook.com/digicrea', 'https://twitter.com/basrul14', 'https://plus.google.com/u/0/103471078199126216243', '2016-11-27 13:29:35', '2018-07-17 19:39:27', '/photos/basrul.jpg'),
+(85, 2, 'admin', 'digicrea08@gmail.com', '$2y$10$I4cxs7.ScXYMoUtxLU3Vu.nQYdjlFL6XvL.Z3xfYKGUiBYnG4Q01O', 1, NULL, NULL, NULL, 'DyIU8daVDV79KYftqqLVWpgXMFtbL2ww', 'v1kwoLvYui3tSXo5NMEVgo78AbMUqnc971ulASYDC85DaUoGSVpeFFt93dBy', 'Basrul', 'Yandri', '', 'Seseorang yang baru tau kalau ternyata kita gak bisa garuk kuping pake sikut :D', 'Perumahan Maharaja Blok N5-12 Depok', '081290751101', 'https://www.facebook.com/digicrea', 'https://twitter.com/basrul14', 'https://plus.google.com/u/0/103471078199126216243', '2016-11-27 13:29:35', '2018-09-08 01:11:16', '/photos/basrul.jpg'),
 (86, 3, 'nana', 'nana@nana.com', 'nana', 1, NULL, NULL, NULL, NULL, NULL, 'Nana', 'Sukmawati', '', '', 'Jl. Jatinegara barat 142 No.1 Jakarta Timu', '085214789562', 'http://facebook.com/nana', 'http://twitter.com/nana', 'http://plus.google.com/nana', '2017-01-21 12:45:27', '2017-08-20 00:54:03', NULL),
 (87, 3, 'lala', 'lala@lala.com', '$2y$10$TKdKTSwVOs.yLx1u2R9MzeTjd0euHeGxd9spUwpaLhErk1M9KXIt6', 1, NULL, NULL, NULL, NULL, NULL, 'Lala', 'Komalasari', 'YcRMJENayuBT3WeYLGpXr8pnwHvombpbTG9nOzlxgGJdMEQ1MCyb2dS2j6C0', NULL, 'Perumahan Maharaja Blok N5-12 Depok', '085301214565', NULL, NULL, NULL, '2017-01-21 08:25:20', '2018-03-19 23:12:33', NULL),
 (89, 3, 'basrul', 'basrul@basrul.com', '$2y$10$sUjx6q.s5Hx0Vchi6WhFVeUEa6zTu8mIAhJLg2M6As.Jz7H5wcNRO', 1, NULL, NULL, NULL, NULL, NULL, 'Yandri', 'Ajah', 'rJgf8zOddEctDXz09aAC0yHm2QKM6XzFAnTwdYcSxU1OtPPiTVGBmoQXAQVe', 'Cuma Basrul ajah', NULL, '0812343754549', '', '', '', '2017-04-02 07:29:44', '2017-08-06 10:49:28', NULL),
@@ -90724,13 +90733,13 @@ ALTER TABLE `category_post`
 -- AUTO_INCREMENT for table `courseitems`
 --
 ALTER TABLE `courseitems`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `menus`
@@ -90778,7 +90787,7 @@ ALTER TABLE `permission_role`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `post_tag`
@@ -90802,7 +90811,7 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `translations`
 --
 ALTER TABLE `translations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `users`

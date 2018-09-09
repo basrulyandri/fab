@@ -115,3 +115,8 @@ function hp($nohp) {
     }
     return $hp;
 }
+
+function courses($orderBy = 'course_order')
+{
+	return \App\Course::orderBy($orderBy,'desc')->get();
+}

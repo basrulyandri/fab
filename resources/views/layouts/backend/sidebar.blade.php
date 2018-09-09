@@ -63,7 +63,12 @@
                 <li>
                     <a href="{{route('report.index')}}"><i class="fa fa-pie-chart"></i> <span class="nav-label">Reports</span></a>
                 </li>
-
+                <li class="">
+                    <a href="#"><i class="fa fa-health"></i> <span class="nav-label">Extras</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
+                        <li><a href="{{route('dashboard.pagebuilder')}}">Page Builder</a></li>                       
+                    </ul>
+                </li>
 
                 <li>
                     <a target="_blank" href="{{route('page.index')}}"><i class="fa fa-home"></i> <span class="nav-label">Visit Site</span></a>

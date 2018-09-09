@@ -163,13 +163,13 @@
 					<section>
 						<div id="upcoming-jcarousel" class="upcoming-jcarousel jcarousel" data-auto="5">
 							<ul class="events unstyled">
-							@foreach($latestPosts as $lp)
+							@foreach(courses() as $course)
 								<li>
 									<article>
 										<figure>
 											<span class="ribbon"></span>
 											<span class="ribbon_icon"><i class="icon-star"></i></span>
-											<a href="{{route('page.single',['slug' => $lp->slug])}}" title="{{$lp->title}}"><img style="width: 100%;" src="{{url('/')}}/{{$lp->thumb()}}" alt="{{$lp->title}}"></a>
+											<a href="{{route('page.course.single',$course->slug)}}" title="{{$course->title}}"><img style="width: 100%;" src="{{url('/')}}/{{$course->thumbnail}}" alt="{{$course->title}}"></a>
 										</figure>
 										<div class="date">
 											<small><i class="icon-picture"></i> </small>
@@ -178,10 +178,10 @@
 											</div>
 										</div>
 										<div class="body">
-											<h4><a href="{{route('page.single',['slug' => $lp->slug])}}" title="{{$lp->title}}">{{$lp->trans('title')}}</a></h4>
-											<p>{{$lp->trans('excerpt')}}</p>
+											<h4><a href="{{route('page.course.single',$course->slug)}}" title="{{$course->title}}">{{$course->trans('title')}}</a></h4>
+											<p>{{$course->trans('excerpt')}}</p>
 											<div class="more">
-												<a href="{{route('page.single',['slug' => $lp->slug])}}" title="{{$lp->title}}"><i class="icon-circle-arrow-right"></i> <span class="hidden-tablet">Read more</span></a>
+												<a href="{{route('page.course.single',$course->slug)}}" title="{{$course->title}}"><i class="icon-circle-arrow-right"></i> <span class="hidden-tablet">Read more</span></a>
 												<!-- <div class="pull-right">
 													<a href="single.html"><i class="icon-comments"></i> 14</a>
 													<a href="single.html"><i class="icon-heart"></i> 122</a>

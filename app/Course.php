@@ -9,9 +9,11 @@ use App\Traits\Translatable;
 class Course extends Model
 {
 	use Sluggable, Translatable;
+
+    protected $table = 'courses';
     protected $guarded = ['id'];
     
-    protected $fillable = [ "title","description","slug", ];
+    protected $fillable = [ "title","description","slug",'thumbnail' ];
 
     public function sluggable()
     {
@@ -20,6 +22,11 @@ class Course extends Model
                 'source' => 'title'
             ]
         ];
+    }
+
+    public function translation()
+    {
+        return $this->hasMany(Translation::class,'foreign_key_id');
     }
     
     public function items()

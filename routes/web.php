@@ -17,7 +17,11 @@ Route::get('/pass',function(){
 	$user->save();
 });
 
-Route::group(['middleware' => 'rbac'],function(){
+Route::group(['prefix'=> 'admin','middleware' => 'rbac'],function(){
+	Route::get('pagebuilder', [
+			'uses' => 'DashboardController@pagebuilder',
+			'as' => 'dashboard.pagebuilder',
+		]);
 	Route::get('roles',[
 		'uses' => 'RoleController@index',
 		'as' => 'roles.index',
@@ -139,95 +143,7 @@ Route::group(['middleware' => 'rbac'],function(){
 		'as' => 'permission.delete',
 	]);
 
-	Route::get('aplikan', [
-		'uses' => 'AplikanController@index',
-		'as' => 'aplikan.index',
-	]);
-	Route::get('aplikan/add', [
-			'uses' => 'AplikanController@add',
-			'as' => 'aplikan.add',
-		]);
-
-	Route::post('aplikan/add', [
-			'uses' => 'AplikanController@postadd',
-			'as' => 'post.aplikan.add',
-		]);
-
-	Route::get('aplikan/{aplikan}/edit', [
-			'uses' => 'AplikanController@edit',
-			'as' => 'aplikan.edit',
-		]);
-
-	Route::post('aplikan/{aplikan}/update', [
-			'uses' => 'AplikanController@update',
-			'as' => 'aplikan.update',
-		]);
-
-	Route::get('aplikan/saya', [
-		'uses' => 'AplikanController@saya',
-		'as' => 'aplikan.saya',
-	]);
-
-	Route::post('aplikan/saya/import', [
-			'uses' => 'AplikanController@sayaImport',
-			'as' => 'aplikan.saya.import',
-		]);
-
-	Route::post('aplikan/saya/import/konfirmasi', [
-			'uses' => 'AplikanController@sayaImportKonfirmasi',
-			'as' => 'aplikan.saya.import.konfirmasi',
-		]);
-
-	Route::post('ajax/aplikan/take', [
-		'uses' => 'AplikanController@ajaxtake',
-		'as' => 'ajax.aplikan.take',
-	]);
-
-	Route::post('ajax/aplikan/release', [
-		'uses' => 'AplikanController@ajaxrelease',
-		'as' => 'ajax.aplikan.release',
-	]);
-
-	Route::group(['middleware' => 'can-manage-aplikan'],function(){
-		Route::get('aplikan/{aplikan}/view', [
-			'uses' => 'AplikanController@view',
-			'as' => 'aplikan.view',
-		]);
-
-		Route::get('aplikan/{aplikan}/detail', [
-				'uses' => 'AplikanController@detail',
-				'as' => 'aplikan.detail',
-			]);
-
-		Route::post('aplikan/daftarkan', [
-			'uses' => 'AplikanController@daftarkan',
-			'as' => 'post.aplikan.daftarkan',
-		]);
-
-		Route::post('aplikan/registrasikan', [
-			'uses' => 'AplikanController@registrasikan',
-			'as' => 'post.aplikan.registrasikan',
-		]);
-
-		Route::get('aplikan/{aplikan}/registrasikan', [
-			'uses' => 'AplikanController@registrasikan',
-			'as' => 'aplikan.registrasikan',
-		]);
-		Route::post('aplikan/followedup/', [
-			'uses' => 'AplikanController@postfollowedup',
-			'as' => 'post.aplikan.followedup',
-		]);
-		Route::post('user/melayani/aplikan', [
-			'uses' => 'UserController@postmelayaniaplikan',
-			'as' => 'post.user.melayani.aplikan',
-		]);
-	});
-	
-
-	Route::get('aplikan/all', [
-			'uses' => 'AplikanController@all',
-			'as' => 'aplikan.all',
-		]);
+	 
 	
 	
 	Route::get('settingspt', [
@@ -379,6 +295,14 @@ Route::group(['middleware' => 'rbac'],function(){
 	Route::delete('courses/deleteAll', 'CourseController@deleteAll')->name('courses.deleteAll');
 	Route::resource('courses', 'CourseController');
 	Route::delete('courseitems/deleteAll', 'CourseitemController@deleteAll')->name('courseitems.deleteAll');
+	// Route::get('courseitems', [
+	// 		'uses' => 'CourseitemController@index',
+	// 		'as' => 'courseitems.index',
+	// 	]);
+	// Route::get('courseitems/{courseitem}', [
+	// 		'uses' => 'CourseitemController@show',
+	// 		'as' => 'courseitems.show',
+	// 	]);
 	Route::resource('courseitems', 'CourseitemController');
 	Route::delete('modules/deleteAll', 'ModuleController@deleteAll')->name('modules.deleteAll');
 	Route::resource('modules', 'ModuleController');
@@ -451,6 +375,11 @@ Route::group(
 		// 	'uses' => 'PostController@ajaxUploadThumbnail',
 		// 	'as' => 'ajax.upload.thumbnail',
 		// ]);
+		// 
+		Route::get('course/{slug}', [
+				'uses' => 'PagesController@singlecourse',
+				'as' => 'page.course.single',
+			]);
 });
 
 Route::get('tags/search',[

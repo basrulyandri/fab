@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Aplikan;
-use App\Post;
 use App\Category;
+use App\Course;
 use App\Events\FormDownloadBrosurEvent;
+use App\Post;
+use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
@@ -70,5 +71,11 @@ class PagesController extends Controller
 	public function register()
     {
         return view('pages.register');
+    }
+
+    public function singlecourse($slug)
+    {
+    	$course = Course::whereSlug($slug)->first();    	
+    	return view('pages.singlecourse',compact(['course']));
     }
 }

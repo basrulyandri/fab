@@ -104,7 +104,21 @@
                 <span class="help-block">{{$errors->first('description')}}</span>
               @endif
             </div>
-          </div>          
+          </div>
+          <div class='form-group{{$errors->has('description') ? ' has-error' : ''}}'>
+              {!!Form::label('thumbnail','thumbnail',['class' => 'col-sm-2 control-label'])!!}
+              <div class="col-sm-10">
+              <div class="input-group">
+                 <span class="input-group-btn">
+                   <a id="uploadbutton" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                     <i class="fa fa-picture-o"></i> Choose
+                   </a>
+                 </span>
+                 <input id="thumbnail" class="form-control" type="text" name="thumbnail">
+               </div>
+               <img src="{{url('assets/backend')}}/img/no-thumbnail.jpg" id="holder" style="margin-top:15px;width:20%">          
+             </div>
+            </div>          
       </div>
       <div class="modal-footer">        
         <input type="submit" class="btn btn-primary" value="Save">
@@ -117,7 +131,9 @@
 
 @section('footer')
  <script>
-        $(document).ready(function() {            
+        $(document).ready(function() {  
+        var domain = "{{url('/')}}/admin/rollo-filemanager";
+            $('#uploadbutton').filemanager('image', {prefix: domain});           
             $('body').on('click','#courseitemDelete',function(e){
               e.preventDefault();
               var formElement = $(this).parent();

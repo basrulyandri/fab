@@ -19,15 +19,13 @@ class AuthController extends Controller
             'password' => 'required',
         ]);  
     	if(Auth::attempt(['email' => $request->input('email'),'password' => $request->input('password')])){
-                return redirect()->intended('/dashboard');
+                return redirect()->intended('admin/dashboard');
             }                      
         return redirect()->route('auth.login')->withInput();
     }
     
 
-    public function logout(){
-        \Log::useDailyFiles(storage_path().'/logs/app.log');
-        \Log::info('User "'.auth()->user()->username.'" successfully logout.');
+    public function logout(){        
     	Auth::logout();
     	return redirect()->route('page.index');
     }
