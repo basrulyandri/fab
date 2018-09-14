@@ -165,6 +165,19 @@
 		<!-- End Main Header -->
 		@yield('content')
 		<!-- Footer -->
+		<div style="position: fixed;bottom: 10px;right: 10px;z-index: 1000; width:180px;">
+					<div style="float: left;width:70%;">
+						<div class="text-us" style="padding:15px;background-color: #fff;font-size: 14pt;font-weight: bold;border-top-right-radius: 50px;border-bottom-right-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"><a target="_blank" href="https://api.whatsapp.com/send?phone={{getOption('theme_option_hotline')}}&text=Halo%20BAF">Chat Us</a>
+						</div>											
+					</div>
+					<div style="float: left;width:30%;">
+						<div class="chat-icon">
+							<a target="_blank" href="https://api.whatsapp.com/send?phone={{getOption('theme_option_hotline')}}&text=Halo%20BAF">
+								<img src="{{url('/assets/frontend/images')}}/whatsapp-icon-min.png" alt="" style="width:50px;">
+							</a>				
+						</div>						
+					</div>			
+		</div>
 		<footer>
 			<!-- Footer Block -->
 			<div class="footer">
@@ -240,6 +253,7 @@
 			</div>
 			<!-- End Footer Block -->
 			<!-- Copyright -->
+			
 			<div class="copyright">
 				<div class="container">
 					<div class="row">

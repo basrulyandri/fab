@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 09, 2018 at 09:53 AM
+-- Generation Time: Sep 14, 2018 at 05:11 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.1.19
 
@@ -7293,7 +7293,7 @@ INSERT INTO `menu_items` (`id`, `label`, `link`, `parent`, `sort`, `class`, `men
 (10, 'Pengumuman', '#', 0, 2, '', 4, 0, '2018-03-15 11:31:48', '2018-03-15 11:32:02'),
 (11, 'Karir', '#', 0, 3, '', 4, 0, '2018-03-15 11:31:58', '2018-03-15 11:32:02'),
 (18, 'About Us', '#', 0, 0, '', 1, 0, '2018-08-27 07:08:59', '2018-08-27 07:10:51'),
-(19, 'Testimonials', '#', 0, 1, '', 1, 0, '2018-08-27 07:09:13', '2018-08-27 07:10:51'),
+(19, 'Testimonials', 'testimonials', 0, 1, '', 1, 0, '2018-08-27 07:09:13', '2018-09-09 09:02:03'),
 (20, 'Exam Dates', '#', 0, 2, '', 1, 0, '2018-08-27 07:09:55', '2018-08-27 07:10:51'),
 (21, 'CIMA Syllabus', '#', 0, 3, '', 1, 0, '2018-08-27 07:13:08', '2018-08-27 07:15:26'),
 (22, 'Students', '#', 0, 4, '', 1, 0, '2018-08-27 07:13:28', '2018-08-27 07:15:26'),
@@ -7380,12 +7380,12 @@ INSERT INTO `options` (`id`, `option_key`, `option_value`, `created_at`, `update
 (6, 'akhir_tahun_akademik', '2018-09-09', '2017-10-21 08:01:55', '0000-00-00 00:00:00'),
 (7, 'theme_option_amount_of_slider', '2', '2017-11-01 08:00:42', '2018-08-29 22:32:39'),
 (8, 'theme_option_slider_contents', 'a:3:{i:0;s:2:\"31\";i:1;s:2:\"32\";i:2;s:2:\"33\";}', '2017-11-01 08:35:29', '2018-08-29 22:32:39'),
-(9, 'theme_option_logo', '/photos/logo-british-academy-of-finance-min.png', '2018-01-04 09:44:46', '2018-08-30 20:04:00'),
-(10, 'theme_option_hotline', '087878917753', '2018-01-04 10:04:14', '2018-08-30 20:04:00'),
-(11, 'theme_option_facebook_url', 'https://www.facebook.com/bafstudies/', '2018-01-04 10:11:01', '2018-08-30 20:04:00'),
-(12, 'theme_option_twitter_url', 'q', '2018-01-04 10:13:25', '2018-08-30 20:04:00'),
-(13, 'theme_option_instagram_url', 'q', '2018-01-04 10:13:25', '2018-08-30 20:04:00'),
-(14, 'theme_option_youtube_url', 'q', '2018-01-04 10:13:36', '2018-08-30 20:04:01'),
+(9, 'theme_option_logo', '/photos/logo_BAF-min-min (1).png', '2018-01-04 09:44:46', '2018-09-10 13:21:45'),
+(10, 'theme_option_hotline', '6287878917753', '2018-01-04 10:04:14', '2018-09-14 21:56:06'),
+(11, 'theme_option_facebook_url', 'https://www.facebook.com/bafstudies/', '2018-01-04 10:11:01', '2018-09-10 13:21:45'),
+(12, 'theme_option_twitter_url', 'q', '2018-01-04 10:13:25', '2018-09-10 13:21:45'),
+(13, 'theme_option_instagram_url', 'q', '2018-01-04 10:13:25', '2018-09-10 13:21:45'),
+(14, 'theme_option_youtube_url', 'q', '2018-01-04 10:13:36', '2018-09-10 13:21:45'),
 (15, 'email_from', 'digicrea08@gmail.com', '2018-02-24 09:54:03', '2018-07-17 20:01:12'),
 (16, 'email_from_label', 'STIKES IMC Bintaro', '2018-02-24 09:55:33', '2018-07-17 20:01:12'),
 (17, 'subject_email_notification_download_brosur_to_aplikan', 'Permintaan Download Brosur anda telah kami terima', '2018-02-24 10:29:00', '2018-07-17 20:01:12'),
@@ -7398,11 +7398,11 @@ INSERT INTO `options` (`id`, `option_key`, `option_value`, `created_at`, `update
 (24, 'theme_option_sambutan_image', '/photos/WhatsApp Image 2018-08-28 at 2.10.14 PM (1).jpeg', '2018-03-15 10:48:11', '2018-09-09 00:55:16'),
 (25, 'theme_option_sambutan_content', 'Welcom', '2018-03-15 10:48:22', '2018-09-09 00:55:16'),
 (26, 'theme_option_sambutan_nama', 'Lalith De Silva', '2018-03-15 11:08:46', '2018-09-09 00:55:16'),
-(27, 'theme_option_address', 'Gedung Perkantoran International Finance Center Tower 2, Lantai 33 Jl. Jend. Sudirman Kav.22-23 Jakarta Selatan 12920', '2018-08-27 12:11:13', '2018-08-30 20:04:00'),
-(28, 'theme_option_email', 'info@bafstudies.com', '2018-08-27 12:14:41', '2018-08-30 20:04:00'),
-(29, 'theme_option_linkedin_url', 'q', '2018-08-27 12:24:42', '2018-08-30 20:04:01'),
-(30, 'web_title', 'The British Academy Of Finance', '2018-08-30 12:56:41', '2018-08-30 20:04:00'),
-(31, 'web_description', 'CIMA accredited learning partner for Indonesia.', '2018-08-30 12:56:41', '2018-08-30 20:04:00');
+(27, 'theme_option_address', 'Gedung Perkantoran International Finance Center Tower 2, Lantai 33 Jl. Jend. Sudirman Kav.22-23 Jakarta Selatan 12920', '2018-08-27 12:11:13', '2018-09-10 13:21:45'),
+(28, 'theme_option_email', 'info@bafstudies.com', '2018-08-27 12:14:41', '2018-09-10 13:21:45'),
+(29, 'theme_option_linkedin_url', 'q', '2018-08-27 12:24:42', '2018-09-10 13:21:45'),
+(30, 'web_title', 'The British Academy Of Finance', '2018-08-30 12:56:41', '2018-09-10 13:21:45'),
+(31, 'web_description', 'CIMA accredited learning partner for Indonesia.', '2018-08-30 12:56:41', '2018-09-10 13:21:45');
 
 --
 -- Triggers `options`
@@ -8382,7 +8382,9 @@ INSERT INTO `translations` (`id`, `foreign_key_id`, `table_name`, `field_name`, 
 (16, 24, 'menu_items', 'label', 'Karir', 'id', 0, '2018-09-03 11:18:53', '2018-09-03 18:18:53'),
 (17, 27, 'menu_items', 'label', 'Kontak', 'id', 0, '2018-09-03 11:19:03', '2018-09-03 18:19:03'),
 (18, 8, 'courses', 'description', '<div class=\"row-fluid\">\r\n<div class=\"span12\">\r\n<div class=\"description shadow-large\">\r\n<h3>Kursus Kami</h3>\r\n<p>Mau lulus test CIMA dengan cepat dan mudah?</p>\r\n<p>Kami telah mendesain kursus online berkualitas tinggi untuk E3, P3 dan F3 yang akan memberikan kesempatan terbaik bagi anda untuk lulus. Dan kami juga percaya anda akan setuju jika kami memberikan garansi yang memastikan anda puas.</p>\r\n</div>\r\n</div>\r\n</div>\r\n<h2>Why study with us?</h2>\r\n<div class=\"row-fluid\">\r\n<div class=\"span4\">\r\n<h4>Focused on ensuring you pass</h4>\r\n<ul>\r\n<li><strong>Study texts</strong> focused on making complex topics easy to understand.</li>\r\n<li><strong>Video tuition</strong> covering everything you need to pass</li>\r\n<li>An <strong>exam practice</strong> kit with detailed solutions</li>\r\n<li><strong>Revision notes</strong> to enable you to revise quickly and easily.</li>\r\n<li><strong>Full syllabus coverage</strong> so you will be prepared for every exam topic</li>\r\n<li><strong>5 mock exams</strong> containing exam standard questions</li>\r\n<li><strong>Experienced CIMA</strong> tutors on hand to answer all your questions</li>\r\n<li>A <strong>personal coach</strong> to guide and support you through the course</li>\r\n<li>An active <strong>online community</strong> so you feel part of a team working together to pass</li>\r\n</ul>\r\n</div>\r\n<div class=\"span4\">\r\n<h4>Minimise study time</h4>\r\n<ul>\r\n<li>Our videos <strong>simplify each chapter into about an hour of focused tuition</strong> to enable you to learn the whole syllabus in the easiest and quickest way possible</li>\r\n<li>Audio downloads are provided for you to <strong>listen whilst on the move</strong></li>\r\n<li>Our study text aims to <strong>simplify each topic</strong> using clear easy to understand examples so you pick topics up easily</li>\r\n<li>Our revision notes mean you can <strong>quickly revise the whole syllabus</strong></li>\r\n<li>All courses are flexible so you can <strong>study wherever and whenever suits you</strong></li>\r\n<li>Detailed solutions to all questions mean you <strong>learn quickly from your mistakes</strong></li>\r\n</ul>\r\n</div>\r\n<div class=\"span4\">\r\n<h4>Value for money</h4>\r\n<ul>\r\n<ul>\r\n<li>We aim to provide the best value for money in the market with the <strong>highest quality products all at a great price</strong></li>\r\n<li>We work hard to ensure we have the <strong>highest quality</strong> study materials prepared by our highly trained staff</li>\r\n<li>With everything online, we can <strong>regularly update our material</strong> to improve it based on student feedback</li>\r\n<li>As everything is online we don&rsquo;t have the overheads of many of our competitors. We are able to provide a wide range of materials at a</li>\r\n</ul>\r\n</ul>\r\n<strong>price which is far lower than the market leading provider</strong>\r\n<ul>.</ul>\r\n</div>\r\n</div>\r\n<h2>Our double guarantee</h2>\r\n<div class=\"row-fluid\">\r\n<div class=\"col-md-10\">\r\n<p><strong>1. Money back guarantee</strong></p>\r\n<p>To make sure that you are completely satisfied with our course materials and support, we have a 14-day full money back guarantee. If you&rsquo;re not happy with the course for any reason we will refund your fees in full.</p>\r\n<p>Our aim is to ensure you&rsquo;re happy to try us out safe in the knowledge that it won&rsquo;t cost you a penny if it&rsquo;s not right for you.</p>\r\n<p><strong>2. Pass guarantee</strong></p>\r\n<p>You get full course access for 12 months as standard. However, if you still haven&rsquo;t passed in that time, then we will extend your access until you do!</p>\r\n</div>\r\n<div class=\"col-md-2\">&nbsp;</div>\r\n</div>\r\n<div class=\"callout shadow-large\">\r\n<div class=\"callout-wrap\">\r\n<div class=\"row-fluid\">\r\n<div class=\"span9\">\r\n<div class=\"message\">\r\n<p><strong>1. Money back guarantee</strong></p>\r\n<p>To make sure that you are completely satisfied with our course materials and support, we have a 14-day full money back guarantee. If you&rsquo;re not happy with the course for any reason we will refund your fees in full.</p>\r\n<p>Our aim is to ensure you&rsquo;re happy to try us out safe in the knowledge that it won&rsquo;t cost you a penny if it&rsquo;s not right for you.</p>\r\n<p><strong>2. Pass guarantee</strong></p>\r\n<p>You get full course access for 12 months as standard. However, if you still haven&rsquo;t passed in that time, then we will extend your access until you do!</p>\r\n</div>\r\n</div>\r\n<div class=\"span3\"><img src=\"https://www.astranti.com/wp-content/uploads/2017/12/Satisfaction3.jpg\" alt=\"\" /></div>\r\n</div>\r\n</div>\r\n</div>', 'id', 1, '2018-09-07 19:31:06', '2018-09-08 02:38:38'),
-(19, 8, 'courses', 'title', 'CIMA STRATEGIS', 'id', 0, '2018-09-07 19:44:32', '2018-09-08 02:44:32');
+(19, 8, 'courses', 'title', 'CIMA STRATEGIS', 'id', 0, '2018-09-07 19:44:32', '2018-09-08 02:44:32'),
+(20, 39, 'posts', 'body', '<div class=\"carousel\">\r\n<div class=\"row-fluid\">\r\n<div class=\"span6\">\r\n<div class=\"testimonial\">\r\n<p>Dengan dukungan Pak Lalith, saya bisa lulus OCS pada percobaan pertama. Sangat professional, dengan komitmen nyata keoada muridnya dan flexibility to accommodate learners worldwide, enabled me to juggle work, family, personal commitments and still pass on attempt no 1. The mock exams were extremely useful and their prompt feedback....</p>\r\n</div>\r\n<div class=\"media\">\r\n<div class=\"media-left d-flex mr-3\"><img src=\"/baf/public/photos/shares/faza-adrizal.jpg\" alt=\"\" /></div>\r\n<div class=\"media-body\">\r\n<div class=\"overview\">\r\n<div class=\"name\"><strong>Faza Adrizal</strong></div>\r\n<div class=\"details\">Commercial Finance for Beverage at Unilever</div>\r\n<div class=\"star-rating\">CIMA Operational Case Study (OCS) &ndash; November 2017 &ndash; 95 Marks</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class=\"span6\">\r\n<div class=\"testimonial\">\r\n<p>Terima kasih The British Academy of Finance (BAF), untuk semuanya, dan terima kasih khususnya kepada mentor saya Pak Lalith De Silva, beliau sangat membantu. Bantuan dari mentor dan tes latihannya membuat saya percaya diri untuk lulus OCS. Saya pasti akan menggunakan jasa BAF lagi untuk level Manajerial, Sekali lagi terima kasih..</p>\r\n</div>\r\n<div class=\"media\">\r\n<div class=\"media-left d-flex mr-3\"><img src=\"/baf/public/photos/shares/gracia-panjaitan.jpg\" alt=\"\" /></div>\r\n<div class=\"media-body\">\r\n<div class=\"overview\">\r\n<div class=\"name\"><strong>Gracia Panjaitan</strong></div>\r\n<div class=\"details\">Assistant Supply Chain Finance Manager at Unilever Indonesia</div>\r\n<div class=\"star-rating\">CIMA Operational Case Study (OCS) &ndash; November 2017 &ndash; 88 Marks</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>', 'id', 1, '2018-09-09 08:08:33', '2018-09-09 15:08:33'),
+(21, 39, 'posts', 'title', 'Testimoni', 'id', 0, '2018-09-09 08:09:44', '2018-09-09 15:09:44');
 
 -- --------------------------------------------------------
 
@@ -90811,7 +90813,7 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `translations`
 --
 ALTER TABLE `translations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `users`
