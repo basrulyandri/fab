@@ -18,7 +18,7 @@ class PagesController extends Controller
 			\Cookie::queue('psr', $request->psr, time() + (86400 * 30));		
 		}
 		$latestPosts = Post::whereStatus('published')->whereType('post')->orderBy('published_at','desc')->take(10)->get();		
-		return view('pages.index',compact('latestPosts'));
+		return view('pages.index2',compact('latestPosts'));
 	}
 
 	public function downloadbrosur(Request $request)

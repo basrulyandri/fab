@@ -134,3 +134,66 @@ aside{
     text-transform: uppercase;
     color: #8b0000;   
 }
+
+   /*Contact sectiom*/
+.content-header{
+  color:#fcc500;
+  font-size: 45px;
+}
+
+.section-content{
+  text-align: center; 
+}
+.section-content h3{
+    color:#fff;
+}
+
+#contact{
+  padding-top: 60px;
+  width: 100%;
+  width: 100vw;
+  /*height: 550px;  change it to your value depending on context*/
+  background: #3a6186; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #3a6186 , #89253e); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #3a6186 , #89253e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color : #fff;
+    opacity: 0.9;    
+}
+.contact-section{
+  padding-top: 40px;
+}
+.button-box{
+    width:100%;
+    padding: 20px;
+    text-align: center;
+}
+.button-box a{
+  display: inline-block;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-style: normal;
+    font-size: 1.8em;
+    letter-spacing: 0.3em;
+    color:rgba(74, 0, 30, 0.7);
+    border-radius: 0;
+    padding: 18px 40px 20px;
+    transition: all 0.7s ease-out;
+    background-image: linear-gradient(to right, #ffffff 0%, #757575 51%, #48002b 100%);
+    background-position: 1% 50%;
+    background-size: 300% 300%;
+    text-decoration: none;
+    margin: 0.625rem;
+    border: none;
+    border: 1px solid rgba(223,190,106,0.3);
+}
+.button-box a small{
+    font-size: 65%;
+}
+
+.button-box a:hover {
+  color: #fff;
+  border: 1px solid rgba(223,190,106,0);
+  color: #fff;
+  background-position: right center;
+}
