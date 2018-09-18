@@ -31,7 +31,7 @@
                     <th><input type="checkbox" id="checkAll"></th><th>id</th>
                 <th>title</th>
                 <th>created_at</th>
-                <th style="width:10%;">Actions</th>
+                <th>Actions</th>
         
                     </tr>
                 </thead>
@@ -45,7 +45,9 @@
                 <td>
                 
                 <form action="{{route('courses.destroy',$course)}}" method="post">
-                    <a class="btn btn-xs btn-white" href="{{route("courses.show",$course)}}" data-toggle="tooltip" data-placement="top" title="View"><i class="fa fa-eye"></i>
+                <a target="_blank" class="btn btn-xs btn-white" href="{{route("page.course.single",$course->slug)}}" data-toggle="tooltip" data-placement="top" title="View on site"><i class="fa fa-globe"></i>
+                </a>
+                <a class="btn btn-xs btn-white" href="{{route("courses.show",$course)}}" data-toggle="tooltip" data-placement="top" title="View"><i class="fa fa-eye"></i>
                 </a>
 
                 <a class="btn btn-xs btn-warning" href="{{route("courses.edit",$course)}}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i>

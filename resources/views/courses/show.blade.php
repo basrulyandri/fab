@@ -53,7 +53,8 @@
   <div class="col-md-6">
   <div class="ibox float-e-margins">
       <div class="ibox-title">
-          <h5>Course Items</h5>          
+          <h5>Course Items</h5> 
+          <a href="#" class="btn btn-xs btn-primary pull-right">Add Item</a>         
       </div>
       <div class="ibox-content no-padding">
           <table class="table table-hover">

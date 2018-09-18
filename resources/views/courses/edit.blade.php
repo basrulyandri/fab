@@ -39,6 +39,15 @@
                     @endif
                   </div>
                 </div>
+                <div class='form-group{{$errors->has('slug') ? ' has-error' : ''}}'>
+                  {!!Form::label('slug','Slug',['class' => 'col-sm-2 control-label'])!!}
+                  <div class="col-sm-10">
+                    {!!Form::text('slug',$course->slug,['class' => 'form-control','placeholder' => 'Slug','required' => 'true'])!!}
+                    @if($errors->has('slug'))
+                      <span class="help-block">{{$errors->first('slug')}}</span>
+                    @endif
+                  </div>
+                </div>
 
                 <div class='form-group{{$errors->has('description') ? ' has-error' : ''}}'>
                   {!!Form::label('description','Description',['class' => 'col-sm-2 control-label'])!!}

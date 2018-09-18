@@ -204,25 +204,7 @@
 							</ul>
 							<!-- End Social Widget -->
 							<!-- Social Buttons Widget -->
-							<ul class="social-buttons unstyled inline">
-								<li class="facebook">
-									<div class="fb-like" data-href="http://envato.com/" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></div>
-								</li>
-								<li class="twitter">
-									<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://envato.com/" data-width="100"></a>
-									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-								</li>
-								<li class="google-plus">
-									<div class="g-plusone" data-size="medium" data-align="left" data-href="http://envato.com/"></div>
-									<script type="text/javascript">
-									  (function() {
-										var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-										po.src = 'http://apis.google.com/js/plusone.js';
-										var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-									  })();
-									</script>
-								</li>
-							</ul>
+							
 							<!-- End Social Buttons Widget -->
 						</div>
 					</div>
