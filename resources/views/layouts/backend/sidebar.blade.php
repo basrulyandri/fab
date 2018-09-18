@@ -57,7 +57,7 @@
                 </li>
                 @endif
                 <li>
-                    <a href="{{route('courses.index')}}"><i class="fa fa-book"></i> <span class="nav-label">Courses</span></a>
+                    <a href="{{route('levels.index')}}"><i class="fa fa-book"></i> <span class="nav-label">CIMA Levels</span></a>
                 </li>
 
                 <li>

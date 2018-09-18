@@ -7,7 +7,9 @@
     <meta name="description" content="{{getOption('web_description')}}" />
 @stop
 @section('content')
-
+@section('title')
+	Register
+@stop
 <div class="main">
 	<div class="container">
 		<div class="row">

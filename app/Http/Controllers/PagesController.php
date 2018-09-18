@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Aplikan;
 use App\Category;
+use App\Level;
 use App\Course;
 use App\Events\FormDownloadBrosurEvent;
 use App\Post;
@@ -73,9 +74,15 @@ class PagesController extends Controller
         return view('pages.register');
     }
 
+    public function singlelevel($slug)
+    {
+    	$level = Level::whereSlug($slug)->first();    	
+    	return view('pages.singlelevel',compact(['level']));
+    }
+
     public function singlecourse($slug)
     {
-    	$course = Course::whereSlug($slug)->first();    	
+    	$course = Course::whereSlug($slug)->first();
     	return view('pages.singlecourse',compact(['course']));
     }
 }

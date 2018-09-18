@@ -292,9 +292,9 @@ Route::group(['prefix'=> 'admin','middleware' => 'rbac'],function(){
 			'uses' => 'TranslateController@update',
 			'as' => 'translate.update',
 		]);
+	Route::delete('levels/deleteAll', 'LevelController@deleteAll')->name('levels.deleteAll');
+	Route::resource('levels', 'LevelController');
 	Route::delete('courses/deleteAll', 'CourseController@deleteAll')->name('courses.deleteAll');
-	Route::resource('courses', 'CourseController');
-	Route::delete('courseitems/deleteAll', 'CourseitemController@deleteAll')->name('courseitems.deleteAll');
 	// Route::get('courseitems', [
 	// 		'uses' => 'CourseitemController@index',
 	// 		'as' => 'courseitems.index',
@@ -303,7 +303,7 @@ Route::group(['prefix'=> 'admin','middleware' => 'rbac'],function(){
 	// 		'uses' => 'CourseitemController@show',
 	// 		'as' => 'courseitems.show',
 	// 	]);
-	Route::resource('courseitems', 'CourseitemController');
+	Route::resource('courses', 'CourseController');
 	Route::delete('modules/deleteAll', 'ModuleController@deleteAll')->name('modules.deleteAll');
 	Route::resource('modules', 'ModuleController');
 	
@@ -376,6 +376,10 @@ Route::group(
 		// 	'as' => 'ajax.upload.thumbnail',
 		// ]);
 		// 
+		Route::get('level/{slug}', [
+				'uses' => 'PagesController@singlelevel',
+				'as' => 'page.level.single',
+			]);
 		Route::get('course/{slug}', [
 				'uses' => 'PagesController@singlecourse',
 				'as' => 'page.course.single',

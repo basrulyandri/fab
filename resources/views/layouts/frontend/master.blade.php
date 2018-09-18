@@ -7,7 +7,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>{{getOption('web_title')}}</title>
+	<title>{{getOption('web_title')}} | @yield('title')</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
 	<meta name="author" content="Basrul Yandri">
 	@yield('og')
@@ -63,7 +63,27 @@
 							<!-- Menu Top -->
 							<ul class="menu-top unstyled inline">							
 								@foreach(\Menu::getByName('Top') as $menu)								
-									<li><a href="{{$menu['link']}}" class="visible-desktop">{{\Harimayco\Menu\Models\MenuItems::find($menu['id'])->trans('label')}}</a></a></li>
+									<li @if(!empty($menu['child'])) class="parent" @endif><a href="{{url('/')}}/{{$menu['link']}}" class="visible-desktop">{{\Harimayco\Menu\Models\MenuItems::find($menu['id'])->trans('label')}} @if(!empty($menu['child'])) <i class="icon-angle-down"></i> @endif</a>
+										@if(!empty($menu['child']))
+											<ul class="unstyled">
+												@foreach($menu['child'] as $child)
+													<li {{(!empty($child['child'])) ? 'class="parent"' : ''}}>
+													<a href="{{url('/')}}/{{$child['link']}}">
+														{{\Harimayco\Menu\Models\MenuItems::find($child['id'])->trans('label')}}</a>
+														
+													</a>
+													@if(!empty($child['child']))
+														<ul>
+															@foreach($child['child'] as $child2)
+																<li><a href="{{url('/')}}/{{$child2['link']}}">{{\Harimayco\Menu\Models\MenuItems::find($child2['id'])->trans('label')}}</a></a></li>
+															@endforeach
+														</ul>										
+													@endif
+													</li>
+												@endforeach
+											</ul>	
+											@endif
+									</li>
 								@endforeach	
 							</ul>
 							<!-- End Menu Top -->

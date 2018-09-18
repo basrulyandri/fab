@@ -20,6 +20,10 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
+        $this->validate($request,[
+            'level_id' => 'required|size:1',
+
+        ]);
         $course = Course::create($request->all());
 
         return redirect()->back()->with('success','Product has been created Successfully');

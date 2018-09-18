@@ -1,10 +1,13 @@
 @extends('layouts.frontend.master')
 @section('og')
     <meta property="og:type" content="website" /> 
-    <meta property="og:title" content="{{'Kategori' . $category->label}} | STIKES IMC BINTARO" />
-    <meta property="og:description" content="Kumpulan kategori {{$category->label}} dari STIKES IMC Bintaro Tangerang" />
+    <meta property="og:title" content="{{$category->label}} | {{getOption('web_title')}}" />
+    <meta property="og:description" content="{{$category->label}} dari STIKES IMC Bintaro Tangerang" />
     <meta property="og:image" content="{{url('/')}}/{{getOption('theme_option_logo')}}" />
     <meta name="description" content="Kumpulan kategori {{$category->label}} dari STIKES IMC Bintaro Tangerang" />
+@stop
+@section('title')
+	{{$category->label}}
 @stop
 @section('content')
 <div class="main">

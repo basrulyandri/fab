@@ -6,12 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use App\Traits\Translatable;
 
-class Course extends Model
+class Level extends Model
 {
-    use Sluggable, Translatable;
+	use Sluggable, Translatable;
+
+    protected $table = 'levels';
     protected $guarded = ['id'];
     
-    protected $fillable = [ "title","description","level_id",'thumbnail','excerpt'];
+    protected $fillable = [ "title","description","slug",'thumbnail','excerpt'];
 
     public function sluggable()
     {
@@ -21,18 +23,14 @@ class Course extends Model
             ]
         ];
     }
+
     public function translation()
     {
         return $this->hasMany(Translation::class,'foreign_key_id');
     }
     
-    public function level()
+    public function courses()
     {
-    	return $this->belongsTo(Level::class);
-    }
-
-    public function modules()
-    {
-    	return $this->hasMany(Module::class,'course_id');
+    	return $this->hasMany(Course::class);
     }
 }

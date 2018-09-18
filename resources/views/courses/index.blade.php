@@ -1,8 +1,5 @@
 @extends('layouts.backend.master')
-@section('title')
-  List of Courses
-@stop
-@section('content')
+
 @section('content')
 
 <div class="row wrapper border-bottom white-bg page-heading">
@@ -17,7 +14,7 @@
     </div>
     <div class="col-sm-8">
         <div class="title-action">
-            <button href="#" class="btn btn-primary" data-toggle="modal" data-target="#courseModal">Add course</button>
+            <button href="#" class="btn btn-primary" data-toggle="modal" data-target="#courseitemModal">Add courseitem</button>
         </div>
     </div>
 </div>
@@ -27,34 +24,30 @@
         <div class="ibox-content">
             <table class="table">
                 <thead>
-                    <tr>
-                    <th><input type="checkbox" id="checkAll"></th><th>id</th>
-                <th>title</th>
-                <th>created_at</th>
-                <th>Actions</th>
-        
+                    <tr>                    
+                      <th>Title</th>                
+                      <th>Course</th>
+                      <th>Level</th>
+                      <th>Actions</th>        
                     </tr>
                 </thead>
             <tbody>
             @foreach($courses as $course)
             <tr>
-            <td><input type="checkbox" class="sub_chk" data-id="{{$course->id}}"></td>
-            <td>{{$course->id}}</td>
+            <td><input type="checkbox" class="sub_chk" data-id="{{$course->id}}"></td>            
                     <td>{{$course->title}}</td>                    
-                    <td>{{$course->created_at->format("d M Y")}}</td>
+                    <td><a href="{{route('levels.show',$course->level)}}">{{$course->level->title}}</a></td>                    
                 <td>
                 
                 <form action="{{route('courses.destroy',$course)}}" method="post">
-                <a target="_blank" class="btn btn-xs btn-white" href="{{route("page.course.single",$course->slug)}}" data-toggle="tooltip" data-placement="top" title="View on site"><i class="fa fa-globe"></i>
-                </a>
-                <a class="btn btn-xs btn-white" href="{{route("courses.show",$course)}}" data-toggle="tooltip" data-placement="top" title="View"><i class="fa fa-eye"></i>
+                    <a class="btn btn-xs btn-white" href="{{route("courses.show",$course)}}" data-toggle="tooltip" data-placement="top" title="View"><i class="fa fa-eye"></i>
                 </a>
 
                 <a class="btn btn-xs btn-warning" href="{{route("courses.edit",$course)}}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i>
                 </a>
                     {!! method_field('delete') !!}                    
                     {!! csrf_field() !!}
-                    <button type="submit" value="Delete" class="btn btn-xs btn-danger" id="courseDelete"><i class="fa fa-trash"></i></button>
+                    <button type="submit" value="Delete" class="btn btn-xs btn-danger" id="courseitemDelete"><i class="fa fa-trash"></i></button>
                     
                 </form>                
             </td>
@@ -69,36 +62,46 @@
     </div>   
 </div>
 
-<div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document" style="width: 80%;">
+<div class="modal fade" id="courseitemModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document" style="width:80%;">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Course</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Courseitem</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
          {!!Form::open(['route' =>'courses.store', 'class' => 'form-horizontal'])!!}
-         <div class="form-group{{$errors->has("title") ? " has-error" : ""}}">
-              {!!Form::label("title","Title",["class" => "col-sm-2 control-label"])!!}
-              <div class="col-sm-10">
-                {!!Form::text("title",old("title"),["class" => "form-control","placeholder" => "Title"])!!}
-                @if($errors->has("title"))
-                  <span class="help-block">{{$errors->first("title")}}</span>
-                @endif
-              </div>
+
+          <div class='form-group{{$errors->has('course_id') ? ' has-error' : ''}}'>
+            {!!Form::label('course_id','Course',['class' => 'col-sm-2 control-label'])!!}
+            <div class="col-sm-10">
+              {!!Form::select('course_id',\App\Course::pluck('title','id')->prepend('Select Parent Course',''),old('course_id'),['class' => 'form-control','required' => 'true'])!!}
+              @if($errors->has('course_id'))
+                <span class="help-block">{{$errors->first('course_id')}}</span>
+              @endif
             </div>
-            <div class='form-group{{$errors->has('description') ? ' has-error' : ''}}'>
-              {!!Form::label('description','Description',['class' => 'col-sm-2 control-label'])!!}
-              <div class="col-sm-10">
-                {!!Form::textarea('description',old('description'),['class' => 'form-control tinyMCE','placeholder' => 'Description'])!!}
-                @if($errors->has('description'))
-                  <span class="help-block">{{$errors->first('description')}}</span> 
-                @endif
-              </div>
-            </div>  
-            <div class='form-group{{$errors->has('description') ? ' has-error' : ''}}'>
+          </div>
+         <div class="form-group{{$errors->has("title") ? " has-error" : ""}}">
+            {!!Form::label("title","Title",["class" => "col-sm-2 control-label"])!!}
+            <div class="col-sm-10">
+              {!!Form::text("title",old("title"),["class" => "form-control","placeholder" => "Title",'required' => 'true'])!!}
+              @if($errors->has("title"))
+                <span class="help-block">{{$errors->first("title")}}</span>
+              @endif
+            </div>
+          </div>
+          <div class='form-group{{$errors->has('description') ? ' has-error' : ''}}'>
+            {!!Form::label('description','Decription',['class' => 'col-sm-2 control-label'])!!}
+            <div class="col-sm-10">
+              {!!Form::textarea('description',old('description'),['class' => 'form-control tinyMCE','placeholder' => 'Decription'])!!}
+              @if($errors->has('description'))
+                <span class="help-block">{{$errors->first('description')}}</span>
+              @endif
+            </div>
+          </div>
+          <div class='form-group{{$errors->has('description') ? ' has-error' : ''}}'>
               {!!Form::label('thumbnail','thumbnail',['class' => 'col-sm-2 control-label'])!!}
               <div class="col-sm-10">
               <div class="input-group">
@@ -111,8 +114,8 @@
                </div>
                <img src="{{url('assets/backend')}}/img/no-thumbnail.jpg" id="holder" style="margin-top:15px;width:20%">          
              </div>
-            </div>
-        </div>
+            </div>          
+      </div>
       <div class="modal-footer">        
         <input type="submit" class="btn btn-primary" value="Save">
         {!!Form::close()!!}
@@ -125,9 +128,9 @@
 @section('footer')
  <script>
         $(document).ready(function() {  
-            var domain = "{{url('/')}}/admin/rollo-filemanager";
-            $('#uploadbutton').filemanager('image', {prefix: domain});          
-            $('body').on('click','#courseDelete',function(e){
+        var domain = "{{url('/')}}/admin/rollo-filemanager";
+            $('#uploadbutton').filemanager('image', {prefix: domain});           
+            $('body').on('click','#courseitemDelete',function(e){
               e.preventDefault();
               var formElement = $(this).parent();
                 swal({

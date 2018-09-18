@@ -7,7 +7,9 @@
     <meta name="description" content="{{$post->excerpt}}" />
 @stop
 @section('content')
-
+@section('title')
+	{{$post->title}}
+@stop
 <div class="main">
 	<div class="container">
 		<div class="row">

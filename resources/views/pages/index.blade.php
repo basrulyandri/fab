@@ -1,10 +1,13 @@
 @extends('layouts.frontend.master')
 @section('og')
     <meta property="og:type" content="website" /> 
-    <meta property="og:title" content="{{getOption('web_title')}}" />
-    <meta property="og:description" content="{{getOption('web_description')}}" />
+    <meta property="og:title" content="{{getOption('web_title')}}, {{getOption('web_description')}}" />
+    <meta property="og:description" content="Helping you to pass CIMA and CPA Australia Exams" />
     <meta property="og:image" content="{{url('/')}}/assets/frontend/images/british academy of finance Indonesia.jpg" />
     <meta name="description" content="{{getOption('web_description')}}" />
+@stop
+@section('title')
+	{{getOption('web_description')}}
 @stop
 @section('content')
 <div class="overall">

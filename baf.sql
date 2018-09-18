@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2018 at 10:04 AM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Generation Time: Sep 18, 2018 at 08:55 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.1.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -74,39 +74,16 @@ INSERT INTO `category_post` (`id`, `category_id`, `post_id`, `created_at`, `upda
 -- --------------------------------------------------------
 
 --
--- Table structure for table `courseitems`
---
-
-CREATE TABLE `courseitems` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `slug` varchar(255) NOT NULL,
-  `description` text,
-  `course_id` int(255) NOT NULL,
-  `thumbnail` longtext,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `courseitems`
---
-
-INSERT INTO `courseitems` (`id`, `title`, `slug`, `description`, `course_id`, `thumbnail`, `created_at`, `updated_at`) VALUES
-(3, 'sdfsdf', 'sdfsdf', '<p>fsdfsdf</p>', 5, '/photos/CIMA STRATEGIC.jpg', '2018-09-06 15:08:43', '2018-09-06 22:08:43');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `courses`
 --
 
 CREATE TABLE `courses` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `description` text,
   `slug` varchar(255) NOT NULL,
-  `course_order` int(11) DEFAULT '0',
+  `description` text,
+  `excerpt` text,
+  `level_id` int(255) NOT NULL,
   `thumbnail` longtext,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL
@@ -116,11 +93,9 @@ CREATE TABLE `courses` (
 -- Dumping data for table `courses`
 --
 
-INSERT INTO `courses` (`id`, `title`, `description`, `slug`, `course_order`, `thumbnail`, `created_at`, `updated_at`) VALUES
-(5, 'CIMA Certificate in Business Accounting (CIMA Cert BA)', '<p>The CIMA Certificate in Business Accounting (Cert BA) will help students with little or no accounting experience unleash their true business potential. Teaching core business and finance skills beyond simple financial accounting, Cert BA syllabus is the perfect stepping stone towards a career in business and finance.</p>\r\n<p>The Cert BA is a qualification in it\'s own right&nbsp;and also forms a formal entry route into the CIMA Professional Qualification. Once&nbsp;students successfully complete both qualifications and qualify for membership, they will be awarded the Chartered Global Management Accountant (CGMA) designation.</p>\r\n<p>Assessments</p>\r\n<p><strong>Format:</strong>&nbsp;computer based<br /> <strong>Availability:</strong>&nbsp;on demand&nbsp;at any of the 5,500 Pearson VUE centres around the world<br /> <strong>Length:</strong>&nbsp;2 hours<br /> <strong>Questions:</strong>&nbsp;BA1, BA2 and BA3 each contain 60 objective test questions, while BA4 contains 85 objective test questions.<br /> <strong>Marking:</strong>&nbsp;computer marked<br /> <strong>Results:</strong>&nbsp;provisional result available immediately&nbsp;followed by confirmation no more than 48 hours later</p>\r\n<p><strong>Further information<br /> </strong>Objective Tests are comprised of a range of items including short multiple-choice questions, number entry questions, drag and drop questions and other formats. In BA2 and BA3 short scenarios may be given to which one or more objective test questions relate</p>', 'cima-certificate-in-business-accounting-CIMA-cert-ba', 0, '/photos/cima certificate.jpg', '2018-09-06 15:15:13', '2018-09-18 14:49:25'),
-(6, 'CIMA OPerational', '<p>CIMA OPerational</p>', 'cima-operational', 1, '/photos/cima operational.jpg', '2018-09-06 15:15:45', '2018-09-06 22:15:45'),
-(7, 'CIMA Management', '<p>CIMA Management</p>', 'cima-management', 2, '/photos/cima manegement.jpg', '2018-09-06 15:16:23', '2018-09-06 22:16:23'),
-(8, 'CIMA STRATEGIC', '<div class=\"row-fluid\">\r\n<div class=\"span12\">\r\n<div class=\"description shadow-large\">\r\n<h3>Our courses</h3>\r\n<p>Want to pass your CIMA exams in the quickest and easiest possible way?</p>\r\n<p>We have designed high quality online courses for the E3, P3 and F3 exams that will give you the very best chance of passing! And we&rsquo;re so confident you&rsquo;ll agree we have a double guarantee that ensures you are completely satisfied.</p>\r\n</div>\r\n</div>\r\n</div>\r\n<h2>Why study with us?</h2>\r\n<div class=\"row-fluid\">\r\n<div class=\"span4\">\r\n<h4>Focused on ensuring you pass</h4>\r\n<ul>\r\n<li><strong>Study texts</strong> focused on making complex topics easy to understand.</li>\r\n<li><strong>Video tuition</strong> covering everything you need to pass</li>\r\n<li>An <strong>exam practice</strong> kit with detailed solutions</li>\r\n<li><strong>Revision notes</strong> to enable you to revise quickly and easily.</li>\r\n<li><strong>Full syllabus coverage</strong> so you will be prepared for every exam topic</li>\r\n<li><strong>5 mock exams</strong> containing exam standard questions</li>\r\n<li><strong>Experienced CIMA</strong> tutors on hand to answer all your questions</li>\r\n<li>A <strong>personal coach</strong> to guide and support you through the course</li>\r\n<li>An active <strong>online community</strong> so you feel part of a team working together to pass</li>\r\n</ul>\r\n</div>\r\n<div class=\"span4\">\r\n<h4>Minimise study time</h4>\r\n<ul>\r\n<li>Our videos <strong>simplify each chapter into about an hour of focused tuition</strong> to enable you to learn the whole syllabus in the easiest and quickest way possible</li>\r\n<li>Audio downloads are provided for you to <strong>listen whilst on the move</strong></li>\r\n<li>Our study text aims to <strong>simplify each topic</strong> using clear easy to understand examples so you pick topics up easily</li>\r\n<li>Our revision notes mean you can <strong>quickly revise the whole syllabus</strong></li>\r\n<li>All courses are flexible so you can <strong>study wherever and whenever suits you</strong></li>\r\n<li>Detailed solutions to all questions mean you <strong>learn quickly from your mistakes</strong></li>\r\n</ul>\r\n</div>\r\n<div class=\"span4\">\r\n<h4>Value for money</h4>\r\n<ul>\r\n<ul>\r\n<li>We aim to provide the best value for money in the market with the <strong>highest quality products all at a great price</strong></li>\r\n<li>We work hard to ensure we have the <strong>highest quality</strong> study materials prepared by our highly trained staff</li>\r\n<li>With everything online, we can <strong>regularly update our material</strong> to improve it based on student feedback</li>\r\n<li>As everything is online we don&rsquo;t have the overheads of many of our competitors. We are able to provide a wide range of materials at a</li>\r\n</ul>\r\n</ul>\r\n<strong>price which is far lower than the market leading provider</strong>\r\n<ul>.</ul>\r\n</div>\r\n</div>\r\n<h2>Our double guarantee</h2>\r\n<div class=\"row-fluid\">\r\n<div class=\"col-md-10\">\r\n<p><strong>1. Money back guarantee</strong></p>\r\n<p>To make sure that you are completely satisfied with our course materials and support, we have a 14-day full money back guarantee. If you&rsquo;re not happy with the course for any reason we will refund your fees in full.</p>\r\n<p>Our aim is to ensure you&rsquo;re happy to try us out safe in the knowledge that it won&rsquo;t cost you a penny if it&rsquo;s not right for you.</p>\r\n<p><strong>2. Pass guarantee</strong></p>\r\n<p>You get full course access for 12 months as standard. However, if you still haven&rsquo;t passed in that time, then we will extend your access until you do!</p>\r\n</div>\r\n<div class=\"col-md-2\">&nbsp;</div>\r\n</div>\r\n<div class=\"callout shadow-large\">\r\n<div class=\"callout-wrap\">\r\n<div class=\"row-fluid\">\r\n<div class=\"span9\">\r\n<div class=\"message\">\r\n<p><strong>1. Money back guarantee</strong></p>\r\n<p>To make sure that you are completely satisfied with our course materials and support, we have a 14-day full money back guarantee. If you&rsquo;re not happy with the course for any reason we will refund your fees in full.</p>\r\n<p>Our aim is to ensure you&rsquo;re happy to try us out safe in the knowledge that it won&rsquo;t cost you a penny if it&rsquo;s not right for you.</p>\r\n<p><strong>2. Pass guarantee</strong></p>\r\n<p>You get full course access for 12 months as standard. However, if you still haven&rsquo;t passed in that time, then we will extend your access until you do!</p>\r\n</div>\r\n</div>\r\n<div class=\"span3\"><img src=\"https://www.astranti.com/wp-content/uploads/2017/12/Satisfaction3.jpg\" alt=\"\" /></div>\r\n</div>\r\n</div>\r\n</div>', 'cima-strategic', 3, '/photos/CIMA STRATEGIC.jpg', '2018-09-06 15:16:50', '2018-09-08 02:28:34');
+INSERT INTO `courses` (`id`, `title`, `slug`, `description`, `excerpt`, `level_id`, `thumbnail`, `created_at`, `updated_at`) VALUES
+(6, 'BA1 Fundamentals of Business Economics', 'ba1-fundamentals-of-business-economics', '<div id=\"ContentPlaceHolder1_Repeater_Modules_ctl00_0_ctl00_0_PnlContent_0\" class=\"textColourBlock theme_white\">\r\n<h2>Overview</h2>\r\n<p>This subject primarily covers the economic and operating context of business and how the factors of competition, the behaviour of financial markets and government economic policy can influence an organisation. It also deals with the information available to assist management in evaluating and forecasting the behaviour of consumers, markets and the economy in general.</p>\r\n<p>The focus of this syllabus is on providing candidates with an understanding of the areas of economic activity relevant to an organisation&rsquo;s decisions and, within this context, the numerical techniques to support such decisions.</p>\r\n<h2>Summary of syllabus</h2>\r\n<p>Each subject is divided into a number of broad syllabus topics.</p>\r\n<p>A percentage weighting is shown against each syllabus topic and is intended as a guide to the proportion of study time each topic requires.</p>\r\n<p>It is essential that all topics in the syllabus are studied, as all topics will be examined.&nbsp;</p>\r\n<table class=\"table table-striped\" border=\"0\" cellspacing=\"5\" cellpadding=\"5\" align=\"left\">\r\n<tbody>\r\n<tr>\r\n<td><strong>Weight</strong></td>\r\n<td><strong>Syllabus topic</strong></td>\r\n</tr>\r\n<tr>\r\n<td><strong>25%</strong></td>\r\n<td><strong>A. </strong>Macroeconomic and Institutional Context of Business</td>\r\n</tr>\r\n<tr>\r\n<td><strong>30%</strong></td>\r\n<td><strong>B. </strong>Microeconomic and Organisational Context of Business</td>\r\n</tr>\r\n<tr>\r\n<td><strong>20%</strong></td>\r\n<td><strong>C. </strong>Informational Context of Business</td>\r\n</tr>\r\n<tr>\r\n<td><strong>25%</strong></td>\r\n<td><strong>D.</strong>&nbsp;Financial Context of Business</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>', 'This subject primarily covers the economic and operating context of business and how the factors of competition, the behaviour of financial markets and government economic policy can influence an organisation', 5, '/photos/CIMA STRATEGIC.jpg', '2018-09-18 16:59:10', '2018-09-19 00:39:50'),
+(7, 'BA2 Fundamentals of Management Accounting', 'ba2-fundamentals-of-management-accounting', '<div id=\"ContentPlaceHolder1_Repeater_Modules_ctl00_0_ctl00_0_PnlContent_0\" class=\"textColourBlock theme_white\">\r\n<h2>Overview</h2>\r\n<p>This subject deals with the fundamental knowledge and techniques that underpin management accounting. It identifies the position of the management accountant within organisations and the role of CIMA. The subject portrays the role of management accounting in the contexts of commercial and public sector bodies and its wider role in society.</p>\r\n<p>The identification and classification of costs and their behaviour provides the basis for understanding and applying the tools and techniques needed to plan, control and make decisions. Budgetary control requires the setting of targets and standards which then allow the performance of organisations to be reported and analysed by the calculation of variances. Investment appraisal, break-even analysis and profit maximisation are used to inform both long and short term decision making.</p>\r\n<h2>Summary of syllabus</h2>\r\n<p>Each subject is divided into a number of broad syllabus topics.</p>\r\n<p>A percentage weighting is shown against each syllabus topic and is intended as a guide to the proportion of study time each topic requires.</p>\r\n<p>It is essential that all topics in the syllabus are studied, as all topics will be examined.&nbsp;</p>\r\n<table class=\"table table-striped\" border=\"0\" cellspacing=\"5\" cellpadding=\"5\" align=\"left\">\r\n<tbody>\r\n<tr>\r\n<td><strong>Weight</strong></td>\r\n<td><strong>Syllabus topic</strong></td>\r\n</tr>\r\n<tr>\r\n<td><strong>10%</strong></td>\r\n<td><strong>A. </strong>The Context of Management Accounting</td>\r\n</tr>\r\n<tr>\r\n<td><strong>25%</strong></td>\r\n<td><strong>B. </strong>Costing</td>\r\n</tr>\r\n<tr>\r\n<td><strong>30%</strong></td>\r\n<td><strong>C. </strong>Planning and Control</td>\r\n</tr>\r\n<tr>\r\n<td><strong>35%</strong></td>\r\n<td><strong>D.</strong>&nbsp;Decision Making</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>', 'This subject deals with the fundamental knowledge and techniques that underpin management accounting. It identifies the position of the management accountant within organisations and the role of CIMA', 5, '/photos/cima manegement.jpg', '2018-09-18 17:41:27', '2018-09-19 01:10:37');
 
 -- --------------------------------------------------------
 
@@ -7240,6 +7215,34 @@ INSERT INTO `districts` (`id`, `regency_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `levels`
+--
+
+CREATE TABLE `levels` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text,
+  `slug` varchar(255) NOT NULL,
+  `excerpt` text,
+  `course_order` int(11) DEFAULT '0',
+  `thumbnail` longtext,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `levels`
+--
+
+INSERT INTO `levels` (`id`, `title`, `description`, `slug`, `excerpt`, `course_order`, `thumbnail`, `created_at`, `updated_at`) VALUES
+(5, 'CIMA Certificate in Business Accounting (CIMA Cert BA)', '<p>The CIMA Certificate in Business Accounting (Cert BA) will help students with little or no accounting experience unleash their true business potential. Teaching core business and finance skills beyond simple financial accounting, Cert BA syllabus is the perfect stepping stone towards a career in business and finance.</p>\r\n<p>The Cert BA is a qualification in it\'s own right&nbsp;and also forms a formal entry route into the CIMA Professional Qualification. Once&nbsp;students successfully complete both qualifications and qualify for membership, they will be awarded the Chartered Global Management Accountant (CGMA) designation.</p>\r\n<p>Assessments</p>\r\n<p><strong>Format:</strong>&nbsp;computer based<br /> <strong>Availability:</strong>&nbsp;on demand&nbsp;at any of the 5,500 Pearson VUE centres around the world<br /> <strong>Length:</strong>&nbsp;2 hours<br /> <strong>Questions:</strong>&nbsp;BA1, BA2 and BA3 each contain 60 objective test questions, while BA4 contains 85 objective test questions.<br /> <strong>Marking:</strong>&nbsp;computer marked<br /> <strong>Results:</strong>&nbsp;provisional result available immediately&nbsp;followed by confirmation no more than 48 hours later</p>\r\n<p><strong>Further information<br /> </strong>Objective Tests are comprised of a range of items including short multiple-choice questions, number entry questions, drag and drop questions and other formats. In BA2 and BA3 short scenarios may be given to which one or more objective test questions relate</p>', 'cima-certificate-in-business-accounting-CIMA-cert-ba', NULL, 0, '/photos/cima certificate.jpg', '2018-09-06 15:15:13', '2018-09-18 14:49:25'),
+(6, 'CIMA OPerational', '<p>CIMA OPerational</p>', 'cima-operational', NULL, 1, '/photos/cima operational.jpg', '2018-09-06 15:15:45', '2018-09-06 22:15:45'),
+(7, 'CIMA Management', '<p>CIMA Management</p>', 'cima-management', NULL, 2, '/photos/cima manegement.jpg', '2018-09-06 15:16:23', '2018-09-06 22:16:23'),
+(8, 'CIMA STRATEGIC', '<div class=\"row-fluid\">\r\n<div class=\"span12\">\r\n<div class=\"description shadow-large\">\r\n<h3>Our courses</h3>\r\n<p>Want to pass your CIMA exams in the quickest and easiest possible way?</p>\r\n<p>We have designed high quality online courses for the E3, P3 and F3 exams that will give you the very best chance of passing! And we&rsquo;re so confident you&rsquo;ll agree we have a double guarantee that ensures you are completely satisfied.</p>\r\n</div>\r\n</div>\r\n</div>\r\n<h2>Why study with us?</h2>\r\n<div class=\"row-fluid\">\r\n<div class=\"span4\">\r\n<h4>Focused on ensuring you pass</h4>\r\n<ul>\r\n<li><strong>Study texts</strong> focused on making complex topics easy to understand.</li>\r\n<li><strong>Video tuition</strong> covering everything you need to pass</li>\r\n<li>An <strong>exam practice</strong> kit with detailed solutions</li>\r\n<li><strong>Revision notes</strong> to enable you to revise quickly and easily.</li>\r\n<li><strong>Full syllabus coverage</strong> so you will be prepared for every exam topic</li>\r\n<li><strong>5 mock exams</strong> containing exam standard questions</li>\r\n<li><strong>Experienced CIMA</strong> tutors on hand to answer all your questions</li>\r\n<li>A <strong>personal coach</strong> to guide and support you through the course</li>\r\n<li>An active <strong>online community</strong> so you feel part of a team working together to pass</li>\r\n</ul>\r\n</div>\r\n<div class=\"span4\">\r\n<h4>Minimise study time</h4>\r\n<ul>\r\n<li>Our videos <strong>simplify each chapter into about an hour of focused tuition</strong> to enable you to learn the whole syllabus in the easiest and quickest way possible</li>\r\n<li>Audio downloads are provided for you to <strong>listen whilst on the move</strong></li>\r\n<li>Our study text aims to <strong>simplify each topic</strong> using clear easy to understand examples so you pick topics up easily</li>\r\n<li>Our revision notes mean you can <strong>quickly revise the whole syllabus</strong></li>\r\n<li>All courses are flexible so you can <strong>study wherever and whenever suits you</strong></li>\r\n<li>Detailed solutions to all questions mean you <strong>learn quickly from your mistakes</strong></li>\r\n</ul>\r\n</div>\r\n<div class=\"span4\">\r\n<h4>Value for money</h4>\r\n<ul>\r\n<ul>\r\n<li>We aim to provide the best value for money in the market with the <strong>highest quality products all at a great price</strong></li>\r\n<li>We work hard to ensure we have the <strong>highest quality</strong> study materials prepared by our highly trained staff</li>\r\n<li>With everything online, we can <strong>regularly update our material</strong> to improve it based on student feedback</li>\r\n<li>As everything is online we don&rsquo;t have the overheads of many of our competitors. We are able to provide a wide range of materials at a</li>\r\n</ul>\r\n</ul>\r\n<strong>price which is far lower than the market leading provider</strong>\r\n<ul>.</ul>\r\n</div>\r\n</div>\r\n<h2>Our double guarantee</h2>\r\n<div class=\"row-fluid\">\r\n<div class=\"col-md-10\">\r\n<p><strong>1. Money back guarantee</strong></p>\r\n<p>To make sure that you are completely satisfied with our course materials and support, we have a 14-day full money back guarantee. If you&rsquo;re not happy with the course for any reason we will refund your fees in full.</p>\r\n<p>Our aim is to ensure you&rsquo;re happy to try us out safe in the knowledge that it won&rsquo;t cost you a penny if it&rsquo;s not right for you.</p>\r\n<p><strong>2. Pass guarantee</strong></p>\r\n<p>You get full course access for 12 months as standard. However, if you still haven&rsquo;t passed in that time, then we will extend your access until you do!</p>\r\n</div>\r\n<div class=\"col-md-2\">&nbsp;</div>\r\n</div>\r\n<div class=\"callout shadow-large\">\r\n<div class=\"callout-wrap\">\r\n<div class=\"row-fluid\">\r\n<div class=\"span9\">\r\n<div class=\"message\">\r\n<p><strong>1. Money back guarantee</strong></p>\r\n<p>To make sure that you are completely satisfied with our course materials and support, we have a 14-day full money back guarantee. If you&rsquo;re not happy with the course for any reason we will refund your fees in full.</p>\r\n<p>Our aim is to ensure you&rsquo;re happy to try us out safe in the knowledge that it won&rsquo;t cost you a penny if it&rsquo;s not right for you.</p>\r\n<p><strong>2. Pass guarantee</strong></p>\r\n<p>You get full course access for 12 months as standard. However, if you still haven&rsquo;t passed in that time, then we will extend your access until you do!</p>\r\n</div>\r\n</div>\r\n<div class=\"span3\"><img src=\"https://www.astranti.com/wp-content/uploads/2017/12/Satisfaction3.jpg\" alt=\"\" /></div>\r\n</div>\r\n</div>\r\n</div>', 'cima-strategic', NULL, 3, '/photos/CIMA STRATEGIC.jpg', '2018-09-06 15:16:50', '2018-09-08 02:28:34');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `menus`
 --
 
@@ -7292,16 +7295,13 @@ INSERT INTO `menu_items` (`id`, `label`, `link`, `parent`, `sort`, `class`, `men
 (9, 'Kegiatan', '#', 0, 1, '', 4, 0, '2018-03-15 11:31:39', '2018-03-15 11:32:02'),
 (10, 'Pengumuman', '#', 0, 2, '', 4, 0, '2018-03-15 11:31:48', '2018-03-15 11:32:02'),
 (11, 'Karir', '#', 0, 3, '', 4, 0, '2018-03-15 11:31:58', '2018-03-15 11:32:02'),
-(18, 'About Us', '#', 0, 0, '', 1, 0, '2018-08-27 07:08:59', '2018-08-27 07:10:51'),
-(19, 'Testimonials', 'testimonials', 0, 1, '', 1, 0, '2018-08-27 07:09:13', '2018-09-09 09:02:03'),
-(20, 'Exam Dates', '#', 0, 2, '', 1, 0, '2018-08-27 07:09:55', '2018-08-27 07:10:51'),
-(21, 'CIMA Syllabus', '#', 0, 3, '', 1, 0, '2018-08-27 07:13:08', '2018-08-27 07:15:26'),
-(22, 'Students', '#', 0, 4, '', 1, 0, '2018-08-27 07:13:28', '2018-08-27 07:15:26'),
-(23, 'Partnership & Affilates ', '#', 0, 5, '', 1, 0, '2018-08-27 07:14:37', '2018-08-27 07:15:26'),
-(24, 'Careers', '#', 0, 6, '', 1, 0, '2018-08-27 07:14:53', '2018-08-27 07:15:26'),
-(25, 'Basket', '#', 0, 7, '', 1, 0, '2018-08-27 07:15:04', '2018-08-27 07:15:26'),
-(26, 'F.A.Q', '#', 0, 8, '', 1, 0, '2018-08-27 07:15:16', '2018-08-27 07:15:26'),
-(27, 'Contact', '#', 0, 9, '', 1, 0, '2018-08-27 07:15:24', '2018-08-27 07:15:26'),
+(18, 'About Us', 'about-us', 0, 1, '', 1, 0, '2018-08-27 07:08:59', '2018-09-18 16:10:02'),
+(19, 'Testimonials', 'testimonials', 0, 4, '', 1, 0, '2018-08-27 07:09:13', '2018-09-18 16:13:23'),
+(20, 'Exam Dates', '#', 0, 5, '', 1, 0, '2018-08-27 07:09:55', '2018-09-18 16:13:23'),
+(21, 'CIMA Syllabus', '#', 0, 6, '', 1, 0, '2018-08-27 07:13:08', '2018-09-18 16:13:23'),
+(22, 'Students', '#', 0, 7, '', 1, 0, '2018-08-27 07:13:28', '2018-09-18 16:13:23'),
+(23, 'Partnership & Affilates ', '#', 0, 8, '', 1, 0, '2018-08-27 07:14:37', '2018-09-18 16:13:23'),
+(25, 'Basket', '#', 0, 9, '', 1, 0, '2018-08-27 07:15:04', '2018-09-18 16:13:23'),
 (28, 'CIMA Home', 'cima-home', 0, 0, '', 2, 0, '2018-08-27 07:18:10', '2018-08-30 16:11:28'),
 (29, 'CIMA Strategic', '#', 0, 1, '', 2, 0, '2018-08-27 07:18:34', '2018-08-27 07:19:29'),
 (30, 'Objective Tests', 'http://localhost/baf/public/cima-strategic-objective-test-courses', 29, 2, '', 2, 1, '2018-08-27 07:19:02', '2018-08-27 13:11:11'),
@@ -7316,7 +7316,10 @@ INSERT INTO `menu_items` (`id`, `label`, `link`, `parent`, `sort`, `class`, `men
 (39, 'CIMA Syllabus', '#', 0, 2, '', 5, 0, '2018-08-29 16:03:41', '2018-08-29 16:04:03'),
 (40, 'Partnership & Affiliates', '#', 0, 3, '', 5, 0, '2018-08-29 16:04:00', '2018-08-29 16:05:08'),
 (41, 'F.A.Q', '#', 0, 0, '', 6, 0, '2018-08-29 16:05:57', '2018-08-29 16:06:09'),
-(42, 'Contact', '#', 0, 1, '', 6, 0, '2018-08-29 16:06:07', '2018-08-29 16:06:09');
+(42, 'Contact', '#', 0, 1, '', 6, 0, '2018-08-29 16:06:07', '2018-08-29 16:06:09'),
+(43, 'Home', '', 0, 0, '', 1, 0, '2018-09-18 16:08:52', '2018-09-18 16:08:58'),
+(44, 'Cima Certificate Courses', '#', 0, 2, '', 1, 0, '2018-09-18 16:10:50', '2018-09-18 16:10:57'),
+(45, 'CIMA Certificate in Business Accounting (CIMA Cert BA)', 'level/cima-certificate-in-business-accounting-CIMA-cert-ba', 44, 3, '', 1, 1, '2018-09-18 16:13:18', '2018-09-18 16:13:23');
 
 -- --------------------------------------------------------
 
@@ -7648,7 +7651,8 @@ INSERT INTO `posts` (`id`, `user_id`, `published_at`, `title`, `body`, `excerpt`
 (36, 85, '2018-08-30 20:14:46', 'CIMA Management', '<p>Management case study exam</p>', 'Management case study exam', 'published', 'cima-management', 'post', NULL, NULL, 0, '/photos/cima manegement.jpg', '2018-08-30 13:14:46', '2018-08-30 20:20:39'),
 (37, 85, '2018-08-30 20:15:20', 'CIMA STRATEGIC', '<p>Strategic Case Study Exam</p>', 'Strategic Case Study Exam', 'published', 'cima-strategic', 'post', NULL, NULL, 0, '/photos/CIMA STRATEGIC.jpg', '2018-08-30 13:15:20', '2018-08-30 20:20:09'),
 (38, 85, '2018-08-30 23:03:42', 'CIMA HOME', '<h2><u>Why CIMA?</u></h2>\r\n<p><img style=\"float: left; margin: 0 10px 10px 0;\" src=\"/baf/public/photos/CIMA.jpg\" alt=\"\" width=\"200px\" />We are the Chartered Institute of Management Accountants. The world&rsquo;s largest professional body of management accountants, with the most useful accounting qualification for a career in business.</p>\r\n<p>Our aim is to help individuals and businesses to succeed by harnessing the full power of management accounting &ndash; not just accounting for the balance sheet, but accounting for business.&nbsp;</p>\r\n<p>Our top four reasons to become a CGMA designation holder are:</p>\r\n<ol>\r\n<ol>\r\n<ol>\r\n<li><strong> Catch the eye of employers around the globe</strong>\r\n<p>Thousands of companies around the world, from multinationals to the newest start-ups in the public and private sectors, train their people with us. Chances are, in any industry you can think of, there&rsquo;ll be CGMA designation holders.</p>\r\n</li>\r\n<li><strong> Choose your own role</strong>\r\n<p>The CIMA qualification is designed to bring together management accounting, financial accounting and business, so you&rsquo;ll have the practical skills employers need. That way, you&rsquo;ll be qualified to work in a wide range of roles from finance to consultancy, IT to senior management positions.</p>\r\n</li>\r\n<li><strong> Earn higher salaries</strong>\r\n<p>As a CGMA designation holder, you can earn more and go further. Even while you&rsquo;re still studying, you can step ahead in the job market. Because working to get your designation shows employers you&rsquo;re dedicated, hardworking and always thinking about your future. And, if you&rsquo;re already working, the CGMA designation can help you move up the ladder.</p>\r\n</li>\r\n<li><strong> Study at your own speed</strong>\r\n<p>Our on-demand exams and flexible structure put you in control, so you work at the pace that works for you. You could complete a level every year, or take a steadier pace if you&rsquo;re balancing studies with a busy working life, family or university studies. Studying with CIMA, you choose when and where to sit each exam, at more than 5,500 Pearson VUE test centres around the world.</p>\r\n</li>\r\n</ol>\r\n</ol>\r\n</ol>\r\n<div class=\"callout shadow-large\">\r\n<div class=\"callout-wrap\">\r\n<div class=\"row-fluid\">\r\n<div class=\"span10\">\r\n<div class=\"message\">\r\n<h4>Ready to register?.</h4>\r\n<p>Register as a student today and start studying with CIMA !</p>\r\n</div>\r\n</div>\r\n<div class=\"span2\">\r\n<div class=\"pull-right\">\r\n<div class=\"button\"><a class=\"btn btn-large\" href=\"#\">Register as a student</a></div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<h2><u>Globally recognised</u></h2>\r\n<p>We are the world&rsquo;s largest professional body of management accountants with a global network of over 650,000 current and next generation finance professionals.</p>\r\n<p>If you are considering a career in business and finance and want to develop your future with a world-class employer, the CGMA designation is the one to have.</p>\r\n<p>Thousands of companies around the world, from multinationals to the newest start-ups, in both the public and private sectors, train their people with us. Chances are that in any sector you can think of, there will be CGMAs driving businesses forward.</p>\r\n<p>Our research shows that:</p>\r\n<ul>\r\n<li><strong>87% of employers would pay a premium to have a CGMA work for them*.</strong></li>\r\n<li><strong>CIMA students and CGMAs are represented in 100% of Interbrand&rsquo;s Best Global Brands 2016**</strong></li>\r\n<li><strong>CIMA students and CGMAs are represented in 96% of FTSE top 100 companies in 2016</strong></li>\r\n</ul>\r\n<p>Having these designatory letters tells the world you&rsquo;re a trusted, business strategist with the ability to connect all aspects of business to drive sustainable success. It says you have a commitment to professional ethics and a code of conduct.</p>\r\n<p>Backed by a powerful array of benefits, your CGMA designation will let you stay connected to the pulse of your profession and become a champion for the business.</p>\r\n<h2><u>CIMA Journey</u></h2>\r\n<p>The Chartered Institute of Management Accountants (CIMA), founded in 1919, is the world&rsquo;s leading and largest professional body of management accountants.</p>\r\n<p>We provide continuing professional development services, fund academic research, develop thought leadership, monitor professional standards, maintain a code of ethics for members, and work with external tuition providers and assessment services to provide the best study and examination experience.</p>\r\n<p>In 2017, members of CIMA and AICPA formed the&nbsp;<a href=\"https://www.aicpaglobal.com/\">Association of International Certified Professional Accountants</a>&nbsp;to unite and strengthen the accounting profession globally. Representing an influential network of more than 650,000 members and students in management and public accounting, the Association prepares accountants for today&rsquo;s challenges and tomorrow&rsquo;s opportunities.</p>\r\n<div class=\"ibox float-e-margins\">\r\n<div id=\"ibox-content\" class=\"ibox-content\">\r\n<div id=\"vertical-timeline\" class=\"vertical-container dark-timeline center-orientation\">\r\n<div class=\"vertical-timeline-block\">\r\n<div class=\"vertical-timeline-icon\">&nbsp;</div>\r\n<div class=\"vertical-timeline-content\">\r\n<h2>Founded</h2>\r\n<p>The Institute of Cost and Works Accountants (ICWA) is founded.</p>\r\n<span class=\"vertical-date\"> 1919 </span></div>\r\n</div>\r\n<div class=\"vertical-timeline-block\">\r\n<div class=\"vertical-timeline-icon blue-bg\">&nbsp;</div>\r\n<div class=\"vertical-timeline-content\">\r\n<h2>Name Changes</h2>\r\n<p>Name changes to the Institute of Cost and Management Accountants (ICMA).</p>\r\n<span class=\"vertical-date\"> 1972 </span></div>\r\n</div>\r\n<div class=\"vertical-timeline-block\">\r\n<div class=\"vertical-timeline-icon lazur-bg\">&nbsp;</div>\r\n<div class=\"vertical-timeline-content\">\r\n<h2>Granted</h2>\r\n<p>ICMA is granted a Royal Charter.</p>\r\n<span class=\"vertical-date\">1975</span></div>\r\n</div>\r\n<div class=\"vertical-timeline-block\">\r\n<div class=\"vertical-timeline-icon yellow-bg\">&nbsp;</div>\r\n<div class=\"vertical-timeline-content\">\r\n<h2>Name changes</h2>\r\n<p>Name changes to the Chartered Institute of Management Accountants (CIMA).</p>\r\n<span class=\"vertical-date\">1986</span></div>\r\n</div>\r\n<div class=\"vertical-timeline-block\">\r\n<div class=\"vertical-timeline-icon lazur-bg\">&nbsp;</div>\r\n<div class=\"vertical-timeline-content\">\r\n<h2>Right for Members</h2>\r\n<p>CIMA members are given the right to use the title Chartered Management Accountant.</p>\r\n<span class=\"vertical-date\">1995</span></div>\r\n</div>\r\n<div class=\"vertical-timeline-block\">\r\n<div class=\"vertical-timeline-icon navy-bg\">&nbsp;</div>\r\n<div class=\"vertical-timeline-content\">\r\n<h2>Joint Venture</h2>\r\n<p>AICPA and CIMA enter into a joint venture.</p>\r\n<span class=\"vertical-date\">2011</span></div>\r\n</div>\r\n<div class=\"vertical-timeline-block\">\r\n<div class=\"vertical-timeline-icon navy-bg\">&nbsp;</div>\r\n<div class=\"vertical-timeline-content\">\r\n<h2>CGMA Launched</h2>\r\n<p>AICPA and CIMA launch the Chartered Global Management Accountant (CGMA) designation.</p>\r\n<span class=\"vertical-date\">2012</span></div>\r\n</div>\r\n<div class=\"vertical-timeline-block\">\r\n<div class=\"vertical-timeline-icon navy-bg\">&nbsp;</div>\r\n<div class=\"vertical-timeline-content\">\r\n<h2>Competency Framework</h2>\r\n<p>AICPA and CIMA introduce the CGMA Competency Framework.</p>\r\n<p>AICPA and CIMA launch the Global Management Accounting Principles</p>\r\n<span class=\"vertical-date\">2014</span></div>\r\n</div>\r\n<div class=\"vertical-timeline-block\">\r\n<div class=\"vertical-timeline-icon navy-bg\">&nbsp;</div>\r\n<div class=\"vertical-timeline-content\">\r\n<h2>Computer Based</h2>\r\n<p>CIMA moves to computer-based assessments.</p>\r\n<span class=\"vertical-date\">2015</span></div>\r\n</div>\r\n<div class=\"vertical-timeline-block\">\r\n<div class=\"vertical-timeline-icon navy-bg\">&nbsp;</div>\r\n<div class=\"vertical-timeline-content\">\r\n<h2>Global Association</h2>\r\n<p>AICPA and CIMA members approve the creation of a new global association to represent public and management accounting around the world.</p>\r\n<span class=\"vertical-date\">2016</span></div>\r\n</div>\r\n<div class=\"vertical-timeline-block\">\r\n<div class=\"vertical-timeline-icon navy-bg\">&nbsp;</div>\r\n<div class=\"vertical-timeline-content\">\r\n<h2>The Association</h2>\r\n<p>AICPA and CIMA form the Association of International Certified Professional Accountants.</p>\r\n<span class=\"vertical-date\">2017</span></div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class=\"row-fluid\">\r\n<div class=\"span6\">\r\n<div class=\"simple-box\">\r\n<h2>About CIMA</h2>\r\n<h4>The Chartered Institute Of Management Accountant</h4>\r\n<p style=\"text-align: justify;\">The Chartered Institute Of Management Accountant (CIMA), founded ini 1919, is the world\'s leading and largest professional body of management accountants, with members and students operating in 177 countries, working at the heart of business. CIMA members and students work in industry, commerce the public sector and not-for-profit organisations.</p>\r\n<p style=\"text-align: justify;\">Together with the American Institute of CPAs (AICPA) CIMA has established the Chartered Global Management Accountant (CGMA) designation. CGMA is the global quality standard that further elevates the profession of management accounting. The designation recognises the most talented and commited management accountants with the discipline and skill to drive strong business performance.</p>\r\n</div>\r\n</div>\r\n<div class=\"span6\">\r\n<div class=\"simple-box\">\r\n<h2>About CGMA</h2>\r\n<h4>The Chartered Global Management Accountant</h4>\r\n<p style=\"text-align: justify;\">CGMA is the most widely held management accounting designation in the world. It distinguishes more than 150,000 accounting and finance professionals who have advanced proficiency in finance, operations, strategy and management. The CGMA designation is underpinned by extensive global research to maintain the highest relevance with employers and develop competencies most in demand. CGMAs qualify through rigorous education, examp and experience requirements. they must commit ti lifelong education and adhere to a stringent code of ethical conduct. Businesses, government and nonprofits around the world trust CGMAs to guide critical decisions that drive strong performance.</p>\r\n</div>\r\n</div>\r\n</div>', 'It takes strategic vision to lead\r\n', 'published', 'cima-home', 'page', NULL, NULL, 0, '/photos/CIMA.jpg', '2018-08-30 16:03:42', '2018-09-18 00:09:40'),
-(39, 85, '2018-09-08 22:49:59', 'Testimonials', '<div class=\"carousel\">\r\n<div class=\"row-fluid\">\r\n<div class=\"span6\">\r\n<div class=\"testimonial\">\r\n<p>Through the dedicated support of Pak Lalith, I was able to pass the OCS on my first attempt. Extremely professional, with a true commitment to his students and flexibility to accommodate learners worldwide, enabled me to juggle work, family, personal commitments and still pass on attempt no 1. The mock exams were extremely useful and their prompt feedback....</p>\r\n</div>\r\n<div class=\"media\">\r\n<div class=\"media-left d-flex mr-3\"><img src=\"/baf/public/photos/shares/faza-adrizal.jpg\" alt=\"\" /></div>\r\n<div class=\"media-body\">\r\n<div class=\"overview\">\r\n<div class=\"name\"><strong>Faza Adrizal</strong></div>\r\n<div class=\"details\">Commercial Finance for Beverage at Unilever</div>\r\n<div class=\"star-rating\">CIMA Operational Case Study (OCS) &ndash; November 2017 &ndash; 95 Marks</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class=\"span6\">\r\n<div class=\"testimonial\">\r\n<p>Thank you, The British Academy of Finance (BAF) , for everything, and a special thanks to my tutor, Mr. Lalith De Silva, he was beyond helpful. The tutor support and mock evaluation gave me the confidence I needed to pass my OCS. I will definitely be using BAF for Managerial level. Thank you once again.</p>\r\n</div>\r\n<div class=\"media\">\r\n<div class=\"media-left d-flex mr-3\"><img src=\"/baf/public/photos/shares/gracia-panjaitan.jpg\" alt=\"\" /></div>\r\n<div class=\"media-body\">\r\n<div class=\"overview\">\r\n<div class=\"name\"><strong>Gracia Panjaitan</strong></div>\r\n<div class=\"details\">Assistant Supply Chain Finance Manager at Unilever Indonesia</div>\r\n<div class=\"star-rating\">CIMA Operational Case Study (OCS) &ndash; November 2017 &ndash; 88 Marks</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>', '', 'published', 'testimonials', 'page', NULL, NULL, 0, '/photos/shares/gracia-panjaitan.jpg', '2018-09-08 15:49:59', '2018-09-08 23:45:50');
+(39, 85, '2018-09-08 22:49:59', 'Testimonials', '<div class=\"carousel\">\r\n<div class=\"row-fluid\">\r\n<div class=\"span6\">\r\n<div class=\"testimonial\">\r\n<p>Through the dedicated support of Pak Lalith, I was able to pass the OCS on my first attempt. Extremely professional, with a true commitment to his students and flexibility to accommodate learners worldwide, enabled me to juggle work, family, personal commitments and still pass on attempt no 1. The mock exams were extremely useful and their prompt feedback....</p>\r\n</div>\r\n<div class=\"media\">\r\n<div class=\"media-left d-flex mr-3\"><img src=\"/baf/public/photos/shares/faza-adrizal.jpg\" alt=\"\" /></div>\r\n<div class=\"media-body\">\r\n<div class=\"overview\">\r\n<div class=\"name\"><strong>Faza Adrizal</strong></div>\r\n<div class=\"details\">Commercial Finance for Beverage at Unilever</div>\r\n<div class=\"star-rating\">CIMA Operational Case Study (OCS) &ndash; November 2017 &ndash; 95 Marks</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class=\"span6\">\r\n<div class=\"testimonial\">\r\n<p>Thank you, The British Academy of Finance (BAF) , for everything, and a special thanks to my tutor, Mr. Lalith De Silva, he was beyond helpful. The tutor support and mock evaluation gave me the confidence I needed to pass my OCS. I will definitely be using BAF for Managerial level. Thank you once again.</p>\r\n</div>\r\n<div class=\"media\">\r\n<div class=\"media-left d-flex mr-3\"><img src=\"/baf/public/photos/shares/gracia-panjaitan.jpg\" alt=\"\" /></div>\r\n<div class=\"media-body\">\r\n<div class=\"overview\">\r\n<div class=\"name\"><strong>Gracia Panjaitan</strong></div>\r\n<div class=\"details\">Assistant Supply Chain Finance Manager at Unilever Indonesia</div>\r\n<div class=\"star-rating\">CIMA Operational Case Study (OCS) &ndash; November 2017 &ndash; 88 Marks</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>', '', 'published', 'testimonials', 'page', NULL, NULL, 0, '/photos/shares/gracia-panjaitan.jpg', '2018-09-08 15:49:59', '2018-09-08 23:45:50'),
+(40, 85, '2018-09-18 23:09:44', 'About Us', '<p>Bafstudies</p>', 'Bafstudies', 'published', 'about-us', 'page', NULL, NULL, 0, '/photos/WhatsApp Image 2018-08-28 at 2.10.14 PM (1).jpeg', '2018-09-18 16:09:44', '2018-09-18 23:09:44');
 
 -- --------------------------------------------------------
 
@@ -90583,12 +90587,6 @@ ALTER TABLE `category_post`
   ADD KEY `post_id` (`post_id`);
 
 --
--- Indexes for table `courseitems`
---
-ALTER TABLE `courseitems`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `courses`
 --
 ALTER TABLE `courses`
@@ -90600,6 +90598,12 @@ ALTER TABLE `courses`
 ALTER TABLE `districts`
   ADD PRIMARY KEY (`id`),
   ADD KEY `districts_id_index` (`regency_id`);
+
+--
+-- Indexes for table `levels`
+--
+ALTER TABLE `levels`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `menus`
@@ -90732,16 +90736,16 @@ ALTER TABLE `category_post`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `courseitems`
---
-ALTER TABLE `courseitems`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `levels`
+--
+ALTER TABLE `levels`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `menus`
@@ -90753,7 +90757,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -90789,7 +90793,7 @@ ALTER TABLE `permission_role`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `post_tag`
