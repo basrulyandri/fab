@@ -15,22 +15,16 @@
 		
 <section id="contact">
 	<div class="section-content">
-		<h1 class="section-header"> <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> WHAT DO YOU WANT TO PASS ?</span></h1>
-		<h3>Helping you to pass CIMA and CPA Australia exams</h3>
+		<h1 class="section-header"> <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Welcome to The British Academy of Finance</span></h1>		
 	</div>
 	<div class="contact-section">
 		<div class="container">	
 			<div class="row-fluid">
-				<div class="span6">
+				<div class="span12">
 					<div class="button-box">
 						<a href="{{url('/')}}/cima-home">CIMA</a>						
 					</div>
-				</div>
-				<div class="span6">					
-					<div class="button-box">
-						<a href="#">CPA <small>Australia</small></a>						
-					</div>
-				</div>
+				</div>				
 			</div>				
 		</div>			
 	</div>

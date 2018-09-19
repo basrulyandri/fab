@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/pass',function(){
-	$user = \App\User::find(85);
-	$user->password = bcrypt('dinabear');
-	$user->save();
+Route::get('/forget',function(){
+	session()->forget('cart');
 });
 
 Route::group(['prefix'=> 'admin','middleware' => 'rbac'],function(){
@@ -303,9 +301,13 @@ Route::group(['prefix'=> 'admin','middleware' => 'rbac'],function(){
 	// 		'uses' => 'CourseitemController@show',
 	// 		'as' => 'courseitems.show',
 	// 	]);
+	
 	Route::resource('courses', 'CourseController');
 	Route::delete('modules/deleteAll', 'ModuleController@deleteAll')->name('modules.deleteAll');
 	Route::resource('modules', 'ModuleController');
+
+	Route::delete('testimonials/deleteAll', 'TestimonialController@deleteAll')->name('testimonials.deleteAll');
+	Route::resource('testimonials', 'TestimonialController');
 
 	Route::post('prices', [
 			'uses' => 'PriceController@store',
@@ -375,6 +377,10 @@ Route::group(
 				'uses' => 'PagesController@register',
 				'as' => 'page.register',
 			]);
+		Route::get('testimonials', [
+				'uses' => 'PagesController@testimonials',
+				'as' => 'page.testimonials',
+			]);
 		Route::get('/{slug}', [
 				'uses' => 'PagesController@single',
 				'as' => 'page.single',
@@ -397,6 +403,7 @@ Route::group(
 				'uses' => 'PagesController@singlecourse',
 				'as' => 'page.course.single',
 			]);
+		
 });
 
 Route::get('tags/search',[
@@ -416,4 +423,18 @@ Route::post('thumbnail/upload',[
 Route::post('ajax/translate/modal', [
 		'uses' => 'TranslateController@ajaxTranslateModal',
 		'as' => 'ajax.load.translate.modal',
+	]);
+Route::post('addtocart', [
+	'uses' => 'CartController@addtocart',
+	'as'	 => 'ajax.post.addtocart'
+]);
+
+Route::post('substractqty', [
+	'uses' => 'CartController@substractqty',
+	'as'	 => 'ajax.post.substractqty'
+]);
+
+Route::post('removefromcart', [
+		'uses' => 'CartController@removefromcart',
+		'as' => 'ajax.post.removefromcart',
 	]);

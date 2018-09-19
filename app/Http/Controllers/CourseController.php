@@ -26,7 +26,7 @@ class CourseController extends Controller
         ]);
         $course = Course::create($request->all());
 
-        return redirect()->back()->with('success','Product has been created Successfully');
+        return redirect()->back()->with('success','Course has been created Successfully');
     }
 
     public function show(Course $course)
@@ -44,7 +44,7 @@ class CourseController extends Controller
     {        
         $course->update($request->all());
 
-        return redirect()->route('courses.index')->with('success','Product has been updated Successfully');
+        return redirect()->route('courses.index')->with('success','Course has been updated Successfully');
     }
 
     public function destroy(Course $course)
@@ -52,7 +52,7 @@ class CourseController extends Controller
         $course->prices->delete();
         $course->delete();
 
-        return redirect()->route('courses.index')->with('success','Product has been deleted Successfully');
+        return redirect()->route('courses.index')->with('success','Course has been deleted Successfully');
     }
 
     public function deleteAll(Request $request)

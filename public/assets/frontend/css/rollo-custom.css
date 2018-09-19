@@ -65,8 +65,7 @@ aside{
     margin-left: 20px;
 }
 .carousel .media img {
-    width: 75px;
-    height: 75px;
+    width: 75px;    
     display: block;
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
@@ -436,4 +435,36 @@ aside{
   .center-orientation .cssanimations .vertical-timeline-content.is-hidden {
     visibility: hidden;
   }
+}
+
+.bg-primary {
+  color: #fff;
+  background-color: #428bca;
+}
+a.bg-primary:hover {
+  background-color: #3071a9;
+}
+.bg-success {
+  background-color: #dff0d8;
+}
+a.bg-success:hover {
+  background-color: #c1e2b3;
+}
+.bg-info {
+  background-color: #d9edf7;
+}
+a.bg-info:hover {
+  background-color: #afd9ee;
+}
+.bg-warning {
+  background-color: #fcf8e3;
+}
+a.bg-warning:hover {
+  background-color: #f7ecb5;
+}
+.bg-danger {
+  background-color: #f2dede;
+}
+a.bg-danger:hover {
+  background-color: #e4b9b9;
 }

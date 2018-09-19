@@ -41,6 +41,7 @@
 	<link rel="stylesheet" type="text/css" href="{{url('assets/frontend')}}/css/switcher.css">
 	<link rel="stylesheet" type="text/css" href="{{url('assets/frontend')}}/css/main.css?ver=6">
 	<link rel="stylesheet" type="text/css" href="{{url('assets/frontend')}}/css/rollo-custom.css">	
+	<link rel="stylesheet" href="{{url('assets/backend')}}/css/plugins/toastr/toastr.min.css">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,400italic|Arvo:400,400italic,700|Lato:400,700,400italic,900|Vollkorn:400,700,400italic|Ubuntu:400,400italic,500,700|Droid+Sans:400,700|Prociono|Lora:400,400italic,700|Merriweather:400,700|Bitter:400,400italic,700|Kreon:400,700|Raleway:400,600|Quicksand:400,700|Oswald:400,700,300|Source+Sans+Pro:400,400italic,600,700,900|Droid+Serif:400,700,400italic">	
 	<!--[if IE]><link rel="stylesheet" type="text/css" href="css/ie.css"><![endif]-->
 	<!--[if IE 7]><link rel="stylesheet" type="text/css" href="css/font-awesome-ie7.min.css"><![endif]-->
@@ -329,6 +330,7 @@
 		</script>
 	<![endif]-->	
 	<script type="text/javascript" src="{{url('assets/frontend')}}/js/plugins.js"></script>
+	<script type="text/javascript" src="{{url('assets/backend')}}/js/plugins/toastr/toastr.min.js"></script>
 	<script type="text/javascript" src="{{url('assets/frontend')}}/js/main.js"></script>
 	@yield('footer')
 </body>

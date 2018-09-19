@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Aplikan;
 use App\Category;
-use App\Level;
 use App\Course;
 use App\Events\FormDownloadBrosurEvent;
+use App\Level;
 use App\Post;
+use App\Testimonial;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -83,6 +84,13 @@ class PagesController extends Controller
     public function singlecourse($slug)
     {
     	$course = Course::whereSlug($slug)->first();
-    	return view('pages.singlecourse',compact(['course']));
+    	$testimonials = Testimonial::inRandomOrder()->take(2)->get();
+    	return view('pages.singlecourse',compact(['course','testimonials']));
+    }
+
+    public function testimonials()
+    {
+    	$testimonials = Testimonial::paginate(20);
+    	return view('pages.testimonials',compact(['testimonials']));
     }
 }

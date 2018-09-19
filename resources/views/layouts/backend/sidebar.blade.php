@@ -59,6 +59,9 @@
                 <li>
                     <a href="{{route('levels.index')}}"><i class="fa fa-book"></i> <span class="nav-label">CIMA Levels</span></a>
                 </li>
+                <li>
+                    <a href="{{route('testimonials.index')}}"><i class="fa fa-book"></i> <span class="nav-label">Testimonial</span></a>
+                </li>
 
                 <li>
                     <a href="{{route('report.index')}}"><i class="fa fa-pie-chart"></i> <span class="nav-label">Reports</span></a>

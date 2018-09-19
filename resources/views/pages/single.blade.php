@@ -1,7 +1,7 @@
 @extends('layouts.frontend.master')
 @section('og')
     <meta property="og:type" content="website" /> 
-    <meta property="og:title" content="{{$post->title}} | STIKES IMC BINTARO" />
+    <meta property="og:title" content="{{$post->title}} | {{getOption('web_title')}}" />
     <meta property="og:description" content="{{$post->excerpt}}" />
     <meta property="og:image" content="{{url('/')}}{{$post->thumbnail}}" />
     <meta name="description" content="{{$post->excerpt}}" />
