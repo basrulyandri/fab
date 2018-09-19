@@ -41,7 +41,7 @@
 													<h4><a href="#">{{$course->trans('title')}}</a></h4>
 													<p>{{$course->trans('excerpt')}}.</p>
 													<div class="more">
-														<a href="{{route('page.course.single',$course->slug)}}" class="btn btn-xs btn-danger">Add To Basket</a>
+														<a href="{{route('page.course.single',$course->slug)}}" class="btn btn-xs btn-danger">Read more</a>
 													</div>
 												</div>
 											</article>

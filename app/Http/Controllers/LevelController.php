@@ -45,6 +45,7 @@ class LevelController extends Controller
 
     public function destroy(Level $level)
     {
+        $level->courses->delete();
         $level->delete();
 
         return redirect()->route('levels.index')->with('success','Level has been deleted Successfully');

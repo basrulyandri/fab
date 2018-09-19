@@ -306,6 +306,19 @@ Route::group(['prefix'=> 'admin','middleware' => 'rbac'],function(){
 	Route::resource('courses', 'CourseController');
 	Route::delete('modules/deleteAll', 'ModuleController@deleteAll')->name('modules.deleteAll');
 	Route::resource('modules', 'ModuleController');
+
+	Route::post('prices', [
+			'uses' => 'PriceController@store',
+			'as' => 'prices.store',
+		]);
+	Route::get('prices/{price}/edit', [
+			'uses' => 'PriceController@edit',
+			'as' => 'prices.edit',
+		]);
+	Route::post('price/{price}/update', [
+			'uses' => 'PriceController@update',
+			'as' => 'prices.update',
+		]);
 	
 });
 

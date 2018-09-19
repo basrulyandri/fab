@@ -49,6 +49,7 @@ class CourseController extends Controller
 
     public function destroy(Course $course)
     {
+        $course->prices->delete();
         $course->delete();
 
         return redirect()->route('courses.index')->with('success','Product has been deleted Successfully');

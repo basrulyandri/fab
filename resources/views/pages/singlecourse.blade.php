@@ -24,9 +24,25 @@
 						
 						{!!$course->trans('description')!!}
 					</div>
-					<!-- End Single Page -->					
-					
-<a href="{{route('page.course.single',$course->slug)}}" class="btn btn-xs btn-danger">Add To Basket</a>
+					<!-- End Single Page -->
+					<h2>{{$course->title}} Course Fees:</h2>					
+
+				  <div class="prices">
+				  	@foreach($course->prices()->orderBy('student_type')->get() as $price)				  	
+					<div class="price-column @if($loop->last) last @endif">
+						<ul class="unstyled">							
+							<li class="row-title">
+								<h3>{{$price->studentType()}} Student</h3>
+							</li>
+							<li class="row-price">
+								<h3>{{toRp($price->amount_idr)}} <small>{{$price->paymentScheme()}}</small></h3>
+							</li>
+							<li style="min-height: 200px;">{!!$price->notes!!}</li>
+							<li class="row-button"><a href="#" class="btn btn-danger btn-large">Add To Basket</a></li>
+						</ul>
+					</div>
+					@endforeach				
+				</div>
 													
 				</div>
 				<!-- End Content -->
