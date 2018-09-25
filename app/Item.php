@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
-    protected $fillable = ['course_id','order_id','qty','price'];
+    protected $fillable = ['course_id','order_id','qty','price','payment_scheme'];
 
     public function course()
     {
@@ -16,5 +16,10 @@ class Item extends Model
     public function order()
     {
     	return $this->belongsTo(Order::class);
+    }
+
+    public function paymentScheme()
+    {
+    	return ucfirst(str_replace('_',' ',$this->payment_scheme));
     }
 }

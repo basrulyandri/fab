@@ -15,6 +15,10 @@ Route::get('/forget',function(){
 	session()->forget('cart');
 });
 
+Route::get('mailable', function(){
+	return (new App\Mail\OrderCheckedOut(auth()->user(),\App\Order::first()))->render();
+});
+
 Route::group(['prefix'=> 'admin','middleware' => 'rbac'],function(){
 	Route::get('pagebuilder', [
 			'uses' => 'DashboardController@pagebuilder',
@@ -373,6 +377,19 @@ Route::group(
 			'as' => 'search.wilayah',
 		]);
 
+		Route::get('page/login', [
+				'uses' => 'PagesController@login',
+				'as' => 'page.login',
+			]);
+		Route::post('page/login', [
+				'uses' => 'PagesController@postlogin',
+				'as' => 'post.page.login',
+			]);
+		Route::get('studentarea', [
+				'uses' => 'PagesController@studentarea',
+				'as' => 'page.studentarea',
+			]);
+
 		Route::get('/register', [
 				'uses' => 'PagesController@register',
 				'as' => 'page.register',
@@ -380,6 +397,22 @@ Route::group(
 		Route::get('testimonials', [
 				'uses' => 'PagesController@testimonials',
 				'as' => 'page.testimonials',
+			]);
+		Route::get('basket', [
+				'uses' => 'PagesController@basket',
+				'as' => 'page.basket',
+			]);
+		Route::get('checkout', [
+				'uses' => 'PagesController@checkout',
+				'as' => 'page.checkout',
+			]);
+		Route::post('checkout', [
+				'uses' => 'PagesController@postcheckout',
+				'as' => 'post.page.checkout',
+			]);
+		Route::get('courses', [
+				'uses' => 'PagesController@courses',
+				'as' => 'page.courses',
 			]);
 		Route::get('/{slug}', [
 				'uses' => 'PagesController@single',
@@ -399,6 +432,8 @@ Route::group(
 				'uses' => 'PagesController@singlelevel',
 				'as' => 'page.level.single',
 			]);
+
+		
 		Route::get('course/{slug}', [
 				'uses' => 'PagesController@singlecourse',
 				'as' => 'page.course.single',
@@ -434,7 +469,7 @@ Route::post('substractqty', [
 	'as'	 => 'ajax.post.substractqty'
 ]);
 
-Route::post('removefromcart', [
-		'uses' => 'CartController@removefromcart',
-		'as' => 'ajax.post.removefromcart',
+Route::post('removecoursefromcart', [
+		'uses' => 'CartController@removecoursefromcart',
+		'as' => 'ajax.post.removecoursefromcart',
 	]);

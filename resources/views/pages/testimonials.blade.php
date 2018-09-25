@@ -22,7 +22,7 @@
 					@foreach($testimonials->chunk(2) as $testimonial)
 					<div class="row-fluid" style="border-bottom: 1px solid #ddd; margin-bottom: 20px;">
 						@foreach($testimonial as $testi)
-						<div class="span3" style="margin-bottom: 20px;">
+						<div class="span6" style="margin-bottom: 20px;">
 							<div class="testimonial">
 								{!!$testi->body!!}
 							</div>

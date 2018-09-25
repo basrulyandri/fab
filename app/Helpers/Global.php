@@ -120,3 +120,12 @@ function courses($orderBy = 'course_order')
 {
 	return \App\Course::orderBy($orderBy,'desc')->get();
 }
+
+function createUsername($firstname)
+{
+	   $username = strtolower($firstname);
+       $userRows  = \App\User::whereRaw("username REGEXP '^{$username}(-[0-9]*)?$'")->get();
+       $countUser = count($userRows) + 1;
+
+       return ($countUser > 1) ? "{$username}{$countUser}" : $username;
+}

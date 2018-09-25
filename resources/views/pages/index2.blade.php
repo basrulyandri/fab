@@ -2,9 +2,9 @@
 @section('og')
     <meta property="og:type" content="website" /> 
     <meta property="og:title" content="{{getOption('web_title')}}, {{getOption('web_description')}}" />
-    <meta property="og:description" content="Helping you to pass CIMA and CPA Australia Exams" />
+    <meta property="og:description" content="Helping you to pass CIMA Exams" />
     <meta property="og:image" content="{{url('/')}}/assets/frontend/images/british academy of finance Indonesia.jpg" />
-    <meta name="description" content="{{getOption('web_description')}}" />
+    <meta name="description" content="{{getOption('web_description')}} Helping you to pass CIMA Exams" />
 @stop
 @section('title')
 	{{getOption('web_description')}}
@@ -30,5 +30,4 @@
 	</div>
 </section>
 </div>
-
 @stop

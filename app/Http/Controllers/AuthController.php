@@ -19,6 +19,9 @@ class AuthController extends Controller
             'password' => 'required',
         ]);  
     	if(Auth::attempt(['email' => $request->input('email'),'password' => $request->input('password')])){
+                if(auth()->user()->isStudent()){
+                    return redirect()->route('page.studentarea');    
+                }
                 return redirect()->intended('admin/dashboard');
             }                      
         return redirect()->route('auth.login')->withInput();

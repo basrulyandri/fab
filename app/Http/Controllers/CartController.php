@@ -31,12 +31,13 @@ class CartController extends Controller
 		session(['cart'=>$cart]);
 		return response()->json(['cart' => session('cart')]);	
 	}
-	public function removefromcart(Request $request)
+	public function removecoursefromcart(Request $request)
 	{
 		$oldCart = (\Session::has('cart')) ? \Session::get('cart') : null;
-
+		//dd($request->all());
+		$course = Course::find($request->input('course_id'));
 		$cart = new Cart($oldCart);
-		$cart->removeItem($request->input('item_id'));
+		$cart->removeItem($course->id);
 		session(['cart'=>$cart]);
 		return response()->json(['cart' => session('cart')]);
 	}

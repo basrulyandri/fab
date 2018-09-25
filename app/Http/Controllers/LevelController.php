@@ -38,9 +38,9 @@ class LevelController extends Controller
 
     public function update(Request $request, Level $level)
     {        
-        $course->update($request->all());
+        $level->update($request->all());
 
-        return redirect()->route('levels.index')->with('success','Product has been updated Successfully');
+        return redirect()->route('levels.index')->with('success','Level has been updated Successfully');
     }
 
     public function destroy(Level $level)

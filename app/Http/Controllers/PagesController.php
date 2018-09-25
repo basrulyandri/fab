@@ -6,7 +6,11 @@ use App\Aplikan;
 use App\Category;
 use App\Course;
 use App\Events\FormDownloadBrosurEvent;
+use App\Item;
 use App\Level;
+use App\Mail\OrderCheckedOut;
+use App\Mail\StudentRegistration;
+use App\Order;
 use App\Post;
 use App\Testimonial;
 use Illuminate\Http\Request;
@@ -92,5 +96,71 @@ class PagesController extends Controller
     {
     	$testimonials = Testimonial::paginate(20);
     	return view('pages.testimonials',compact(['testimonials']));
+    }
+
+    public function basket()
+    {
+    	// session()->forget('cart');
+    	//dd(session('cart'));
+    	return view('pages.basket');
+    }
+
+    public function checkout()
+    {
+    	return view('pages.checkout');
+    }
+
+    public function postcheckout(Request $request)
+    {
+    	//dd(session('cart'));
+    	$request->request->add(['username' => 'test']);
+    	$request->request->add(['role_id' => 3]);
+    	$request->request->add(['activated' => 1]);
+    	$request->merge(['password' => bcrypt($request->password)]);
+    	$request->merge(['username' => createUsername($request->first_name)]);
+
+    	//dd($request->all());
+    	$user = \App\User::create($request->all());
+    	$order = Order::create([
+    		'user_id' => $user->id,
+    		'total_qty' => session('cart')->totalQty,
+    		'total_price' => session('cart')->totalPrice,
+    		'status' => 'created',
+    		'validated' => 0
+
+    	]);
+    	foreach(session('cart')->items as $key => $item){
+    		Item::create([
+    			'course_id' => $key,
+    			'order_id' => $order->id,
+    			'qty' => $item['qty'],
+    			'price' => $item['price'],
+    			'payment_scheme' => $item['payment_scheme']
+    		]);
+    	}
+        \Mail::to($user->email)->send(new StudentRegistration($user));
+        \Mail::to($user->email)->send(new OrderCheckedOut($user,$order));
+    	auth()->loginUsingId($user->id);
+    	return redirect()->route('page.index');
+    }
+
+    public function login()
+    {
+        if(auth()->check()){
+            return redirect()->route('page.studentarea');
+        }
+        return view('pages.login');
+    }
+
+    public function studentarea()
+    {
+        return view('pages.studentarea');
+    }
+
+    public function courses()
+    {
+        $levels = Level::all();
+        $testimonials = Testimonial::inRandomOrder()->take(2)->get();
+        return view('pages.courses',compact(['levels','testimonials']));
     }
 }

@@ -35,10 +35,10 @@
 										<li>
 											<article>
 												<figure>													
-													<a href="#"><img src="{{url('/')}}{{$course->thumbnail}}" alt=""></a>
+													<a href="{{route('page.course.single',$course->slug)}}"><img src="{{url('/')}}{{$course->thumbnail}}" alt=""></a>
 												</figure>												
 												<div class="body">
-													<h4><a href="#">{{$course->trans('title')}}</a></h4>
+													<h4><a href="{{route('page.course.single',$course->slug)}}">{{$course->trans('title')}}</a></h4>
 													<p>{{$course->trans('excerpt')}}.</p>
 													<div class="more">
 														<a href="{{route('page.course.single',$course->slug)}}" class="btn btn-xs btn-danger">Read more</a>

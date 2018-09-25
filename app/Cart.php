@@ -17,18 +17,42 @@ class Cart
     	}
     }
 
+    // public function add($item,$price,$id)
+    // {    	
+    // 	$storedItem = ['qty' => 0,'price' => $price->amount_idr,'payment_scheme' => $price->payment_scheme,'item' => $item,'image'=>$item->thumbnail];
+    // 	if($this->items){
+    // 		if(array_key_exists($id, $this->items)){
+    // 			$storedItem = $this->items[$id];
+    // 		}
+    // 	}
+    // 	$storedItem['qty']++;    	
+    // 	$this->items[$id] = $storedItem;
+    // 	$this->totalQty++;
+    // 	$this->totalPrice += $price->amount_idr;
+    // }
+    // 
+    // 
     public function add($item,$price,$id)
-    {    	
-    	$storedItem = ['qty' => 0,'price' => $price->amount_idr,'payment_scheme' => $price->payment_scheme,'item' => $item,'image'=>$item->thumbnail];
-    	if($this->items){
-    		if(array_key_exists($id, $this->items)){
-    			$storedItem = $this->items[$id];
-    		}
-    	}
-    	$storedItem['qty']++;    	
-    	$this->items[$id] = $storedItem;
-    	$this->totalQty++;
-    	$this->totalPrice += $item->price;
+    {       
+        $storedItem = ['qty' => 0,'price' => $price->amount_idr,'payment_scheme' => $price->payment_scheme,'item' => $item,'image'=>$item->thumbnail];
+        if($this->items){
+            if(array_key_exists($id, $this->items)){                
+                $storedItem['qty'] = 1;
+                $this->totalPrice = $this->totalPrice - $this->items[$id]['price'] + $price->amount_idr;
+                $this->items[$id] = $storedItem;            
+            } else {                
+                $storedItem['qty']++;
+                $this->items[$id] = $storedItem;
+                $this->totalQty++;
+                $this->totalPrice += $price->amount_idr;
+            }
+        } else {
+            $storedItem['qty']++;       
+            $this->items[$id] = $storedItem;
+            $this->totalQty++;
+            $this->totalPrice += $price->amount_idr;
+        }
+
     }
 
     public function substractqty($item,$id)
@@ -43,13 +67,14 @@ class Cart
     }
 
 
-    public function removeItem($item_id)
+    public function removeItem($course_id)
     {
+        //dd($course_id);
         if($this->items){
-            if(array_key_exists($item_id,$this->items)){
-                $this->totalQty -= $this->items[$item_id]['qty'];
-                $this->totalPrice -= $this->items[$item_id]['price'];
-                unset($this->items[$item_id]);
+            if(array_key_exists($course_id,$this->items)){
+                $this->totalQty -= $this->items[$course_id]['qty'];
+                $this->totalPrice -= $this->items[$course_id]['price'];
+                unset($this->items[$course_id]);
             }
         }
     }

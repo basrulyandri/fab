@@ -85,7 +85,7 @@ jQuery(function($) {
 	$(document).ready(function(){
 		$('.add-to-cart').click(function(){			
 			var btn = $(this);
-			btn.html('<i class="fa fa-circle-o-notch fa-spin"></i> ...process');			
+			btn.html('<i class="fa icon-refresh icon-spin"></i> ...process');			
 			var price_id = btn.attr('price-id');
 			var _token = '{{Session::token()}}';
 			$.ajax({
@@ -94,7 +94,9 @@ jQuery(function($) {
 			  data: { price_id : price_id, _token:_token },
 			}).success(function(data){
 				$('#cartInfo').text(data['cart'].totalQty);
-				btn.html('Add To Basket');
+				btn.html('Added to Basket');
+				$('.add-to-cart').removeClass('disabled');
+				btn.addClass('disabled');
 				toastr.success('Success','Course has been added to yor basket.');
 				console.log(data['cart'].totalQty);
 			});

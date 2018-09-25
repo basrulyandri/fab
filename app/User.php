@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
+   
     /**
      * The attributes that are mass assignable.
      *
@@ -106,35 +107,13 @@ class User extends Authenticatable
         return false;   
     }
 
-    public function isPresenter()
+    public function isStudent()
     {
         if($this->role->id == 3){
             return true;
         }
-        return false;
-    }
 
-    public function isReferrer()
-    {
-        if($this->role->id == 7){
-            return true;
-        }
-        return false;   
-    }
-    public function isKeuangan()
-    {
-        if($this->role->id == 4){
-            return true;
-        }
-        return false;
-    }
-
-    public function isAdminKampus()
-    {
-        if($this->role->id == 5){
-            return true;
-        }
-        return false;
+        return false; 
     }
 
     public function getAvatarUrl()
