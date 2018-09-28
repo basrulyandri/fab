@@ -37,7 +37,7 @@
             </form>
         </div>
             <ul class="nav navbar-top-links navbar-right">                
-                @if(auth()->user()->isAdminKampus())
+                @if(auth()->user()->isAdmin())
                 <li class="dropdown">
                     <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
                         <i class="fa fa-wrench"></i>  <span class="label label-primary"></span>

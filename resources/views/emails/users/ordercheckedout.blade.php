@@ -12,7 +12,7 @@ Thank you for ordering from BAF website. Below is your order detail your order :
 
 #Total {{toRp($order->total_price)}}
 @component('mail::promotion')
-	Please make payment ti the following Account	
+	Please make payment to the following Account	
 	{!!getOption('bank_account')!!}
 @endcomponent
 @component('mail::button', ['url' => ''])

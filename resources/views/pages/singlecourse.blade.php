@@ -2,9 +2,9 @@
 @section('og')
     <meta property="og:type" content="website" /> 
     <meta property="og:title" content="{{$course->title}} | {{getOption('web_title')}}" />
-    <meta property="og:description" content="{{$course->description}}" />
+    <meta property="og:description" content="{{$course->excerpt}}" />
     <meta property="og:image" content="{{url('/')}}{{$course->thumbnail}}" />
-    <meta name="description" content="{{$course->description}}" />
+    <meta name="description" content="{{$course->excerpt}}" />
 @stop
 @section('content')
 @section('title')
@@ -43,7 +43,17 @@
 					</div>
 					@endforeach				
 				</div>
-													
+					<p style="text-align: justify;">The first step would be to register @ The British Academy of Finance (BAF)  to follow CIMA by paying the course fee. Students will be guided and supported by the management of BAF on the CIMA-UK registration process which will be informed ahead.</p>
+					<p style="text-align: justify;">This comprehensive package makes learning convenient and reliable. It has been designed in such a way that the student has ample access to information and time to get feedback from the tutor. It consists of the following three elements.</p>
+
+					<h3>1. Study Material (Power point presentations and Videos)</h3>
+					<p>A collection of comprehensive study material will be made available to you as a guide.</p>
+					<h3>2. On-line Tutoring- (20 Hours) </h3>
+					<p>This will cover twenty hours of online tutoring during which, you will get to clarify your doubts from the tutor. Lecture times can be arranged according to your convenience ( Please refer class schedule) .</p>
+
+					<h3>3. Revision Questions</h3>
+					<p>The revision question pack provided via this package aims at testing your knowledge and to train you to provide accurate answers efficiently.</p>
+								
 				</div>
 				<!-- End Content -->
 			</div>	

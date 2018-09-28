@@ -77,7 +77,7 @@
 											<div class="span2">
 												<div class="pull-right">
 													<div class="button">
-														<a href="#" class="btn btn-info btn-large">Go To Courses Page</a>
+														<a href="{{route('page.courses')}}" class="btn btn-info btn-large">Go To Courses Page</a>
 													</div>
 												</div>
 											</div>
@@ -97,7 +97,7 @@
 											<div class="span2">
 												<div class="pull-right">
 													<div class="button">
-														<a href="#" class="btn btn-info btn-large">Go To Courses Page</a>
+														<a href="{{route('page.courses')}}" class="btn btn-info btn-large">Go To Courses Page</a>
 													</div>
 												</div>
 											</div>
@@ -147,7 +147,7 @@ jQuery(function($) {
 				$('#totalQty').text(response['cart'].totalQty);
 				$('.totalPrice').html('<strong>'+toRp(response['cart'].totalPrice)+'</strong>');
 				if(response['cart'].items.length == 0){
-					$('.page').html('<div class="callout shadow-large"><div class="callout-wrap"><div class="row-fluid"><div class="span10"><div class="message"><h4>You don"t have any courses in your basket.</h4></div></div><div class="span2"><div class="pull-right"><div class="button"><a href="#" class="btn btn-info btn-large">Go To Courses Page</a></div></div></div></div></div></div>');
+					$('.page').html('<div class="callout shadow-large"><div class="callout-wrap"><div class="row-fluid"><div class="span10"><div class="message"><h4>You don"t have any courses in your basket.</h4></div></div><div class="span2"><div class="pull-right"><div class="button"><a href="/courses" class="btn btn-info btn-large">Go To Courses Page</a></div></div></div></div></div></div>');
 				}
 				toastr.success('Success','1 course has been deleted.'); 
 			});			

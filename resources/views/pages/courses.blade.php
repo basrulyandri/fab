@@ -13,13 +13,13 @@
 <div class="main">
 	<div class="container">
 		<div class="row">			
-			<div class="span8">			
+			<div class="span12">			
 				<!-- Content -->
 				<div class="content">					
 					<div class="page">	
 					@foreach($levels as $level)
 						<div class="page-header">
-							<h2><i class="icon-play-circle"></i> {{$level->title}}</h2>
+							<a href="{{route('page.level.single',$level->slug)}}"><h2><i class="icon-play-circle"></i> {{$level->title}}</h2></a>
 						</div>
 
 						<section id="videos">
@@ -47,34 +47,7 @@
 					@endforeach
 					</div>
 				</div>
-			</div>
-
-			<div class="span4">
-				<div class="page-header">
-						<h1>Testimonials</h1>
-					</div>
-				<div class="carousel">				
-					
-						@foreach($testimonials as $testi)
-						<div class="span3" style="margin-bottom: 20px;border-bottom: 1px solid #ddd;">
-							<div class="testimonial">
-								{!!$testi->body!!}
-							</div>
-							<div class="media">
-								<div class="media-left d-flex mr-3"><img src="{{$testi->thumbnail}}" alt=""></div>
-								<div class="media-body">
-									<div class="overview">
-										<div class="name"><strong>{{$testi->name}}</strong></div>
-										<div class="details"><b>{{$testi->position_title}}</b></div>
-										<div class="star-rating">{{$testi->course}}</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						@endforeach					
-					
-				</div>
-			</div>		
+			</div>					
 		</div>
 	</div>
 </div>

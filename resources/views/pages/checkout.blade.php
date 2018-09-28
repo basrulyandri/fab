@@ -77,34 +77,34 @@
 														<div class="control-group">
 															<div class="controls">
 																<i class="icon-user"></i>
-																<input type="text" name="first_name" class="input-block-level" placeholder="{{trans('msg.first_name')}}">
+																<input type="text" name="first_name" class="input-block-level" placeholder="{{trans('msg.first_name')}}" required>
 															</div>
 														</div>
 
 														<div class="control-group">
 															<div class="controls">
 																<i class="icon-user"></i>
-																<input type="text" name="last_name" class="input-block-level" placeholder="{{trans('msg.last_name')}}">
+																<input type="text" name="last_name" class="input-block-level" placeholder="{{trans('msg.last_name')}}" required>
 															</div>
 														</div>
 														<div class="control-group">
 															<div class="controls">
 																<i class="icon-phone"></i>
-																<input type="text" name="phone" class="input-block-level" placeholder="{{trans('msg.phone_number')}}">
+																<input type="text" name="phone" class="input-block-level" placeholder="{{trans('msg.phone_number')}}" required>
 															</div>
 														</div>
 
 														<div class="control-group">
 															<div class="controls">
 																<i class="icon-envelope"></i>
-																<input type="text" class="input-block-level" name="email" placeholder="Email">
+																<input type="text" class="input-block-level" name="email" placeholder="Email" required>
 															</div>
 														</div>
 
 														<div class="control-group">
 															<div class="controls">
 																<i class="icon-key"></i>
-																<input type="password" class="input-block-level" placeholder="Password" name="password">
+																<input type="password" class="input-block-level" placeholder="Password" name="password" required>
 															</div>
 														</div>
 														<div class="form-actions">

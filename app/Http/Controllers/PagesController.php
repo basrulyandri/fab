@@ -159,8 +159,7 @@ class PagesController extends Controller
 
     public function courses()
     {
-        $levels = Level::all();
-        $testimonials = Testimonial::inRandomOrder()->take(2)->get();
-        return view('pages.courses',compact(['levels','testimonials']));
+        $levels = Level::all();        
+        return view('pages.courses',compact(['levels']));
     }
 }

@@ -2,9 +2,9 @@
 @section('og')
     <meta property="og:type" content="website" /> 
     <meta property="og:title" content="{{$level->title}} | {{getOption('web_title')}}" />
-    <meta property="og:description" content="{{$level->description}}" />
+    <meta property="og:description" content="{{$level->excerpt}}" />
     <meta property="og:image" content="{{url('/')}}{{$level->thumbnail}}" />
-    <meta name="description" content="{{$level->description}}" />
+    <meta name="description" content="{{$level->excerpt}}" />
 @stop
 @section('content')
 @section('title')

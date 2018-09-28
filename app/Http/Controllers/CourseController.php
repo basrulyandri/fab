@@ -21,7 +21,7 @@ class CourseController extends Controller
     {
         //dd($request->all());
         $this->validate($request,[
-            'level_id' => 'required|size:1',
+            'level_id' => 'required|min:1',
 
         ]);
         $course = Course::create($request->all());
