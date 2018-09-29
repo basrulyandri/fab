@@ -20,11 +20,11 @@ class AuthController extends Controller
         ]);  
     	if(Auth::attempt(['email' => $request->input('email'),'password' => $request->input('password')])){
                 if(auth()->user()->isStudent()){
-                    return redirect()->route('page.studentarea');    
+                    return redirect()->route('dashboard.index');    
                 }
-                return redirect()->intended('admin/dashboard');
+                return redirect()->intended('panel/dashboard');
             }                      
-        return redirect()->route('auth.login')->withInput();
+        return redirect()->route('page.login')->withInput()->with('login-error',trans('msg.login_failed_message'));
     }
     
 

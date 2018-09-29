@@ -113,22 +113,6 @@
 <script src="{{url('assets/backend')}}/js/plugins/typeahead/typeahead.js"></script>
 <script src="{{url('/')}}/vendor/laravel-filemanager/js/lfm.js"></script>
     <script>
-        @if(Session::has('success'))
-          swal({title: "Success",
-                type: 'success',
-                text: "{{Session::get('success')}} !",
-                timer: 3000,
-                showConfirmButton: true });
-          @endif
-
-          @if(Session::has('warning'))
-            swal({title: "SURE ?",
-                  type: 'warning',
-                  text: "{{Session::get('success')}} !",
-                  timer: 3000,
-                  showConfirmButton: true });
-          @endif
-
           @if(Session::has('danger'))
             swal({title: "ERROR !",
                   type: 'error',
@@ -136,6 +120,15 @@
                   timer: 3000,
                   showConfirmButton: true });
           @endif
+
+          @if(Session::has('success'))
+            toastr.success('{{Session::get("success")}}', 'Success');
+          @endif
+
+          @if(Session::has('warning'))
+            toastr.success('{{Session::get("error")}}', 'Warning');
+          @endif
+
             var _token = "{{Session::token()}}";
             var editor_config = {
                 path_absolute : "{{ URL::to('/') }}/",

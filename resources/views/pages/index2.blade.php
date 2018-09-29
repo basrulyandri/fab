@@ -15,7 +15,7 @@
 		
 <section id="contact">
 	<div class="section-content">
-		<h1 class="section-header"> <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Welcome to The British Academy of Finance</span></h1>		
+		<h1 class="section-header"> <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> {{trans('msg.welcome_greeting')}}</span></h1>		
 	</div>
 	<div class="contact-section">
 		<div class="container">	

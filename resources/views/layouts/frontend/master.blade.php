@@ -93,7 +93,7 @@
 							<!-- Access -->
 							<ul class="access unstyled">								
 								@if(!auth()->user())
-								<li class="login-area"><a href="{{route('auth.login')}}"><i class="icon-user"></i> {{trans('msg.login')}}</a>
+								<li class="login-area"><a href="{{route('page.login')}}"><i class="icon-user"></i> {{trans('msg.login')}}</a>
 								</li>
 								@else
 								<ul class="menu-top unstyled inline">
@@ -192,7 +192,7 @@
 						<div class="span3">
 							<!-- About us -->
 							<h3><i class="icon-book"></i> {{trans('msg.about_us')}}</h3>
-							<p>The British Academy Of Finance (BAF) is CIMA accredited learning partner for Indonesia.</a>.</p>							
+							<p>{{trans('app.baf_description')}}</a>.</p>							
 							<address>
 								<strong>Address</strong><br>
 								<i class="icon-map-marker"></i> {{getOption('theme_option_address')}}<br>

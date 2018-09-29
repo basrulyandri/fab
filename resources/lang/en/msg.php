@@ -11,5 +11,7 @@ return [
 	'enroll_to' => 'Enroll to',
 	'first_name' => 'First Name',
 	'last_name' => 'Last Name',
-	'phone_number' => 'Phone Number'
+	'phone_number' => 'Phone Number',
+	'login_failed_message' => 'Login failed. Wrong user credentials',
+	'welcome_greeting' => 'Welcome to The British Academy of Finance',	
 ];

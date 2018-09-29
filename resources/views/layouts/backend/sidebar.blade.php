@@ -3,7 +3,7 @@
             <ul class="nav" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element"> <span>
-                            <img alt="image" style="max-width: 48px" class="img-circle" src="{{\Auth::user()->getAvatarurl()}}"/>
+                            <img alt="image" style="width: 48px;height: 48px;" class="img-circle" src="{{\Auth::user()->getAvatarurl()}}"/>
                              </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{\Auth::user()->getNameOrEmail(true)}}</strong>
@@ -55,7 +55,6 @@
                 <li>
                     <a href="{{route('menus.index')}}"><i class="fa fa-wrench"></i><span class="nav-label"> Menus</span></a>
                 </li>
-                @endif
                 <li>
                     <a href="{{route('levels.index')}}"><i class="fa fa-book"></i> <span class="nav-label">CIMA Levels</span></a>
                 </li>
@@ -72,6 +71,13 @@
                         <li><a href="{{route('dashboard.pagebuilder')}}">Page Builder</a></li>                       
                     </ul>
                 </li>
+                @endif
+
+                @if(auth()->user()->isStudent())
+                    <li>
+                        <a href="{{route('my.courses')}}"><i class="fa fa-book"></i> <span class="nav-label">My Courses</span></a>
+                    </li>
+                @endif
 
                 <li>
                     <a target="_blank" href="{{route('page.index')}}"><i class="fa fa-home"></i> <span class="nav-label">Visit Site</span></a>

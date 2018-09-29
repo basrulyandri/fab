@@ -61,4 +61,9 @@ class CourseController extends Controller
         \DB::table("courses")->whereIn('id',explode(",",$ids))->delete();
         return response()->json(['success'=>"Courses Deleted successfully."]);
     }
+
+    public function mycourses()
+    {
+        return view('courses.my');
+    }
 }

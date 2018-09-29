@@ -31,67 +31,25 @@
                                 </div>
                             </div>
                             <div class="ibox-content profile-content">
-                                <h4><strong>{{$user->getNameOrEmail(true)}}</strong></h4>
-                                <p>{{$user->role->name}}</p>
+                                <h4 class="text-center"><strong>{{$user->getNameOrEmail(true)}}</strong></h4>
+                                <p class="text-center">{{$user->role->name}}</p>
                                 <h5>
                                     About me
                                 </h5>
                                 <p>
                                     {{$user->about}}
                                 </p>
-                                <div class="row m-t-lg">
-                                    <div class="col-md-4">
-                                        <h5><strong>{{$user->aplikan()->count()}}</strong> Aplikan</h5>
-                                    </div>
-                                    <div class="col-md-4">                                        
-                                        <h5><strong>{{$user->followup()->count()}}</strong> Follow Up</h5>
-                                    </div>
-                                    <div class="col-md-4">                                        
-                                        <h5><strong>{{$user->register()->count()}}</strong> Closing</h5>
-                                    </div>
-                                </div>
-                                <div class="row m-t-lg">
-                                <p>Refferal Link :</p>
-                                <p>Homepage <a target="_blank" href="{{route('page.index',['psr' => $user->id])}}">{{route('page.index',['psr' => $user->id])}}</a></p>
-
-                                <p>Download Brosur <a target="_blank" href="{{route('page.download.brosur',['psr' => $user->id])}}">{{route('page.download.brosur',['psr' => $user->id])}}</a></p>
                                 </div>
                             </div>
                     </div>
                 </div>
-                    </div>
                 <div class="col-md-8">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
                             <h5>Aktifitas Terakhir</h5>                            
                         </div>
                         <div class="ibox-content" style="display: block;">
-
-                            <div>
-                                <div class="feed-activity-list">                                  
-                                    @foreach(userActivities($user) as $activity)
-                                    <div class="feed-element">
-                                        <a href="#" class="pull-left">
-                                            <img alt="image" class="img-circle" src="{{$user->getAvatarUrl()}}">
-                                        </a>
-                                        <div class="media-body ">
-                                            <small class="pull-right">{{$activity->pivot->created_at->diffForHumans()}}</small>
-                                            <strong>{{$user->first_name}}</strong> {{$activity->pivot->getTable()}} aplikan <strong><a href="{{route('aplikan.detail',$activity)}}">{{$activity->nama}}</a></strong>. <br>
-                                            <small class="text-muted">{{$activity->pivot->created_at->format('d M Y')}}</small>
-                                            <div class="well">
-                                                {{$activity->pivot->keterangan}}
-                                            </div>
-                                            <!-- <div class="pull-right">
-                                                <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-                                                <a class="btn btn-xs btn-white"><i class="fa fa-heart"></i> Love</a>
-                                                <a class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Message</a>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                    
-                                </div>
-                            </div>
+                           
 
                         </div>
                     </div>

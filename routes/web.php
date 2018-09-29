@@ -19,7 +19,7 @@ Route::get('mailable', function(){
 	return (new App\Mail\OrderCheckedOut(auth()->user(),\App\Order::first()))->render();
 });
 
-Route::group(['prefix'=> 'admin','middleware' => 'rbac'],function(){
+Route::group(['prefix'=> 'panel','middleware' => 'web'],function(){
 	Route::get('pagebuilder', [
 			'uses' => 'DashboardController@pagebuilder',
 			'as' => 'dashboard.pagebuilder',
@@ -89,6 +89,10 @@ Route::group(['prefix'=> 'admin','middleware' => 'rbac'],function(){
 	Route::post('myprofile/changepicture', [
 			'uses' => 'ProfileController@changepicture',
 			'as' => 'myprofile.change.picture',
+		]);
+	Route::get('mycourses', [
+			'uses' => 'CourseController@mycourses',
+			'as' => 'my.courses',
 		]);
 
 	Route::get('role/add',[

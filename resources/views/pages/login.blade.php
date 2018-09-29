@@ -22,21 +22,29 @@
 								<div class="login" style="margin-bottom: 20px;">
 									<div class="header">
 										<h2>Login</h2>
-									</div>												
+									</div>
 									<div class="internal-login">	
-									{!!Form::open(['route' =>'auth.dologin'])!!}												
-										<form>
-											<div class="control-group">
+										@if(Session::has('login-error'))
+											<p class="text-error">{{Session::get('login-error')}}</p>
+										@endif																					
+									{!!Form::open(['route' =>'auth.dologin'])!!}	
+											<div class="control-group{{$errors->has('email') ? ' error' : ''}}">
 												<div class="controls">
 													<i class="icon-user"></i>
-													<input type="email" name="email" class="input-block-level" placeholder="Email">
+													<input type="email" name="email" class="input-block-level" placeholder="Email" value="{{old('email')}}" required>
+													@if($errors->has('email'))
+														<span class="help-inline">{{$errors->first('email')}}</span>
+												    @endif
 												</div>
 											</div>
 											
-											<div class="control-group">
+											<div class="control-group{{$errors->has('password') ? ' error' : ''}}">
 												<div class="controls">
 													<i class="icon-key"></i>
-													<input type="password" class="input-block-level" placeholder="Password" name="password">
+													<input type="password" class="input-block-level" placeholder="Password" name="password" required>
+													@if($errors->has('password'))
+														<span class="help-inline">{{$errors->first('password')}}</span>
+												    @endif
 												</div>
 											</div>
 											<div class="form-actions">
@@ -45,7 +53,7 @@
 												</div>
 											</div>
 											<hr>
-										</form>
+										{!!Form::close()!!}
 									</div>
 								</div>
 							</div>

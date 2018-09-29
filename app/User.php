@@ -13,7 +13,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = ['email','username','password','activated','role_id','first_name','last_name','photo'];
+    protected $fillable = ['email','username','password','activated','role_id','first_name','last_name','photo','phone'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -31,7 +31,7 @@ class User extends Authenticatable
     public function aplikan()
     {
         return $this->hasMany(Aplikan::class);
-    }
+    }   
 
     public function followup()
     {

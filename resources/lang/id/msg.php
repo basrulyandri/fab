@@ -11,5 +11,7 @@ return [
 	'enroll_to' => 'Pendaftaran',
 	'first_name' => 'Nama Depan',
 	'last_name' => 'Nama Belakang',
-	'phone_number' => 'No. Telpon'
+	'phone_number' => 'No. Telpon',
+	'login_failed_message' => 'Login gagal. Salah masukkan email atau password.',
+	'welcome_greeting' => 'Selamat datang di The British Academy of Finance'
 ];
