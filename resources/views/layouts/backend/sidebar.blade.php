@@ -80,8 +80,12 @@
                 @endif
 
                 <li>
-                    <a target="_blank" href="{{route('page.index')}}"><i class="fa fa-home"></i> <span class="nav-label">Visit Site</span></a>
-                </li>            
+                    <a target="_blank" href="{{route('page.index')}}"><i class="fa fa-home"></i> <span class="nav-label">BAF Site</span></a>
+                </li>  
+
+                <li style="margin-top: 30px; text-align: center;">
+                    <img style="width: 80%;" src="{{url('/').getOption('theme_option_logo')}}" alt="">
+                </li>          
             </ul>
 
         </div>

@@ -158,7 +158,63 @@
 			</div>			
 			<!-- End Header -->
 			@include('layouts.frontend._menu')
-			
+			@if(\Request::route()->getName() == 'page.index')
+			<!-- Slideshow -->
+			<div class="overall">
+				<div class="inner">
+					<!-- Hero Carousel -->
+					<section class="hero">
+						<div id="hero-carousel" class="hero-carousel">						
+							<article>
+								<img class="slider-image" src="{{url('/')}}/photos/cima-slider.jpg" alt="" />
+								<div class="overlay"></div>
+								<div class="contents" style="padding:10px;background-color:rgba(0, 0, 0, 0.5);">
+									<h2>What is your benefit ?</h2>
+									<ol>
+										<li><strong>Catch the eye of employers around the globe</strong></li>
+										<li><strong>Choose your own role</strong></li>
+										<li><strong>Earn higher salaries</strong></li>	
+										<li><strong>Study at your own speed</strong></li>									
+									</ol>
+									<a class="btn btn-large btn-info" href="/cima-home">CIMA Home</a>
+								</div>
+							</article>
+							<article>
+								<img class="slider-image" src="{{url('/')}}/photos/lalith-baf.jpg" alt="" />
+								<div class="overlay"></div>
+								<div class="contents" style="padding:10px;background-color:rgba(0, 0, 0, 0.5);">
+									<h2>3 Steps to Pass The Exam.</h2>
+									<ol>
+										<li>Study Material (Power point presentations and Videos)</li>
+										<li>On-line Tutoring- (20 Hours)</li>
+										<li>Revision Questions</li>
+									</ol>
+									<a class="btn btn-large btn-info" href="/courses">Go To Courses</a>
+								</div>
+							</article>
+
+							<article>
+								<img class="slider-image" src="{{url('/')}}/photos/baf-silder-(1).jpg" alt="" />
+								<div class="overlay"></div>
+								<div class="contents" style="padding:10px;background-color:rgba(0, 0, 0, 0.5);">
+									<h2>We Offer more than just CIMA study support ?</h2>
+									<ol>
+										<li>STUDY SUMMARIES</li>
+										<li>24/7 SUPPORT</li>
+										<li>LIVE SESSIONS</li>
+										<li>INDIVIDUAL SESSIONS</li>
+									</ol>
+									<a class="btn btn-large btn-info" href="/courses">Getting Started</a>
+								</div>
+							</article>
+
+						</div>
+					</section>
+					<!-- End Hero Carousel -->
+				</div>
+			</div>
+			<!-- End Slideshow -->
+			@endif
 		</header>
 		<!-- End Main Header -->
 		@yield('content')

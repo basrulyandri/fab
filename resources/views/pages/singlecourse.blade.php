@@ -35,7 +35,7 @@
 								<h3>{{$price->studentType()}} Student</h3>
 							</li>
 							<li class="row-price">
-								<h3>{{toRp($price->amount_idr)}} <small>{{$price->paymentScheme()}}</small></h3>
+								<h3>{{toRp($price->amount_idr)}} <small style="color:#8b0000;font-weight: bold;">{{$price->paymentScheme()}}</small></h3>
 							</li>
 							<li style="min-height: 200px;">{!!$price->notes!!}</li>
 							<li class="row-button"><button price-id="{{$price->id}}" class="btn btn-danger add-to-cart">Add To Basket</button></li>

@@ -11,7 +11,7 @@
 @stop
 @section('content')
 
-<div class="main" style="background: url('{{url('/')}}/photos/baf-silder-(1).jpg'); background-size: cover;">
+<!-- <div class="main" style="background: url('{{url('/')}}/photos/baf-silder-(1).jpg'); background-size: cover;">
 		
 <section id="contact">
 	<div class="section-content">
@@ -22,12 +22,12 @@
 			<div class="row-fluid">
 				<div class="span12">
 					<div class="button-box">
-						<a href="{{url('/')}}/cima-home">CIMA</a>						
+						<a href="#">CIMA</a>						
 					</div>
 				</div>				
 			</div>				
 		</div>			
 	</div>
 </section>
-</div>
+</div> -->
 @stop
