@@ -173,7 +173,8 @@
 				<div class="inner">
 					<!-- Hero Carousel -->
 					<section class="hero">
-						<div id="hero-carousel" class="hero-carousel">						
+						<div id="hero-carousel" class="hero-carousel">	
+							@if(\LaravelLocalization::getCurrentLocale() == 'en')					
 							<article>
 								<img class="slider-image" src="{{url('/')}}/photos/cima-slider.jpg" alt="" />
 								<div class="overlay"></div>
@@ -192,7 +193,7 @@
 								<img class="slider-image" src="{{url('/')}}/photos/lalith-baf.jpg" alt="" />
 								<div class="overlay"></div>
 								<div class="contents" style="padding:10px;background-color:rgba(0, 0, 0, 0.5);">
-									<h2>3 Steps to Pass The Exam.</h2>
+									<h2>3 Steps to Pass The Exam</h2>
 									<ol>
 										<li>Study Material (Power point presentations and Videos)</li>
 										<li>On-line Tutoring- (20 Hours)</li>
@@ -206,7 +207,7 @@
 								<img class="slider-image" src="{{url('/')}}/photos/baf-silder-(1).jpg" alt="" />
 								<div class="overlay"></div>
 								<div class="contents" style="padding:10px;background-color:rgba(0, 0, 0, 0.5);">
-									<h2>We Offer more than just CIMA study support ?</h2>
+									<h2>We Offer more than just CIMA study support</h2>
 									<ol>
 										<li>STUDY SUMMARIES</li>
 										<li>24/7 SUPPORT</li>
@@ -216,7 +217,52 @@
 									<a class="btn btn-large btn-info" href="/courses">Getting Started</a>
 								</div>
 							</article>
+							@endif
 
+							@if(\LaravelLocalization::getCurrentLocale() == 'id')					
+							<article>
+								<img class="slider-image" src="{{url('/')}}/photos/cima-slider.jpg" alt="" />
+								<div class="overlay"></div>
+								<div class="contents" style="padding:10px;background-color:rgba(0, 0, 0, 0.5);">
+									<h2>Apa Keuntunganmu ?</h2>
+									<ol>
+										<li><strong>Dikenal karyawan di seluruh dunia</strong></li>
+										<li><strong>Pilih tugasmu sendiri</strong></li>
+										<li><strong>Peluang gaji lebih besar</strong></li>	
+										<li><strong>Belajar sesuai kemampuanmu sendiri</strong></li>									
+									</ol>
+									<a class="btn btn-large btn-info" href="/cima-home">Beranda CIMA</a>
+								</div>
+							</article>
+							<article>
+								<img class="slider-image" src="{{url('/')}}/photos/lalith-baf.jpg" alt="" />
+								<div class="overlay"></div>
+								<div class="contents" style="padding:10px;background-color:rgba(0, 0, 0, 0.5);">
+									<h2>3 langkah lulus test CIMA</h2>
+									<ol>
+										<li>Materi belajar (Slide Powerpoint dan video)</li>
+										<li>Belajar Online- (20 Jam)</li>
+										<li>Pertanyaan revisi</li>
+									</ol>
+									<a class="btn btn-large btn-info" href="/courses">Ke halaman Kursus</a>
+								</div>
+							</article>
+
+							<article>
+								<img class="slider-image" src="{{url('/')}}/photos/baf-silder-(1).jpg" alt="" />
+								<div class="overlay"></div>
+								<div class="contents" style="padding:10px;background-color:rgba(0, 0, 0, 0.5);">
+									<h2>Kami menawarkan lebih dari sekedar dukungan belajar dari CIMA</h2>
+									<ol>
+										<li>Rangkuman pengajaran</li>
+										<li>Dukungan 24 jam</li>
+										<li>Sesi siaran langsung</li>
+										<li>Sesi individu</li>
+									</ol>
+									<a class="btn btn-large btn-info" href="/courses">Mulai belajar</a>
+								</div>
+							</article>
+							@endif
 						</div>
 					</section>
 					<!-- End Hero Carousel -->
