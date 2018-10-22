@@ -17,7 +17,7 @@
 				<!-- Content -->
 				<div class="content">
 					<div class="page-header">
-						<h1>Basket</h1>
+						<h1>{{trans('app.basket')}}</h1>
 					</div>
 					<div class="page">
 						@if(session('cart'))
@@ -66,6 +66,7 @@
 
 							<a href="{{route('page.checkout')}}" class="btn btn-large btn-info">Checkout</a>
 							@else
+								@if(\LaravelLocalization::getCurrentLocale() == 'en')
 								<div class="callout shadow-large">
 									<div class="callout-wrap">
 										<div class="row-fluid">
@@ -84,9 +85,32 @@
 										</div>
 									</div>
 								</div>
+								@endif
+
+								@if(\LaravelLocalization::getCurrentLocale() == 'id')
+								<div class="callout shadow-large">
+									<div class="callout-wrap">
+										<div class="row-fluid">
+											<div class="span10">
+												<div class="message">
+													<h4>Anda belum memiliki kursus di keranjang.</h4>
+												</div>
+											</div>
+											<div class="span2">
+												<div class="pull-right">
+													<div class="button">
+														<a href="{{route('page.courses')}}" class="btn btn-info btn-large">Ke halaman Kursus</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								@endif
 							@endif
 						@else
-						<div class="callout shadow-large">
+					@if(\LaravelLocalization::getCurrentLocale() == 'en')
+								<div class="callout shadow-large">
 									<div class="callout-wrap">
 										<div class="row-fluid">
 											<div class="span10">
@@ -104,6 +128,28 @@
 										</div>
 									</div>
 								</div>
+								@endif
+
+								@if(\LaravelLocalization::getCurrentLocale() == 'id')
+								<div class="callout shadow-large">
+									<div class="callout-wrap">
+										<div class="row-fluid">
+											<div class="span10">
+												<div class="message">
+													<h4>Anda belum memiliki kursus di keranjang.</h4>
+												</div>
+											</div>
+											<div class="span2">
+												<div class="pull-right">
+													<div class="button">
+														<a href="{{route('page.courses')}}" class="btn btn-info btn-large">Ke halaman Kursus</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								@endif
 						@endif
 					</div>
 				</div>
