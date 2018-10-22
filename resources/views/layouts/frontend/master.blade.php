@@ -49,6 +49,13 @@
 	<!--[if (gte IE 6)&(lte IE 8)]><script type="text/javascript" src="js/vendor/selectivizr.min.js"></script><![endif]-->
 	<!--[if lt IE 9]><script type="text/javascript" src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
 	<script type="text/javascript" src="{{url('assets/frontend')}}/js/vendor/modernizr.min.js"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-116802175-3');
+	</script>
 	<link rel="shortcut icon" href="favicon.ico">
 	@yield('header')
 </head>
@@ -61,20 +68,21 @@
 				<div class="container">
 					<div class="row">
 						<div class="span10 hidden-phone">
-							<!-- Menu Top -->
-							<ul class="menu-top unstyled inline">							
+						<nav>
+						    <ul class="custom-nav">							
 								@foreach(\Menu::getByName('Top') as $menu)								
-									<li @if(!empty($menu['child'])) class="parent" @endif><a href="{{url('/')}}/{{$menu['link']}}" class="visible-desktop">{{\Harimayco\Menu\Models\MenuItems::find($menu['id'])->trans('label')}} @if(!empty($menu['child'])) <i class="icon-angle-down"></i> @endif</a>
+									<li><a href="{{url('/')}}/{{$menu['link']}}" class="visible-desktop">{{\Harimayco\Menu\Models\MenuItems::find($menu['id'])->trans('label')}} @if(!empty($menu['child'])) <i class="icon-angle-down"></i> @endif</a>
 										@if(!empty($menu['child']))
-											<ul class="unstyled">
+											<ul class="custom-nav">
 												@foreach($menu['child'] as $child)
-													<li {{(!empty($child['child'])) ? 'class="parent"' : ''}}>
+													<li>
 													<a href="{{url('/')}}/{{$child['link']}}">
-														{{\Harimayco\Menu\Models\MenuItems::find($child['id'])->trans('label')}}</a>
+														{{\Harimayco\Menu\Models\MenuItems::find($child['id'])->trans('label')}} 
+													</a>
 														
 													</a>
 													@if(!empty($child['child']))
-														<ul>
+														<ul class="custom-nav">
 															@foreach($child['child'] as $child2)
 																<li><a href="{{url('/')}}/{{$child2['link']}}">{{\Harimayco\Menu\Models\MenuItems::find($child2['id'])->trans('label')}}</a></a></li>
 															@endforeach
@@ -87,8 +95,9 @@
 									</li>
 								@endforeach	
 							</ul>
-							<!-- End Menu Top -->
+						</nav>
 						</div>
+					
 						<div class="span2">
 							<!-- Access -->
 							<ul class="access unstyled">								

@@ -583,3 +583,52 @@ body {
   background: #fff;
   min-height: 460px;
 }
+
+ul.custom-nav {
+    position: absolute;
+    margin: 0;
+    list-style:none;
+    background: #222236;
+}
+
+ul.custom-nav li {
+    display: inline-block;
+    position: relative;
+}
+ul.custom-nav li:hover > ul {
+    display: block;
+}
+ul.custom-nav ul {
+    position: absolute;
+    display: none;
+    margin: 0;
+    padding: 0 10px;
+    background: #f9f9f9;
+}
+ul.custom-nav ul li {
+    display: block;
+    white-space: nowrap;
+    padding: 5px;
+}
+
+ul.custom-nav ul li a{
+  color: #000;  
+}
+
+ul.custom-nav ul ul {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: #f9f9f9;
+}
+/*************
+ * EXTRA CSS
+ *************/
+ul.custom-nav a{
+  color: #FFF;
+  text-decoration: none;
+  padding: 7px 10px;
+}
+ul.custom-nav a:hover {
+  border-bottom: 1px dashed #FFF;
+}

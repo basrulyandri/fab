@@ -23,9 +23,10 @@
 						</div>
 
 						<section id="videos">
-								<div class="videos">									
+								<div class="videos">
+									@foreach($level->courses->chunk(5) as $courses)									
 									<div class="row">
-										@foreach($level->courses as $course)
+										@foreach($courses as $course)
 										<div class="span2">
 											<div class="item">
 												<a href="{{route('page.course.single',$course->slug)}}">
@@ -41,7 +42,8 @@
 										</div>	
 										@endforeach								
 									
-									</div>									
+									</div>
+									@endforeach									
 								</div>
 							</section>
 					@endforeach
