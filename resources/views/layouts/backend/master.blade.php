@@ -115,8 +115,9 @@
     <script>
           @if(Session::has('danger'))
             swal({title: "ERROR !",
-                  type: 'error',
-                  text: "{{Session::get('danger')}} !",
+                  dangerMode: true,
+                  text: "Yakin mau dihapus !",
+                  icon: 'warning',
                   timer: 3000,
                   showConfirmButton: true });
           @endif

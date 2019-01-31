@@ -632,3 +632,26 @@ ul.custom-nav a{
 ul.custom-nav a:hover {
   border-bottom: 1px dashed #FFF;
 }
+
+.hero-carousel article .contents {      
+      text-shadow: -4px 4px 20px #000000;
+  }
+
+
+@media (max-width: 600px){
+  .hero-carousel article .contents ol{
+    display: none;
+  }
+  .hero-carousel article .contents {
+      position: relative;
+      top: 95px !important;
+      text-shadow: -4px 4px 20px #000000;
+  }
+  .prices .price-column{
+    width:100%;
+    margin-bottom: 30px;
+  }
+  .prices .price-column ul li {
+    min-height: 50px !important;    
+  }
+}

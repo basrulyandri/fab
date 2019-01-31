@@ -137,7 +137,7 @@
 						<div class="span8">
 							<br class="hidden-phone">
 							<div class="pull-right">
-								<h2 class="text-info"><a href="https://api.whatsapp.com/send?phone={{getOption('theme_option_hotline')}}&text=Halo%20BAF"><img style="width:30px;" src="https://stickeroid.com/uploads/pic/thumb/stickeroid_5a3e1ffa54f47.png"></span> +{{getOption('theme_option_hotline')}}</a></h2>
+								<h2 class="text-info"><a href="https://api.whatsapp.com/send?phone={{getOption('theme_option_hotline')}}&text=Halo%20BAF"><img style="width:30px;" src="{{url('/assets/frontend/images')}}/whatsapp-icon-min.png"></span> +{{getOption('theme_option_hotline')}}</a></h2>
 								<!-- Social Widget -->
 							<ul class="social-icons social-dark inline">
 								@if(getOption('theme_option_facebook_url') !='')
@@ -177,8 +177,8 @@
 							@if(\LaravelLocalization::getCurrentLocale() == 'en')					
 							<article>
 								<img class="slider-image" src="{{url('/')}}/photos/cima-slider.jpg" alt="" />
-								<div class="overlay"></div>
-								<div class="contents" style="padding:10px;background-color:rgba(0, 0, 0, 0.5);">
+								
+								<div class="contents">
 									<h2>What is your benefit ?</h2>
 									<ol>
 										<li><strong>Catch the eye of employers around the globe</strong></li>
@@ -186,27 +186,27 @@
 										<li><strong>Earn higher salaries</strong></li>	
 										<li><strong>Study at your own speed</strong></li>									
 									</ol>
-									<a class="btn btn-large btn-info" href="/cima-home">CIMA Home</a>
+									<a class="btn btn-small btn-info" href="/cima-home">CIMA Home</a>
 								</div>
 							</article>
 							<article>
 								<img class="slider-image" src="{{url('/')}}/photos/lalith-baf.jpg" alt="" />
-								<div class="overlay"></div>
-								<div class="contents" style="padding:10px;background-color:rgba(0, 0, 0, 0.5);">
+								
+								<div class="contents">
 									<h2>3 Steps to Pass The Exam</h2>
 									<ol>
 										<li>Study Material (Power point presentations and Videos)</li>
 										<li>On-line Tutoring- (20 Hours)</li>
 										<li>Revision Questions</li>
 									</ol>
-									<a class="btn btn-large btn-info" href="/courses">Go To Courses</a>
+									<a class="btn btn-small btn-info" href="/courses">Go To Courses</a>
 								</div>
 							</article>
 
 							<article>
 								<img class="slider-image" src="{{url('/')}}/photos/baf-silder-(1).jpg" alt="" />
-								<div class="overlay"></div>
-								<div class="contents" style="padding:10px;background-color:rgba(0, 0, 0, 0.5);">
+								
+								<div class="contents">
 									<h2>We Offer more than just CIMA study support</h2>
 									<ol>
 										<li>STUDY SUMMARIES</li>
@@ -214,7 +214,7 @@
 										<li>LIVE SESSIONS</li>
 										<li>INDIVIDUAL SESSIONS</li>
 									</ol>
-									<a class="btn btn-large btn-info" href="/courses">Getting Started</a>
+									<a class="btn btn-small btn-info" href="/courses">Getting Started</a>
 								</div>
 							</article>
 							@endif
@@ -383,7 +383,7 @@
 
 					carousel.each(function () {
 						$(this).heroCarousel({
-							animationSpeed: 1000,
+							animationSpeed: 3000,
 							navigation: true,
 							easing: 'easeOutExpo',
 							timeout: 5000,
