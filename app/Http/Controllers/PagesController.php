@@ -23,8 +23,14 @@ class PagesController extends Controller
 		if($request->has('psr')){
 			\Cookie::queue('psr', $request->psr, time() + (86400 * 30));		
 		}
-		$latestPosts = Post::whereStatus('published')->whereType('post')->orderBy('published_at','desc')->take(10)->get();		
-		return view('pages.canvas.index',compact('latestPosts'));
+		$latestPosts = Post::whereStatus('published')->whereType('post')->orderBy('published_at','desc')->take(10)->get();	
+        $levels = [
+                ['title' => 'CIMA Strategic','thumbnail' => '/photos/CIMA STRATEGIC.jpg','url' => 'https://www.bafstudies.com/level/associate-chartered-management-accountant-acma-and-chartered-global-management-accountant-cgma'],
+                ['title' => 'CIMA Management','thumbnail' => '/photos/cima manegement.jpg','url' => 'https://www.bafstudies.com/level/cima-advanced-diploma-in-management-accounting-cima-adv-dip-ma'],
+                ['title' => 'CIMA Operational','thumbnail' => '/photos/cima operational.jpg','url' => 'https://www.bafstudies.com/level/cima-diploma-in-management-accounting-CIMA-Dip-MA'],
+                ['title' => 'CIMA Certificate','thumbnail' => '/photos/cima certificate.jpg','url' => 'https://www.bafstudies.com/level/cima-certificate-in-business-accounting-CIMA-cert-ba'],
+            ];
+		return view('pages.canvas.index',compact('latestPosts','levels'));
 	}
 
 	public function downloadbrosur(Request $request)

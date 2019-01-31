@@ -28,42 +28,28 @@
 							<h2><span>British Academy Of Finance</span></h2>
 							<span>Will walk you though for success</span>
 						</div>
-
-						<div class="col_one_third nobottommargin">
-							<div class="feature-box media-box">
-								<div class="fbox-media">
-									<img src="{{url('/')}}/assets/frontend/canvas/images/services/1.jpg" alt="Why choose Us?">
-								</div>
-								<div class="fbox-desc">
-									<h3>Why choose Us.<span class="subtitle">Because we are Reliable.</span></h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi rem, facilis nobis voluptatum est voluptatem accusamus molestiae eaque perspiciatis mollitia.</p>
-								</div>
+						<div class="col_one_third">
+							<div class="heading-block fancy-title nobottomborder title-bottom-border">
+								<h4>Why choose <span>Us</span>.</h4>
 							</div>
+							<p>Programmes that will equip you with to impact your objectives and develop personally. We take the time to explore your needs to ensure programmes meet your requirements.</p>
+						</div>
+						<div class="col_one_third">
+							<div class="heading-block fancy-title nobottomborder title-bottom-border">
+								<h4>Our <span>Mission</span>.</h4>
+							</div>
+
+							<p>The British Academy of Finance training is delivered in a practical and engaging format by industry experienced trainers who have actually done the job.</p>
+
 						</div>
 
-						<div class="col_one_third nobottommargin">
-							<div class="feature-box media-box">
-								<div class="fbox-media">
-									<img src="{{url('/')}}/assets/frontend/canvas/images/services/2.jpg" alt="Why choose Us?">
-								</div>
-								<div class="fbox-desc">
-									<h3>Our Mission.<span class="subtitle">To Redefine your Brand.</span></h3>
-									<p>Quos, non, esse eligendi ab accusantium voluptatem. Maxime eligendi beatae, atque tempora ullam. Vitae delectus quia, consequuntur rerum molestias quo.</p>
-								</div>
+						<div class="col_one_third col_last">
+							<div class="heading-block fancy-title nobottomborder title-bottom-border">
+								<h4>What we <span>Do</span>.</h4>
 							</div>
+							<p>As a CIMA Learning partner adds value by delivering very focused effort to work with individuals to mobilize their knowledge and skill levels to meet CIMA professional standards. The proven passed rates have shown in Indonesia dramatically.</p>
 						</div>
-
-						<div class="col_one_third nobottommargin col_last">
-							<div class="feature-box media-box">
-								<div class="fbox-media">
-									<img src="{{url('/')}}/assets/frontend/canvas/images/services/3.jpg" alt="Why choose Us?">
-								</div>
-								<div class="fbox-desc">
-									<h3>What we Do.<span class="subtitle">Make our Customers Happy.</span></h3>
-									<p>Porro repellat vero sapiente amet vitae quibusdam necessitatibus consectetur, labore totam. Accusamus perspiciatis asperiores labore esse ab accusantium ea modi ut.</p>
-								</div>
-							</div>
-						</div>
+						
 
 						<div class="clear"></div>
 
@@ -73,28 +59,23 @@
 
 						<div class="container clearfix">
 
-							<div class="col_one_fourth nobottommargin center" data-animate="bounceIn">
-								<i class="i-plain i-xlarge divcenter nobottommargin icon-code"></i>
-								<div class="counter counter-lined"><span data-from="100" data-to="846" data-refresh-interval="50" data-speed="2000"></span>K+</div>
-								<h5>Lines of Codes</h5>
+							<div class="col_one_third nobottommargin center" data-animate="bounceIn">
+								<i class="i-plain i-xlarge divcenter nobottommargin icon-user-graduate"></i>
+								<div class="counter counter-lined"><span data-from="100" data-to="211" data-refresh-interval="50" data-speed="2000"></span>+</div>
+								<h5>Students</h5>
 							</div>
 
-							<div class="col_one_fourth nobottommargin center" data-animate="bounceIn" data-delay="200">
-								<i class="i-plain i-xlarge divcenter nobottommargin icon-magic"></i>
-								<div class="counter counter-lined"><span data-from="3000" data-to="15360" data-refresh-interval="100" data-speed="2500"></span>+</div>
-								<h5>KBs of HTML Files</h5>
+							<div class="col_one_third nobottommargin center" data-animate="bounceIn" data-delay="200">
+								<i class="i-plain i-xlarge divcenter nobottommargin icon-handshake"></i>
+								<div class="counter counter-lined"><span data-from="1" data-to="35" data-refresh-interval="100" data-speed="2500"></span>+</div>
+								<h5>Partners</h5>
 							</div>
+							
 
-							<div class="col_one_fourth nobottommargin center" data-animate="bounceIn" data-delay="400">
-								<i class="i-plain i-xlarge divcenter nobottommargin icon-file-text"></i>
-								<div class="counter counter-lined"><span data-from="10" data-to="386" data-refresh-interval="25" data-speed="3500"></span>*</div>
-								<h5>No. of Templates</h5>
-							</div>
-
-							<div class="col_one_fourth nobottommargin center col_last" data-animate="bounceIn" data-delay="600">
-								<i class="i-plain i-xlarge divcenter nobottommargin icon-time"></i>
-								<div class="counter counter-lined"><span data-from="60" data-to="1200" data-refresh-interval="30" data-speed="2700"></span>+</div>
-								<h5>Hours of Coding</h5>
+							<div class="col_one_third nobottommargin center col_last" data-animate="bounceIn" data-delay="600">
+								<i class="i-plain i-xlarge divcenter nobottommargin icon-line2-book-open"></i>
+								<div class="counter counter-lined"><span data-from="20" data-to="120" data-refresh-interval="30" data-speed="2700"></span>+</div>
+								<h5>Modules</h5>
 							</div>
 
 						</div>
@@ -106,217 +87,27 @@
 				<section id="section-work" class="page-section topmargin-lg">
 
 					<div class="heading-block center">
-						<h2>Our Works</h2>
-						<span>Some of the Awesome Projects we've worked on.</span>
+						<h2>Our Courses</h2>						
 					</div>
 
 					<div class="container clearfix center">
-
-						<!-- Portfolio Items
-						============================================= -->
-						<div id="portfolio" class="portfolio grid-container portfolio-nomargin clearfix">
-
-							<article class="portfolio-item pf-media pf-icons">
-								<div class="portfolio-image">
-									<a href="portfolio-single.html">
-										<img src="{{url('/')}}/assets/frontend/canvas/images/portfolio/4/1.jpg" alt="Open Imagination">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="{{url('/')}}/assets/frontend/canvas/images/portfolio/full/1.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="portfolio-single.html">Open Imagination</a></h3>
-									<span><a href="#">Media</a>, <a href="#">Icons</a></span>
-								</div>
-							</article>
-
-							<article class="portfolio-item pf-illustrations">
-								<div class="portfolio-image">
-									<a href="portfolio-single.html">
-										<img src="{{url('/')}}/assets/frontend/canvas/images/portfolio/4/2.jpg" alt="Locked Steel Gate">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="{{url('/')}}/assets/frontend/canvas/images/portfolio/full/2.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="portfolio-single.html">Locked Steel Gate</a></h3>
-									<span><a href="#">Illustrations</a></span>
-								</div>
-							</article>
-
-							<article class="portfolio-item pf-graphics pf-uielements">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="{{url('/')}}/assets/frontend/canvas/images/portfolio/4/3.jpg" alt="Mac Sunglasses">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="http://vimeo.com/89396394" class="left-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
-										<a href="portfolio-single-video.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="portfolio-single-video.html">Mac Sunglasses</a></h3>
-									<span><a href="#">Graphics</a>, <a href="#">UI Elements</a></span>
-								</div>
-							</article>
-
-							<article class="portfolio-item pf-icons pf-illustrations">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="{{url('/')}}/assets/frontend/canvas/images/portfolio/4/4.jpg" alt="Mac Sunglasses">
-									</a>
-									<div class="portfolio-overlay" data-lightbox="gallery">
-										<a href="{{url('/')}}/assets/frontend/canvas/images/portfolio/full/4.jpg" class="left-icon" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
-										<a href="{{url('/')}}/assets/frontend/canvas/images/portfolio/full/4-1.jpg" class="hidden" data-lightbox="gallery-item"></a>
-										<a href="portfolio-single-gallery.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="portfolio-single-gallery.html">Morning Dew</a></h3>
-									<span><a href="#">Icons</a>, <a href="#">Illustrations</a></span>
-								</div>
-							</article>
-
-							<article class="portfolio-item pf-uielements pf-media">
-								<div class="portfolio-image">
-									<a href="portfolio-single.html">
-										<img src="{{url('/')}}/assets/frontend/canvas/images/portfolio/4/5.jpg" alt="Console Activity">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="{{url('/')}}/assets/frontend/canvas/images/portfolio/full/5.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="portfolio-single.html">Console Activity</a></h3>
-									<span><a href="#">UI Elements</a>, <a href="#">Media</a></span>
-								</div>
-							</article>
-
-							<article class="portfolio-item pf-graphics pf-illustrations">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="{{url('/')}}/assets/frontend/canvas/images/portfolio/4/6.jpg" alt="Mac Sunglasses">
-									</a>
-									<div class="portfolio-overlay" data-lightbox="gallery">
-										<a href="{{url('/')}}/assets/frontend/canvas/images/portfolio/full/6.jpg" class="left-icon" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
-										<a href="{{url('/')}}/assets/frontend/canvas/images/portfolio/full/6-1.jpg" class="hidden" data-lightbox="gallery-item"></a>
-										<a href="{{url('/')}}/assets/frontend/canvas/images/portfolio/full/6-2.jpg" class="hidden" data-lightbox="gallery-item"></a>
-										<a href="{{url('/')}}/assets/frontend/canvas/images/portfolio/full/6-3.jpg" class="hidden" data-lightbox="gallery-item"></a>
-										<a href="portfolio-single-gallery.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="portfolio-single-gallery.html">Shake It!</a></h3>
-									<span><a href="#">Illustrations</a>, <a href="#">Graphics</a></span>
-								</div>
-							</article>
-
-							<article class="portfolio-item pf-uielements pf-icons">
-								<div class="portfolio-image">
-									<a href="portfolio-single-video.html">
-										<img src="{{url('/')}}/assets/frontend/canvas/images/portfolio/4/7.jpg" alt="Backpack Contents">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="http://www.youtube.com/watch?v=kuceVNBTJio" class="left-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
-										<a href="portfolio-single-video.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="portfolio-single-video.html">Backpack Contents</a></h3>
-									<span><a href="#">UI Elements</a>, <a href="#">Icons</a></span>
-								</div>
-							</article>
-
-							<article class="portfolio-item pf-graphics">
-								<div class="portfolio-image">
-									<a href="portfolio-single.html">
-										<img src="{{url('/')}}/assets/frontend/canvas/images/portfolio/4/8.jpg" alt="Sunset Bulb Glow">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="{{url('/')}}/assets/frontend/canvas/images/portfolio/full/8.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="portfolio-single.html">Sunset Bulb Glow</a></h3>
-									<span><a href="#">Graphics</a></span>
-								</div>
-							</article>
-
-							<article class="portfolio-item pf-illustrations pf-icons">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="{{url('/')}}/assets/frontend/canvas/images/portfolio/4/9.jpg" alt="Mac Sunglasses">
-									</a>
-									<div class="portfolio-overlay" data-lightbox="gallery">
-										<a href="{{url('/')}}/assets/frontend/canvas/images/portfolio/full/9.jpg" class="left-icon" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
-										<a href="{{url('/')}}/assets/frontend/canvas/images/portfolio/full/9-1.jpg" class="hidden" data-lightbox="gallery-item"></a>
-										<a href="{{url('/')}}/assets/frontend/canvas/images/portfolio/full/9-2.jpg" class="hidden" data-lightbox="gallery-item"></a>
-										<a href="portfolio-single-gallery.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="portfolio-single.html">Bridge Side</a></h3>
-									<span><a href="#">Illustrations</a>, <a href="#">Icons</a></span>
-								</div>
-							</article>
-
-							<article class="portfolio-item pf-graphics pf-media pf-uielements">
-								<div class="portfolio-image">
-									<a href="portfolio-single-video.html">
-										<img src="{{url('/')}}/assets/frontend/canvas/images/portfolio/4/10.jpg" alt="Study Table">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="http://vimeo.com/91973305" class="left-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
-										<a href="portfolio-single-video.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="portfolio-single-video.html">Study Table</a></h3>
-									<span><a href="#">Graphics</a>, <a href="#">Media</a></span>
-								</div>
-							</article>
-
-							<article class="portfolio-item pf-media pf-icons">
-								<div class="portfolio-image">
-									<a href="portfolio-single.html">
-										<img src="{{url('/')}}/assets/frontend/canvas/images/portfolio/4/11.jpg" alt="Workspace Stuff">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="{{url('/')}}/assets/frontend/canvas/images/portfolio/full/11.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="portfolio-single.html">Workspace Stuff</a></h3>
-									<span><a href="#">Media</a>, <a href="#">Icons</a></span>
-								</div>
-							</article>
-
-							<article class="portfolio-item pf-illustrations pf-graphics">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="{{url('/')}}/assets/frontend/canvas/images/portfolio/4/12.jpg" alt="Mac Sunglasses">
-									</a>
-									<div class="portfolio-overlay" data-lightbox="gallery">
-										<a href="{{url('/')}}/assets/frontend/canvas/images/portfolio/full/12.jpg" class="left-icon" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
-										<a href="{{url('/')}}/assets/frontend/canvas/images/portfolio/full/12-1.jpg" class="hidden" data-lightbox="gallery-item"></a>
-										<a href="portfolio-single-gallery.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="portfolio-single-gallery.html">Fixed Aperture</a></h3>
-									<span><a href="#">Illustrations</a>, <a href="#">Graphics</a></span>
-								</div>
-							</article>
-
-						</div><!-- #portfolio end -->
-
+							<div id="portfolio" class="portfolio grid-container portfolio-nomargin clearfix">
+								@foreach($levels as $level)							
+									<article class="portfolio-item pf-media pf-icons">
+										<div class="portfolio-image">
+											<a href="{{$level['url']}}">
+												<img src="{{$level['thumbnail']}}" alt="Open Imagination">
+											</a>
+											<div class="portfolio-overlay">												
+												<a href="{{$level['url']}}" class="center-icon"><i class="icon-search"></i></a>
+											</div>
+										</div>
+										<div class="portfolio-desc">
+											<h3><a href="{{$level['url']}}">{{$level['title']}}</a></h3>
+										</div>
+									</article>								
+								@endforeach
+							</div>								
 					</div>
 
 				</section>
@@ -335,23 +126,13 @@
 
 								<div class="team team-list clearfix">
 									<div class="team-image">
-										<img src="{{url('/')}}/assets/frontend/canvas/images/team/3.jpg" alt="John Doe">
+										<img src="/photos/lalith-de-silva-th-british-academy-of-finance.jpg" alt="John Doe">
 									</div>
 									<div class="team-desc">
-										<div class="team-title"><h4>John Doe</h4><span>CEO</span></div>
-										<div class="team-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat assumenda similique unde mollitia.</div>
-										<a href="#" class="social-icon si-rounded si-small si-facebook">
-											<i class="icon-facebook"></i>
-											<i class="icon-facebook"></i>
-										</a>
-										<a href="#" class="social-icon si-rounded si-small si-twitter">
-											<i class="icon-twitter"></i>
-											<i class="icon-twitter"></i>
-										</a>
-										<a href="#" class="social-icon si-rounded si-small si-gplus">
-											<i class="icon-gplus"></i>
-											<i class="icon-gplus"></i>
-										</a>
+										<div class="team-title"><h4>Lalith De Silva</h4><span>Programme Director</span></div>
+										<div class="team-content"><p>FCMA, CGMA, FCPA (Aust.), MBA (Aust.) CIMA Course Leader (CIMA accredited Global Learning Partner)Founder of British Academy of Finance - Jakarta, Indonesia.</p>
+										<p>A fully qualified Financial and Management professional with proven track record of over 24 years in industries from Oil & Gas, Trading, Logistics, Manufacturing and F&B. Worked in both multinational environments and single country-based Organizations</p>
+										</div>										
 									</div>
 								</div>
 
@@ -361,79 +142,20 @@
 
 								<div class="team team-list clearfix">
 									<div class="team-image">
-										<img src="{{url('/')}}/assets/frontend/canvas/images/team/4.jpg" alt="Nix Maxwell">
+										<img src="/photos/august-the-british-academy-of-finance.jpg" alt="Nix Maxwell">
 									</div>
 									<div class="team-desc">
-										<div class="team-title"><h4>Nix Maxwell</h4><span>Co-Founder</span></div>
-										<div class="team-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat assumenda similique unde mollitia.</div>
-										<a href="#" class="social-icon si-rounded si-small si-forrst">
-											<i class="icon-forrst"></i>
-											<i class="icon-forrst"></i>
-										</a>
-										<a href="#" class="social-icon si-rounded si-small si-skype">
-											<i class="icon-skype"></i>
-											<i class="icon-skype"></i>
-										</a>
-										<a href="#" class="social-icon si-rounded si-small si-flickr">
-											<i class="icon-flickr"></i>
-											<i class="icon-flickr"></i>
-										</a>
+										<div class="team-title"><h4>Mr. Augustus Perera</h4></div>
+										<div class="team-content">
+											<p>A multi discipline professionally qualified individual with 15 years of corporate management experience</p>
+											<p>He have worked with best in class consultants McKinsey USA, SIEMENS IN, KPMG CA, LeanCor USA and have Experience with Global Companies like GSK ( Life Science and Chemicals), M&S, G-Star, George ( Fashion & Apparel ), Uniliver ( FMCG ), Etisalat, Dialog ( Telecommunication ), Camso, Solideal ( Industrial goods ), Litro ( LPG Gas & Energy ) , Maldives Port / SLPA (Project Cargo ) are highlights among many other.</p>
+										</div>										
 									</div>
 								</div>
 
 							</div>
 
-							<div class="w-100"></div>
-
-							<div class="col-lg-6 bottommargin">
-
-								<div class="team team-list clearfix">
-									<div class="team-image">
-										<img src="{{url('/')}}/assets/frontend/canvas/images/team/2.jpg" alt="Josh Clark">
-									</div>
-									<div class="team-desc">
-										<div class="team-title"><h4>Josh Clark</h4><span>Developer</span></div>
-										<div class="team-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat assumenda similique unde mollitia.</div>
-										<a href="#" class="social-icon si-rounded si-small si-dribbble">
-											<i class="icon-dribbble"></i>
-											<i class="icon-dribbble"></i>
-										</a>
-										<a href="#" class="social-icon si-rounded si-small si-twitter">
-											<i class="icon-twitter"></i>
-											<i class="icon-twitter"></i>
-										</a>
-										<a href="#" class="social-icon si-rounded si-small si-github">
-											<i class="icon-github"></i>
-											<i class="icon-github"></i>
-										</a>
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-lg-6 bottommargin">
-
-								<div class="team team-list clearfix">
-									<div class="team-image">
-										<img src="{{url('/')}}/assets/frontend/canvas/images/team/8.jpg" alt="Mary Jane">
-									</div>
-									<div class="team-desc">
-										<div class="team-title"><h4>Mary Jane</h4><span>Support</span></div>
-										<div class="team-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat assumenda similique unde mollitia.</div>
-										<a href="#" class="social-icon si-rounded si-small si-facebook">
-											<i class="icon-facebook"></i>
-											<i class="icon-facebook"></i>
-										</a>
-										<a href="#" class="social-icon si-rounded si-small si-linkedin">
-											<i class="icon-linkedin"></i>
-											<i class="icon-linkedin"></i>
-										</a>
-										<a href="#" class="social-icon si-rounded si-small si-twitter">
-											<i class="icon-twitter"></i>
-											<i class="icon-twitter"></i>
-										</a>
-									</div>
-								</div>
+							
 
 							</div>
 						</div>

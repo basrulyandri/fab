@@ -50,7 +50,7 @@
 					============================================= -->
 					<div id="logo">
 						<a href="index.html" class="standard-logo" data-dark-logo="{{url('/')}}/assets/frontend/canvas/images/logo-dark.png"><img src="{{url('/').getOption('theme_option_logo')}}" alt="Canvas Logo"></a>
-						<a href="index.html" class="retina-logo" data-dark-logo="{{url('/')}}/assets/frontend/canvas/images/logo-dark@2x.png"><img src="{{url('/')}}/assets/frontend/canvas/images/logo@2x.png" alt="Canvas Logo"></a>
+						<a href="index.html" class="retina-logo" data-dark-logo="{{url('/')}}/assets/frontend/canvas/images/logo-dark@2x.png"><img src="http://127.0.0.1:8000/photos/2x-logo_BAF_larger.png" alt="Canvas Logo"></a>
 					</div><!-- #logo end -->
 
 					<!-- Primary Navigation
@@ -60,7 +60,7 @@
 						<ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1500">
 							<li><a href="{{route('page.index')}}"><div>Home</div></a></li>
 							<li><a href="#" data-href="#section-about"><div>About</div></a></li>
-							<li><a href="#" data-href="#section-work"><div>Work</div></a></li>
+							<li><a href="#" data-href="#section-work"><div>Courses</div></a></li>
 							<li><a href="#" data-href="#section-team"><div>Team</div></a></li>
 							<li><a href="#" data-href="#section-services"><div>Services</div></a></li>
 							<li><a href="#" data-href="#section-pricing"><div>Pricing</div></a></li>
