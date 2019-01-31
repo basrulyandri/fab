@@ -24,7 +24,7 @@ class PagesController extends Controller
 			\Cookie::queue('psr', $request->psr, time() + (86400 * 30));		
 		}
 		$latestPosts = Post::whereStatus('published')->whereType('post')->orderBy('published_at','desc')->take(10)->get();		
-		return view('pages.index2',compact('latestPosts'));
+		return view('pages.canvas.index',compact('latestPosts'));
 	}
 
 	public function downloadbrosur(Request $request)
@@ -64,7 +64,7 @@ class PagesController extends Controller
 		if(!$post){
 			return view('errors.404');
 		}
-		return view('pages.single',compact(['post']));
+		return view('pages.canvas.single',compact(['post']));
 	}
 
 	public function category($slug)
