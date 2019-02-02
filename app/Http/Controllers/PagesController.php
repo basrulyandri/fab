@@ -30,7 +30,9 @@ class PagesController extends Controller
                 ['title' => 'CIMA Operational','thumbnail' => '/photos/cima operational.jpg','url' => 'https://www.bafstudies.com/level/cima-diploma-in-management-accounting-CIMA-Dip-MA'],
                 ['title' => 'CIMA Certificate','thumbnail' => '/photos/cima certificate.jpg','url' => 'https://www.bafstudies.com/level/cima-certificate-in-business-accounting-CIMA-cert-ba'],
             ];
-		return view('pages.canvas.index',compact('latestPosts','levels'));
+            $testimonials = Testimonial::inRandomOrder()->take(5)->get();
+            //dd($testimonials);
+		return view('pages.canvas.index',compact('latestPosts','levels','testimonials'));
 	}
 
 	public function downloadbrosur(Request $request)

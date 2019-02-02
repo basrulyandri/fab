@@ -10,8 +10,7 @@
 	{{getOption('web_description')}}
 @stop
 @section('content')
-<section id="content">
-
+		<section id="content">
 			<div class="content-wrap">
 				<div class="promo promo-light promo-full bottommargin-lg header-stick notopborder">
 					<div class="container clearfix">
@@ -55,7 +54,7 @@
 
 					</div>
 
-					<div class="section dark parallax nobottommargin" style="padding: 80px 0;background-image: url('{{url('/')}}/assets/frontend/canvas/images/parallax/1.jpg');" data-bottom-top="background-position:0px 100px;" data-top-bottom="background-position:0px -300px;">
+					<div class="section dark parallax nobottommargin" style="padding: 80px 0;background-image: url('{{url('/')}}/assets/frontend/canvas/images/baf/1.jpg');" data-bottom-top="background-position:0px 100px;" data-top-bottom="background-position:0px -300px;">
 
 						<div class="container clearfix">
 
@@ -152,59 +151,19 @@
 										</div>										
 									</div>
 								</div>
-
-							</div>
-
-							
-
-							</div>
+							</div>													
 						</div>
-
-						<div class="clear"></div>
-
-						<div class="fancy-title title-border title-center topmargin-sm">
-							<h4>Skills we are Perfect in</h4>
-						</div>
-
-						<div class="col_one_fourth nobottommargin center">
-							<div class="rounded-skill" data-color="#D01C1C" data-size="150" data-percent="90" data-width="2" data-animate="3000">
-								<div class="counter counter-inherit"><span data-from="1" data-to="90" data-refresh-interval="50" data-speed="3000"></span>%</div>
-							</div>
-							<h5>HTML5</h5>
-						</div>
-
-						<div class="col_one_fourth nobottommargin center">
-							<div class="rounded-skill" data-color="#1770A4" data-size="150" data-percent="75" data-width="2" data-animate="3000">
-								<div class="counter counter-inherit"><span data-from="1" data-to="75" data-refresh-interval="50" data-speed="3000"></span>%</div>
-							</div>
-							<h5>CSS3</h5>
-						</div>
-
-						<div class="col_one_fourth nobottommargin center">
-							<div class="rounded-skill" data-color="#6A89AA" data-size="150" data-percent="85" data-width="2" data-animate="3000">
-								<div class="counter counter-inherit"><span data-from="1" data-to="85" data-refresh-interval="50" data-speed="3000"></span>%</div>
-							</div>
-							<h5>PHP</h5>
-						</div>
-
-						<div class="col_one_fourth nobottommargin center col_last">
-							<div class="rounded-skill" data-color="#248673" data-size="150" data-percent="80" data-width="2" data-animate="3000">
-								<div class="counter counter-inherit"><span data-from="1" data-to="80" data-refresh-interval="50" data-speed="3000"></span>%</div>
-							</div>
-							<h5>jQuery</h5>
-						</div>
-
 					</div>
 
-					<div class="section parallax" style="background-image: url('{{url('/')}}/assets/frontend/canvas/images/parallax/3.jpg'); padding: 100px 0;" data-bottom-top="background-position:0px 100px;" data-top-bottom="background-position:0px -100px;">
+					<div class="section parallax" style="background-image: url('{{url('/')}}/assets/frontend/canvas/images/baf/parallax-3.jpg'); padding: 100px 0;" data-bottom-top="background-position:0px 100px;" data-top-bottom="background-position:0px -100px;">
 						<div class="heading-block center nobottomborder nobottommargin">
-							<h2>"Everything is designed, but some things are designed well."</h2>
+							<h2>It is a walk-though journey with us to acquire a globally recognized management accounting qualification.</h2>
 						</div>
 					</div>
 
 				</section>
 
-				<section id="section-services" class="page-section topmargin-lg">
+				<!-- <section id="section-services" class="page-section topmargin-lg">
 
 					<div class="heading-block center bottommargin-lg">
 						<h2>Services</h2>
@@ -313,9 +272,9 @@
 
 					<div class="divider divider-short divider-center topmargin-lg"><i class="icon-star3"></i></div>
 
-				</section>
+				</section> -->
 
-				<section id="section-pricing" class="page-section topmargin-lg">
+				<!-- <section id="section-pricing" class="page-section topmargin-lg">
 
 					<div class="heading-block center">
 						<h2>Pricing</h2>
@@ -435,9 +394,9 @@
 
 					</div>
 
-				</section>
+				</section> -->
 
-				<section id="section-testimonials" class="page-section section parallax dark" style="background-image: url('{{url('/')}}/assets/frontend/canvas/images/about/me-parallax.jpg'); padding: 200px 0;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
+				<section id="section-testimonials" class="page-section section parallax dark" style="background-image: url('{{url('/')}}/assets/frontend/canvas/images/baf/me-parallax.jpg'); padding: 200px 0;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
 
 					<div class="container clearfix">
 
@@ -446,40 +405,24 @@
 						<div class="col_half nobottommargin col_last">
 
 							<div class="heading-block center">
-								<h4>What Clients say?</h4>
-								<span>Some of our Clients love us &amp; so we do!</span>
+								<h4>What Students say ?</h4>
+								<span>Some of our Students love us &amp; so we do!</span>
 							</div>
 
 							<div class="fslider testimonial testimonial-full nobgcolor noborder noshadow nopadding" data-arrows="false">
 								<div class="flexslider">
 									<div class="slider-wrap">
+										@foreach($testimonials as $testi)
 										<div class="slide">
 											<div class="testi-content">
-												<p>Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?</p>
+												{!!$testi->body!!}
 												<div class="testi-meta">
-													Steve Jobs
-													<span>Apple Inc.</span>
+													{{$testi->name}}
+													<span>{{$testi->position_title}}</span>
 												</div>
 											</div>
 										</div>
-										<div class="slide">
-											<div class="testi-content">
-												<p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias.</p>
-												<div class="testi-meta">
-													Collis Ta'eed
-													<span>Envato Inc.</span>
-												</div>
-											</div>
-										</div>
-										<div class="slide">
-											<div class="testi-content">
-												<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
-												<div class="testi-meta">
-													John Doe
-													<span>XYZ Inc.</span>
-												</div>
-											</div>
-										</div>
+										@endforeach
 									</div>
 								</div>
 							</div>
@@ -532,21 +475,10 @@
 
 								<div class="clear"></div>
 
-								<div class="col_two_third">
+								<div class="col_full">
 									<label for="template-contactform-subject">Subject <small>*</small></label>
 									<input type="text" id="template-contactform-subject" name="template-contactform-subject" value="" class="required sm-form-control" />
-								</div>
-
-								<div class="col_one_third col_last">
-									<label for="template-contactform-service">Services</label>
-									<select id="template-contactform-service" name="template-contactform-service" class="sm-form-control">
-										<option value="">-- Select One --</option>
-										<option value="Wordpress">Wordpress</option>
-										<option value="PHP / MySQL">PHP / MySQL</option>
-										<option value="HTML5 / CSS3">HTML5 / CSS3</option>
-										<option value="Graphic Design">Graphic Design</option>
-									</select>
-								</div>
+								</div>							
 
 								<div class="clear"></div>
 
@@ -583,41 +515,32 @@
 						============================================= -->
 						<div class="col_full nobottommargin clearfix">
 
-							<div class="col_one_fourth">
+							<div class="col_one_third">
 								<div class="feature-box fbox-center fbox-bg fbox-plain">
 									<div class="fbox-icon">
 										<a href="#"><i class="icon-map-marker2"></i></a>
 									</div>
-									<h3>Our Headquarters<span class="subtitle">Melbourne, Australia</span></h3>
+									<h3>Address<span class="subtitle">Finance Tower 2, Lantai 33 Jl. Jend. Sudirman, Jakarta Selatan </span></h3>
 								</div>
 							</div>
 
-							<div class="col_one_fourth">
+							<div class="col_one_third">
 								<div class="feature-box fbox-center fbox-bg fbox-plain">
 									<div class="fbox-icon">
 										<a href="#"><i class="icon-phone3"></i></a>
 									</div>
-									<h3>Speak to Us<span class="subtitle">(123) 456 7890</span></h3>
+									<h3>Call Us<span class="subtitle">{{getOption('theme_option_hotline')}}</span></h3>
 								</div>
 							</div>
 
-							<div class="col_one_fourth">
+							<div class="col_one_third col_last">
 								<div class="feature-box fbox-center fbox-bg fbox-plain">
 									<div class="fbox-icon">
-										<a href="#"><i class="icon-skype2"></i></a>
+										<a href="#"><i class="icon-email"></i></a>
 									</div>
-									<h3>Make a Video Call<span class="subtitle">CanvasOnSkype</span></h3>
+									<h3>Email<span class="subtitle">{{getOption('theme_option_email')}}</span></h3>
 								</div>
-							</div>
-
-							<div class="col_one_fourth col_last">
-								<div class="feature-box fbox-center fbox-bg fbox-plain">
-									<div class="fbox-icon">
-										<a href="#"><i class="icon-twitter2"></i></a>
-									</div>
-									<h3>Follow on Twitter<span class="subtitle">2.3M Followers</span></h3>
-								</div>
-							</div>
+							</div>						
 
 						</div><!-- Contact Info End -->
 
