@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="{{url('/')}}/assets/frontend/canvas/css/magnific-popup.css" type="text/css" />
 
 	<link rel="stylesheet" href="{{url('/')}}/assets/frontend/canvas/css/responsive.css" type="text/css" />
+	<link rel="stylesheet" href="{{url('assets/backend')}}/css/plugins/toastr/toastr.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	@yield('og')
 
@@ -315,8 +316,9 @@
 	<!-- Footer Scripts
 	============================================= -->
 	<script src="{{url('/')}}/assets/frontend/canvas/js/functions.js"></script>
+	<script type="text/javascript" src="{{url('assets/backend')}}/js/plugins/toastr/toastr.min.js"></script>
 
-	<script src="https://maps.google.com/maps/api/js?key=AIzaSyCb-tr8ZOXJOFS7N8BqLxLgDo6WqW9FqEM"></script>
+	<!-- <script src="https://maps.google.com/maps/api/js?key=AIzaSyCb-tr8ZOXJOFS7N8BqLxLgDo6WqW9FqEM"></script> -->
 	<script src="{{url('/')}}/assets/frontend/canvas/js/jquery.gmap.js"></script>
 
 	<script>
@@ -349,6 +351,7 @@
 
 		});
 	</script>
+	@yield('footer')
 
 </body>
 </html>

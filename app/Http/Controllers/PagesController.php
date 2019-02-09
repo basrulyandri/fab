@@ -24,12 +24,14 @@ class PagesController extends Controller
 			\Cookie::queue('psr', $request->psr, time() + (86400 * 30));		
 		}
 		$latestPosts = Post::whereStatus('published')->whereType('post')->orderBy('published_at','desc')->take(10)->get();	
-        $levels = [
-                ['title' => 'CIMA Strategic','thumbnail' => '/photos/CIMA STRATEGIC.jpg','url' => 'https://www.bafstudies.com/level/associate-chartered-management-accountant-acma-and-chartered-global-management-accountant-cgma'],
-                ['title' => 'CIMA Management','thumbnail' => '/photos/cima manegement.jpg','url' => 'https://www.bafstudies.com/level/cima-advanced-diploma-in-management-accounting-cima-adv-dip-ma'],
-                ['title' => 'CIMA Operational','thumbnail' => '/photos/cima operational.jpg','url' => 'https://www.bafstudies.com/level/cima-diploma-in-management-accounting-CIMA-Dip-MA'],
-                ['title' => 'CIMA Certificate','thumbnail' => '/photos/cima certificate.jpg','url' => 'https://www.bafstudies.com/level/cima-certificate-in-business-accounting-CIMA-cert-ba'],
-            ];
+        $levels = Level::whereIn('id',[8,7,6,5])->orderBy('id','desc')->get();
+        //dd($levels);
+        // $levels = [
+        //         ['title' => 'CIMA Strategic','thumbnail' => '/photos/CIMA STRATEGIC.jpg','url' => 'https://www.bafstudies.com/level/associate-chartered-management-accountant-acma-and-chartered-global-management-accountant-cgma'],
+        //         ['title' => 'CIMA Management','thumbnail' => '/photos/cima manegement.jpg','url' => 'https://www.bafstudies.com/level/cima-advanced-diploma-in-management-accounting-cima-adv-dip-ma'],
+        //         ['title' => 'CIMA Operational','thumbnail' => '/photos/cima operational.jpg','url' => 'https://www.bafstudies.com/level/cima-diploma-in-management-accounting-CIMA-Dip-MA'],
+        //         ['title' => 'CIMA Certificate','thumbnail' => '/photos/cima certificate.jpg','url' => 'https://www.bafstudies.com/level/cima-certificate-in-business-accounting-CIMA-cert-ba'],
+        //     ];
             $testimonials = Testimonial::inRandomOrder()->take(5)->get();
             //dd($testimonials);
 		return view('pages.canvas.index',compact('latestPosts','levels','testimonials'));
@@ -90,14 +92,14 @@ class PagesController extends Controller
     public function singlelevel($slug)
     {
     	$level = Level::whereSlug($slug)->first();    	
-    	return view('pages.singlelevel',compact(['level']));
+    	return view('pages.canvas.singlelevel',compact(['level']));
     }
 
     public function singlecourse($slug)
     {
     	$course = Course::whereSlug($slug)->first();
     	$testimonials = Testimonial::inRandomOrder()->take(2)->get();
-    	return view('pages.singlecourse',compact(['course','testimonials']));
+    	return view('pages.canvas.singlecourse',compact(['course','testimonials']));
     }
 
     public function testimonials()
@@ -168,6 +170,6 @@ class PagesController extends Controller
     public function courses()
     {
         $levels = Level::all();        
-        return view('pages.courses',compact(['levels']));
+        return view('pages.canvas.courses',compact(['levels']));
     }
 }

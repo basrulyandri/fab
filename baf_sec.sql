@@ -2,10 +2,10 @@
 -- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Sep 28, 2018 at 12:56 PM
--- Server version: 5.5.61
--- PHP Version: 5.6.34
+-- Host: 127.0.0.1
+-- Generation Time: Feb 09, 2019 at 08:40 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.1.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `baf_sec`
+-- Database: `baf`
 --
 
 -- --------------------------------------------------------
@@ -7268,6 +7268,7 @@ INSERT INTO `items` (`id`, `course_id`, `order_id`, `qty`, `price`, `payment_sch
 CREATE TABLE `levels` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
+  `alias` varchar(100) NOT NULL,
   `description` text,
   `slug` varchar(255) NOT NULL,
   `excerpt` text,
@@ -7281,13 +7282,13 @@ CREATE TABLE `levels` (
 -- Dumping data for table `levels`
 --
 
-INSERT INTO `levels` (`id`, `title`, `description`, `slug`, `excerpt`, `course_order`, `thumbnail`, `created_at`, `updated_at`) VALUES
-(5, 'CIMA Certificate in Business Accounting (CIMA Cert BA)', '<h1>Certificate Level</h1>\r\n<p>The CIMA Certificate in Business Accounting (Cert BA) will help students with little or no accounting experience unleash their true business potential. Teaching core business and finance skills beyond simple financial accounting, Cert BA syllabus is the perfect stepping stone towards a career in business and finance.</p>\r\n<p>The Cert BA is a qualification in it\'s own right&nbsp;and also forms a formal entry route into the CIMA Professional Qualification. Once&nbsp;students successfully complete both qualifications and qualify for membership, they will be awarded the Chartered Global Management Accountant (CGMA) designation.</p>\r\n<p>Assessments</p>\r\n<p><strong>Format:</strong>&nbsp;computer based<br /> <strong>Availability:</strong>&nbsp;on demand&nbsp;at any of the 5,500 Pearson VUE centres around the world<br /> <strong>Length:</strong>&nbsp;2 hours<br /> <strong>Questions:</strong>&nbsp;BA1, BA2 and BA3 each contain 60 objective test questions, while BA4 contains 85 objective test questions.<br /> <strong>Marking:</strong>&nbsp;computer marked<br /> <strong>Results:</strong>&nbsp;provisional result available immediately&nbsp;followed by confirmation no more than 48 hours later</p>\r\n<p><strong>Further information<br /> </strong>Objective Tests are comprised of a range of items including short multiple-choice questions, number entry questions, drag and drop questions and other formats. In BA2 and BA3 short scenarios may be given to which one or more objective test questions relate</p>', 'cima-certificate-in-business-accounting-CIMA-cert-ba', NULL, 0, '/photos/cima certificate.jpg', '2018-09-06 15:15:13', '2018-09-22 01:03:50'),
-(6, 'CIMA Diploma in Management Accounting (CIMA Dip MA)', '<h1>Operational Level</h1>\r\n<p>This is first level of the Professional Qualification and consists of three computer based Objective Tests and one Case Study exam.</p>\r\n<p>The Operational level covers the implementation of strategy, as well as reporting on the implementation of strategy. Its focus is short-term.</p>\r\n<p><strong>Students will learn how to:</strong></p>\r\n<ul>\r\n<li>Prepare financial statements</li>\r\n<li>Provide management accounting information</li>\r\n<li>Use appropriate tools for decision making through a broad understanding of business</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>After successfully completing this level, students will receive the CIMA Diploma in Management Accounting (CIMA Dip MA).</p>\r\n<p>Assessment</p>\r\n<p>Examining the syllabus</p>\r\n<p>CIMA is the first global accountancy body to pioneer a combination of computerised assessments.</p>\r\n<p>Each subject in the syllabus is assessed by an Objective Test (nine in total) and also by an integrated Case Study exam at the end of each level (three in total).&nbsp;Once all three Objective Tests and the Case Study exam have been successfully passed, students can progress on to the next level of the qualification.</p>\r\n<p>Objective Tests</p>\r\n<p><strong>Format:</strong>&nbsp;computer based<br /> <strong>Availability:</strong>&nbsp;on demand&nbsp;at any of the 5,000 Pearson VUE centres around the world<br /> <strong>Length:</strong>&nbsp;90 minutes<br /> <strong>Marking:</strong>&nbsp;computer marked<br /> <strong>Results:</strong>&nbsp;provisional result available immediately&nbsp;followed by confirmation no more than 48 hours later</p>\r\n<p><strong>Further information<br /> </strong>Objective Tests are comprised of a range of items including short multiple choice questions, number entry questions, drag and drop questions and other formats. They test all component learning outcomes across the whole subject.</p>\r\n<p>Case Study exams</p>\r\n<p><strong>Format:</strong>&nbsp;computer based<br /> <strong>Availability:</strong>&nbsp;four windows each year (Feb, May, Aug, Nov) at&nbsp;any of the 5,000 Pearson VUE centres around the world<br /> <strong>Length:&nbsp;</strong>3 hours<br /> <strong>Marking:</strong>&nbsp;human marked<br /> <strong>Results:</strong>&nbsp;available 5 weeks after the close of the exam window</p>\r\n<p><strong>Further information<br /> </strong>The Case Study exams are used to test a variety of skills including research and analysis, how to present information, persuasion and communication skills. The move to more Case Study exams has been deliberate to test a wider range of skills and integrated learning across the syllabus.</p>\r\n<p>Case Study exams reflect a real life business scenario, comprising a series of time bound tasks set for students to complete based on pre-seen material. Pre-seen material released to students: 6 weeks prior to the exam window.</p>\r\n<h2>The technical content at the Operational level</h2>\r\n<p>The Operational level covers the implementation of strategy, as well as reporting on the implementation of strategy. Its focus is on the short-term.</p>', 'cima-diploma-in-management-accounting-CIMA-Dip-MA', NULL, 1, '/photos/cima operational.jpg', '2018-09-06 15:15:45', '2018-09-22 01:02:59'),
-(7, 'CIMA Advanced Diploma in Management Accounting (CIMA Adv Dip MA)', '<h1>Management level</h1>\r\n<p>This is the second level of the Professional Qualification and consists of three computer based Objective Tests and one Case Study.</p>\r\n<p>The Management level translates the strategy decided at higher levels, and communicates it to lower levels for implementation. It monitors and reports on the implementation of strategy, and ensures corrective action is taken when required. It has a medium-term focus.</p>\r\n<p><strong>Students will learn how to:</strong></p>\r\n<ul>\r\n<li>Prepare group accounts</li>\r\n<li>Make pricing and product decisions based on a robust analysis</li>\r\n<li>Manage projects and relationships</li>\r\n</ul>\r\n<p>On completion, you receive the CIMA Advanced Diploma in Management Accounting (CIMA Adv Dip MA).</p>\r\n<p>The technical content at the Management level</p>\r\n<p>The Management level translates the strategy decided at higher levels, and communicates it to lower levels for implementation. It monitors and reports on the implementation of strategy, and ensures corrective action is taken when required. It has a medium-term focus.</p>', 'cima-advanced-diploma-in-management-accounting-cima-adv-dip-ma', NULL, 2, '/photos/cima manegement.jpg', '2018-09-06 15:16:23', '2018-09-22 01:01:41'),
-(8, 'Associate Chartered Management Accountant (ACMA) and Chartered Global Management Accountant (CGMA)', '<h1>Strategic level</h1>\r\n<p>This is the third level of the Professional Qualification and consists of three computer based Objective Tests and one Case Study exam.</p>\r\n<p>The Strategic level concentrates on making strategic decisions and providing the context for which those decisions will be implemented. Its focus is the long-term.</p>\r\n<p><strong>Students will learn how to:</strong></p>\r\n<ul>\r\n<li>formulate financial strategy</li>\r\n<li>manage strategic relationships</li>\r\n<li>identify and manage risk</li>\r\n</ul>\r\n<p>The subjects at each level and designed to be sequential, from Operational to Strategic level, encouraging the progressive development of knowledge, techniques and skills.</p>\r\n<p>On completion of the Strategic level, students will be eligible to submit their practical experience for assessment.</p>\r\n<p>On successful completion of the practical experience requirements, students will be admitted to associate membership and granted the associate chartered management accountant (ACMA) and&nbsp;Chartered Global Management Accountant (CGMA)&nbsp;designations.</p>\r\n<p>Strategic level is the third and final level of the CIMA Professional Qualification and consists of three subject areas.</p>\r\n<h2>The technical content at the Strategic level</h2>\r\n<p>The Strategic level concentrates on making strategic decisions and providing the context for which those decisions will be implemented. Its focus is the long-term.</p>', 'associate-chartered-management-accountant-acma-and-chartered-global-management-accountant-cgma', NULL, 3, '/photos/CIMA STRATEGIC.jpg', '2018-09-06 15:16:50', '2018-09-22 00:35:12'),
-(9, 'Courses for University Academics', '', 'courses-for-university-academics ', NULL, 0, '/photos/CIMA STRATEGIC.jpg', '2018-09-28 16:58:37', '2018-09-28 13:18:12'),
-(10, 'Courses for working professionals', '', 'courses-for-working-professionals', NULL, 0, '/photos/cima certificate.jpg', '2018-09-28 17:32:46', '2018-09-28 13:32:46');
+INSERT INTO `levels` (`id`, `title`, `alias`, `description`, `slug`, `excerpt`, `course_order`, `thumbnail`, `created_at`, `updated_at`) VALUES
+(5, 'CIMA Certificate in Business Accounting (CIMA Cert BA)', 'Certificate', '<h1>Certificate Level</h1>\r\n<p>The CIMA Certificate in Business Accounting (Cert BA) will help students with little or no accounting experience unleash their true business potential. Teaching core business and finance skills beyond simple financial accounting, Cert BA syllabus is the perfect stepping stone towards a career in business and finance.</p>\r\n<p>The Cert BA is a qualification in it\'s own right&nbsp;and also forms a formal entry route into the CIMA Professional Qualification. Once&nbsp;students successfully complete both qualifications and qualify for membership, they will be awarded the Chartered Global Management Accountant (CGMA) designation.</p>\r\n<p>Assessments</p>\r\n<p><strong>Format:</strong>&nbsp;computer based<br /> <strong>Availability:</strong>&nbsp;on demand&nbsp;at any of the 5,500 Pearson VUE centres around the world<br /> <strong>Length:</strong>&nbsp;2 hours<br /> <strong>Questions:</strong>&nbsp;BA1, BA2 and BA3 each contain 60 objective test questions, while BA4 contains 85 objective test questions.<br /> <strong>Marking:</strong>&nbsp;computer marked<br /> <strong>Results:</strong>&nbsp;provisional result available immediately&nbsp;followed by confirmation no more than 48 hours later</p>\r\n<p><strong>Further information<br /> </strong>Objective Tests are comprised of a range of items including short multiple-choice questions, number entry questions, drag and drop questions and other formats. In BA2 and BA3 short scenarios may be given to which one or more objective test questions relate</p>', 'cima-certificate-in-business-accounting-CIMA-cert-ba', NULL, 0, '/photos/cima certificate.jpg', '2018-09-06 15:15:13', '2018-09-22 01:03:50'),
+(6, 'CIMA Diploma in Management Accounting (CIMA Dip MA)', 'Operational', '<h1>Operational Level</h1>\r\n<p>This is first level of the Professional Qualification and consists of three computer based Objective Tests and one Case Study exam.</p>\r\n<p>The Operational level covers the implementation of strategy, as well as reporting on the implementation of strategy. Its focus is short-term.</p>\r\n<p><strong>Students will learn how to:</strong></p>\r\n<ul>\r\n<li>Prepare financial statements</li>\r\n<li>Provide management accounting information</li>\r\n<li>Use appropriate tools for decision making through a broad understanding of business</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>After successfully completing this level, students will receive the CIMA Diploma in Management Accounting (CIMA Dip MA).</p>\r\n<p>Assessment</p>\r\n<p>Examining the syllabus</p>\r\n<p>CIMA is the first global accountancy body to pioneer a combination of computerised assessments.</p>\r\n<p>Each subject in the syllabus is assessed by an Objective Test (nine in total) and also by an integrated Case Study exam at the end of each level (three in total).&nbsp;Once all three Objective Tests and the Case Study exam have been successfully passed, students can progress on to the next level of the qualification.</p>\r\n<p>Objective Tests</p>\r\n<p><strong>Format:</strong>&nbsp;computer based<br /> <strong>Availability:</strong>&nbsp;on demand&nbsp;at any of the 5,000 Pearson VUE centres around the world<br /> <strong>Length:</strong>&nbsp;90 minutes<br /> <strong>Marking:</strong>&nbsp;computer marked<br /> <strong>Results:</strong>&nbsp;provisional result available immediately&nbsp;followed by confirmation no more than 48 hours later</p>\r\n<p><strong>Further information<br /> </strong>Objective Tests are comprised of a range of items including short multiple choice questions, number entry questions, drag and drop questions and other formats. They test all component learning outcomes across the whole subject.</p>\r\n<p>Case Study exams</p>\r\n<p><strong>Format:</strong>&nbsp;computer based<br /> <strong>Availability:</strong>&nbsp;four windows each year (Feb, May, Aug, Nov) at&nbsp;any of the 5,000 Pearson VUE centres around the world<br /> <strong>Length:&nbsp;</strong>3 hours<br /> <strong>Marking:</strong>&nbsp;human marked<br /> <strong>Results:</strong>&nbsp;available 5 weeks after the close of the exam window</p>\r\n<p><strong>Further information<br /> </strong>The Case Study exams are used to test a variety of skills including research and analysis, how to present information, persuasion and communication skills. The move to more Case Study exams has been deliberate to test a wider range of skills and integrated learning across the syllabus.</p>\r\n<p>Case Study exams reflect a real life business scenario, comprising a series of time bound tasks set for students to complete based on pre-seen material. Pre-seen material released to students: 6 weeks prior to the exam window.</p>\r\n<h2>The technical content at the Operational level</h2>\r\n<p>The Operational level covers the implementation of strategy, as well as reporting on the implementation of strategy. Its focus is on the short-term.</p>', 'cima-diploma-in-management-accounting-CIMA-Dip-MA', NULL, 1, '/photos/cima operational.jpg', '2018-09-06 15:15:45', '2018-09-22 01:02:59'),
+(7, 'CIMA Advanced Diploma in Management Accounting (CIMA Adv Dip MA)', 'Management', '<h1>Management level</h1>\r\n<p>This is the second level of the Professional Qualification and consists of three computer based Objective Tests and one Case Study.</p>\r\n<p>The Management level translates the strategy decided at higher levels, and communicates it to lower levels for implementation. It monitors and reports on the implementation of strategy, and ensures corrective action is taken when required. It has a medium-term focus.</p>\r\n<p><strong>Students will learn how to:</strong></p>\r\n<ul>\r\n<li>Prepare group accounts</li>\r\n<li>Make pricing and product decisions based on a robust analysis</li>\r\n<li>Manage projects and relationships</li>\r\n</ul>\r\n<p>On completion, you receive the CIMA Advanced Diploma in Management Accounting (CIMA Adv Dip MA).</p>\r\n<p>The technical content at the Management level</p>\r\n<p>The Management level translates the strategy decided at higher levels, and communicates it to lower levels for implementation. It monitors and reports on the implementation of strategy, and ensures corrective action is taken when required. It has a medium-term focus.</p>', 'cima-advanced-diploma-in-management-accounting-cima-adv-dip-ma', NULL, 2, '/photos/cima manegement.jpg', '2018-09-06 15:16:23', '2018-09-22 01:01:41'),
+(8, 'Associate Chartered Management Accountant (ACMA) and Chartered Global Management Accountant (CGMA)', 'Strategic', '<h1>Strategic level</h1>\r\n<p>This is the third level of the Professional Qualification and consists of three computer based Objective Tests and one Case Study exam.</p>\r\n<p>The Strategic level concentrates on making strategic decisions and providing the context for which those decisions will be implemented. Its focus is the long-term.</p>\r\n<p><strong>Students will learn how to:</strong></p>\r\n<ul>\r\n<li>formulate financial strategy</li>\r\n<li>manage strategic relationships</li>\r\n<li>identify and manage risk</li>\r\n</ul>\r\n<p>The subjects at each level and designed to be sequential, from Operational to Strategic level, encouraging the progressive development of knowledge, techniques and skills.</p>\r\n<p>On completion of the Strategic level, students will be eligible to submit their practical experience for assessment.</p>\r\n<p>On successful completion of the practical experience requirements, students will be admitted to associate membership and granted the associate chartered management accountant (ACMA) and&nbsp;Chartered Global Management Accountant (CGMA)&nbsp;designations.</p>\r\n<p>Strategic level is the third and final level of the CIMA Professional Qualification and consists of three subject areas.</p>\r\n<h2>The technical content at the Strategic level</h2>\r\n<p>The Strategic level concentrates on making strategic decisions and providing the context for which those decisions will be implemented. Its focus is the long-term.</p>', 'associate-chartered-management-accountant-acma-and-chartered-global-management-accountant-cgma', NULL, 3, '/photos/CIMA STRATEGIC.jpg', '2018-09-06 15:16:50', '2018-09-22 00:35:12'),
+(9, 'Courses for University Academics', 'Academic', '', 'courses-for-university-academics ', NULL, 0, '/photos/CIMA STRATEGIC.jpg', '2018-09-28 16:58:37', '2018-09-28 13:18:12'),
+(10, 'Courses for working professionals', 'CA-CGMA', '', 'courses-for-working-professionals', NULL, 0, '/photos/cima certificate.jpg', '2018-09-28 17:32:46', '2018-09-28 13:32:46');
 
 -- --------------------------------------------------------
 
@@ -7345,12 +7346,12 @@ INSERT INTO `menu_items` (`id`, `label`, `link`, `parent`, `sort`, `class`, `men
 (10, 'Pengumuman', '#', 0, 2, '', 4, 0, '2018-03-15 11:31:48', '2018-03-15 11:32:02'),
 (11, 'Karir', '#', 0, 3, '', 4, 0, '2018-03-15 11:31:58', '2018-03-15 11:32:02'),
 (18, 'About Us', 'about-us', 0, 1, '', 1, 0, '2018-08-27 07:08:59', '2018-09-18 16:10:02'),
-(19, 'Testimonials', 'testimonials', 0, 9, '', 1, 0, '2018-08-27 07:09:13', '2018-09-28 17:49:38'),
-(20, 'Exam Dates', 'exam-dates', 0, 10, '', 1, 0, '2018-08-27 07:09:55', '2018-09-28 17:49:38'),
-(21, 'CIMA Syllabus', '#', 0, 11, '', 1, 0, '2018-08-27 07:13:08', '2018-09-28 17:49:38'),
-(22, 'Students', '#', 0, 12, '', 1, 0, '2018-08-27 07:13:28', '2018-09-28 17:49:38'),
-(23, 'Partnership & Affilates ', '#', 0, 13, '', 1, 0, '2018-08-27 07:14:37', '2018-09-28 17:49:38'),
-(25, 'Basket', 'basket', 0, 14, '', 1, 0, '2018-08-27 07:15:04', '2018-09-28 17:49:38'),
+(19, 'Testimonials', 'testimonials', 0, 10, '', 1, 0, '2018-08-27 07:09:13', '2018-10-04 19:20:49'),
+(20, 'Exam Dates', 'exam-dates', 0, 11, '', 1, 0, '2018-08-27 07:09:55', '2018-10-04 19:20:49'),
+(21, 'CIMA Syllabus', '#', 0, 12, '', 1, 0, '2018-08-27 07:13:08', '2018-10-04 19:20:49'),
+(22, 'Students', '#', 0, 13, '', 1, 0, '2018-08-27 07:13:28', '2018-10-04 19:20:49'),
+(23, 'Partnership & Affilates ', '#', 0, 14, '', 1, 0, '2018-08-27 07:14:37', '2018-10-04 19:20:49'),
+(25, 'Basket', 'basket', 0, 15, '', 1, 0, '2018-08-27 07:15:04', '2018-10-04 19:20:49'),
 (28, 'CIMA Home', 'cima-home', 0, 0, '', 2, 0, '2018-08-27 07:18:10', '2018-08-30 16:11:28'),
 (29, 'CIMA Strategic', 'level/associate-chartered-management-accountant-acma-and-chartered-global-management-accountant-cgma', 0, 1, '', 2, 0, '2018-08-27 07:18:34', '2018-09-20 19:39:28'),
 (32, 'CIMA Mangement', 'level/cima-advanced-diploma-in-management-accounting-cima-adv-dip-ma', 0, 2, '', 2, 0, '2018-08-27 07:21:11', '2018-09-20 19:39:46'),
@@ -7364,12 +7365,13 @@ INSERT INTO `menu_items` (`id`, `label`, `link`, `parent`, `sort`, `class`, `men
 (42, 'Contact', '#', 0, 1, '', 6, 0, '2018-08-29 16:06:07', '2018-08-29 16:06:09'),
 (43, 'Home', '', 0, 0, '', 1, 0, '2018-09-18 16:08:52', '2018-09-18 16:08:58'),
 (44, 'Certificate Courses', 'courses', 0, 2, '', 1, 0, '2018-09-18 16:10:50', '2018-09-28 17:08:32'),
-(45, 'CIMA Certificate in Business Accounting (CIMA Cert BA)', 'level/cima-certificate-in-business-accounting-CIMA-cert-ba', 44, 3, '', 1, 1, '2018-09-18 16:13:18', '2018-09-28 16:54:03'),
-(46, 'CIMA Diploma in Management Accounting (CIMA Dip MA)', 'level/cima-diploma-in-management-accounting-CIMA-Dip-MA', 44, 4, '', 1, 1, '2018-09-20 19:15:13', '2018-09-28 16:54:03'),
-(47, 'CIMA Advanced Diploma in Management Accounting (CIMA Adv Dip MA)', 'level/cima-advanced-diploma-in-management-accounting-cima-adv-dip-ma', 44, 5, '', 1, 1, '2018-09-20 19:35:49', '2018-09-28 16:54:03'),
-(48, 'Associate Chartered Management Accountant (ACMA) and Chartered Global Management Accountant (CGMA)', 'level/associate-chartered-management-accountant-acma-and-chartered-global-management-accountant-cgma', 44, 6, '', 1, 1, '2018-09-20 19:38:41', '2018-09-28 16:54:03'),
-(50, 'Courses for University Academics', 'level/courses-for-university-academics', 44, 7, '', 1, 1, '2018-09-28 17:17:22', '2018-09-28 17:17:52'),
-(51, 'Courses for working professionals', 'level/courses-for-working-professionals', 44, 8, '', 1, 1, '2018-09-28 17:49:30', '2018-09-28 17:49:38');
+(45, 'CIMA Certificate in Business Accounting (CIMA Cert BA)', 'level/cima-certificate-in-business-accounting-CIMA-cert-ba', 52, 4, '', 1, 2, '2018-09-18 16:13:18', '2018-10-04 19:22:37'),
+(46, 'CIMA Diploma in Management Accounting (CIMA Dip MA)', 'level/cima-diploma-in-management-accounting-CIMA-Dip-MA', 52, 5, '', 1, 2, '2018-09-20 19:15:13', '2018-10-04 19:22:38'),
+(47, 'CIMA Advanced Diploma in Management Accounting (CIMA Adv Dip MA)', 'level/cima-advanced-diploma-in-management-accounting-cima-adv-dip-ma', 52, 6, '', 1, 2, '2018-09-20 19:35:49', '2018-10-04 19:22:38'),
+(48, 'Associate Chartered Management Accountant (ACMA) and Chartered Global Management Accountant (CGMA)', 'level/associate-chartered-management-accountant-acma-and-chartered-global-management-accountant-cgma', 52, 7, '', 1, 2, '2018-09-20 19:38:41', '2018-10-04 19:22:38'),
+(50, 'Courses for University Academics', 'level/courses-for-university-academics', 44, 8, '', 1, 1, '2018-09-28 17:17:22', '2018-10-04 19:20:49'),
+(51, 'Courses for working professionals', 'level/courses-for-working-professionals', 50, 9, '', 1, 2, '2018-09-28 17:49:30', '2018-10-04 20:25:02'),
+(52, 'Courses For All', '#', 44, 3, '', 1, 1, '2018-10-04 19:20:37', '2018-10-04 19:21:35');
 
 -- --------------------------------------------------------
 
@@ -7490,6 +7492,26 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `user_id`, `total_qty`, `total_price`, `status`, `paid_date`, `validated`, `created_at`, `updated_at`) VALUES
 (10, 106, 1, 7440000, 'created', NULL, 0, '2018-09-28 21:02:47', '2018-09-28 17:02:47');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payments`
+--
+
+CREATE TABLE `payments` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `amount` int(15) DEFAULT NULL,
+  `paying_date` datetime DEFAULT NULL,
+  `method` varchar(45) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `description` longtext NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -8595,8 +8617,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `username`, `email`, `password`, `activated`, `activation_code`, `activated_at`, `last_login`, `reset_password_code`, `remember_token`, `first_name`, `last_name`, `api_token`, `about`, `address`, `phone`, `facebook_url`, `twitter_url`, `google_plus_url`, `created_at`, `updated_at`, `photo`) VALUES
-(85, 2, 'admin', 'digicrea08@gmail.com', '$2y$10$I4cxs7.ScXYMoUtxLU3Vu.nQYdjlFL6XvL.Z3xfYKGUiBYnG4Q01O', 1, NULL, NULL, NULL, 'DyIU8daVDV79KYftqqLVWpgXMFtbL2ww', 'YBOV7bPzxPnbqqrcnECbTSGetnjaF6RQMH0BjxNdiXPbHP17Tcd7CkxVSqP3', 'Basrul', 'Yandri', '', 'Seseorang yang baru tau kalau ternyata kita gak bisa garuk kuping pake sikut :D', 'Perumahan Maharaja Blok N5-12 Depok', '081290751101', 'https://www.facebook.com/digicrea', 'https://twitter.com/basrul14', 'https://plus.google.com/u/0/103471078199126216243', '2016-11-27 13:29:35', '2018-09-28 05:30:34', '/photos/basrul.jpg'),
-(106, 3, 'basrul', 'yandribisnis@gmail.com', '$2y$10$.CcUipw29NnrWI2s0e/Dpuzq.yuCEOaNnmU9x0w75Anoz3ENHbulm', 1, NULL, NULL, NULL, NULL, 'gj4D6lA6IVpgfiX6CxIoQQQfcPzFhZwJs3FEc5AGJqr0yt3TVIXDNF1Tkje7', 'Basrul', 'Yandri', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-09-28 21:02:47', '2018-09-28 06:27:32', NULL);
+(85, 2, 'admin', 'digicrea08@gmail.com', '$2y$10$I4cxs7.ScXYMoUtxLU3Vu.nQYdjlFL6XvL.Z3xfYKGUiBYnG4Q01O', 1, NULL, NULL, NULL, 'DyIU8daVDV79KYftqqLVWpgXMFtbL2ww', 'n4RTAZH0Tt5Pf0flZ5zH3WSvoDs4qu3s5m5pgiPzvmKgjxwXra77fcsOtnTC', 'Basrul', 'Yandri', '', 'Seseorang yang baru tau kalau ternyata kita gak bisa garuk kuping pake sikut :D', 'Perumahan Maharaja Blok N5-12 Depok', '081290751101', 'https://www.facebook.com/digicrea', 'https://twitter.com/basrul14', 'https://plus.google.com/u/0/103471078199126216243', '2016-11-27 13:29:35', '2018-09-29 22:49:34', '/photos/basrul.jpg'),
+(106, 3, 'basrul', 'yandribisnis@gmail.com', '$2y$10$.CcUipw29NnrWI2s0e/Dpuzq.yuCEOaNnmU9x0w75Anoz3ENHbulm', 1, NULL, NULL, NULL, NULL, '8KDXNSB91k3Apzc97vAvwiJ1otBUpHIPmidEvVU2QAWZRdN8IOI9BI6CnZMb', 'Basrul', 'Yandri', NULL, NULL, NULL, '08797979909', NULL, NULL, NULL, '2018-09-28 21:02:47', '2018-09-30 01:45:19', '/photos/basrul.jpg');
 
 --
 -- Triggers `users`
@@ -90811,6 +90833,12 @@ ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `payments`
+--
+ALTER TABLE `payments`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `permissions`
 --
 ALTER TABLE `permissions`
@@ -90949,7 +90977,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -90976,6 +91004,12 @@ ALTER TABLE `orders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `payments`
+--
+ALTER TABLE `payments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
@@ -90985,7 +91019,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `permission_role`
 --
 ALTER TABLE `permission_role`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `posts`
@@ -91009,7 +91043,7 @@ ALTER TABLE `prices`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tags`

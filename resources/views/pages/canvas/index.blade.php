@@ -16,7 +16,7 @@
 					<div class="container clearfix">
 						<h3><span>Ready to register?</span></h3>
 						<span>Register as a student today and start studying with CIMA !</span>
-						<a href="#" class="button button-dark button-xlarge button-rounded">Go to courses</a>
+						<a href="{{route('page.courses')}}" class="button button-dark button-xlarge button-rounded">Go to courses</a>
 					</div>
 				</div>
 				<section id="section-about" class="page-section">
@@ -94,15 +94,15 @@
 								@foreach($levels as $level)							
 									<article class="portfolio-item pf-media pf-icons">
 										<div class="portfolio-image">
-											<a href="{{$level['url']}}">
-												<img src="{{$level['thumbnail']}}" alt="Open Imagination">
+											<a href="{{route('page.level.single',$level->slug)}}">
+												<img src="{{$level->thumbnail}}" alt="{{$level->title}}">
 											</a>
 											<div class="portfolio-overlay">												
-												<a href="{{$level['url']}}" class="center-icon"><i class="icon-search"></i></a>
+												<a href="{{route('page.level.single',$level->slug)}}" class="center-icon"><i class="icon-search"></i></a>
 											</div>
 										</div>
 										<div class="portfolio-desc">
-											<h3><a href="{{$level['url']}}">{{$level['title']}}</a></h3>
+											<h3><a href="{{$level['url']}}">{{$level->title}}</a></h3>
 										</div>
 									</article>								
 								@endforeach
