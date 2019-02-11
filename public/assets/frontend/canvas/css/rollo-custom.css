@@ -1,0 +1,25 @@
+#header {
+	background-color: #30304d;
+}
+
+#header.sticky-header #header-wrap {
+	background-color: #30304d;	
+}
+
+#primary-menu ul li > a {
+	color:#fff;
+}
+
+#primary-menu ul li.current > a {
+	color:#f39c12;
+}
+#primary-menu ul li:hover > a {
+	color:#f39c12;
+}
+
+#top-search a, #top-cart > a, #side-panel-trigger a {
+    color: #fff;    
+}
+#top-search form input {
+	color: #fff;
+}

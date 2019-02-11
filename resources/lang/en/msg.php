@@ -13,5 +13,8 @@ return [
 	'last_name' => 'Last Name',
 	'phone_number' => 'Phone Number',
 	'login_failed_message' => 'Login failed. Wrong user credentials',
-	'welcome_greeting' => 'Welcome to The British Academy of Finance',	
-];
+	'welcome_greeting' => 'Welcome to The British Academy of Finance',
+	'register_call_to_action' => 'Ready To Register ?',
+	'register_call_to_action_message' => 'Register as a student today and start studying with CIMA !',
+	'go_to_courses' => 'Go To Courses'
+];	

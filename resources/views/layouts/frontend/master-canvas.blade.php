@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="{{url('/')}}/assets/frontend/canvas/css/magnific-popup.css" type="text/css" />
 
 	<link rel="stylesheet" href="{{url('/')}}/assets/frontend/canvas/css/responsive.css" type="text/css" />
+	<link rel="stylesheet" href="{{url('/')}}/assets/frontend/canvas/css/rollo-custom.css" type="text/css" />
 	<link rel="stylesheet" href="{{url('assets/backend')}}/css/plugins/toastr/toastr.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	@yield('og')
@@ -50,34 +51,85 @@
 					<!-- Logo
 					============================================= -->
 					<div id="logo">
-						<a href="index.html" class="standard-logo" data-dark-logo="{{url('/')}}/assets/frontend/canvas/images/logo-dark.png"><img src="{{url('/').getOption('theme_option_logo')}}" alt="Canvas Logo"></a>
-						<a href="index.html" class="retina-logo" data-dark-logo="{{url('/')}}/assets/frontend/canvas/images/logo-dark@2x.png"><img src="http://127.0.0.1:8000/photos/2x-logo_BAF_larger.png" alt="Canvas Logo"></a>
+						<a href="index.html" class="standard-logo" data-dark-logo="{{url('/')}}/assets/frontend/canvas/images/logo-dark.png"><img src="{{url('/').getOption('theme_option_logo')}}" alt="{{getOption('web_title')}} logo"></a>
+						<a href="index.html" class="retina-logo" data-dark-logo="{{url('/')}}/assets/frontend/canvas/images/logo-dark@2x.png"><img src="{{url('/').getOption('theme_option_logo')}}" alt="{{getOption('web_title')}} Logo"></a>
 					</div><!-- #logo end -->
 
 					<!-- Primary Navigation
 					============================================= -->
 					<nav id="primary-menu">
+						@if(request()->route()->getName() == 'page.index')
+							<ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1500">
+								<li><a href="{{route('page.index')}}"><div>{{trans('app.home')}}</div></a></li>
+								<li><a href="#" data-href="#section-about"><div>{{trans('app.about')}}</div></a></li>
+								<li><a href="#" data-href="#section-work"><div>{{trans('app.courses')}}</div></a></li>
+								<li><a href="#" data-href="#section-team"><div>{{trans('app.team')}}</div></a></li>
+								<!-- <li><a href="#" data-href="#section-services"><div>Services</div></a></li>
+								<li><a href="#" data-href="#section-pricing"><div>Pricing</div></a></li>
+								<li><a href="blog.html"><div>Blog</div></a></li> -->
+								<li><a href="#" data-href="#section-testimonials" data-offset="60"><div>{{trans('app.testimonials')}}</div></a></li>
+								<li><a href="#" data-href="#section-contact"><div>{{trans('app.contact')}}</div></a></li>
+								<li><a href="{{route('page.basket')}}"><div>{{trans('app.basket')}}</div></a></li>
+							</ul>
+						@else
+							<ul data-easing="easeInOutExpo" data-speed="1500">
+								<li><a href="{{route('page.index')}}"><div>{{trans('app.home')}}</div></a></li>
+								<li><a href="{{route('page.index')}}#section-about" data-href="{{route('page.index')}}#section-about"><div>{{trans('app.about')}}</div></a></li>
+								<li><a href="{{route('page.index')}}#section-work" data-href="{{route('page.index')}}#section-work"><div>{{trans('app.courses')}}</div></a></li>
+								<li><a href="{{route('page.index')}}#section-team" data-href="{{route('page.index')}}#section-team"><div>{{trans('app.team')}}</div></a></li>
+								<!-- <li><a href="#" data-href="#section-services"><div>Services</div></a></li>
+								<li><a href="#" data-href="#section-pricing"><div>Pricing</div></a></li>
+								<li><a href="blog.html"><div>Blog</div></a></li> -->
+								<li><a href="{{route('page.index')}}#section-testimonials" data-href="{{route('page.index')}}#section-testimonials" data-offset="60"><div>{{trans('app.testimonials')}}</div></a></li>
+								<li><a href="{{route('page.index')}}#section-contact" data-href="{{route('page.index')}}#section-contact"><div>{{trans('app.contact')}}</div></a></li>
+								<li><a href="{{route('page.basket')}}"><div>{{trans('app.basket')}}</div></a></li>
+							</ul>
+						@endif
+						
+						<div id="top-cart">
+							<a href="#" id="top-cart-trigger">
+								@if( LaravelLocalization::getCurrentLocale() == 'en')
+									<img src="{{asset('assets/frontend/canvas/images/flags/us.png')}}" alt=""></a>
+								@endif
+								@if( LaravelLocalization::getCurrentLocale() == 'id')
+									<img src="{{asset('assets/frontend/canvas/images/flags/id.png')}}" alt=""></a>
+								@endif
+							<div class="top-cart-content">	
+								<div class="top-cart-title">
+									<h4>{{trans('msg.select_language')}}</h4>
+								</div>							
+								<div class="top-cart-items">
+									<div class="top-cart-item clearfix">
+										<div class="top-cart-item-image">
+											<a href="{{ \LaravelLocalization::getLocalizedURL('en', url()->current()) }}"><img src="{{asset('assets/frontend/canvas/images/flags/us.png')}}"></a>
+										</div>
+										<div class="top-cart-item-desc">
+											<a href="{{ \LaravelLocalization::getLocalizedURL('en', url()->current()) }}">English</a>											
+										</div>
+									</div>
 
-						<ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1500">
-							<li><a href="{{route('page.index')}}"><div>Home</div></a></li>
-							<li><a href="#" data-href="#section-about"><div>About</div></a></li>
-							<li><a href="#" data-href="#section-work"><div>Courses</div></a></li>
-							<li><a href="#" data-href="#section-team"><div>Team</div></a></li>
-							<!-- <li><a href="#" data-href="#section-services"><div>Services</div></a></li>
-							<li><a href="#" data-href="#section-pricing"><div>Pricing</div></a></li>
-							<li><a href="blog.html"><div>Blog</div></a></li> -->
-							<li><a href="#" data-href="#section-testimonials" data-offset="60"><div>Testimonials</div></a></li>
-							<li><a href="#" data-href="#section-contact"><div>Contact</div></a></li>
-						</ul>
-
+									<div class="top-cart-item clearfix">
+										<div class="top-cart-item-image">
+											<a href="{{ \LaravelLocalization::getLocalizedURL('en', url()->current()) }}"><img src="{{asset('assets/frontend/canvas/images/flags/id.png')}}"></a>
+										</div>
+										<div class="top-cart-item-desc">
+											<a href="{{ \LaravelLocalization::getLocalizedURL('id', url()->current()) }}">Indonesia</a>											
+										</div>
+									</div>
+									
+								</div>								
+							</div>
+						</div>
+						
 						<!-- Top Search
 						============================================= -->
-						<div id="top-search">
+						<!-- <div id="top-search">
 							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
 							<form action="search.html" method="get">
 								<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
 							</form>
-						</div><!-- #top-search end -->
+						</div> -->
+						<!-- #top-search end -->
 
 					</nav><!-- #primary-menu end -->
 
@@ -107,7 +159,7 @@
 
 							<div class="widget clearfix">
 
-								<img src="{{url('/').getOption('theme_option_logo')}}" alt="" class="footer-logo">
+								<img src="{{url('/').getOption('theme_option_logo')}}" alt="" class="{{getOption('web_title')}}">
 								
 
 								<div style="background: url('{{url('/')}}/assets/frontend/canvas/images/world-map.png') no-repeat center center; background-size: 100%;">

@@ -14,9 +14,9 @@
 			<div class="content-wrap">
 				<div class="promo promo-light promo-full bottommargin-lg header-stick notopborder">
 					<div class="container clearfix">
-						<h3><span>Ready to register?</span></h3>
-						<span>Register as a student today and start studying with CIMA !</span>
-						<a href="{{route('page.courses')}}" class="button button-dark button-xlarge button-rounded">Go to courses</a>
+						<h3><span>{{trans('msg.register_call_to_action')}}</span></h3>
+						<span>{{trans('msg.register_call_to_action_message')}}</span>
+						<a href="{{route('page.courses')}}" class="button button-dark button-xlarge button-rounded">{{trans('msg.go_to_courses')}}</a>
 					</div>
 				</div>
 				<section id="section-about" class="page-section">
@@ -24,7 +24,7 @@
 
 
 						<div class="heading-block center">
-							<h2><span>British Academy Of Finance</span></h2>
+							<h2><span>The British Academy Of Finance</span></h2>
 							<span>Will walk you though for success</span>
 						</div>
 						<div class="col_one_third">
@@ -102,7 +102,7 @@
 											</div>
 										</div>
 										<div class="portfolio-desc">
-											<h3><a href="{{$level['url']}}">{{$level->title}}</a></h3>
+											<h3><a href="{{route('page.level.single',$level->slug)}}">CIMA {{$level->alias}}</a></h3>
 										</div>
 									</article>								
 								@endforeach
@@ -594,11 +594,11 @@
 							</div>
 						@endif
 						@if(\LaravelLocalization::getCurrentLocale() == 'id')
-							<div class="swiper-slide dark" style="background-image: url('{{url('/')}}/assets/frontend/canvas/images/slider/swiper/1.jpg');">
+							<div class="swiper-slide dark" style="background-image: url('{{url('/')}}/photos/baf-silder-(2).jpg');">
 								<div class="container clearfix">
 									<div class="slider-caption slider-caption-center">
-										<h2 data-animate="fadeInUp">Welcome to Canvas</h2>
-										<p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">Create just what you need for your Perfect Website. Choose from a wide range of Elements &amp; simply put them on our Canvas.</p>
+										<h2 data-animate="fadeInUp">Selamat Datang di BAFSTUDIES</h2>
+										<p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">Will walk you though for success</p>
 									</div>
 								</div>
 							</div>

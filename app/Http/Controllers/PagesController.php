@@ -112,7 +112,7 @@ class PagesController extends Controller
     {
     	// session()->forget('cart');
     	//dd(session('cart'));
-    	return view('pages.basket');
+    	return view('pages.canvas.basket');
     }
 
     public function checkout()
