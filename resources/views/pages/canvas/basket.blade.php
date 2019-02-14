@@ -27,10 +27,10 @@
 							<thead>
 								<tr>									
 									<th class="cart-product-thumbnail">NO</th>
-									<th class="cart-product-name">COURSE NAME</th>
-									<th class="cart-product-price">PAYMENT SCHEME</th>
-									<th class="cart-product-quantity">FEE</th>
-									<th class="cart-product-subtotal">ACTIONS</th>
+									<th class="cart-product-name">{{trans('app.course-name')}}</th>
+									<th class="cart-product-price">{{trans('app.payment-scheme')}}</th>
+									<th class="cart-product-quantity">{{trans('app.fee')}}</th>
+									<th class="cart-product-subtotal">{{trans('app.actions')}}</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -48,22 +48,21 @@
 								@php
 									$no++;	
 								@endphp
-								@endforeach	
+								@endforeach									
 							</tbody>
 						</table>
 						<div class="row clearfix">
 						<div class="col-lg-6 clearfix">							
 						</div>
 
-						<div class="col-lg-6 clearfix">
-							<h4>Cart Totals</h4>
+						<div class="col-lg-6 clearfix">							
 
 							<div class="table-responsive">
 								<table class="table cart">
 									<tbody>
 										<tr class="cart_item">
 											<td class="cart-product-name">
-												<strong>Total Fee</strong>
+												<strong>{{trans('app.total-fee')}}</strong>
 											</td>
 
 											<td class="cart-product-name">
@@ -72,13 +71,22 @@
 										</tr>
 										<tr class="cart_item">
 											<td class="cart-product-name">
-												<strong>Quantity</strong>
+												<strong>Total Qty</strong>
 											</td>
 
 											<td class="cart-product-name">
 												<span class="amount totalQty">{{session('cart')->totalQty}}</span>
 											</td>
-										</tr>										
+										</tr>	
+										<tr class="cart_item">
+											<td colspan="2">
+												<div class="row clearfix">
+													<div class="col-lg-12 nopadding">
+														<a href="{{route('page.checkout')}}" class="button button-3d notopmargin fright">{{trans('app.checkout')}}</a>
+													</div>
+												</div>
+											</td>
+										</tr>									
 									</tbody>
 
 								</table>

@@ -19,12 +19,14 @@ class PagesController extends Controller
 {
 	public function index(Request $request)
 	{
+
 		//dd(\Menu::getByName('Under Logo'));
 		if($request->has('psr')){
 			\Cookie::queue('psr', $request->psr, time() + (86400 * 30));		
 		}
 		$latestPosts = Post::whereStatus('published')->whereType('post')->orderBy('published_at','desc')->take(10)->get();	
-        $levels = Level::whereIn('id',[8,7,6,5])->orderBy('id','desc')->get();
+        //$levels = Level::whereIn('id',[8,7,6,5])->orderBy('id','desc')->get();
+        $levels = Level::all();
         //dd($levels);
         // $levels = [
         //         ['title' => 'CIMA Strategic','thumbnail' => '/photos/CIMA STRATEGIC.jpg','url' => 'https://www.bafstudies.com/level/associate-chartered-management-accountant-acma-and-chartered-global-management-accountant-cgma'],
@@ -105,7 +107,7 @@ class PagesController extends Controller
     public function testimonials()
     {
     	$testimonials = Testimonial::paginate(20);
-    	return view('pages.testimonials',compact(['testimonials']));
+    	return view('pages.canvas.testimonials',compact(['testimonials']));
     }
 
     public function basket()
@@ -117,12 +119,14 @@ class PagesController extends Controller
 
     public function checkout()
     {
-    	return view('pages.checkout');
+    	return view('pages.canvas.checkout');
     }
 
     public function postcheckout(Request $request)
     {
     	//dd(session('cart'));
+       
+        //dd($request->all()); //
     	$request->request->add(['username' => 'test']);
     	$request->request->add(['role_id' => 3]);
     	$request->request->add(['activated' => 1]);

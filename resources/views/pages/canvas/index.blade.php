@@ -13,13 +13,13 @@
 		<section id="content">
 			<div class="content-wrap">
 				<div class="promo promo-light promo-full bottommargin-lg header-stick notopborder">
-					<div class="container clearfix">
+					<div class="container clearfix one-page-menu" data-easing="easeInOutExpo" data-speed="1500">
 						<h3><span>{{trans('msg.register_call_to_action')}}</span></h3>
 						<span>{{trans('msg.register_call_to_action_message')}}</span>
-						<a href="{{route('page.courses')}}" class="button button-dark button-xlarge button-rounded">{{trans('msg.go_to_courses')}}</a>
+						<a href="#" data-href="#section-work" class="button button-dark button-xlarge button-rounded">{{trans('msg.go_to_courses')}}</a>
 					</div>
 				</div>
-				<section id="section-about" class="page-section">
+				<section id="section-about" class="page-section" data-animate="bounceInLeft">
 					<div class="container clearfix">
 
 
@@ -27,6 +27,7 @@
 							<h2><span>The British Academy Of Finance</span></h2>
 							<span>Will walk you though for success</span>
 						</div>
+						@if(\LaravelLocalization::getCurrentLocale() == 'en')
 						<div class="col_one_third">
 							<div class="heading-block fancy-title nobottomborder title-bottom-border">
 								<h4>Why choose <span>Us</span>.</h4>
@@ -48,7 +49,32 @@
 							</div>
 							<p>As a CIMA Learning partner adds value by delivering very focused effort to work with individuals to mobilize their knowledge and skill levels to meet CIMA professional standards. The proven passed rates have shown in Indonesia dramatically.</p>
 						</div>
-						
+
+						@endif
+
+						@if(\LaravelLocalization::getCurrentLocale() == 'id')
+							<div class="col_one_third">
+							<div class="heading-block fancy-title nobottomborder title-bottom-border">
+								<h4>Kenapa memilih <span>Kami</span>.</h4>
+							</div>
+							<p>Program yang akan membekali Anda untuk memengaruhi tujuan Anda dan mengembangkan diri secara pribadi.Kami meluangkan waktu untuk mengeksplorasi kebutuhan Anda untuk memastikan program memenuhi persyaratan Anda.</p>
+						</div>
+						<div class="col_one_third">
+							<div class="heading-block fancy-title nobottomborder title-bottom-border">
+								<h4>Misi <span>Kami</span>.</h4>
+							</div>
+
+							<p>Pelatihan British Academy of Finance disampaikan dalam format praktis dan menarik oleh pelatih berpengalaman industri yang benar-benar telah melakukan pekerjaan bersangkutan.</p>
+
+						</div>
+
+						<div class="col_one_third col_last">
+							<div class="heading-block fancy-title nobottomborder title-bottom-border">
+								<h4>Apa yang kami <span>Lakukan</span>.</h4>
+							</div>
+							<p>Sebagai mitra Pembelajaran CIMA menambah nilai dengan memberikan upaya yang sangat terfokus untuk bekerja dengan individu untuk memobilisasi pengetahuan dan tingkat keterampilan mereka untuk memenuhi standar profesional CIMA.</p>
+						</div>
+						@endif
 
 						<div class="clear"></div>
 
@@ -61,20 +87,20 @@
 							<div class="col_one_third nobottommargin center" data-animate="bounceIn">
 								<i class="i-plain i-xlarge divcenter nobottommargin icon-user-graduate"></i>
 								<div class="counter counter-lined"><span data-from="100" data-to="211" data-refresh-interval="50" data-speed="2000"></span>+</div>
-								<h5>Students</h5>
+								<h5>{{trans('app.students')}}</h5>
 							</div>
 
 							<div class="col_one_third nobottommargin center" data-animate="bounceIn" data-delay="200">
 								<i class="i-plain i-xlarge divcenter nobottommargin icon-handshake"></i>
 								<div class="counter counter-lined"><span data-from="1" data-to="35" data-refresh-interval="100" data-speed="2500"></span>+</div>
-								<h5>Partners</h5>
+								<h5>{{trans('app.partners')}}</h5>
 							</div>
 							
 
 							<div class="col_one_third nobottommargin center col_last" data-animate="bounceIn" data-delay="600">
 								<i class="i-plain i-xlarge divcenter nobottommargin icon-line2-book-open"></i>
 								<div class="counter counter-lined"><span data-from="20" data-to="120" data-refresh-interval="30" data-speed="2700"></span>+</div>
-								<h5>Modules</h5>
+								<h5>{{trans('app.modules')}}</h5>
 							</div>
 
 						</div>
@@ -83,38 +109,53 @@
 
 				</section>
 
-				<section id="section-work" class="page-section topmargin-lg">
-
+				<section id="section-work" class="page-section topmargin-lg" data-animate="bounceInDown">
+					<div class="container clearfix">
 					<div class="heading-block center">
-						<h2>Our Courses</h2>						
-					</div>
+						@if(\LaravelLocalization::getCurrentLocale() == 'en')
+							<h2>Our Courses</h2>					
+						@endif
 
+						@if(\LaravelLocalization::getCurrentLocale() == 'id')
+							<h2>Kursus Kami</h2>
+						@endif
+												
+					</div>
+					<ul class="portfolio-filter clearfix" data-container="#portfolio">
+							<li class="activeFilter"><a href="#" data-filter="*">Show All</a></li>
+						@foreach($levels as $level)
+							<li><a href="#" data-filter=".pf-{{$level->id}}">{{$level->alias}}</a></li>	
+						@endforeach					
+
+					</ul><!-- #portfolio-filter end -->
+
+					<div class="clear"></div>
 					<div class="container clearfix center">
-							<div id="portfolio" class="portfolio grid-container portfolio-nomargin clearfix">
-								@foreach($levels as $level)							
-									<article class="portfolio-item pf-media pf-icons">
+						<div id="portfolio" class="portfolio grid-container clearfix">
+							@foreach($levels as $level)
+								@foreach($level->courses as $course)
+									<article class="portfolio-item pf-media pf-{{$level->id}}">
 										<div class="portfolio-image">
-											<a href="{{route('page.level.single',$level->slug)}}">
-												<img src="{{$level->thumbnail}}" alt="{{$level->title}}">
+											<a href="{{route('page.course.single',$course->slug)}}">
+												<img src="{{$course->thumbnail}}" alt="{{$course->title}}">
 											</a>
-											<div class="portfolio-overlay">												
-												<a href="{{route('page.level.single',$level->slug)}}" class="center-icon"><i class="icon-search"></i></a>
+											<div class="portfolio-overlay">									
+												<a href="{{route('page.course.single',$course->slug)}}" class="center-icon"><i class="icon-line-eye"></i></a>
 											</div>
-										</div>
-										<div class="portfolio-desc">
-											<h3><a href="{{route('page.level.single',$level->slug)}}">CIMA {{$level->alias}}</a></h3>
-										</div>
-									</article>								
+										</div>								
+									</article>
 								@endforeach
-							</div>								
-					</div>
+							@endforeach
 
+						</div><!-- #portfolio end -->															
+					</div>
+					</div>
 				</section>
 
-				<section id="section-team" class="page-section topmargin-lg">
+				<section id="section-team" class="page-section topmargin-lg" data-animate="fadeInUp">
 
 					<div class="heading-block center">
-						<h2>Our Team</h2>
+						<h2>{{trans('app.our-team')}}</h2>
 						<span>People who have contributed enormously to our Company.</span>
 					</div>
 
@@ -163,238 +204,7 @@
 
 				</section>
 
-				<!-- <section id="section-services" class="page-section topmargin-lg">
-
-					<div class="heading-block center bottommargin-lg">
-						<h2>Services</h2>
-						<span>List of some features included in Canvas.</span>
-					</div>
-
-					<div class="container clearfix">
-
-						<div class="col_one_third">
-							<div class="feature-box fbox-center fbox-effect nobottomborder" data-animate="fadeIn">
-								<div class="fbox-icon">
-									<a href="#"><i class="icon-phone2"></i></a>
-								</div>
-								<h3>Responsive Layout</h3>
-								<p>Powerful Layout with Responsive functionality that can be adapted to any screen size.</p>
-							</div>
-						</div>
-
-						<div class="col_one_third">
-							<div class="feature-box fbox-center fbox-effect nobottomborder" data-animate="fadeIn" data-delay="200">
-								<div class="fbox-icon">
-									<a href="#"><i class="icon-eye"></i></a>
-								</div>
-								<h3>Retina Ready Graphics</h3>
-								<p>Looks beautiful &amp; ultra-sharp on Retina Displays with Retina Icons, Fonts &amp; Images.</p>
-							</div>
-						</div>
-
-						<div class="col_one_third col_last">
-							<div class="feature-box fbox-center fbox-effect nobottomborder" data-animate="fadeIn" data-delay="400">
-								<div class="fbox-icon">
-									<a href="#"><i class="icon-star2"></i></a>
-								</div>
-								<h3>Powerful Performance</h3>
-								<p>Optimized code that are completely customizable and deliver unmatched fast performance.</p>
-							</div>
-						</div>
-
-						<div class="clear"></div>
-
-						<div class="col_one_third">
-							<div class="feature-box fbox-center fbox-effect nobottomborder" data-animate="fadeIn" data-delay="600">
-								<div class="fbox-icon">
-									<a href="#"><i class="icon-video"></i></a>
-								</div>
-								<h3>HTML5 Video</h3>
-								<p>Canvas provides support for Native HTML5 Videos that can be added to a Full Width Background.</p>
-							</div>
-						</div>
-
-						<div class="col_one_third">
-							<div class="feature-box fbox-center fbox-effect nobottomborder" data-animate="fadeIn" data-delay="800">
-								<div class="fbox-icon">
-									<a href="#"><i class="icon-params"></i></a>
-								</div>
-								<h3>Parallax Support</h3>
-								<p>Display your Content attractively using Parallax Sections that have unlimited customizable areas.</p>
-							</div>
-						</div>
-
-						<div class="col_one_third col_last">
-							<div class="feature-box fbox-center fbox-effect nobottomborder" data-animate="fadeIn" data-delay="1000">
-								<div class="fbox-icon">
-									<a href="#"><i class="icon-fire"></i></a>
-								</div>
-								<h3>Endless Possibilities</h3>
-								<p>Complete control on each &amp; every element that provides endless customization possibilities.</p>
-							</div>
-						</div>
-
-						<div class="clear"></div>
-
-						<div class="col_one_third nobottommargin">
-							<div class="feature-box fbox-center fbox-effect nobottomborder" data-animate="fadeIn" data-delay="1200">
-								<div class="fbox-icon">
-									<a href="#"><i class="icon-bulb"></i></a>
-								</div>
-								<h3>Light &amp; Dark Color Schemes</h3>
-								<p>Change your Website's Primary Scheme instantly by simply adding the dark class to the body.</p>
-							</div>
-						</div>
-
-						<div class="col_one_third nobottommargin">
-							<div class="feature-box fbox-center fbox-effect nobottomborder" data-animate="fadeIn" data-delay="1400">
-								<div class="fbox-icon">
-									<a href="#"><i class="icon-heart2"></i></a>
-								</div>
-								<h3>Boxed &amp; Wide Layouts</h3>
-								<p>Stretch your Website to the Full Width or make it boxed to surprise your visitors.</p>
-							</div>
-						</div>
-
-						<div class="col_one_third nobottommargin col_last">
-							<div class="feature-box fbox-center fbox-effect nobottomborder" data-animate="fadeIn" data-delay="1600">
-								<div class="fbox-icon">
-									<a href="#"><i class="icon-note"></i></a>
-								</div>
-								<h3>Extensive Documentation</h3>
-								<p>We have covered each &amp; everything in our Documentation including Videos &amp; Screenshots.</p>
-							</div>
-						</div>
-
-						<div class="clear"></div>
-
-					</div>
-
-					<div class="divider divider-short divider-center topmargin-lg"><i class="icon-star3"></i></div>
-
-				</section> -->
-
-				<!-- <section id="section-pricing" class="page-section topmargin-lg">
-
-					<div class="heading-block center">
-						<h2>Pricing</h2>
-						<span>We offer Flexible Pricing Options.</span>
-					</div>
-
-					<div class="container clearfix">
-
-						<div class="row pricing bottommargin clearfix">
-
-							<div class="col-lg-3" data-animate="fadeInLeft">
-
-								<div class="pricing-box">
-									<div class="pricing-title">
-										<h3>Starter</h3>
-									</div>
-									<div class="pricing-price">
-										<span class="price-unit">&euro;</span>7<span class="price-tenure">/mo</span>
-									</div>
-									<div class="pricing-features">
-										<ul>
-											<li><strong>Full</strong> Access</li>
-											<li><i class="icon-code"></i> Source Files</li>
-											<li><strong>100</strong> User Accounts</li>
-											<li><strong>1 Year</strong> License</li>
-											<li>Phone &amp; Email Support</li>
-										</ul>
-									</div>
-									<div class="pricing-action">
-										<a href="#" class="btn btn-danger btn-block btn-lg">Sign Up</a>
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-lg-3" data-animate="fadeInDown"  data-delay="250">
-
-								<div class="pricing-box best-price">
-									<div class="pricing-title">
-										<h3>Professional</h3>
-										<span>Most Popular</span>
-									</div>
-									<div class="pricing-price">
-										<span class="price-unit">&euro;</span>12<span class="price-tenure">/mo</span>
-									</div>
-									<div class="pricing-features">
-										<ul>
-											<li><strong>Full</strong> Access</li>
-											<li><i class="icon-code"></i> Source Files</li>
-											<li><strong>1000</strong> User Accounts</li>
-											<li><strong>2 Years</strong> License</li>
-											<li><i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i></li>
-										</ul>
-									</div>
-									<div class="pricing-action">
-										<a href="#" class="btn btn-danger btn-block btn-lg bgcolor border-color">Sign Up</a>
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-lg-3" data-animate="fadeInUp" data-delay="500">
-
-								<div class="pricing-box">
-									<div class="pricing-title">
-										<h3>Business</h3>
-									</div>
-									<div class="pricing-price">
-										<span class="price-unit">&euro;</span>19<span class="price-tenure">/mo</span>
-									</div>
-									<div class="pricing-features">
-										<ul>
-											<li><strong>Full</strong> Access</li>
-											<li><i class="icon-code"></i> Source Files</li>
-											<li><strong>500</strong> User Accounts</li>
-											<li><strong>3 Years</strong> License</li>
-											<li>Phone &amp; Email Support</li>
-										</ul>
-									</div>
-									<div class="pricing-action">
-										<a href="#" class="btn btn-danger btn-block btn-lg">Sign Up</a>
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-lg-3" data-animate="fadeInRight" data-delay="250">
-
-								<div class="pricing-box">
-									<div class="pricing-title">
-										<h3>Enterprise</h3>
-									</div>
-									<div class="pricing-price">
-										<span class="price-unit">&euro;</span>29<span class="price-tenure">/mo</span>
-									</div>
-									<div class="pricing-features">
-										<ul>
-											<li><strong>Full</strong> Access</li>
-											<li><i class="icon-code"></i> Source Files</li>
-											<li><strong>1000</strong> User Accounts</li>
-											<li><strong>5 Years</strong> License</li>
-											<li>Phone &amp; Email Support</li>
-										</ul>
-									</div>
-									<div class="pricing-action">
-										<a href="#" class="btn btn-danger btn-block btn-lg">Sign Up</a>
-									</div>
-								</div>
-
-							</div>
-
-						</div>
-
-					</div>
-
-				</section> -->
+				
 
 				<section id="section-testimonials" class="page-section section parallax dark" style="background-image: url('{{url('/')}}/assets/frontend/canvas/images/baf/me-parallax.jpg'); padding: 200px 0;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
 
@@ -405,8 +215,9 @@
 						<div class="col_half nobottommargin col_last">
 
 							<div class="heading-block center">
-								<h4>What Students say ?</h4>
-								<span>Some of our Students love us &amp; so we do!</span>
+
+								<h4>{{trans('app.testimonials')}}</h4>
+								
 							</div>
 
 							<div class="fslider testimonial testimonial-full nobgcolor noborder noshadow nopadding" data-arrows="false">
@@ -426,7 +237,9 @@
 									</div>
 								</div>
 							</div>
-
+							<div class="text-center topmargin">
+								<a href="{{url('/testimonials')}}" class="button button-3d button-mini button-rounded button-red">{{trans('app.see-all')}}</a>
+							</div>
 						</div>
 
 					</div>
@@ -436,15 +249,20 @@
 				<section id="section-contact" class="page-section">
 
 					<div class="heading-block title-center">
-						<h2>Get in Touch with us</h2>
-						<span>Still have Questions? Contact Us using the Form below.</span>
+						@if(\LaravelLocalization::getCurrentLocale() == 'en')
+							<h2>Get in Touch with us</h2>						
+						@endif
+
+						@if(\LaravelLocalization::getCurrentLocale() == 'id')
+							<h2>Kontak Kami</h2>
+						@endif
 					</div>
 
 					<div class="container clearfix">
 
 						<!-- Contact Form
 						============================================= -->
-						<div class="col_half">
+						<!-- <div class="col_half">
 
 							<div class="fancy-title title-dotted-border">
 								<h3>Send us an Email</h3>
@@ -500,16 +318,16 @@
 						</div>
 
 
-						</div><!-- Contact Form End -->
+						</div> --><!-- Contact Form End -->
 
 						<!-- Google Map
 						============================================= -->
-						<div class="col_half col_last">
+						<!-- <div class="col_half col_last">
 
 							<section id="google-map" class="gmap" style="height: 410px;"></section>
 
 
-						</div><!-- Google Map End -->
+						</div> --><!-- Google Map End -->
 
 						<!-- Contact Info
 						============================================= -->
@@ -520,7 +338,7 @@
 									<div class="fbox-icon">
 										<a href="#"><i class="icon-map-marker2"></i></a>
 									</div>
-									<h3>Address<span class="subtitle">Finance Tower 2, Lantai 33 Jl. Jend. Sudirman, Jakarta Selatan </span></h3>
+									<h3>{{trans('app.address')}}<span class="subtitle">Finance Tower 2, Lantai 33 Jl. Jend. Sudirman, Jakarta Selatan </span></h3>
 								</div>
 							</div>
 
@@ -529,7 +347,7 @@
 									<div class="fbox-icon">
 										<a href="#"><i class="icon-phone3"></i></a>
 									</div>
-									<h3>Call Us<span class="subtitle">{{getOption('theme_option_hotline')}}</span></h3>
+									<h3>{{trans('app.call-us')}}<span class="subtitle">+{{getOption('theme_option_hotline')}}</span></h3>
 								</div>
 							</div>
 

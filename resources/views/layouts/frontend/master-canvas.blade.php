@@ -155,7 +155,7 @@
 
 					<div class="col_two_third">
 
-						<div class="col_one_third">
+						<div class="col_two_third">
 
 							<div class="widget clearfix">
 
@@ -164,10 +164,10 @@
 
 								<div style="background: url('{{url('/')}}/assets/frontend/canvas/images/world-map.png') no-repeat center center; background-size: 100%;">
 									<address>
-										<strong>Address</strong><br>
+										<strong>{{trans('app.address')}}</strong><br>
 										{{getOption('theme_option_address')}}
 									</address>
-									<abbr title="Phone Number"><strong>Phone:</strong></abbr> {{getOption('theme_option_hotline')}}<br>									
+									<abbr title="Phone Number"><strong>{{trans('app.phone')}}:</strong></abbr> {{getOption('theme_option_hotline')}}<br>									
 									<abbr title="Email Address"><strong>Email:</strong></abbr> {{getOption('theme_option_email')}}
 								</div>
 
@@ -175,14 +175,14 @@
 
 						</div>
 
-						<div class="col_one_third">
+						<div class="col_one_third col_last">
 
 							<div class="widget widget_links clearfix">
 
 								<h4>Menu</h4>
 								<ul>
-								@foreach(\Menu::getByName('Footer 1') as $menu)								
-									<li><a href="{{$menu['link']}}"><i class="fa fa-plus"></i> {{$menu['label']}}</a></li>
+								@foreach(\Menu::getByName('Footer 1') as $menu)									
+									<li><a href="{{$menu['link']}}"><i class="fa fa-plus"></i>{{\Harimayco\Menu\Models\MenuItems::find($menu['id'])->trans('label')}}</a></li>
 								@endforeach	
 									<!-- <li><a href="http://codex.wordpress.org/">Documentation</a></li>
 									<li><a href="http://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
@@ -197,68 +197,11 @@
 
 						</div>
 
-						<div class="col_one_third col_last">
-
-							<div class="widget clearfix">
-								<h4>Recent News</h4>
-
-								<div id="post-list-footer">
-									<div class="spost clearfix">
-										<div class="entry-c">
-											<div class="entry-title">
-												<h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
-											</div>
-											<ul class="entry-meta">
-												<li>10th July 2014</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="spost clearfix">
-										<div class="entry-c">
-											<div class="entry-title">
-												<h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
-											</div>
-											<ul class="entry-meta">
-												<li>10th July 2014</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="spost clearfix">
-										<div class="entry-c">
-											<div class="entry-title">
-												<h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
-											</div>
-											<ul class="entry-meta">
-												<li>10th July 2014</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-
-						</div>
+						
 
 					</div>
 
-					<div class="col_one_third col_last">
-
-						<div class="widget subscribe-widget clearfix">
-							<h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</h5>
-							<div class="widget-subscribe-form-result"></div>
-							<form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
-								<div class="input-group divcenter">
-									<div class="input-group-prepend">
-										<div class="input-group-text"><i class="icon-email2"></i></div>
-									</div>
-									<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-									<div class="input-group-append">
-										<button class="btn btn-success" type="submit">Subscribe</button>
-									</div>
-								</div>
-							</form>
-						</div>
+					<div class="col_one_third col_last">					
 
 						<div class="widget clearfix" style="margin-bottom: -20px;">
 
@@ -269,14 +212,14 @@
 										<i class="icon-facebook"></i>
 										<i class="icon-facebook"></i>
 									</a>
-									<a href="#"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
+									<a href="{{getOption('theme_option_facebook_url')}}"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
 								</div>
 								<div class="col-lg-6 clearfix">
-									<a href="#" class="social-icon si-dark si-colored si-rss nobottommargin" style="margin-right: 10px;">
-										<i class="icon-rss"></i>
-										<i class="icon-rss"></i>
+									<a href="#" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
+										<i class="icon-twitter"></i>
+										<i class="icon-twitter"></i>
 									</a>
-									<a href="#"><small style="display: block; margin-top: 3px;"><strong>Subscribe</strong><br>to RSS Feeds</small></a>
+									<a href="{{getOption('theme_option_twitter_url')}}"><small style="display: block; margin-top: 3px;"><strong>Follow</strong><br>Our Twitter</small></a>
 								</div>
 
 							</div>
@@ -296,56 +239,21 @@
 				<div class="container clearfix">
 
 					<div class="col_half">
-						Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.<br>
-						<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+						Copyrights &copy; 2019 {{getOption('web_title')}}<br>						
 					</div>
 
 					<div class="col_half col_last tright">
 						<div class="fright clearfix">
-							<a href="#" class="social-icon si-small si-borderless si-facebook">
+							<a href="{{getOption('theme_option_facebook_url')}}" class="social-icon si-small si-borderless si-facebook">
 								<i class="icon-facebook"></i>
 								<i class="icon-facebook"></i>
 							</a>
 
-							<a href="#" class="social-icon si-small si-borderless si-twitter">
+							<a href="{{getOption('theme_option_twitter_url')}}" class="social-icon si-small si-borderless si-twitter">
 								<i class="icon-twitter"></i>
 								<i class="icon-twitter"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-gplus">
-								<i class="icon-gplus"></i>
-								<i class="icon-gplus"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-pinterest">
-								<i class="icon-pinterest"></i>
-								<i class="icon-pinterest"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-vimeo">
-								<i class="icon-vimeo"></i>
-								<i class="icon-vimeo"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-github">
-								<i class="icon-github"></i>
-								<i class="icon-github"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-yahoo">
-								<i class="icon-yahoo"></i>
-								<i class="icon-yahoo"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-linkedin">
-								<i class="icon-linkedin"></i>
-								<i class="icon-linkedin"></i>
-							</a>
-						</div>
-
-						<div class="clear"></div>
-
-						<i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +91-11-6541-6369 <span class="middot">&middot;</span> <i class="icon-skype2"></i> CanvasOnSkype
+							</a>							
+						</div>						
 					</div>
 
 				</div>
