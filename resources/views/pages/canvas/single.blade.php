@@ -24,11 +24,11 @@
 						<h1>{{$post->trans('title')}}</h1>
 					</div>
 					<!-- Single Page -->
-						<div class="page">
-							
-							{!!$post->trans('body')!!}
-						</div>
-						<!-- End Single Page -->
+					<div class="page">
+						
+						{!!$post->trans('body')!!}
+					</div>
+					<!-- End Single Page -->
 				</div>
 				<!-- End Content -->
 			</div>

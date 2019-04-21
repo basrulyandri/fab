@@ -27,6 +27,9 @@ class PagesController extends Controller
 		$latestPosts = Post::whereStatus('published')->whereType('post')->orderBy('published_at','desc')->take(10)->get();	
         //$levels = Level::whereIn('id',[8,7,6,5])->orderBy('id','desc')->get();
         $levels = Level::all();
+        $levelForAll = Level::whereFlag('courses-for-all')->get();
+        $coursesForStudents = Course::whereFlag('courses-for-students')->get();
+        $coursesForprofessionals = Course::whereFlag('courses-for-working-professionals')->get();
         //dd($levels);
         // $levels = [
         //         ['title' => 'CIMA Strategic','thumbnail' => '/photos/CIMA STRATEGIC.jpg','url' => 'https://www.bafstudies.com/level/associate-chartered-management-accountant-acma-and-chartered-global-management-accountant-cgma'],
@@ -36,7 +39,7 @@ class PagesController extends Controller
         //     ];
             $testimonials = Testimonial::inRandomOrder()->take(5)->get();
             //dd($testimonials);
-		return view('pages.canvas.index',compact('latestPosts','levels','testimonials'));
+		return view('pages.canvas.index',compact('latestPosts','levels','testimonials','levelForAll','coursesForStudents','coursesForprofessionals'));
 	}
 
 	public function downloadbrosur(Request $request)

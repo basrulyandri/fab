@@ -80,78 +80,10 @@
 
 					</div>
 
-					<div class="section dark parallax nobottommargin" style="padding: 80px 0;background-image: url('{{url('/')}}/assets/frontend/canvas/images/baf/1.jpg');" data-bottom-top="background-position:0px 100px;" data-top-bottom="background-position:0px -300px;">
-
-						<div class="container clearfix">
-
-							<div class="col_one_third nobottommargin center" data-animate="bounceIn">
-								<i class="i-plain i-xlarge divcenter nobottommargin icon-user-graduate"></i>
-								<div class="counter counter-lined"><span data-from="100" data-to="211" data-refresh-interval="50" data-speed="2000"></span>+</div>
-								<h5>{{trans('app.students')}}</h5>
-							</div>
-
-							<div class="col_one_third nobottommargin center" data-animate="bounceIn" data-delay="200">
-								<i class="i-plain i-xlarge divcenter nobottommargin icon-handshake"></i>
-								<div class="counter counter-lined"><span data-from="1" data-to="35" data-refresh-interval="100" data-speed="2500"></span>+</div>
-								<h5>{{trans('app.partners')}}</h5>
-							</div>
-							
-
-							<div class="col_one_third nobottommargin center col_last" data-animate="bounceIn" data-delay="600">
-								<i class="i-plain i-xlarge divcenter nobottommargin icon-line2-book-open"></i>
-								<div class="counter counter-lined"><span data-from="20" data-to="120" data-refresh-interval="30" data-speed="2700"></span>+</div>
-								<h5>{{trans('app.modules')}}</h5>
-							</div>
-
-						</div>
-
-					</div>
+					
 
 				</section>
-
-				<section id="section-work" class="page-section topmargin-lg" data-animate="bounceInDown">
-					<div class="container clearfix">
-					<div class="heading-block center">
-						@if(\LaravelLocalization::getCurrentLocale() == 'en')
-							<h2>Our Courses</h2>					
-						@endif
-
-						@if(\LaravelLocalization::getCurrentLocale() == 'id')
-							<h2>Kursus Kami</h2>
-						@endif
-												
-					</div>
-					<ul class="portfolio-filter clearfix" data-container="#portfolio">
-							<li class="activeFilter"><a href="#" data-filter="*">Show All</a></li>
-						@foreach($levels as $level)
-							<li><a href="#" data-filter=".pf-{{$level->id}}">{{$level->alias}}</a></li>	
-						@endforeach					
-
-					</ul><!-- #portfolio-filter end -->
-
-					<div class="clear"></div>
-					<div class="container clearfix center">
-						<div id="portfolio" class="portfolio grid-container clearfix">
-							@foreach($levels as $level)
-								@foreach($level->courses as $course)
-									<article class="portfolio-item pf-media pf-{{$level->id}}">
-										<div class="portfolio-image">
-											<a href="{{route('page.course.single',$course->slug)}}">
-												<img src="{{$course->thumbnail}}" alt="{{$course->title}}">
-											</a>
-											<div class="portfolio-overlay">									
-												<a href="{{route('page.course.single',$course->slug)}}" class="center-icon"><i class="icon-line-eye"></i></a>
-											</div>
-										</div>								
-									</article>
-								@endforeach
-							@endforeach
-
-						</div><!-- #portfolio end -->															
-					</div>
-					</div>
-				</section>
-
+				
 				<section id="section-team" class="page-section topmargin-lg" data-animate="fadeInUp">
 
 					<div class="heading-block center">
@@ -185,10 +117,10 @@
 										<img src="/photos/august-the-british-academy-of-finance.jpg" alt="Nix Maxwell">
 									</div>
 									<div class="team-desc">
-										<div class="team-title"><h4>Mr. Augustus Perera</h4></div>
+										<div class="team-title"><h4>Augustus Perera</h4><span>Senior Consultant</span></div>
 										<div class="team-content">
 											<p>A multi discipline professionally qualified individual with 15 years of corporate management experience</p>
-											<p>He have worked with best in class consultants McKinsey USA, SIEMENS IN, KPMG CA, LeanCor USA and have Experience with Global Companies like GSK ( Life Science and Chemicals), M&S, G-Star, George ( Fashion & Apparel ), Uniliver ( FMCG ), Etisalat, Dialog ( Telecommunication ), Camso, Solideal ( Industrial goods ), Litro ( LPG Gas & Energy ) , Maldives Port / SLPA (Project Cargo ) are highlights among many other.</p>
+											<p>He have worked with best in class consultants McKinsey USA, SIEMENS IN, KPMG CA, LeanCor USA and have Experience with Global Companies like GSK (Life Science and Chemicals), M&S, G-Star, George (Fashion & Apparel), Uniliver (FMCG), Etisalat, Dialog (Telecommunication), Camso, Solideal (Industrial goods), Litro (LPG Gas & Energy) , Maldives Port / SLPA (Project Cargo) are highlights among many other.</p>
 										</div>										
 									</div>
 								</div>
@@ -198,11 +130,82 @@
 
 					<div class="section parallax" style="background-image: url('{{url('/')}}/assets/frontend/canvas/images/baf/parallax-3.jpg'); padding: 100px 0;" data-bottom-top="background-position:0px 100px;" data-top-bottom="background-position:0px -100px;">
 						<div class="heading-block center nobottomborder nobottommargin">
-							<h2>It is a walk-though journey with us to acquire a globally recognized management accounting qualification.</h2>
+							<h2 style="text-transform: none;">It is a walk-though journey with us to acquire a globally recognized management accounting qualification.</h2>
 						</div>
 					</div>
 
 				</section>
+
+				<section id="section-work" class="page-section topmargin-lg" data-animate="bounceInDown">
+					<div class="container clearfix">
+					<div class="heading-block center">
+						@if(\LaravelLocalization::getCurrentLocale() == 'en')
+							<h2>Our Courses</h2>					
+						@endif
+
+						@if(\LaravelLocalization::getCurrentLocale() == 'id')
+							<h2>Kursus Kami</h2>
+						@endif
+												
+					</div>
+
+					<ul class="portfolio-filter clearfix" data-container="#Bcourse">
+							<li class="activeFilter"><a href="#" data-filter="*">Show All</a></li>
+						
+						<li><a href="#" data-filter=".pf-courses-for-all">Courses For All</a></li>	
+						<li><a href="#" data-filter=".pf-courses-for-students">Courses for University STUDENTS</a></li>	
+						<li><a href="#" data-filter=".pf-courses-for-working-professionals">Courses for Working PROFESSIONALS</a></li>	
+						
+
+					</ul><!-- #portfolio-filter end -->
+
+					<div class="clear"></div>
+					<div class="container clearfix center">
+						<div id="Bcourse" class="portfolio grid-container clearfix">
+							@foreach($levelForAll as $level)								
+								<article class="portfolio-item pf-media pf-courses-for-all">
+									<div class="portfolio-image">
+										<a href="{{route('page.level.single',$level->slug)}}">
+											<img src="{{$level->thumbnail}}" alt="{{$level->title}}">
+										</a>
+										<div class="portfolio-overlay">									
+											<a href="{{route('page.level.single',$level->slug)}}" class="center-icon"><i class="icon-line-eye"></i></a>
+										</div>
+									</div>								
+								</article>								
+							@endforeach
+
+							@foreach($coursesForStudents as $cfs)
+									<article class="portfolio-item pf-media pf-courses-for-students">
+										<div class="portfolio-image">
+											<a href="{{route('page.course.single',$cfs->slug)}}">
+												<img src="{{$cfs->thumbnail}}" alt="{{$cfs->title}}">
+											</a>
+											<div class="portfolio-overlay">									
+												<a href="{{route('page.course.single',$cfs->slug)}}" class="center-icon"><i class="icon-line-eye"></i></a>
+											</div>
+										</div>								
+									</article>
+							@endforeach
+
+							@foreach($coursesForprofessionals as $cfwp)
+									<article class="portfolio-item pf-media pf-courses-for-working-professionals">
+										<div class="portfolio-image">
+											<a href="{{route('page.course.single',$cfwp->slug)}}">
+												<img src="{{$cfwp->thumbnail}}" alt="{{$cfwp->title}}">
+											</a>
+											<div class="portfolio-overlay">									
+												<a href="{{route('page.course.single',$cfwp->slug)}}" class="center-icon"><i class="icon-line-eye"></i></a>
+											</div>
+										</div>								
+									</article>
+							@endforeach
+						</div><!-- #portfolio end -->															
+					</div>
+					</div>
+				</section>
+
+				
 
 				
 
@@ -338,7 +341,7 @@
 									<div class="fbox-icon">
 										<a href="#"><i class="icon-map-marker2"></i></a>
 									</div>
-									<h3>{{trans('app.address')}}<span class="subtitle">Finance Tower 2, Lantai 33 Jl. Jend. Sudirman, Jakarta Selatan </span></h3>
+									<h3>{{trans('app.address')}}<span class="subtitle">Finance Center Tower 2, Lantai 33 Jl. Jend. Sudirman Kav.22-23 Jakarta Selatan 12920 </span></h3>
 								</div>
 							</div>
 
@@ -347,7 +350,10 @@
 									<div class="fbox-icon">
 										<a href="#"><i class="icon-phone3"></i></a>
 									</div>
-									<h3>{{trans('app.call-us')}}<span class="subtitle">+{{getOption('theme_option_hotline')}}</span></h3>
+									<h3>{{trans('app.call-us')}}
+										<span class="subtitle">WA: +{{getOption('theme_option_hotline')}}</span>
+										<span class="subtitle">Phone: +62 21 8086 9481</span>
+									</h3>
 								</div>
 							</div>
 
@@ -356,7 +362,9 @@
 									<div class="fbox-icon">
 										<a href="#"><i class="icon-email"></i></a>
 									</div>
-									<h3>Email<span class="subtitle">{{getOption('theme_option_email')}}</span></h3>
+									<h3>Email<span class="subtitle">{{getOption('theme_option_email')}}</span>
+									<span class="subtitle">dammicool@gmail.com</span>
+									</h3>
 								</div>
 							</div>						
 
@@ -382,16 +390,26 @@
 							<div class="swiper-slide dark" style="background-image: url('{{url('/')}}/photos/baf-silder-(2).jpg');">
 								<div class="container clearfix">
 									<div class="slider-caption slider-caption-center">
-										<h2 data-animate="fadeInUp">Welcome to BAFStudies</h2>
-										<p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">Will walk you though for success.</p>
+										<h3 style="font-size: 28pt;" data-animate="fadeInUp">We Offer more than just CIMA study support</h3>
+										<ul style="list-style: none;">
+											<li>STUDY SUMMARIES</li>
+											<li>24/7 SUPPORT</li>
+											<li>LIVE SESSIONS</li>
+											<li>INDIVIDUAL SESSIONS</li>
+										</ul>										
 									</div>
 								</div>
 							</div>
-							<div class="swiper-slide dark">
+							<div class="swiper-slide dark" style="background-image: url('{{url('/')}}/photos/cima-slider.jpg');">
 								<div class="container clearfix">
 									<div class="slider-caption slider-caption-center">
-										<h2 data-animate="fadeInUp">Beautifully Flexible</h2>
-										<p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">Looks beautiful &amp; ultra-sharp on Retina Screen Displays. Powerful Layout with Responsive functionality that can be adapted to any screen size.</p>
+										<h3 style="font-size: 28pt;" data-animate="fadeInUp">Why global management accounting qualification?</h3>
+										<ul style="list-style: none;">
+											<li><strong>Catch the eye of employers around the globe</strong></li>
+											<li><strong>Choose your own role</strong></li>
+											<li><strong>Earn higher salaries</strong></li>	
+											<li><strong>Study at your own speed</strong></li>									
+										</ul>
 									</div>
 								</div>
 								<div class="video-wrap">
@@ -402,29 +420,54 @@
 									<div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
 								</div>
 							</div>
-							<div class="swiper-slide" style="background-image: url('{{url('/')}}/assets/frontend/canvas/images/slider/swiper/3.jpg'); background-position: center top;">
+
+							<div class="swiper-slide dark" style="background-image: url('{{url('/')}}/photos/lalith-baf.jpg');">
 								<div class="container clearfix">
-									<div class="slider-caption">
-										<h2 data-animate="fadeInUp">Great Performance</h2>
-										<p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">You'll be surprised to see the Final Results of your Creation &amp; would crave for more.</p>
+									<div class="slider-caption slider-caption-center">
+										<h3 style="font-size: 28pt;" data-animate="fadeInUp">3 Steps to Pass The Exam</h3>
+										<ul style="list-style: none;">
+											<li><strong>Study Material (Power point presentations and Videos)</strong></li>
+											<li><strong>On-line Tutoring- (20 Hours)</strong></li>
+											<li><strong>Revision Questions</strong></li>	
+											<li><strong>Go To Courses </strong></li>									
+											<li><strong>We Offer more than just CIMA study support</strong></li>
+										</ul>
 									</div>
 								</div>
+								<div class="video-wrap">
+									<video poster="{{url('/')}}/assets/frontend/canvas/images/videos/explore.jpg" preload="auto" loop autoplay muted>
+										<source src='{{url('/')}}/assets/frontend/canvas/images/videos/explore.mp4' type='video/mp4' />
+										<source src='{{url('/')}}/assets/frontend/canvas/images/videos/explore.webm' type='video/webm' />
+									</video>
+									<div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
+								</div>
 							</div>
+							
 						@endif
 						@if(\LaravelLocalization::getCurrentLocale() == 'id')
 							<div class="swiper-slide dark" style="background-image: url('{{url('/')}}/photos/baf-silder-(2).jpg');">
 								<div class="container clearfix">
 									<div class="slider-caption slider-caption-center">
-										<h2 data-animate="fadeInUp">Selamat Datang di BAFSTUDIES</h2>
-										<p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">Will walk you though for success</p>
+										<h3 style="font-size: 28pt;" data-animate="fadeInUp">Kami menawarkan lebih dari sekedar dukungan dari CIMA</h3>
+										<ul style="list-style: none;">
+											<li>RINGKASAN BELAJAR</li>
+											<li>DUKUNGAN 24 JAM</li>
+											<li>SESI SIARAN LANGSUNG</li>
+											<li>SESI PRIVAT</li>
+										</ul>										
 									</div>
 								</div>
 							</div>
-							<div class="swiper-slide dark">
+							<div class="swiper-slide dark" style="background-image: url('{{url('/')}}/photos/cima-slider.jpg');">
 								<div class="container clearfix">
 									<div class="slider-caption slider-caption-center">
-										<h2 data-animate="fadeInUp">Beautifully Flexible</h2>
-										<p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">Looks beautiful &amp; ultra-sharp on Retina Screen Displays. Powerful Layout with Responsive functionality that can be adapted to any screen size.</p>
+										<h3 style="font-size: 28pt;" data-animate="fadeInUp">Mengapa perlu global untuk kualifikasi manajemen akunting ?</h3>
+										<ul style="list-style: none;">
+											<li><strong>Dapat perhatian dari seluruh dunia</strong></li>
+											<li><strong>Pilih jabatanmu</strong></li>
+											<li><strong>Gaji lebih besar</strong></li>	
+											<li><strong>Belajar sesuai kemampuanmu</strong></li>									
+										</ul>
 									</div>
 								</div>
 								<div class="video-wrap">
@@ -435,12 +478,24 @@
 									<div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
 								</div>
 							</div>
-							<div class="swiper-slide" style="background-image: url('{{url('/')}}/assets/frontend/canvas/images/slider/swiper/3.jpg'); background-position: center top;">
+
+							<div class="swiper-slide dark" style="background-image: url('{{url('/')}}/photos/lalith-baf.jpg');">
 								<div class="container clearfix">
-									<div class="slider-caption">
-										<h2 data-animate="fadeInUp">Great Performance</h2>
-										<p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">You'll be surprised to see the Final Results of your Creation &amp; would crave for more.</p>
+									<div class="slider-caption slider-caption-center">
+										<h3 style="font-size: 28pt;" data-animate="fadeInUp">3 langkah untuk lulus ujian</h3>
+										<ul style="list-style: none;">
+											<li><strong>Materi belajar (Power point dan video)</strong></li>
+											<li><strong>Tutor Online-(20 jam)</strong></li>
+											<li><strong>Revisi pertanyaan</strong></li>														
+										</ul>
 									</div>
+								</div>
+								<div class="video-wrap">
+									<video poster="{{url('/')}}/assets/frontend/canvas/images/videos/explore.jpg" preload="auto" loop autoplay muted>
+										<source src='{{url('/')}}/assets/frontend/canvas/images/videos/explore.mp4' type='video/mp4' />
+										<source src='{{url('/')}}/assets/frontend/canvas/images/videos/explore.webm' type='video/webm' />
+									</video>
+									<div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
 								</div>
 							</div>
 						@endif
@@ -448,7 +503,7 @@
 					</div>
 					<div class="slider-arrow-left"><i class="icon-angle-left"></i></div>
 					<div class="slider-arrow-right"><i class="icon-angle-right"></i></div>
-					<div class="slide-number"><div class="slide-number-current"></div><span>/</span><div class="slide-number-total"></div></div>
+					
 				</div>
 
 			</div>

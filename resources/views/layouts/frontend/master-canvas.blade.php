@@ -51,8 +51,8 @@
 					<!-- Logo
 					============================================= -->
 					<div id="logo">
-						<a href="index.html" class="standard-logo" data-dark-logo="{{url('/')}}/assets/frontend/canvas/images/logo-dark.png"><img src="{{url('/').getOption('theme_option_logo')}}" alt="{{getOption('web_title')}} logo"></a>
-						<a href="index.html" class="retina-logo" data-dark-logo="{{url('/')}}/assets/frontend/canvas/images/logo-dark@2x.png"><img src="{{url('/').getOption('theme_option_logo')}}" alt="{{getOption('web_title')}} Logo"></a>
+						<a href="{{route('page.index')}}" class="standard-logo" data-dark-logo="{{url('/')}}/assets/frontend/canvas/images/logo-dark.png"><img src="{{url('/').getOption('theme_option_logo')}}" alt="{{getOption('web_title')}} logo"></a>
+						<a href="{{route('page.index')}}" class="retina-logo" data-dark-logo="{{url('/')}}/assets/frontend/canvas/images/logo-dark@2x.png"><img src="{{url('/').getOption('theme_option_logo')}}" alt="{{getOption('web_title')}} Logo"></a>
 					</div><!-- #logo end -->
 
 					<!-- Primary Navigation
@@ -63,11 +63,13 @@
 								<li><a href="{{route('page.index')}}"><div>{{trans('app.home')}}</div></a></li>
 								<li><a href="#" data-href="#section-about"><div>{{trans('app.about')}}</div></a></li>
 								<li><a href="#" data-href="#section-work"><div>{{trans('app.courses')}}</div></a></li>
-								<li><a href="#" data-href="#section-team"><div>{{trans('app.team')}}</div></a></li>
+								<li><a href="/cima-syllabus"><div>{{trans('app.cima_syllabus')}}</div></a></li>
+								<li><a href="#" data-href="#section-testimonials" data-offset="60"><div>{{trans('app.testimonials')}}</div></a></li>
+								<li><a href="/exam-dates"><div>{{trans('app.exam_dates')}}</div></a></li>
+								<li><a href="#"><div>{{trans('app.partnership_affiliate')}}</div></a></li>								
 								<!-- <li><a href="#" data-href="#section-services"><div>Services</div></a></li>
 								<li><a href="#" data-href="#section-pricing"><div>Pricing</div></a></li>
 								<li><a href="blog.html"><div>Blog</div></a></li> -->
-								<li><a href="#" data-href="#section-testimonials" data-offset="60"><div>{{trans('app.testimonials')}}</div></a></li>
 								<li><a href="#" data-href="#section-contact"><div>{{trans('app.contact')}}</div></a></li>
 								<li><a href="{{route('page.basket')}}"><div>{{trans('app.basket')}}</div></a></li>
 							</ul>
@@ -76,11 +78,10 @@
 								<li><a href="{{route('page.index')}}"><div>{{trans('app.home')}}</div></a></li>
 								<li><a href="{{route('page.index')}}#section-about" data-href="{{route('page.index')}}#section-about"><div>{{trans('app.about')}}</div></a></li>
 								<li><a href="{{route('page.index')}}#section-work" data-href="{{route('page.index')}}#section-work"><div>{{trans('app.courses')}}</div></a></li>
-								<li><a href="{{route('page.index')}}#section-team" data-href="{{route('page.index')}}#section-team"><div>{{trans('app.team')}}</div></a></li>
-								<!-- <li><a href="#" data-href="#section-services"><div>Services</div></a></li>
-								<li><a href="#" data-href="#section-pricing"><div>Pricing</div></a></li>
-								<li><a href="blog.html"><div>Blog</div></a></li> -->
+								<li><a href="/cima-syllabus"><div>{{trans('app.cima_syllabus')}}</div></a></li>								
 								<li><a href="{{route('page.index')}}#section-testimonials" data-href="{{route('page.index')}}#section-testimonials" data-offset="60"><div>{{trans('app.testimonials')}}</div></a></li>
+								<li><a href="/exam-dates"><div>{{trans('app.exam_dates')}}</div></a></li>
+								<li><a href="{{route('page.index')}}#"><div>{{trans('app.partnership_affiliate')}}</div></a></li>
 								<li><a href="{{route('page.index')}}#section-contact" data-href="{{route('page.index')}}#section-contact"><div>{{trans('app.contact')}}</div></a></li>
 								<li><a href="{{route('page.basket')}}"><div>{{trans('app.basket')}}</div></a></li>
 							</ul>
@@ -89,10 +90,10 @@
 						<div id="top-cart">
 							<a href="#" id="top-cart-trigger">
 								@if( LaravelLocalization::getCurrentLocale() == 'en')
-									<img src="{{asset('assets/frontend/canvas/images/flags/us.png')}}" alt=""></a>
+									EN </a>
 								@endif
 								@if( LaravelLocalization::getCurrentLocale() == 'id')
-									<img src="{{asset('assets/frontend/canvas/images/flags/id.png')}}" alt=""></a>
+									ID </a>
 								@endif
 							<div class="top-cart-content">	
 								<div class="top-cart-title">
@@ -142,7 +143,20 @@
 		<div class="clear"></div>
 
 		@yield('content')
-
+		
+		<div style="position: fixed;bottom: 25px;right: 80px;z-index: 1000; width:180px;">
+					<div style="float: left;width:70%;">
+						<div class="text-us" style="padding:15px;background-color: #fff;font-size: 14pt;font-weight: bold;border-top-right-radius: 50px;border-bottom-right-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"><a target="_blank" href="https://api.whatsapp.com/send?phone={{getOption('theme_option_hotline')}}&text=Halo%20BAF">Chat Us</a>
+						</div>											
+					</div>
+					<div style="float: left;width:30%;">
+						<div class="chat-icon">
+							<a target="_blank" href="https://api.whatsapp.com/send?phone={{getOption('theme_option_hotline')}}&text=Halo%20BAF">
+								<img src="{{url('/assets/frontend/images')}}/whatsapp-icon-min.png" alt="" style="width:50px;">
+							</a>				
+						</div>						
+					</div>			
+		</div>
 		<!-- Footer
 		============================================= -->
 		<footer id="footer" class="dark">
