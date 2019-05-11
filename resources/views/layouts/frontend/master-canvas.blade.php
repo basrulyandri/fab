@@ -144,7 +144,7 @@
 
 		@yield('content')
 		
-		<div style="position: fixed;bottom: 25px;right: 80px;z-index: 1000; width:180px;">
+		<div class="whatsapp" style="position: fixed;bottom: 25px;right: 80px;z-index: 1000; width:180px;display: none;">
 					<div style="float: left;width:70%;">
 						<div class="text-us" style="padding:15px;background-color: #fff;font-size: 14pt;font-weight: bold;border-top-right-radius: 50px;border-bottom-right-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"><a target="_blank" href="https://api.whatsapp.com/send?phone={{getOption('theme_option_hotline')}}&text=Halo%20BAF">Chat Us</a>
 						</div>											
@@ -296,33 +296,15 @@
 	<script src="{{url('/')}}/assets/frontend/canvas/js/jquery.gmap.js"></script>
 
 	<script>
-
-		jQuery('#google-map').gMap({
-
-			address: 'Melbourne, Australia',
-			maptype: 'ROADMAP',
-			zoom: 14,
-			markers: [
-				{
-					address: "Melbourne, Australia",
-					html: '<div style="width: 300px;"><h4 style="margin-bottom: 8px;">Hi, we\'re <span>Envato</span></h4><p class="nobottommargin">Our mission is to help people to <strong>earn</strong> and to <strong>learn</strong> online. We operate <strong>marketplaces</strong> where hundreds of thousands of people buy and sell digital goods every day, and a network of educational blogs where millions learn <strong>creative skills</strong>.</p></div>',
-					icon: {
-						image: "{{url('/')}}/assets/frontend/canvas/images/icons/map-icon-red.png",
-						iconsize: [32, 39],
-						iconanchor: [32,39]
-					}
-				}
-			],
-			doubleclickzoom: false,
-			controls: {
-				panControl: true,
-				zoomControl: true,
-				mapTypeControl: true,
-				scaleControl: false,
-				streetViewControl: false,
-				overviewMapControl: false
-			}
-
+		jQuery(document).ready(function(){
+			$(document).scroll(function() {
+			  var y = $(this).scrollTop();
+			  if (y > 300) {
+			    $('.whatsapp').fadeIn();
+			  } else {
+			    $('.whatsapp').fadeOut();
+			  }
+			});
 		});
 	</script>
 	@yield('footer')

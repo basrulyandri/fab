@@ -5,6 +5,14 @@
     <meta property="og:description" content="Helping you to pass CIMA Exams" />
     <meta property="og:image" content="{{url('/')}}/assets/frontend/images/british academy of finance Indonesia.jpg" />
     <meta name="description" content="{{getOption('web_description')}} Helping you to pass CIMA Exams" />
+    <style>
+    	@media only screen and (max-width: 600px) {
+    		.banner-list-text{
+				display: none;
+    		}
+    		
+    	}
+    </style>
 @stop
 @section('title')
 	{{getOption('web_description')}}
@@ -16,7 +24,7 @@
 					<div class="container clearfix one-page-menu" data-easing="easeInOutExpo" data-speed="1500">
 						<h3><span>{{trans('msg.register_call_to_action')}}</span></h3>
 						<span>{{trans('msg.register_call_to_action_message')}}</span>
-						<a href="#" data-href="#section-work" class="button button-dark button-xlarge button-rounded">{{trans('msg.go_to_courses')}}</a>
+						<a target="_blank" href="https://www.cimaglobal.com/Studying/Starting-out/" class="button button-dark button-xlarge button-rounded">{{trans('msg.go_to_courses')}}</a>
 					</div>
 				</div>
 				<section id="section-about" class="page-section" data-animate="bounceInLeft">
@@ -169,7 +177,7 @@
 											<img src="{{$level->thumbnail}}" alt="{{$level->title}}">
 										</a>
 										<div class="portfolio-overlay">									
-											<a href="{{route('page.level.single',$level->slug)}}" class="center-icon"><i class="icon-line-eye"></i></a>
+											<a href="{{route('page.level.single',$level->slug)}}" class="center-icon"><i class="icon-link"></i></a>
 										</div>
 									</div>								
 								</article>								
@@ -182,7 +190,7 @@
 												<img src="{{$cfs->thumbnail}}" alt="{{$cfs->title}}">
 											</a>
 											<div class="portfolio-overlay">									
-												<a href="{{route('page.course.single',$cfs->slug)}}" class="center-icon"><i class="icon-line-eye"></i></a>
+												<a href="{{route('page.course.single',$cfs->slug)}}" class="center-icon"><i class="icon-link"></i></a>
 											</div>
 										</div>								
 									</article>
@@ -195,7 +203,7 @@
 												<img src="{{$cfwp->thumbnail}}" alt="{{$cfwp->title}}">
 											</a>
 											<div class="portfolio-overlay">									
-												<a href="{{route('page.course.single',$cfwp->slug)}}" class="center-icon"><i class="icon-line-eye"></i></a>
+												<a href="{{route('page.course.single',$cfwp->slug)}}" class="center-icon"><i class="icon-link"></i></a>
 											</div>
 										</div>								
 									</article>
@@ -262,78 +270,7 @@
 					</div>
 
 					<div class="container clearfix">
-
-						<!-- Contact Form
-						============================================= -->
-						<!-- <div class="col_half">
-
-							<div class="fancy-title title-dotted-border">
-								<h3>Send us an Email</h3>
-							</div>
-
-							<div class="contact-widget">
-
-								<div class="contact-form-result"></div>
-
-								<form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail.php" method="post">
-
-								<div class="form-process"></div>
-
-								<div class="col_one_third">
-									<label for="template-contactform-name">Name <small>*</small></label>
-									<input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
-								</div>
-
-								<div class="col_one_third">
-									<label for="template-contactform-email">Email <small>*</small></label>
-									<input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
-								</div>
-
-								<div class="col_one_third col_last">
-									<label for="template-contactform-phone">Phone</label>
-									<input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
-								</div>
-
-								<div class="clear"></div>
-
-								<div class="col_full">
-									<label for="template-contactform-subject">Subject <small>*</small></label>
-									<input type="text" id="template-contactform-subject" name="template-contactform-subject" value="" class="required sm-form-control" />
-								</div>							
-
-								<div class="clear"></div>
-
-								<div class="col_full">
-									<label for="template-contactform-message">Message <small>*</small></label>
-									<textarea class="required sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="30"></textarea>
-								</div>
-
-								<div class="col_full hidden">
-									<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
-								</div>
-
-								<div class="col_full">
-									<button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Send Message</button>
-								</div>
-
-							</form>
-
-						</div>
-
-
-						</div> --><!-- Contact Form End -->
-
-						<!-- Google Map
-						============================================= -->
-						<!-- <div class="col_half col_last">
-
-							<section id="google-map" class="gmap" style="height: 410px;"></section>
-
-
-						</div> --><!-- Google Map End -->
-
-						<!-- Contact Info
-						============================================= -->
+						
 						<div class="col_full nobottommargin clearfix">
 
 							<div class="col_one_third">
@@ -390,79 +327,52 @@
 							<div class="swiper-slide dark" style="background-image: url('{{url('/')}}/photos/baf-silder-(2).jpg');">
 								<div class="container clearfix">
 									<div class="slider-caption slider-caption-center">
-										<h3 style="font-size: 28pt;" data-animate="fadeInUp">We Offer more than just CIMA study support</h3>
-										<ul style="list-style: none;">
+										<h3 data-animate="fadeInUp">WHY GLOBAL MANAGEMENT ACCOUNTING QUALIFICATION ?</h3>
+										<ul style="list-style: none;" class="banner-list-text">
+											<li><strong>Catch the eye of employers around the globe</strong></li>
+											<li><strong>Choose your own role</strong></li>
+											<li><strong>Earn higher salaries</strong></li>	
+											<li><strong>Study at your own speed</strong></li>									
+										</ul>										
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide dark" style="background-image: url('{{url('/')}}/photos/lalith-baf.jpg');">
+								<div class="container clearfix">
+									<div class="slider-caption slider-caption-center">
+										<h3 data-animate="fadeInUp">3 STEPS TO PASS THE EXAM</h3>
+										<ul style="list-style: none;" class="banner-list-text">
+											<li><strong>Study Material (Power point presentations and Videos)</strong></li>
+											<li><strong>On-line Tutoring- (20 Hours)</strong></li>
+											<li><strong>Revision Questions</strong></li>	
+										</ul>
+									</div>
+								</div>								
+							</div>
+
+							<div class="swiper-slide dark" style="background-image: url('{{url('/')}}/photos/cima-slider.jpg');">
+								<div class="container clearfix">
+									<div class="slider-caption slider-caption-center">
+										<h3 data-animate="fadeInUp">WE OFFER MORE THAN JUST CIMA STUDY SUPPORT</h3>
+										<ul style="list-style: none;" class="banner-list-text">
 											<li>STUDY SUMMARIES</li>
 											<li>24/7 SUPPORT</li>
 											<li>LIVE SESSIONS</li>
 											<li>INDIVIDUAL SESSIONS</li>
 										</ul>										
 									</div>
-								</div>
-							</div>
-							<div class="swiper-slide dark" style="background-image: url('{{url('/')}}/photos/cima-slider.jpg');">
-								<div class="container clearfix">
-									<div class="slider-caption slider-caption-center">
-										<h3 style="font-size: 28pt;" data-animate="fadeInUp">Why global management accounting qualification?</h3>
-										<ul style="list-style: none;">
-											<li><strong>Catch the eye of employers around the globe</strong></li>
-											<li><strong>Choose your own role</strong></li>
-											<li><strong>Earn higher salaries</strong></li>	
-											<li><strong>Study at your own speed</strong></li>									
-										</ul>
-									</div>
-								</div>
-								<div class="video-wrap">
-									<video poster="{{url('/')}}/assets/frontend/canvas/images/videos/explore.jpg" preload="auto" loop autoplay muted>
-										<source src='{{url('/')}}/assets/frontend/canvas/images/videos/explore.mp4' type='video/mp4' />
-										<source src='{{url('/')}}/assets/frontend/canvas/images/videos/explore.webm' type='video/webm' />
-									</video>
-									<div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
-								</div>
+								</div>								
 							</div>
 
-							<div class="swiper-slide dark" style="background-image: url('{{url('/')}}/photos/lalith-baf.jpg');">
-								<div class="container clearfix">
-									<div class="slider-caption slider-caption-center">
-										<h3 style="font-size: 28pt;" data-animate="fadeInUp">3 Steps to Pass The Exam</h3>
-										<ul style="list-style: none;">
-											<li><strong>Study Material (Power point presentations and Videos)</strong></li>
-											<li><strong>On-line Tutoring- (20 Hours)</strong></li>
-											<li><strong>Revision Questions</strong></li>	
-											<li><strong>Go To Courses </strong></li>									
-											<li><strong>We Offer more than just CIMA study support</strong></li>
-										</ul>
-									</div>
-								</div>
-								<div class="video-wrap">
-									<video poster="{{url('/')}}/assets/frontend/canvas/images/videos/explore.jpg" preload="auto" loop autoplay muted>
-										<source src='{{url('/')}}/assets/frontend/canvas/images/videos/explore.mp4' type='video/mp4' />
-										<source src='{{url('/')}}/assets/frontend/canvas/images/videos/explore.webm' type='video/webm' />
-									</video>
-									<div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
-								</div>
-							</div>
+							
 							
 						@endif
 						@if(\LaravelLocalization::getCurrentLocale() == 'id')
 							<div class="swiper-slide dark" style="background-image: url('{{url('/')}}/photos/baf-silder-(2).jpg');">
 								<div class="container clearfix">
 									<div class="slider-caption slider-caption-center">
-										<h3 style="font-size: 28pt;" data-animate="fadeInUp">Kami menawarkan lebih dari sekedar dukungan dari CIMA</h3>
-										<ul style="list-style: none;">
-											<li>RINGKASAN BELAJAR</li>
-											<li>DUKUNGAN 24 JAM</li>
-											<li>SESI SIARAN LANGSUNG</li>
-											<li>SESI PRIVAT</li>
-										</ul>										
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide dark" style="background-image: url('{{url('/')}}/photos/cima-slider.jpg');">
-								<div class="container clearfix">
-									<div class="slider-caption slider-caption-center">
-										<h3 style="font-size: 28pt;" data-animate="fadeInUp">Mengapa perlu global untuk kualifikasi manajemen akunting ?</h3>
-										<ul style="list-style: none;">
+										<h3 data-animate="fadeInUp">MENGAPA PERLU KUALIFIKASI GLOBAL UNTUK MANAJEMEN AKUNTING ?</h3>
+										<ul style="list-style: none;" class="banner-list-text">
 											<li><strong>Dapat perhatian dari seluruh dunia</strong></li>
 											<li><strong>Pilih jabatanmu</strong></li>
 											<li><strong>Gaji lebih besar</strong></li>	
@@ -470,33 +380,33 @@
 										</ul>
 									</div>
 								</div>
-								<div class="video-wrap">
-									<video poster="{{url('/')}}/assets/frontend/canvas/images/videos/explore.jpg" preload="auto" loop autoplay muted>
-										<source src='{{url('/')}}/assets/frontend/canvas/images/videos/explore.mp4' type='video/mp4' />
-										<source src='{{url('/')}}/assets/frontend/canvas/images/videos/explore.webm' type='video/webm' />
-									</video>
-									<div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
-								</div>
+							</div>
+							<div class="swiper-slide dark" style="background-image: url('{{url('/')}}/photos/cima-slider.jpg');">
+								<div class="container clearfix">
+									<div class="slider-caption slider-caption-center">
+										<h3 data-animate="fadeInUp">KAMI MENAWARKAN LEBIH DARI SEKEDAR DUKUNGAN CIMA</h3>
+										<ul style="list-style: none;" class="banner-list-text">
+											<li>RINGKASAN BELAJAR</li>
+											<li>DUKUNGAN 24 JAM</li>
+											<li>SESI SIARAN LANGSUNG</li>
+											<li>SESI PRIVAT</li>
+										</ul>																				
+									</div>
+								</div>								
 							</div>
 
 							<div class="swiper-slide dark" style="background-image: url('{{url('/')}}/photos/lalith-baf.jpg');">
 								<div class="container clearfix">
 									<div class="slider-caption slider-caption-center">
-										<h3 style="font-size: 28pt;" data-animate="fadeInUp">3 langkah untuk lulus ujian</h3>
-										<ul style="list-style: none;">
+										<h3 data-animate="fadeInUp"># LANGKAH UNTUK LULUS UJIAN</h3>
+										<ul style="list-style: none;" class="banner-list-text">
 											<li><strong>Materi belajar (Power point dan video)</strong></li>
 											<li><strong>Tutor Online-(20 jam)</strong></li>
 											<li><strong>Revisi pertanyaan</strong></li>														
 										</ul>
 									</div>
 								</div>
-								<div class="video-wrap">
-									<video poster="{{url('/')}}/assets/frontend/canvas/images/videos/explore.jpg" preload="auto" loop autoplay muted>
-										<source src='{{url('/')}}/assets/frontend/canvas/images/videos/explore.mp4' type='video/mp4' />
-										<source src='{{url('/')}}/assets/frontend/canvas/images/videos/explore.webm' type='video/webm' />
-									</video>
-									<div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
-								</div>
+								
 							</div>
 						@endif
 
