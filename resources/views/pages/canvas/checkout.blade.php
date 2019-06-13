@@ -24,8 +24,7 @@
 						<tr>
 							<th>NO</th>
 							<th>{{trans('app.course-name')}}</th>
-							<th>{{trans('app.payment-scheme')}}</th>										
-							<th>{{trans('app.fee')}}</th>
+							<th>{{trans('app.payment-scheme')}}</th>																	
 						</tr>
 					</thead>
 					<tbody>
@@ -37,7 +36,6 @@
 							<td>{{$no}}</td>
 							<td>{{$item['item']->title}}</td>
 							<td>{{ucfirst(str_replace('_',' ',$item['payment_scheme']))}}</td>								
-							<td><strong>{{toRp($item['price'])}}</strong></td>										
 						</tr>
 						@php
 							$no++;	
@@ -47,12 +45,7 @@
 							<th colspan="2"></th>
 							<th>Total QTY</th>
 							<th id="totalQty">{{session('cart')->totalQty}}</th>
-						</tr>
-						<tr>									
-							<th colspan="2"></th>									
-							<th>{{trans('app.total-fee')}}</th>
-							<th class="totalPrice">{{toRp(session('cart')->totalPrice)}}</th>
-						</tr>								
+						</tr>					
 
 					</tbody>							
 				</table>

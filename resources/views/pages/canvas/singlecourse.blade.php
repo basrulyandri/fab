@@ -43,7 +43,7 @@
 									<h4>{{$price->studentType()}} Student</h4>
 								</div>
 								<div class="pricing-price" style="padding: 5px 0;">
-									<h4 style="margin-bottom: 5px;">{{toRp($price->amount_idr)}}</h4>
+									<h4 style="margin-bottom: 5px;">Contact Us</h4>
 									<h5 style="color:#8b0000;font-weight: bold;">{{$price->paymentScheme()}}</h5>									
 								</div>
 								<div class="pricing-features" style="min-height: 210px;{{$loop->index % 2 == 0 ? 'padding:20px;' : ''}}">

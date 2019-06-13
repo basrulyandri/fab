@@ -28,8 +28,7 @@
 								<tr>									
 									<th class="cart-product-thumbnail">NO</th>
 									<th class="cart-product-name">{{trans('app.course-name')}}</th>
-									<th class="cart-product-price">{{trans('app.payment-scheme')}}</th>
-									<th class="cart-product-quantity">{{trans('app.fee')}}</th>
+									<th class="cart-product-price">{{trans('app.payment-scheme')}}</th>									
 									<th class="cart-product-subtotal">{{trans('app.actions')}}</th>
 								</tr>
 							</thead>
@@ -42,7 +41,6 @@
 									<td>{{$no}}</td>
 										<td>{{$item['item']->title}}</td>
 										<td>{{ucfirst(str_replace('_',' ',$item['payment_scheme']))}}</td>									
-										<td><strong>{{toRp($item['price'])}}</strong></td>
 										<td><button course-id="{{$item['item']->id}}" class="btn btn-xs btn-danger remove-item"><i class="icon-trash"></i></button></td>
 								</tr>
 								@php
@@ -59,16 +57,7 @@
 
 							<div class="table-responsive">
 								<table class="table cart">
-									<tbody>
-										<tr class="cart_item">
-											<td class="cart-product-name">
-												<strong>{{trans('app.total-fee')}}</strong>
-											</td>
-
-											<td class="cart-product-name">
-												<span class="amount totalPrice">{{toRp(session('cart')->totalPrice)}}</span>
-											</td>
-										</tr>
+									<tbody>										
 										<tr class="cart_item">
 											<td class="cart-product-name">
 												<strong>Total Qty</strong>
